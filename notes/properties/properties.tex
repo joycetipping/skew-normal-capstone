@@ -1,0 +1,213 @@
+\documentclass{article}
+\usepackage{joyce-math}
+\numberwithin{equation}{section}
+
+\begin{document}
+\title{The Properties of the Standard Skew Normal}
+\date{}
+\maketitle
+
+The four properties of the skew normal listed in section 2 of ``A Note on Improved Approx \ldots''.
+
+\section{Property 1}
+\begin{thm*}
+  If $Z \sim SN(0, 1, \lambda)$, then $(-Z) \sim SN(0, 1, -\lambda)$.
+\end{thm*}
+
+\begin{proof}
+  
+  The standard normal pdf is an even function: $\phi(-x) = \frac{1}{\sqrt{2\pi}}\;e^{-(-x)^2/2} =
+  \frac{1}{\sqrt{2\pi}}\;e^{-x^2/2} = \phi(x)$. The standard normal cdf, however, $\Phi(x) =
+  \int_{-\infty}^\infty \phi(x)$, is not, being 0 near $-\infty$ and 1 near $\infty$. Thus,
+  
+  \begin{align*}
+    f_{(-Z)}(x) &= f_Z(-x) \\
+    & = 2 \cdot \phi(-x) \cdot \Phi (-\lambda x) \\
+    & = 2 \cdot \phi(x) \cdot \Phi (-\lambda x)
+  \end{align*}
+  which is the pdf of $SN(0, 1, -\lambda)$.
+\end{proof}
+
+\section{Property 2}
+\begin{thm*}
+  As $\lambda \to \pm \infty$, $SN(0, 1, \lambda)$ tends to the half normal distribution.
+\end{thm*}
+
+To prove our theorem, it is helpful to formally define the half normal distribution:
+
+\begin{lemma*}
+  Let $X \sim N(0, \sigma^2)$. Then the distribution of $|X|$ is a half-normal random variable
+  with parameter $\sigma$ and
+
+  \[
+  f_{|X|}(x) =
+  \begin{dcases*}
+    2 \cdot f_{N(0, \sigma^2)}(x) & when $0 < x < \infty$ \\
+    0 & everywhere else
+  \end{dcases*}
+  \]
+\end{lemma*}
+
+\begin{proof}
+  Let $X \sim N(0, \sigma^2)$, defined over $A = (-\infty, \infty)$.
+
+  Define 
+  
+  \[
+  Y = |X| =
+  \begin{dcases*}
+    -x & if $x < 0$ \\
+    0 & if $x = 0$ \\
+    x & if $x > 0$ \\
+  \end{dcases*}
+  \]
+
+  $Y$ is not one-to-one over $A$. However, we can partition $A$ into disjoint
+  subsets $A_1 = (-\infty, 0)$, $A_2 = (0, \infty)$, and $A_3 = \{0\}$ such that $A = A_1 \cup A_2
+  \cup A_3$ and $Y$ is one-to-one over each $A_i$. We can then transform each piece separately
+  using Theorem 6.3.2:
+
+  On $A_1$: $y = -x \lra x = -y$ and $\J = \left| \frac{dx}{dy} \right| = |-1| = 1$, yielding
+  \begin{align*}
+    f_Y(y) &= f_x(x) \cdot \J\\
+    &= f_x(-y) \cdot 1 \\
+    &= \frac{1}{\sqrt{2\pi}\sigma} \; e^{-\frac{(-y)^2}{2\sigma}} \\
+    &= \frac{1}{\sqrt{2\pi}\sigma} \; e^{-\frac{y^2}{2\sigma}} \\
+    &= f_{N(0, \sigma^2)}(y)
+  \end{align*}
+  over the domain $A_1: -\infty < x < 0 \lra -\infty < -y < 0 \lra 0 < y < \infty :B_1$.
+
+  Similarly, on $A_2$: $y = x \lra x = y$ and $\J = \left| \frac{dx}{dy} \right| = |1| = 1$,
+  yielding
+  \begin{align*}
+    f_Y(y) &= f_x(x) \cdot \J\\
+    &= f_x(y) \cdot 1 \\
+    &= \frac{1}{\sqrt{2\pi}\sigma} \; e^{-\frac{y^2}{2\sigma}} \\
+    &= f_{N(0, \sigma^2)}(y)
+  \end{align*}
+  over the domain $A_2: 0 < x < \infty \lra 0 < y < \infty :B_2$.
+
+  On $A_3$, we have $x = 0, y = 0$ and $\J = \left| \frac{dx}{dy} \right| = |0| = 0$, yielding
+  $f_Y(y) = f_X(x) \cdot \J = f_X(x) \cdot 0 = 0$.
+
+  Then, by Theorem 6.3.10,
+  \begin{align*}
+    f_Y(y) &= \{ f_Y(y) \textrm{ over } A_1 \} + \{ f_Y(y) \textrm{ over } A_2 \} \\
+    &= f_{N(0, \sigma^2)}(y) + f_{N(0, \sigma^2)}(y) \\
+    &= 2 \cdot f_{N(0, \sigma^2)}(y)
+  \end{align*}
+  over $B = B_1 \cup B_2 = (0, \infty)$, and 0 otherwise.
+\end{proof}
+
+With this result, we can easily show our property:
+
+\begin{proof}
+  Let $X \sim SN(0,1,\lambda)$. Recall that $f_X(x) = 2 \cdot \phi(x) \cdot \Phi(\lambda x)$.
+
+  Consider $\lim_{\lambda \to \infty} f_X(x)$. When $x$ is negative, $\lambda x \to -\infty$ and
+  thus $\Phi(\lambda x) \to 0$. When $x$ is positive, however, $\lambda x \to \infty$ and
+  $\Phi(\lambda x) \to 1$. Thus we have
+
+  \[
+  \lim_{\lambda \to \infty} 2 \cdot \phi(x) \cdot \Phi(\lambda x) =
+  \begin{dcases*}
+    0 & when $x \leq 0$ \\
+    2 \cdot \phi(x) & when $x > 0$
+  \end{dcases*}
+  \]
+
+  In $\lim_{\lambda \to -\infty} f_X(x)$, the signs are reversed. When $x$ is negative, $\lambda x
+  \to \infty$ and $\Phi(\lambda x) \to 1$. When $x$ is positive, $\lambda x \to -\infty$ and
+  $\Phi(\lambda x) \to 0$. Thus,
+
+  \[
+  \lim_{\lambda \to -\infty} 2 \cdot \phi(x) \cdot \Phi(\lambda x) =
+  \begin{dcases*}
+    2 \cdot \phi(x) & when $x < 0$ \\
+    0 & when $x \geq 0$
+  \end{dcases*}
+  \]
+
+\end{proof}
+
+\section{Property 3}
+\begin{thm*}
+  If $Z \sim SN(0, 1, \lambda)$, then $Z^2 \sim \chi^2_1$ (chi-square with 1 degree of freedom).
+\end{thm*}
+
+\begin{proof}
+  To prove our result, we make use of a lemma in Azzalini (2005):
+
+  \begin{lemma}
+    If $f_0$ is a one-dimensional probability density function symmetric about 0, and $G$ is a
+    one-dimensional distribution function such that $G'$ exists and is a density symmetric about
+    0, then
+
+    \begin{equation} \label{azzalini-lemma}
+      f(z) = 2 \cdot f_0(z) \cdot G\{w(z)\} \quad (-\infty < z < \infty)
+    \end{equation}
+
+    is a density function for any odd function $w(\cdot)$.
+  \end{lemma}
+
+  Notice that $\phi(x)$ is a one-dimensional probability density function symmetric about 0, and
+  $\Phi(x)$ is a one-dimensional distribution function such that $\Phi'$ exists and is a density
+  symmetric about 0. Furthermore, $\lambda x$ is an odd function. Thus, $f_Z(z) = 2 \cdot \phi(z)
+  \cdot \Phi(\lambda z)$ conforms to equation \ref{azzalini-lemma}. With that in mind, the corollary
+  to this lemma provides a very useful result:
+
+  \begin{cor*}[Perturbation Invariance]
+    If $Y \sim f_0$ and $Z \sim f$, then $|Y| \overset{d}{=} |Z|$, where the notation
+    $\overset{d}{=}$ denotes equality in distribution.    
+  \end{cor*}
+
+  Thus, we can treat $\phi$ and $Z$ as being equal in distribution. We will now show that $\phi^2
+  \sim \chi^2_1$:
+  \begin{align}
+    M_{\phi^2}(t) &= E[e^{tx^2}] \nonumber \\
+    &= \int_{-\infty}^\infty \; e^{tx^2} \left[ \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \right] dx
+    \nonumber \\
+    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{tx^2 - x^2/2} \; dx \nonumber \\
+    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-\frac{x^2}{2}(1 - 2t)} \; dx \nonumber \\
+    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-\frac{1}{2}(\sqrt{1-2t} \; x)^2} \; dx \label{before-sub}
+  \end{align}
+
+  Let $u = (\sqrt{1-2t}) \; x$; then we have $du = \sqrt{1-2t}$, \enspace $dx =
+  \frac{du}{\sqrt{1-2t}}$, \enspace and our limits become $x \to -\infty \Ra u \to -\infty$ and $x
+  \to \infty \Ra u \to \infty$. Now we can rewrite equation \ref{before-sub} as
+
+  \begin{align}
+    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-u^2/2} \; \left( \frac{1}{\sqrt{1-2t}}
+    \right) du \nonumber \\
+    &= \frac{1}{\sqrt{1-2t}} \; \left( \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-u^2/2}
+      \; du \right) \label{phi-pdf}
+  \end{align}
+
+  Notice that $\frac{1}{\sqrt{2\pi}} \; e^{-u^2/2}$ is the pdf of the standard normal, which
+  integrated over $(-\infty, \infty)$ equals 1. Thus equation \ref{phi-pdf} reduces to
+  $\frac{1}{\sqrt{1-2t}} = (1-2t)^{-1/2}$, which is the MGF of the $\chi^2_1$.
+
+  Since $Z$ is equal in distribution to $\phi$, we can also conclude that $Z^2 \sim \chi^2_1$.
+\end{proof}
+
+\section{Property 4}
+\begin{thm*}
+  The MGF of $SN(0, 1, \lambda)$ is $M(t|\lambda) = 2 \cdot \Phi (\delta t) \cdot e^{t^2/2}$ where
+  $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}}$ and $t \in (-\infty, \infty)$.
+\end{thm*}
+
+According to equation 5 in Azzalini (2005), the MGF of $SN(\mu, \sigma^2, \lambda)$ is
+\begin{equation}
+  M(t) = E\{e^{tY}\} = 2 \cdot \exp \left( \mu t + \frac{\sigma^2 t^2}{2} \right) \cdot \Phi(\delta \sigma
+  t)
+\end{equation}
+where $\delta = \frac{\lambda}{1 + \lambda^2} \in (-1, 1)$.
+
+It follows that the MGF of the $SN(0, 1, \lambda)$ is
+\begin{equation}
+  2 \cdot \exp \left( 0 \cdot t + \frac{1 \cdot t^2}{2} \right) \cdot \Phi(\delta \cdot 1 \cdot t) =
+  2 \cdot e^{t^2/2} \cdot \Phi(\delta t)
+\end{equation}
+where $\delta = \frac{\lambda}{1 + \lambda^2} \in (-1, 1)$.
+
+\end{document}

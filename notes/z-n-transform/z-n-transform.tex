@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage{joyce-math}
+
+\begin{document}
+\title{Hello World!}
+\author{Joyce Tipping}
+\date{}
+\maketitle
+
+Let $\Z$ be the standard normal distribution. Show that $\X = \mu + \Z\sigma$ has a normal
+distribution with mean $\mu$ and standard deviation $\sigma$.
+
+\begin{proof}
+\begin{align*}
+M_{\X}(t) & = e^{\mu t} \cdot M_{\Z}(\sigma t) \\
+& = e^{\mu t} \cdot e^{\frac{(\sigma t)^2}{2}} \\
+& = e^{\mu t + \frac{1}{2}\sigma^2t^2} \\
+& = M_{\N}(t)
+\end{align*}
+\end{proof}
+\end{document}

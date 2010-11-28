@@ -1,0 +1,1145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<head>
+<title>Skew normal distribution - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="generator" content="MediaWiki 1.16wmf4" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Skew_normal_distribution&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Skew_normal_distribution&amp;action=edit" />
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/vector/main-ltr.css?283-12" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/shared.css?283-12" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/skins-1.5/common/commonPrint.css?283-12" type="text/css" media="print" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/combined.min.css?117" type="text/css" media="all" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/css/vector/jquery-ui-1.7.2.css?1.7.2y" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="print" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Handheld.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="handheld" />
+<link rel="stylesheet" href="/w/index.php?title=MediaWiki:Vector.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=2678400&amp;action=raw&amp;maxage=2678400" type="text/css" media="all" />
+<link rel="stylesheet" href="/w/index.php?title=-&amp;action=raw&amp;maxage=2678400&amp;gen=css" type="text/css" media="all" />
+<script type="text/javascript">
+var skin="vector",
+stylepath="http://bits.wikimedia.org/skins-1.5",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://en.wikipedia.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="Skew_normal_distribution",
+wgTitle="Skew normal distribution",
+wgAction="view",
+wgArticleId=16266475,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=391838908,
+wgVersion="1.16wmf4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikipedia", "5": "Wikipedia talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Portal", "101": "Portal talk", "108": "Book", "109": "Book talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikipedia": 4, "wikipedia_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "portal": 100, "portal_talk": 101, "book": 108, "book_talk": 109, "wp": 4, "wt": 5, "image": 6, "image_talk": 7},
+wgSiteName="Wikipedia",
+wgCategories=["Statistics articles with navigational template", "Continuous distributions"],
+wgDBname="enwiki",
+wgMWSuggestTemplate="http://en.wikipedia.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgSearchNamespaces=[0],
+wgMWSuggestMessages=["with suggestions", "no suggestions"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgFlaggedRevsParams={"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}},
+wgStableRevisionId=null,
+wgRevContents={"error": "Unable to get content.", "waiting": "Waiting for content"},
+wgWikimediaMobileUrl="http://en.m.wikipedia.org/wiki",
+wgCollapsibleNavBucketTest=false,
+wgCollapsibleNavForceNewVersion=false,
+wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 1}, "simplesearch": {"enable": 1, "disablesuggest": 0}},
+wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
+wgArticleAssessmentJUIPath="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/js2stopgap/jui.combined.min.js",
+Geo={"city": "", "country": ""},
+wgNoticeProject="wikipedia";
+</script><script src="http://bits.wikimedia.org/skins-1.5/common/wikibits.js?283-12" type="text/javascript"></script>
+<script type="text/javascript" src="http://bits.wikimedia.org/skins-1.5/common/jquery.min.js?283-12"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/ajax.js?283-12" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/skins-1.5/common/mwsuggest.js?283-12" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/WikimediaMobile/MobileRedirect.js?2.2" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/js/plugins.combined.min.js?283-12" type="text/javascript"></script>
+<script src="http://bits.wikimedia.org/w/extensions/UsabilityInitiative/Vector/Vector.combined.min.js?283-12" type="text/javascript"></script>
+<script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
+<script src="/w/index.php?title=Special:BannerController&amp;cache=/cn.js&amp;283-12" type="text/javascript"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
+<script src="/w/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=vector&amp;283-12" type="text/javascript"></script>
+
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Skew_normal_distribution skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Skew normal distribution</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<table class="infobox bordered" style="width:325px; max-width:325px; font-size:95%; text-align: left;">
+<caption>Skew Normal</caption>
+<tr style="text-align: center;">
+<td colspan="2">Probability density function<br />
+<a href="/wiki/File:Skew_normal_densities.svg" class="image" title="Probability density plots of skew normal distributions"><img alt="Probability density plots of skew normal distributions" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Skew_normal_densities.svg/325px-Skew_normal_densities.svg.png" width="325" height="244" /></a></td>
+</tr>
+<tr style="text-align: center;">
+<td colspan="2">Cumulative distribution function<br />
+<a href="/wiki/File:Skew_normal_cdfs.svg" class="image" title="Cumulative distribution function plots of skew normal distributions"><img alt="Cumulative distribution function plots of skew normal distributions" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Skew_normal_cdfs.svg/325px-Skew_normal_cdfs.svg.png" width="325" height="244" /></a></td>
+</tr>
+<tr>
+<th>parameters:</th>
+<td><img class="tex" alt="\xi \," src="http://upload.wikimedia.org/math/0/a/6/0a647fdd7aa9d6bbb8633f8f034bb50e.png" /> <a href="/wiki/Location_parameter" title="Location parameter">location</a> (<a href="/wiki/Real_number" title="Real number">real</a>)<br />
+<img class="tex" alt="\omega \," src="http://upload.wikimedia.org/math/a/7/0/a70d0c9b2e529c999ec05569e1638668.png" /> <a href="/wiki/Scale_parameter" title="Scale parameter">scale</a> (positive, <a href="/wiki/Real_number" title="Real number">real</a>)<br />
+<img class="tex" alt="\alpha \," src="http://upload.wikimedia.org/math/b/2/7/b27abc434a11d07b390df859d7aa782a.png" /> <a href="/wiki/Shape_parameter" title="Shape parameter">shape</a> (<a href="/wiki/Real_number" title="Real number">real</a>)</td>
+</tr>
+<tr>
+<th><a href="/wiki/Support_(mathematics)" title="Support (mathematics)">support</a>:</th>
+<td><img class="tex" alt="x \in (-\infty; +\infty)\!" src="http://upload.wikimedia.org/math/1/c/2/1c20b416940140cdb98029660648aea6.png" /></td>
+</tr>
+<tr>
+<th><a href="/wiki/Probability_density_function" title="Probability density function">pdf</a>:</th>
+<td><img class="tex" alt="\frac{1}{\omega\pi} e^{-\frac{(x-\xi)^2}{2\omega^2}} \int_{-\infty}^{\alpha\left(\frac{x-\xi}{\omega}\right)}   e^{-\frac{t^2}{2}}\ dt" src="http://upload.wikimedia.org/math/6/2/8/628a96d51ba225eee1157849e8c52c9b.png" /></td>
+</tr>
+<tr>
+<th><a href="/wiki/Cumulative_distribution_function" title="Cumulative distribution function">cdf</a>:</th>
+<td><img class="tex" alt="\Phi\left(\frac{x-\xi}{\omega}\right)-2T\left(\frac{x-\xi}{\omega},\alpha\right)" src="http://upload.wikimedia.org/math/2/a/2/2a2c0119da2d82104dd9fa34844bf591.png" /><br />
+<span class="texhtml"><i>T</i>(<i>h</i>,<i>a</i>)</span> is <a href="/wiki/Owen%27s_T_function" title="Owen's T function">Owen's T function</a></td>
+</tr>
+<tr>
+<th><a href="/wiki/Expected_value" title="Expected value">mean</a>:</th>
+<td><img class="tex" alt="\xi + \omega\delta\sqrt{\frac{2}{\pi}}" src="http://upload.wikimedia.org/math/1/3/e/13e9ddf2fee7adfe55729e46beac0ec5.png" /> where <img class="tex" alt="\delta = \frac{\alpha}{\sqrt{1+\alpha^2}}" src="http://upload.wikimedia.org/math/c/b/d/cbd90c79959a059b013020599ef178cf.png" /></td>
+</tr>
+<tr>
+<th><a href="/wiki/Median" title="Median">median</a>:</th>
+<td></td>
+</tr>
+<tr>
+<th><a href="/wiki/Mode_(statistics)" title="Mode (statistics)">mode</a>:</th>
+<td></td>
+</tr>
+<tr>
+<th><a href="/wiki/Variance" title="Variance">variance</a>:</th>
+<td><img class="tex" alt="\omega^2\left(1 - \frac{2\delta^2}{\pi}\right)" src="http://upload.wikimedia.org/math/b/f/5/bf520647c06d0178eb697f06a0dc2866.png" /></td>
+</tr>
+<tr>
+<th><a href="/wiki/Skewness" title="Skewness">skewness</a>:</th>
+<td><img class="tex" alt="\frac{4-\pi}{2} \frac{\left(\delta\sqrt{2/\pi}\right)^3}{  \left(1-2\delta^2/\pi\right)^{3/2}}" src="http://upload.wikimedia.org/math/d/8/d/d8db7a0f5002ca36fd11642431d980a7.png" /></td>
+</tr>
+<tr>
+<th><a href="/wiki/Excess_kurtosis" title="Excess kurtosis" class="mw-redirect">ex.kurtosis</a>:</th>
+<td><img class="tex" alt="2(\pi - 3)\frac{\left(\delta\sqrt{2/\pi}\right)^4}{\left(1-2\delta^2/\pi\right)^2}" src="http://upload.wikimedia.org/math/6/8/c/68cb01bc9ffc25c9317ba09241efcc6d.png" /></td>
+</tr>
+<tr>
+<th><a href="/wiki/Information_entropy" title="Information entropy" class="mw-redirect">entropy</a>:</th>
+<td></td>
+</tr>
+<tr>
+<th><a href="/wiki/Moment-generating_function" title="Moment-generating function">mgf</a>:</th>
+<td><img class="tex" alt="M_X\left(t\right)=2\exp\left(\xi t+\frac{\omega^2t^2}{2}\right)\Phi\left(\omega\delta t\right)" src="http://upload.wikimedia.org/math/f/2/5/f25c3d6b7eec2808780a2a0366a0cf90.png" /></td>
+</tr>
+<tr>
+<th><a href="/wiki/Characteristic_function_(probability_theory)" title="Characteristic function (probability theory)">cf</a>:</th>
+<td></td>
+</tr>
+</table>
+<p>In <a href="/wiki/Probability_theory" title="Probability theory">probability theory</a> and <a href="/wiki/Statistics" title="Statistics">statistics</a>, the <b>skew normal distribution</b> is a <a href="/wiki/Continuous_probability_distribution" title="Continuous probability distribution">continuous probability distribution</a> that generalises the <a href="/wiki/Normal_distribution" title="Normal distribution">normal distribution</a> to allow for non-zero <a href="/wiki/Skewness" title="Skewness">skewness</a>.</p>
+<table id="toc" class="toc">
+<tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Definition"><span class="tocnumber">1</span> <span class="toctext">Definition</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Estimation"><span class="tocnumber">2</span> <span class="toctext">Estimation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#External_links"><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } 
+//]]>
+</script>
+<h2><span class="editsection">[<a href="/w/index.php?title=Skew_normal_distribution&amp;action=edit&amp;section=1" title="Edit section: Definition">edit</a>]</span> <span class="mw-headline" id="Definition">Definition</span></h2>
+<p>Let <span class="texhtml">φ(<i>x</i>)</span> denote the standard normal <a href="/wiki/Probability_density_function" title="Probability density function">probability density function</a></p>
+<dl>
+<dd><img class="tex" alt="\phi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}" src="http://upload.wikimedia.org/math/5/0/c/50c748c025873052901ca5e969c060df.png" /></dd>
+</dl>
+<p>with the <a href="/wiki/Cumulative_distribution_function" title="Cumulative distribution function">cumulative distribution function</a> given by</p>
+<dl>
+<dd><img class="tex" alt="\Phi(x) = \int_{-\infty}^{x} \phi(t)\ dt = \frac{1}{2} \left[ 1 + \text{erf} \left(\frac{x}{\sqrt{2}}\right)\right]." src="http://upload.wikimedia.org/math/e/b/3/eb3c621562480d744714143989583a20.png" /></dd>
+</dl>
+<p>Then the probability density function of the skew-normal distribution with parameter α is given by</p>
+<dl>
+<dd><img class="tex" alt="f(x) = 2\phi(x)\Phi(\alpha x). \," src="http://upload.wikimedia.org/math/1/2/5/125b78ef208fe8a3547e32a37770df4d.png" /></dd>
+</dl>
+<p>This distribution was first introduced by O'Hagan and Leonhard (1976).</p>
+<p>To add <a href="/wiki/Location_parameter" title="Location parameter">location</a> and <a href="/wiki/Scale_parameter" title="Scale parameter">scale</a> parameters to this, one makes the usual transform <img class="tex" alt="x\rightarrow\frac{x-\xi}{\omega}" src="http://upload.wikimedia.org/math/3/c/7/3c70480a02cf04e4741979b314e3d0b0.png" />. One can verify that the normal distribution is recovered when <span class="texhtml">α = 0</span>, and that the absolute value of the skewness increases as the absolute value of <span class="texhtml">α</span> increases. Note, however, that the skewness of the distribution is limited to the interval <span class="texhtml">( − 1,1)</span>. The distribution is right skewed if <span class="texhtml">α &gt; 0</span> and is left skewed if <span class="texhtml">α &lt; 0</span>. The probability density function with location <span class="texhtml">ξ</span>, scale <span class="texhtml">ω</span>, and parameter <span class="texhtml">α</span> becomes</p>
+<dl>
+<dd><img class="tex" alt="f(x) = \frac{2}{\omega}\phi\left(\frac{x-\xi}{\omega}\right)\Phi\left(\alpha \left(\frac{x-\xi}{\omega}\right)\right). \," src="http://upload.wikimedia.org/math/f/2/5/f25633eb0af6675ed3029ac45541e5f9.png" /></dd>
+</dl>
+<h2><span class="editsection">[<a href="/w/index.php?title=Skew_normal_distribution&amp;action=edit&amp;section=2" title="Edit section: Estimation">edit</a>]</span> <span class="mw-headline" id="Estimation">Estimation</span></h2>
+<p><a href="/wiki/Maximum_likelihood" title="Maximum likelihood">Maximum likelihood</a> estimates for <span class="texhtml">ξ</span>, <span class="texhtml">ω</span>, and <span class="texhtml">α</span> can be computed numerically, but no closed-form expression for the estimates is available unless <span class="texhtml">α = 0</span>. If a closed-form expression is needed, the <a href="/wiki/Method_of_moments_(statistics)" title="Method of moments (statistics)">method of moments</a> can be applied to estimate <span class="texhtml">α</span> from the sample skew, by inverting the skewness equation. This yields the estimate</p>
+<dl>
+<dd><img class="tex" alt="|\delta| = \sqrt{\frac{\pi}{2} \frac{  |\hat{\gamma}_3|^{\frac{2}{3}}  }{|\hat{\gamma}_3|^{\frac{2}{3}}+((4-\pi)/2)^\frac{2}{3}}}" src="http://upload.wikimedia.org/math/1/e/5/1e5e0f1be9508dd6610081de0ec2d15d.png" /></dd>
+</dl>
+<p>where <img class="tex" alt="\delta = \frac{\alpha}{\sqrt{1+\alpha^2}}" src="http://upload.wikimedia.org/math/c/b/d/cbd90c79959a059b013020599ef178cf.png" />, and <img class="tex" alt="\hat{\gamma}_3" src="http://upload.wikimedia.org/math/2/7/5/275ddfe6e92099dd3d39c3d70f30e925.png" /> is the sample skew. The sign of <span class="texhtml">δ</span> is the same as the sign of <img class="tex" alt="\hat{\gamma}_3" src="http://upload.wikimedia.org/math/2/7/5/275ddfe6e92099dd3d39c3d70f30e925.png" />. Consequently, <img class="tex" alt="\hat{\alpha} = \delta/\sqrt{1-\delta^2}" src="http://upload.wikimedia.org/math/4/e/9/4e92738bf2cc0081df9677990e4cecb7.png" />.</p>
+<h2><span class="editsection">[<a href="/w/index.php?title=Skew_normal_distribution&amp;action=edit&amp;section=3" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h2>
+<ul>
+<li><a href="/wiki/Normal_distribution" title="Normal distribution">Normal distribution</a></li>
+<li><a href="/wiki/Generalized_normal_distribution" title="Generalized normal distribution">Generalized normal distribution</a></li>
+<li><a href="/wiki/Lognormal_distribution" title="Lognormal distribution" class="mw-redirect">Lognormal distribution</a></li>
+<li><a href="/wiki/Skewness" title="Skewness">Skewness</a></li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Skew_normal_distribution&amp;action=edit&amp;section=4" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<ul>
+<li><span class="citation Journal">Azzalini, A. (1985). "A class of distributions which includes the normal ones". <i>Scand. J. Statist.</i> <b>12</b>: 171–178.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.atitle=A+class+of+distributions+which+includes+the+normal+ones&amp;rft.jtitle=Scand.+J.+Statist.&amp;rft.aulast=Azzalini&amp;rft.aufirst=A.&amp;rft.au=Azzalini%2C%26%2332%3BA.&amp;rft.date=1985&amp;rft.volume=12&amp;rft.pages=171%E2%80%93178&amp;rfr_id=info:sid/en.wikipedia.org:Skew_normal_distribution"><span style="display: none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li>O'Hagan, A. and Leonhard, T. (1976). Bayes estimation subject to uncertainty about parameter constraints. Biometrika, 63, 201-202.</li>
+</ul>
+<h2><span class="editsection">[<a href="/w/index.php?title=Skew_normal_distribution&amp;action=edit&amp;section=5" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<ul>
+<li><a href="http://azzalini.stat.unipd.it/SN/Intro/intro.html" class="external text" rel="nofollow">A very brief introduction to the skew-normal distribution</a></li>
+<li><a href="http://azzalini.stat.unipd.it/SN/" class="external text" rel="nofollow">The Skew-Normal Probability Distribution (and related distributions, such as the skew-t)</a></li>
+<li><a href="http://people.sc.fsu.edu/~burkardt/cpp_src/owens/owens.html" class="external text" rel="nofollow">OWENS: Owen's T Function</a></li>
+</ul>
+<table class="navbox" cellspacing="0" style=";">
+<tr>
+<td style="padding:2px;">
+<table cellspacing="0" class="nowraplinks collapsible autocollapse" style="width:100%;background:transparent;color:inherit;;">
+<tr>
+<th style=";" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">
+<div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;;border:none;; font-size:xx-small;"><a href="/wiki/Template:ProbDistributions" title="Template:ProbDistributions"><span title="View this template" style=";;border:none;">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/wiki/Template_talk:ProbDistributions" title="Template talk:ProbDistributions"><span title="Discuss this template" style=";;border:none;">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:ProbDistributions&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style=";;border:none;;">e</span></a></div>
+</div>
+<span class="" style="font-size:110%;"><a href="/wiki/Probability_distribution" title="Probability distribution">Probability distributions</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/List_of_probability_distributions#With_finite_support" title="List of probability distributions">Discrete univariate with finite support</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><span style="white-space:nowrap"><a href="/wiki/Benford%27s_law" title="Benford's law">Benford</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Bernoulli_distribution" title="Bernoulli distribution">Bernoulli</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Beta-binomial_distribution" title="Beta-binomial distribution">Beta-binomial</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Binomial_distribution" title="Binomial distribution">binomial</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Categorical_distribution" title="Categorical distribution">categorical</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Hypergeometric_distribution" title="Hypergeometric distribution">hypergeometric</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Poisson_binomial_distribution" title="Poisson binomial distribution">Poisson binomial</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Rademacher_distribution" title="Rademacher distribution">Rademacher</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Uniform_distribution_(discrete)" title="Uniform distribution (discrete)">discrete uniform</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Zipf%27s_law" title="Zipf's law">Zipf</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Zipf-Mandelbrot_law" title="Zipf-Mandelbrot law" class="mw-redirect">Zipf-Mandelbrot</a></span></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/List_of_probability_distributions#With_infinite_support" title="List of probability distributions">Discrete univariate with infinite support</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><span style="white-space:nowrap"><a href="/wiki/Boltzmann_distribution" title="Boltzmann distribution">Boltzmann</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Conway%E2%80%93Maxwell%E2%80%93Poisson_distribution" title="Conway–Maxwell–Poisson distribution">Conway–Maxwell–Poisson</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Discrete_phase-type_distribution" title="Discrete phase-type distribution">discrete phase-type</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Extended_negative_binomial_distribution" title="Extended negative binomial distribution">extended negative binomial</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Gauss%E2%80%93Kuzmin_distribution" title="Gauss–Kuzmin distribution">Gauss–Kuzmin</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Geometric_distribution" title="Geometric distribution">geometric</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Logarithmic_distribution" title="Logarithmic distribution">logarithmic</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Negative_binomial_distribution" title="Negative binomial distribution">negative binomial</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Parabolic_fractal_distribution" title="Parabolic fractal distribution">parabolic fractal</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Poisson_distribution" title="Poisson distribution">Poisson</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Skellam_distribution" title="Skellam distribution">Skellam</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Yule%E2%80%93Simon_distribution" title="Yule–Simon distribution">Yule–Simon</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Zeta_distribution" title="Zeta distribution">zeta</a></span></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/List_of_probability_distributions#Supported_on_a_bounded_interval" title="List of probability distributions">Continuous univariate supported on a bounded interval, e.g. [0,1]</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><span style="white-space:nowrap"><a href="/wiki/Beta_distribution" title="Beta distribution">Beta</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Irwin%E2%80%93Hall_distribution" title="Irwin–Hall distribution">Irwin–Hall</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Kumaraswamy_distribution" title="Kumaraswamy distribution">Kumaraswamy</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Logit-normal_distribution" title="Logit-normal distribution">logit-normal</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Raised_cosine_distribution" title="Raised cosine distribution">raised cosine</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Triangular_distribution" title="Triangular distribution">triangular</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/U-quadratic_distribution" title="U-quadratic distribution">U-quadratic</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Uniform_distribution_(continuous)" title="Uniform distribution (continuous)">uniform</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Wigner_semicircle_distribution" title="Wigner semicircle distribution">Wigner semicircle</a></span></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/List_of_probability_distributions#Supported_on_semi-infinite_intervals.2C_usually_.5B0.2C.E2.88.9E.29" title="List of probability distributions">Continuous univariate supported on a semi-infinite interval, usually [0,∞)</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><span style="white-space:nowrap"><a href="/wiki/Beta_prime_distribution" title="Beta prime distribution">Beta prime</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Bose%E2%80%93Einstein_statistics" title="Bose–Einstein statistics">Bose–Einstein</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Burr_distribution" title="Burr distribution">Burr</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Chi-square_distribution" title="Chi-square distribution">chi-square</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Chi_distribution" title="Chi distribution">chi</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Phase-type_distribution#Coxian_distribution" title="Phase-type distribution">Coxian</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Erlang_distribution" title="Erlang distribution">Erlang</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Exponential_distribution" title="Exponential distribution">exponential</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/F-distribution" title="F-distribution"><i>F</i></a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Fermi%E2%80%93Dirac_statistics" title="Fermi–Dirac statistics">Fermi–Dirac</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Folded_normal_distribution" title="Folded normal distribution">folded normal</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Fr%C3%A9chet_distribution" title="Fréchet distribution">Fréchet</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Gamma_distribution" title="Gamma distribution">Gamma</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Generalized_extreme_value_distribution" title="Generalized extreme value distribution">generalized extreme value</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Generalized_inverse_Gaussian_distribution" title="Generalized inverse Gaussian distribution">generalized inverse Gaussian</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Half-logistic_distribution" title="Half-logistic distribution">half-logistic</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Half-normal_distribution" title="Half-normal distribution">half-normal</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Hotelling%27s_T-square_distribution" title="Hotelling's T-square distribution">Hotelling's T-square</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Hyper-exponential_distribution" title="Hyper-exponential distribution">hyper-exponential</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Hypoexponential_distribution" title="Hypoexponential distribution">hypoexponential</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Inverse-chi-square_distribution" title="Inverse-chi-square distribution">inverse chi-square</a> (<a href="/wiki/Scaled-inverse-chi-square_distribution" title="Scaled-inverse-chi-square distribution">scaled inverse chi-square</a>)&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Inverse_Gaussian_distribution" title="Inverse Gaussian distribution">inverse Gaussian</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Inverse-gamma_distribution" title="Inverse-gamma distribution">inverse gamma</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/L%C3%A9vy_distribution" title="Lévy distribution">Lévy</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Log-normal_distribution" title="Log-normal distribution">log-normal</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Log-logistic_distribution" title="Log-logistic distribution">log-logistic</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Maxwell%E2%80%93Boltzmann_distribution" title="Maxwell–Boltzmann distribution">Maxwell–Boltzmann</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Maxwell_speed_distribution" title="Maxwell speed distribution">Maxwell speed</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Nakagami_distribution" title="Nakagami distribution">Nakagami</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Noncentral_chi-square_distribution" title="Noncentral chi-square distribution">noncentral chi-square</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Pareto_distribution" title="Pareto distribution">Pareto</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Phase-type_distribution" title="Phase-type distribution">phase-type</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Rayleigh_distribution" title="Rayleigh distribution">Rayleigh</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Relativistic_Breit%E2%80%93Wigner_distribution" title="Relativistic Breit–Wigner distribution">relativistic Breit–Wigner</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Rice_distribution" title="Rice distribution">Rice</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Rosin%E2%80%93Rammler_distribution" title="Rosin–Rammler distribution" class="mw-redirect">Rosin–Rammler</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Shifted_Gompertz_distribution" title="Shifted Gompertz distribution">shifted Gompertz</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Truncated_normal_distribution" title="Truncated normal distribution">truncated normal</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Type-2_Gumbel_distribution" title="Type-2 Gumbel distribution">type-2 Gumbel</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Weibull_distribution" title="Weibull distribution">Weibull</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Wilks%27_lambda_distribution" title="Wilks' lambda distribution">Wilks' lambda</a></span></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible uncollapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/List_of_probability_distributions#Supported_on_the_whole_real_line" title="List of probability distributions">Continuous univariate supported on the whole real line (−∞,&#160;∞)</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><span style="white-space:nowrap"><a href="/wiki/Cauchy_distribution" title="Cauchy distribution">Cauchy</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Extreme_value_distribution" title="Extreme value distribution" class="mw-redirect">extreme value</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Generalized_normal_distribution#Version_1" title="Generalized normal distribution">exponential power</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Fisher%27s_z-distribution" title="Fisher's z-distribution">Fisher's z</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Generalized_normal_distribution" title="Generalized normal distribution">generalized normal</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Generalised_hyperbolic_distribution" title="Generalised hyperbolic distribution">generalized hyperbolic</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Gumbel_distribution" title="Gumbel distribution">Gumbel</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Hyperbolic_secant_distribution" title="Hyperbolic secant distribution">hyperbolic secant</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Landau_distribution" title="Landau distribution">Landau</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Laplace_distribution" title="Laplace distribution">Laplace</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Logistic_distribution" title="Logistic distribution">logistic</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Noncentral_t-distribution" title="Noncentral t-distribution">noncentral t</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Normal_distribution" title="Normal distribution">normal (Gaussian)</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Normal-inverse_Gaussian_distribution" title="Normal-inverse Gaussian distribution">normal-inverse Gaussian</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><strong class="selflink">skew normal</strong>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Slash_distribution" title="Slash distribution">slash</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Stable_distribution" title="Stable distribution">stable</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Student%27s_t-distribution" title="Student's t-distribution">Student's <i>t</i></a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Type-1_Gumbel_distribution" title="Type-1 Gumbel distribution">type-1 Gumbel</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Variance-gamma_distribution" title="Variance-gamma distribution">Variance-Gamma</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Voigt_profile" title="Voigt profile">Voigt</a></span></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/Joint_probability_distribution" title="Joint probability distribution">Multivariate (joint)</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><span style="white-space:nowrap"><i>Discrete:</i> <a href="/wiki/Ewens%27s_sampling_formula" title="Ewens's sampling formula">Ewens</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Multinomial_distribution" title="Multinomial distribution">multinomial</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Multivariate_Polya_distribution" title="Multivariate Polya distribution">multivariate Polya</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Negative_multinomial_distribution" title="Negative multinomial distribution">negative multinomial</a><br />
+<i>Continuous:</i> <a href="/wiki/Dirichlet_distribution" title="Dirichlet distribution">Dirichlet</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Generalized_Dirichlet_distribution" title="Generalized Dirichlet distribution">Generalized Dirichlet</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Multivariate_normal_distribution" title="Multivariate normal distribution">multivariate normal</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Multivariate_Student_distribution" title="Multivariate Student distribution">multivariate Student</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Normal-scaled_inverse_gamma_distribution" title="Normal-scaled inverse gamma distribution">normal-scaled inverse gamma</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Normal-gamma_distribution" title="Normal-gamma distribution">normal-gamma</a><br />
+<i><a href="/wiki/Random_matrix" title="Random matrix">Matrix-valued</a>:</i> <a href="/wiki/Inverse-Wishart_distribution" title="Inverse-Wishart distribution">inverse-Wishart</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Matrix_normal_distribution" title="Matrix normal distribution">matrix normal</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Wishart_distribution" title="Wishart distribution">Wishart</a></span></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/Directional_statistics" title="Directional statistics">Directional</a>, <a href="/wiki/Degenerate_distribution" title="Degenerate distribution">degenerate</a>, and <a href="/wiki/Singular_distribution" title="Singular distribution">singular</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><span style="white-space:nowrap"><i><a href="/wiki/Directional_statistics" title="Directional statistics">Directional</a>:</i><a href="/wiki/Circular_uniform_distribution" title="Circular uniform distribution">Circular Uniform</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Bivariate_von_Mises_distribution" title="Bivariate von Mises distribution">bivariate von Mises</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Kent_distribution" title="Kent distribution">Kent</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Von_Mises_distribution" title="Von Mises distribution">univariate von Mises</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Von_Mises%E2%80%93Fisher_distribution" title="Von Mises–Fisher distribution">von Mises–Fisher</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Wrapped_normal_distribution" title="Wrapped normal distribution">Wrapped normal</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Wrapped_Cauchy_distribution" title="Wrapped Cauchy distribution">Wrapped Cauchy</a> &#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Wrapped_L%C3%A9vy_distribution" title="Wrapped Lévy distribution">Wrapped Lévy</a><br />
+<i><a href="/wiki/Degenerate_distribution" title="Degenerate distribution">Degenerate</a>:</i> <a href="/wiki/Degenerate_distribution" title="Degenerate distribution">discrete degenerate</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Dirac_delta_function" title="Dirac delta function">Dirac delta function</a><br />
+<i><a href="/wiki/Singular_distribution" title="Singular distribution">Singular</a>:</i> <a href="/wiki/Cantor_distribution" title="Cantor distribution">Cantor</a></span></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;">Families</span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><span style="white-space:nowrap"><a href="/wiki/Circular_distribution" title="Circular distribution">Circular</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Compound_Poisson_distribution" title="Compound Poisson distribution">compound Poisson</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Elliptical_distribution" title="Elliptical distribution">elliptical</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Exponential_family" title="Exponential family">exponential</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Natural_exponential_family" title="Natural exponential family">natural exponential</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Location-scale_family" title="Location-scale family">location-scale</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Maximum_entropy_probability_distribution" title="Maximum entropy probability distribution">maximum entropy</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Mixture_density" title="Mixture density">mixture</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Pearson_distribution" title="Pearson distribution">Pearson</a>&#160;<b>·</b></span> <span style="white-space:nowrap"><a href="/wiki/Tweedie_distributions" title="Tweedie distributions">Tweedie</a></span></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table class="navbox" cellspacing="0" style=";">
+<tr>
+<td style="padding:2px;">
+<table cellspacing="0" class="nowraplinks collapsible uncollapsed" style="width:100%;background:transparent;color:inherit;;">
+<tr>
+<th style=";" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">
+<div class="noprint plainlinks navbar" style="background:none; padding:0; font-weight:normal;;;border:none;; font-size:xx-small;"><a href="/wiki/Template:Statistics" title="Template:Statistics"><span title="View this template" style=";;border:none;">v</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="/wiki/Template_talk:Statistics" title="Template talk:Statistics"><span title="Discuss this template" style=";;border:none;">d</span></a>&#160;<span style="font-size:80%;">•</span>&#160;<a href="http://en.wikipedia.org/w/index.php?title=Template:Statistics&amp;action=edit" class="external text" rel="nofollow"><span title="Edit this template" style=";;border:none;;">e</span></a></div>
+</div>
+<span class="" style="font-size:110%;"><a href="/wiki/Statistics" title="Statistics">Statistics</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/Descriptive_statistics" title="Descriptive statistics">Descriptive statistics</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks navbox-subgroup" style="width:100%;;;;">
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Continuous_probability_distribution" title="Continuous probability distribution">Continuous data</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks navbox-subgroup" style="width:100%;;;;">
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Location_parameter" title="Location parameter">Location</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Mean" title="Mean">Mean</a> (<a href="/wiki/Arithmetic_mean" title="Arithmetic mean">Arithmetic</a>, <a href="/wiki/Geometric_mean" title="Geometric mean">Geometric</a>, <a href="/wiki/Harmonic_mean" title="Harmonic mean">Harmonic</a>)<span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Median" title="Median">Median</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Mode_(statistics)" title="Mode (statistics)">Mode</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Statistical_dispersion" title="Statistical dispersion">Dispersion</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Range_(statistics)" title="Range (statistics)">Range</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Standard_deviation" title="Standard deviation">Standard deviation</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Coefficient_of_variation" title="Coefficient of variation">Coefficient of variation</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Percentile" title="Percentile">Percentile</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Interquartile_range" title="Interquartile range">Interquartile range</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Shape_of_the_distribution" title="Shape of the distribution">Shape</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Variance" title="Variance">Variance</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Skewness" title="Skewness">Skewness</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Kurtosis" title="Kurtosis">Kurtosis</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Moment_(mathematics)" title="Moment (mathematics)">Moments</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/L-moment" title="L-moment">L-moments</a></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Discrete_probability_distribution" title="Discrete probability distribution">Count data</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Index_of_dispersion" title="Index of dispersion">Index of dispersion</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;">Summary tables</div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Grouped_data" title="Grouped data">Grouped data</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Frequency_distribution" title="Frequency distribution">Frequency distribution</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Contingency_table" title="Contingency table">Contingency table</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Correlation_and_dependence" title="Correlation and dependence">Dependence</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Pearson_product-moment_correlation_coefficient" title="Pearson product-moment correlation coefficient">Pearson product-moment correlation</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Rank_correlation" title="Rank correlation">Rank correlation</a> (<a href="/wiki/Spearman%27s_rank_correlation_coefficient" title="Spearman's rank correlation coefficient">Spearman's rho</a>, <a href="/wiki/Kendall_tau_rank_correlation_coefficient" title="Kendall tau rank correlation coefficient">Kendall's tau</a>)<span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Partial_correlation" title="Partial correlation">Partial correlation</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Scatter_plot" title="Scatter plot">Scatter plot</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Statistical_graphics" title="Statistical graphics">Statistical graphics</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Bar_chart" title="Bar chart">Bar chart</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Biplot" title="Biplot">Biplot</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Box_plot" title="Box plot">Box plot</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Control_chart" title="Control chart">Control chart</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Correlogram" title="Correlogram">Correlogram</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Forest_plot" title="Forest plot">Forest plot</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Histogram" title="Histogram">Histogram</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Q-Q_plot" title="Q-Q plot">Q-Q plot</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Run_chart" title="Run chart">Run chart</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Scatter_plot" title="Scatter plot">Scatter plot</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Stemplot" title="Stemplot">Stemplot</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Radar_chart" title="Radar chart">Radar chart</a></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/Data_collection" title="Data collection">Data collection</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks navbox-subgroup" style="width:100%;;;;">
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;">Designing studies</div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Effect_size" title="Effect size">Effect size</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Standard_error_(statistics)" title="Standard error (statistics)">Standard error</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Statistical_power" title="Statistical power">Statistical power</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Sample_size" title="Sample size">Sample size determination</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Statistical_survey" title="Statistical survey">Survey methodology</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Sampling_(statistics)" title="Sampling (statistics)">Sampling</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Stratified_sampling" title="Stratified sampling">Stratified sampling</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Opinion_poll" title="Opinion poll">Opinion poll</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Questionnaire" title="Questionnaire">Questionnaire</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Experiment#Controlled_experiments" title="Experiment">Controlled experiment</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Design_of_experiments" title="Design of experiments">Design of experiments</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Randomized_experiment" title="Randomized experiment">Randomized experiment</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Random_assignment" title="Random assignment">Random assignment</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Replication_(statistics)" title="Replication (statistics)">Replication</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Blocking_(statistics)" title="Blocking (statistics)">Blocking</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Regression_discontinuity_design" title="Regression discontinuity design">Regression discontinuity</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Optimal_design" title="Optimal design">Optimal design</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;">Uncontrolled studies</div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Natural_experiment" title="Natural experiment">Natural experiment</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Quasi-experiment" title="Quasi-experiment">Quasi-experiment</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Observational_study" title="Observational study">Observational study</a></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/Statistical_inference" title="Statistical inference">Statistical inference</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks navbox-subgroup" style="width:100%;;;;">
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Bayesian_inference" title="Bayesian inference">Bayesian inference</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Bayesian_probability" title="Bayesian probability">Bayesian probability</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Prior_probability" title="Prior probability">Prior</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Posterior_distribution" title="Posterior distribution" class="mw-redirect">Posterior</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Credible_interval" title="Credible interval">Credible interval</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Bayes_factor" title="Bayes factor">Bayes factor</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Bayes_estimator" title="Bayes estimator">Bayesian estimator</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Maximum_a_posteriori_estimation" title="Maximum a posteriori estimation">Maximum posterior estimator</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Frequentist_inference" title="Frequentist inference">Frequentist inference</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Confidence_interval" title="Confidence interval">Confidence interval</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Statistical_hypothesis_testing" title="Statistical hypothesis testing">Hypothesis testing</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Sampling_distribution" title="Sampling distribution">Sampling distribution</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Meta-analysis" title="Meta-analysis">Meta-analysis</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;">Specific tests</div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Z-test" title="Z-test">Z-test (normal)</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Student%27s_t-test" title="Student's t-test">Student's t-test</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/F-test" title="F-test">F-test</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Chi-square_test" title="Chi-square test">Chi-square test</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Pearson%27s_chi-square_test" title="Pearson's chi-square test">Pearson's chi-square</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Wald_test" title="Wald test">Wald test</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Mann%E2%80%93Whitney_U" title="Mann–Whitney U">Mann–Whitney U</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Shapiro%E2%80%93Wilk_test" title="Shapiro–Wilk test">Shapiro–Wilk</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Wilcoxon_signed-rank_test" title="Wilcoxon signed-rank test">Signed-rank</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Likelihood-ratio_test" title="Likelihood-ratio test">Likelihood-ratio</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Estimator" title="Estimator">General estimation</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Bias_of_an_estimator" title="Bias of an estimator">Mean-unbiased</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Bias_of_an_estimator#Median_unbiased_estimators" title="Bias of an estimator">Median-unbiased</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Maximum_likelihood" title="Maximum likelihood">Maximum likelihood</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Method_of_moments_(statistics)" title="Method of moments (statistics)">Method of moments</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Minimum_distance_estimation" title="Minimum distance estimation">Minimum distance</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Maximum_spacing_estimation" title="Maximum spacing estimation">Maximum spacing</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Density_estimation" title="Density estimation">Density estimation</a></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/Correlation_and_dependence" title="Correlation and dependence">Correlation</a> and <a href="/wiki/Regression_analysis" title="Regression analysis">regression analysis</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks navbox-subgroup" style="width:100%;;;;">
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Correlation_and_dependence" title="Correlation and dependence">Correlation</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Pearson_product-moment_correlation_coefficient" title="Pearson product-moment correlation coefficient">Pearson product-moment correlation</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Partial_correlation" title="Partial correlation">Partial correlation</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Confounding" title="Confounding">Confounding variable</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Coefficient_of_determination" title="Coefficient of determination">Coefficient of determination</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Regression_analysis" title="Regression analysis">Regression analysis</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Errors_and_residuals_in_statistics" title="Errors and residuals in statistics">Errors and residuals</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Regression_model_validation" title="Regression model validation">Regression model validation</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Mixed_model" title="Mixed model">Mixed effects models</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Simultaneous_equations_model" title="Simultaneous equations model">Simultaneous equations models</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Linear_regression" title="Linear regression">Linear regression</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Simple_linear_regression" title="Simple linear regression">Simple linear regression</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Ordinary_least_squares" title="Ordinary least squares">Ordinary least squares</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/General_linear_model" title="General linear model">General linear model</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Bayesian_linear_regression" title="Bayesian linear regression">Bayesian regression</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;">Non-standard predictors</div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Nonlinear_regression" title="Nonlinear regression">Nonlinear regression</a><span style="font-weight:bold;">&#160;·</span> <a href="/wiki/Nonparametric_regression" title="Nonparametric regression">Nonparametric</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Semiparametric_regression" title="Semiparametric regression">Semiparametric</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/Isotonic_regression" title="Isotonic regression">Isotonic</a> <span style="font-weight:bold;">&#160;·</span> <a href="/wiki/Robust_regression" title="Robust regression">Robust</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Generalized_linear_model" title="Generalized linear model">Generalized linear model</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Exponential_families" title="Exponential families" class="mw-redirect">Exponential families</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Logistic_regression" title="Logistic regression">Logistic (Bernoulli)</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Binomial_regression" title="Binomial regression">Binomial</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Poisson_regression" title="Poisson regression">Poisson</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;">Formal analyses</div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Analysis_of_variance" title="Analysis of variance">Analysis of variance (ANOVA)</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Analysis_of_covariance" title="Analysis of covariance">Analysis of covariance</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Multivariate_analysis_of_variance" title="Multivariate analysis of variance">Multivariate ANOVA</a></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/Data_analysis" title="Data analysis">Data analyses</a> and <a href="/wiki/Statistical_model" title="Statistical model">models</a> for other specific data types</span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks navbox-subgroup" style="width:100%;;;;">
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Multivariate_statistics" title="Multivariate statistics">Multivariate statistics</a><br /></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Multivariate_regression_model" title="Multivariate regression model" class="mw-redirect">Multivariate regression</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Principal_component_analysis" title="Principal component analysis">Principal components</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Factor_analysis" title="Factor analysis">Factor analysis</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Cluster_analysis" title="Cluster analysis">Cluster analysis</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Copula_(statistics)" title="Copula (statistics)">Copulas</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Time_series_analysis" title="Time series analysis" class="mw-redirect">Time series analysis</a><br /></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Decomposition_of_time_series" title="Decomposition of time series">Decomposition</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Trend_estimation" title="Trend estimation">Trend estimation</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Box%E2%80%93Jenkins" title="Box–Jenkins">Box–Jenkins</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Autoregressive_moving_average_model" title="Autoregressive moving average model">ARMA models</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Spectral_density_estimation" title="Spectral density estimation">Spectral density estimation</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Survival_analysis" title="Survival analysis">Survival analysis</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Survival_function" title="Survival function">Survival function</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Kaplan%E2%80%93Meier_estimator" title="Kaplan–Meier estimator">Kaplan–Meier</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Logrank_test" title="Logrank test">Logrank test</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Failure_rate" title="Failure rate">Failure rate</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Proportional_hazards_models" title="Proportional hazards models">Proportional hazards models</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Accelerated_failure_time_model" title="Accelerated failure time model">Accelerated failure time model</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Categorical_data" title="Categorical data">Categorical data</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/McNemar%27s_test" title="McNemar's test">McNemar's test</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Cohen%27s_kappa" title="Cohen's kappa">Cohen's kappa</a></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks collapsible collapsed navbox-subgroup" style="width:100%;;;;">
+<tr>
+<th style=";;" colspan="2" class="navbox-title">
+<div style="float:left; width:6em;text-align:left;">&#160;</div>
+<span class="" style="font-size:100%;"><a href="/wiki/List_of_fields_of_application_of_statistics" title="List of fields of application of statistics">Applications</a></span></th>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td colspan="2" style="width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"></div>
+<table cellspacing="0" class="nowraplinks navbox-subgroup" style="width:100%;;;;">
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Engineering_statistics" title="Engineering statistics">Engineering statistics</a></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Methods_engineering" title="Methods engineering">Methods engineering</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Probabilistic_design" title="Probabilistic design">Probabilistic design</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Process_control" title="Process control">Process &amp;</a> <a href="/wiki/Quality_control" title="Quality control">Quality control</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Reliability_engineering" title="Reliability engineering">Reliability</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/System_identification" title="System identification">System identification</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Environmental_statistics" title="Environmental statistics">Environmental statistics</a><br /></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Geostatistics" title="Geostatistics">Geostatistics</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Climatology" title="Climatology">Climatology</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Medical_statistics" title="Medical statistics">Medical statistics</a><br /></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-even">
+<div style="padding:0em 0.25em"><a href="/wiki/Epidemiology" title="Epidemiology">Epidemiology</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Clinical_trial" title="Clinical trial">Clinical trial</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Clinical_study_design" title="Clinical study design">Clinical study design</a></div>
+</td>
+</tr>
+<tr style="height:2px">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-group" style=";padding-left:0em;padding-right:0em;;">
+<div style="padding:0em 0.75em;"><a href="/wiki/Social_statistics" title="Social statistics">Social statistics</a><br /></div>
+</td>
+<td style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;;;" class="navbox-list navbox-odd">
+<div style="padding:0em 0.25em"><a href="/wiki/Actuarial_science" title="Actuarial science">Actuarial science</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Population" title="Population">Population</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Demographic_statistics" title="Demographic statistics">Demography</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Census" title="Census">Census</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Psychometrics" title="Psychometrics">Psychometrics</a><span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Official_statistics" title="Official statistics">Official statistics</a> <span style="font-weight:bold;">&#160;·</span>  <a href="/wiki/Crime_statistics" title="Crime statistics">Crime statistics</a></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="height:2px;">
+<td></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" style=";background:#ccccff;" colspan="2"><b><a href="/wiki/Category:Statistics" title="Category:Statistics">Category</a></b><span style="font-weight:bold;">&#160;·</span>  <b><a href="/wiki/Portal:Statistics" title="Portal:Statistics">Portal</a></b><span style="font-weight:bold;">&#160;·</span>  <b><a href="/wiki/Outline_of_statistics" title="Outline of statistics">Outline</a></b><span style="font-weight:bold;">&#160;·</span>  <b><a href="/wiki/Index_of_statistics_articles" title="Index of statistics articles" class="mw-redirect">Index</a></b></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 8660/1000000
+Post-expand include size: 418134/2048000 bytes
+Template argument size: 283010/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:16266475-0!1!0!default!!en!4 and timestamp 20101126032936 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/Skew_normal_distribution">http://en.wikipedia.org/wiki/Skew_normal_distribution</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir='ltr'><a href="/wiki/Category:Continuous_distributions" title="Category:Continuous distributions">Continuous distributions</a></span></div><div id="mw-hidden-catlinks" class="mw-hidden-cats-hidden">Hidden categories: <span dir='ltr'><a href="/wiki/Category:Statistics_articles_with_navigational_template" title="Category:Statistics articles with navigational template">Statistics articles with navigational template</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li  id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Skew_normal_distribution" title="You are encouraged to log in; however, it is not mandatory. [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li  id="ca-nstab-main" class="selected"><a href="/wiki/Skew_normal_distribution"  title="View the content page [c]" accesskey="c"><span>Article</span></a></li>
+					<li  id="ca-talk"><a href="/wiki/Talk:Skew_normal_distribution"  title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><a href="/wiki/Skew_normal_distribution" ><span>Read</span></a></li>
+					<li id="ca-edit"><a href="/w/index.php?title=Skew_normal_distribution&amp;action=edit"  title="You can edit this page. &#10;Please use the preview button before saving. [e]" accesskey="e"><span>Edit</span></a></li>
+					<li id="ca-history" class="collapsible "><a href="/w/index.php?title=Skew_normal_distribution&amp;action=history"  title="Past versions of this page [h]" accesskey="h"><span>View history</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+		<input type='hidden' name="title" value="Special:Search"/>
+				<div id="simpleSearch">
+			<input id="searchInput" name="search" type="text"  title="Search Wikipedia [f]" accesskey="f"  value="" />
+			<button id="searchButton" type='submit' name='button'  title="Search Wikipedia for this text"><img src="http://bits.wikimedia.org/skins-1.5/vector/images/search-ltr.png?283-12" alt="Search" /></button>
+		</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(http://upload.wikimedia.org/wikipedia/commons/d/d6/Wikipedia-logo-v2-en.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+					<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+					<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content — the best of Wikipedia">Featured content</a></li>
+					<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+					<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+					<li id="n-variablepage" class="active" ><a href="/w/index.php?title=Special:VariablePage&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=spontaneous_donation">Donate</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- interaction -->
+<div class="portal" id='p-interaction'>
+	<h5>Interaction</h5>
+	<div class="body">
+				<ul>
+					<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+					<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+					<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+					<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+					<li id="n-contact"><a href="/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /interaction -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Skew_normal_distribution" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Skew_normal_distribution" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+																																					<li id="t-upload"><a href="/wiki/Wikipedia:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+											<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="/w/index.php?title=Skew_normal_distribution&amp;oldid=391838908" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Skew_normal_distribution&amp;id=391838908" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- coll-print_export -->
+<div class="portal" id='p-coll-print_export'>
+	<h5>Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Skew+normal+distribution" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Skew+normal+distribution&amp;oldid=391838908&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Skew_normal_distribution&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- LANGUAGES -->
+<div class="portal" id="p-lang">
+	<h5>Languages</h5>
+	<div class="body">
+		<ul>
+					<li class="interwiki-fr"><a href="http://fr.wikipedia.org/wiki/Loi_normale_asym%C3%A9trique" title="Loi normale asymétrique">Français</a></li>
+					<li class="interwiki-sl"><a href="http://sl.wikipedia.org/wiki/Nesimetri%C4%8Dna_normalna_porazdelitev" title="Nesimetrična normalna porazdelitev">Slovenščina</a></li>
+				</ul>
+	</div>
+</div>
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 20 October 2010 at 13:59.<br /></li>
+																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br/>
+Wikipedia&reg; is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.<br /></li><li class="noprint"><a class='internal' href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+																							<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+															</ul>
+										<ul id="footer-icons" class="noprint">
+								<li id="footer-icon-poweredby"><a href="http://www.mediawiki.org/"><img src="http://bits.wikimedia.org/skins-1.5/common/images/poweredby_mediawiki_88x31.png" height="31" width="88" alt="Powered by MediaWiki" /></a></li>
+												<li id="footer-icon-copyright"><a href="http://wikimediafoundation.org/"><img src="/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a></li>
+							</ul>
+			<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		
+<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<script type="text/javascript" src="http://geoiplookup.wikimedia.org/"></script>		<!-- Served by srv194 in 1.749 secs. -->			</body>
+</html>

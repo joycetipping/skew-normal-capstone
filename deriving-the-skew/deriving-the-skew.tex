@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage {joyce-math}
+
+\begin{document}
+\title {Deriving $\lambda$ with the Method of Moments}
+\date{}
+\maketitle
+
+Let $Y_i \overset{iid}{\sim} SN(\mu, \sigma^2, \lambda)$. Find MME's for $\mu, \sigma^2, \lambda$.
+
+We know that:
+
+\begin{alignat*}{10}
+  \mu_1' &= E(Y) &=& \mu \\
+  \mu_2' &= E(Y^2) &=& Var (Y) + \mu^2 = \sigma^2 + \mu^2 \\
+  \mu_3' &= E(Y^3) &=& \mu \cdot E(Z^3) + \sigma
+\end{alignat*}
+
+where $Z ~ SN(0, 1, \lambda)$ and
+
+\[
+E(Z^3) = \frac{3 \sqrt{2}}{\sqrt{\pi}} \cdot \frac{\lambda}{(1 + \lambda)^{3/2}} \cdot \left( 1 +
+  \frac{2}{3} \lambda^2 \right)
+\]
+
+by equation 
+
+Also:
+
+\begin{align*}
+  M_1' &= \bar Y \\
+  M_2' &= \frac{1}{n} \sum_{i=1}^n Y_i^2 \\
+  M_3' &= \frac{1}{n} \sum_{i=1}^n Y_i^3
+\end{align*}
+
+So we have:
+
+\begin{equation*}
+  \begin{dcases}
+    \mu_1' = M_1' \\
+    \mu_2' = M_2' \\
+    \mu_3' = M_3' \\
+  \end{dcases}
+  \quad \Rightarrow \quad
+  \begin{dcases}
+    \mu &= \bar Y \\
+    \sigma^2 + \mu^2 &= \frac{1}{n} \sum_{i=1}^n Y_i^2 \\
+    E(Y^3) &= \frac{1}{n} \sum_{i=1}^n Y_i^3
+  \end{dcases}
+  \quad \Rightarrow \quad
+  \begin{dcases}
+    \mu &= \bar Y \\
+    \sigma^2 &= \frac{1}{n} \sum_{i=1}^n Y_i^2 - \mu^2 \\
+    E(Y^3) &= \frac{1}{n} \sum_{i=1}^n Y_i^3
+  \end{dcases}
+\end{equation*}
+
+\end{document}

@@ -1,0 +1,627 @@
+\documentclass{beamer}
+% Class options include: notes, notesonly, handout, trans,
+%                        hidesubsections, shadesubsections,
+%                        inrow, blue, red, grey, brown
+
+% Theme for beamer presentation.
+\usepackage{beamerthemesplit} 
+% Other themes include: beamerthemebars, beamerthemelined, 
+%                       beamerthemetree, beamerthemetreebars
+  
+
+\title{Graphs, Linear Algebra, and Ecology}         % Enter your title between curly braces
+\author{Michael J. Adams}  % Enter your name between curly braces
+      
+      
+\institute{Department of Mathematics and Computer Science \\  \bigskip Truman State University \\ \bigskip Kirksville, Missouri}     % Enter your institute name between curly braces
+\date{October 22, 2007}          % Enter your date or \today between curly braces
+\usepackage{graphicx}
+\graphicspath{%
+    {converted_graphics/}% inserted by PCTeX
+    {C:/Myfiles/PICTURES/}% inserted by PCTeX
+    {C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/}% inserted by PCTeX
+}
+\begin{document}
+
+% Creates title page of slide show using above information
+\frame{\titlepage}
+
+
+\frame{ 
+{Population Projection Matrices}
+
+A single-species matrix population model consists of a {\bf population projection matrix} $A$, whose entries are the vital rates - growth, survival, and fecundity - and a vector $\vec{N}(t)$ whose $i$th component $N_i(t)$ denotes the number of individuals in demographic class $i$ at time $t$. 
+
+\bigskip 
+The total population at time $t$ is $\displaystyle N(t)=\sum_{i=1}^n N_i(t).$
+
+\bigskip
+This is a discrete-time, deterministic model: given any population distribution at time $t$, the population distribution one time-step later is given by $$A \vec{N}(t) = \vec{N}(t+\Delta t).$$
+
+} 
+
+\frame{
+Population projection matrix for a hypothetical stage-structured population.  
+
+\bigskip 
+stage 1: seed \qquad stage 2: seedling \qquad stage 3: small rosette  
+
+\medskip
+stage 4: large rosette \qquad stage 5: flowering plant 
+
+\medskip
+$$\left[ \begin{array}{ccccc}
+0 & 0 & 0 & 0 & 4 \\
+0.5 & 0 & 0 & 0 & 0 \\
+0 & 0.45 & 0 & 0 & 1.5 \\
+0 & 0.45 & 0.45 & 0 & 0 \\
+0 & 0 & 0.45 & 0.9 & 0 
+\end{array} \right]
+\left[ \begin{array}{c} 10 \\ 10 \\ 10 \\ 10 \\ 10 \end{array} \right] = 
+\left[ \begin{array}{c} 40 \\ 5 \\ 19.5 \\ 9 \\ 13.5 \end{array} \right]
+.$$
+
+
+
+\rightline{Hypothetical critter: \includegraphics[width=0.5in,height=1.25in,keepaspectratio]{flytrap01}}
+
+
+}
+
+
+
+\frame{
+
+We will restrict our discussion to {\it irreducible} population projection matrices.  
+
+\bigskip
+
+For any irreducible population projection matrix $A$ the dominant eigenvalue $\lambda$ is the finite rate of population change.  (In our example, $\lambda = 1.377$.)
+
+\bigskip
+Let {\bf v} be a left eigenvector for $\lambda$: ${\bf v}^TA=\lambda {\bf v}^T$.  When ${\bf v}_1=1$, the components of {\bf v} are interpreted as the reproductive values of the stage classes. 
+
+\bigskip 
+Let {\bf w} be a right eigenvector for $\lambda$: $A{\bf w}=\lambda {\bf w}$.  When normalized so $\displaystyle \sum {\bf w}_i=1$, {\bf w} is the asymptotically stable stage distribution.  
+
+
+
+
+}
+
+\frame{  
+
+The eigenvalue $\lambda$ is a function of the $a_{i,j}$'s. An increase in any vital rate will result in an increase in $\lambda$.
+
+\bigskip
+The {\bf sensitivity} of $\lambda$ with respect to $a_{i,j}$ is 
+$$ s_{i,j}=\lim _{\Delta a_{i,j}\to 0} \left({\Delta \lambda \over \Delta a_{i,j}} \right)={\partial \lambda \over \partial a_{i,j}}.$$  
+
+\bigskip 
+The sensitivities can be computed using left and right eigenvectors for $\lambda$.
+
+}
+
+\frame{
+
+Taking the differential of $A{\bf w}=\lambda {\bf w}$ yields $$A (d{\bf w})+(dA){\bf w}=\lambda (d{\bf w})+(d\lambda ){\bf w}.$$
+ 
+Take the scalar product of both sides with {\bf v} 
+
+$$\left<A (d{\bf w}), {\bf v}\right>+\left<(dA){\bf w},{\bf v}\right>=\left<\lambda (d{\bf w}),{\bf v}\right>+\left<(d\lambda ){\bf w},{\bf v}\right>$$ 
+
+and solve for $$d\lambda = { \left< (dA){\bf w}, {\bf v}\right>  \over \left< {\bf w},{\bf v} \right>   } ={{\bf v}^T(dA) {\bf w} \over {\bf v}^T{\bf w}}.$$
+
+
+Assume that only one element, $a_{i,j}$, of $A$ changes.  Then $dA$ has one nonzero element, $da_{i,j}$, so we have 
+$\displaystyle d\lambda ={{\bf v}_i{\bf w}_j da_{i,j} \over \left< {\bf w},{\bf v} \right> }$ which yields 
+$\displaystyle {\partial \lambda \over \partial a_{i,j} }={{\bf v}_i{\bf w}_j \over \left< {\bf w},{\bf v} \right> }.$ 
+
+
+}
+
+\frame{ 
+
+
+The {\bf sensitivity matrix} is $\displaystyle S={{\bf v}{\bf w}^T \over {\bf v}^T{\bf w} }$.
+
+\vskip .5in 
+The sensitivity matrix for our example is 
+
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/sensitivity.bmp
+  \includegraphics[bb=0 0 377 77,width=4.0in,height=1.16in,keepaspectratio]{sensitivity}
+
+\end{figure}
+
+
+
+
+
+}
+
+
+\frame{
+ 
+The {\bf elasticity} of $\lambda$ with respect to $a_{i,j}$ is a dimensionless quantity representing the proportional change of $\lambda$ with respect to proportional change of $a_{i,j}$.
+
+$$ e_{i,j}=\lim _{\Delta a_{i,j}\to 0} \left({\Delta \lambda \over \lambda}\right) /\left( {\Delta a_{i,j} \over a_{i,j}} \right)={a_{i,j} \over \lambda}{\partial \lambda \over \partial a_{i,j}}.$$ 
+
+\bigskip 
+The {\bf elasticity matrix} is $$ E={1 \over \lambda} A \circ S$$ where $\circ $ denotes the Hadamard product. 
+
+}
+
+\frame{
+
+
+
+\bigskip 
+The elasticity matrix for our example is 
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/elasticity.bmp
+  \includegraphics[bb=0 0 363 77,width=4.0in,height=1.2in,keepaspectratio]{elasticity}
+
+\end{figure}
+
+\bigskip
+Elasticities satisfy [de Kroon, et al., 1986]:
+
+\bigskip 
+1. $\displaystyle \sum_{i,j}e_{i,j}=1$,
+
+\medskip
+2. $\displaystyle \sum_{k}e_{k,i}=\sum_{k}e_{i,k}$ for all $i$.
+
+
+}
+
+
+\frame{
+{Life Cycle Graphs}
+
+The {\bf life cycle graph} is a directed graph whose nodes correspond to the demographic classes of the population and whose edges correspond to the transitions from one class to another. There is an edge $(i,j)$ directed from node $i$ to node $j$ if and only if $a_{j,i}>0$.
+
+\bigskip
+\leftline{\includegraphics[width=2.0in,height=2.0in,keepaspectratio]{Digraph} $\Longleftrightarrow \left[ \begin{array}{ccc} 0 & 0 & a_{1,3} \\ a_{2,1} & 0 & 0 \\ 0 & a_{3,2} & a_{3,3} \end{array} \right]\ $ }
+
+
+\bigskip 
+$A$ is irreducible if, and only if, $D$ is strongly connected.
+
+
+}
+
+
+\frame{ 
+
+The life cycle graph is a summary of the transitions between stages observed in the population as a whole.
+
+
+\bigskip
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Life_cycle_graph_1.jpg
+  \includegraphics[width=4in,height=2.18in,keepaspectratio]{Life_cycle_graph_1}
+
+\end{figure}
+
+\bigskip
+Individual life history pathways correspond to {\bf loops} (directed cycles) in the life cycle graph.
+
+
+}
+ 
+\frame{
+Loop analysis was introduced as a tool to evaluate the relative contributions of different life histories to $\lambda$ [van Groenendael, et al., 1994].
+
+\bigskip
+In loop analysis, the total elasticity is partitioned over an independent set of loops.  
+
+\begin{itemize}
+  \item Every edge in a loop is assigned the same {\bf characteristic elasticity}.
+  \item The elasticity of a loop is the characteristic elasticity times the length of the loop.
+  \item The loop's elasticity is interpreted as its contribution to $\lambda$ relative to the other loops used in the partition.
+\end{itemize}
+
+\bigskip 
+We will refer to a partition of the total elasticity over a set of loops as a {\bf loop decomposition} of the life cycle graph.
+
+}
+
+\frame{
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/MBI Research/Loop_decomposition.jpg
+  \includegraphics[width=4in,height=3.11in,keepaspectratio]{Loop_decomposition}
+\end{figure}
+
+
+
+}
+
+\frame{
+
+How does one identify the loops over which the elasticities are to be partitioned? 
+
+\bigskip
+The first published algorithm selects loops determined by chords of a spanning tree [Wardle, 1998].  
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Life_cycle_graph_spanning_tree.jpg
+  \includegraphics[width=4in,height=2.10in,keepaspectratio]{Life_cycle_graph_spanning_tree}
+\end{figure}
+
+The algorithm ``fails" in an interesting way for some graphs, including our example.
+
+
+}
+
+
+\frame{
+
+A recently published algorithm for decomposing weighted digraphs into a collection of weighted subgraphs [Sun and Wang, 2007] overcomes some of the difficulties with Wardle's algorithm.
+
+\bigskip
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Sun_Wang_Alg_1.jpg
+  \includegraphics[width=4.02in,height=1.75in,keepaspectratio]{Sun_Wang_Alg_1}
+
+\end{figure}
+
+}
+
+\frame{
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Sun_Wang_Alg_2.jpg
+  \includegraphics[width=4.02in,height=1.75in,keepaspectratio]{Sun_Wang_Alg_2}
+
+\end{figure}
+
+}
+
+\frame{
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Sun_Wang_Alg_3.jpg
+  \includegraphics[width=4.02in,height=1.75in,keepaspectratio]{Sun_Wang_Alg_3}
+
+\end{figure}
+
+
+
+}
+
+
+\frame{
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Sun_Wang_Alg_4.jpg
+  \includegraphics[width=4.02in,height=1.75in,keepaspectratio]{Sun_Wang_Alg_4}
+
+\end{figure}
+
+
+
+}
+
+
+\frame{
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Sun_Wang_Alg_5.jpg
+  \includegraphics[width=4.02in,height=1.75in,keepaspectratio]{Sun_Wang_Alg_5}
+
+\end{figure}
+
+
+}
+
+
+\frame{
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Sun_Wang_Alg_6.jpg
+  \includegraphics[width=4.02in,height=1.75in,keepaspectratio]{Sun_Wang_Alg_6}
+
+\end{figure}
+
+
+
+}
+
+
+\frame{
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Sun_Wang_Alg_7.jpg
+  \includegraphics[width=4.02in,height=1.75in,keepaspectratio]{Sun_Wang_Alg_7}
+
+\end{figure}
+
+
+
+}
+
+
+\frame{
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/MTCS_Colloquium/Sept_2007/Sun_Wang_Alg_8.jpg
+  \includegraphics[width=4.02in,height=1.75in,keepaspectratio]{Sun_Wang_Alg_8}
+
+\end{figure}
+
+
+}
+
+
+\frame{ 
+
+
+\begin{figure}[tbp] % float placement: (h)ere, page (t)op, page (b)ottom, other (p)age
+  \centering
+  % file name: C:/Myfiles/TALKS/Reno_Oct_2007/Sun_Wang_Alg_9.jpg
+  \includegraphics[width=4.02in,height=1.75in,keepaspectratio]{Sun_Wang_Alg_9}
+
+\end{figure}
+
+
+
+}
+
+
+
+\frame{
+
+
+\bigskip 
+The approach to loop analysis embodied by both algorithms suffers from two deficits:
+
+\bigskip
+1. It requires linearly independent sets of loops, therefore allowing for the possibility of only  finitely many loop decompositions.  This is not a biologically reasonable constraint. 
+
+\bigskip
+2. Provides little information about relative contributions of life history pathways to $\lambda$ independent of the set of loops chosen for the loop decomposition.
+
+
+\bigskip
+{\bf Both issues can be resolved if we allow loop decompositions over linearly dependent sets of loops.}
+}
+
+
+\frame{
+{Alternative Approach to Loop Analysis}
+
+
+\bigskip
+Let $D$ be a strongly connected graph with $n$ vertices and $m$ edges and let $E(D)$ denote the edge set of $D$.
+
+\bigskip
+A {\bf circulation} in $D$ is a function $f:E(D)\to I\!\!R$ satisfying $$\sum_{k}f(k,i)=\sum_{k}f(i,k)\mbox{ for all }i.$$
+
+\bigskip 
+The function $e:E(D)\to I\!\!R$ defined by the elasticities of $\lambda$, $e(i,j)=e_{j,i}$, is a circulation in the life cycle graph.
+
+}
+
+\frame{ 
+
+Vector spaces associated with $D$:
+
+\bigskip
+\begin{itemize}
+  \item The edge space $C_1(D)=\{f\ |\ f:E(D)\to I\!\!R \}$. \\ \medskip Dim $C_1(D)=m$. \medskip  
+  \item The cycle space $\ Z(D)=\{f\ |\ f\mbox{ is a circulation in }D \}$. \\ \medskip Dim $Z(D)=m-n+1$.
+\end{itemize}
+
+\bigskip
+{\bf Proposition:} [Thomasson, 1999] If $D$ is a strongly connected digraph, then the directed cycles (loops) generate the cycle space of $D$.
+
+\bigskip
+Let $l$ equal the number of loops in $D$ and form the $m\times l$ edge-loop incidence matrix $\Lambda$.
+
+\bigskip
+{\bf The column space of $\Lambda$ is $Z(D)$.} 
+
+}
+
+\frame{
+
+{\bf Theorem:} There is a one-to-one correspondence between the set of loop decompositions of $D$ and the set of nonnegative solutions $x$ of $\Lambda x=e$.
+  
+
+\bigskip
+In our example, $m=8$, $n=5$, so dim $Z(D)=4$.  $D$ has 5 loops.
+\begin{center} 
+\begin{tabular}{ccccc} $\phantom{xxxxxxxxxxxx}$ & $\ L_1\  L_2\ \ L_3\  L_4\  L_5$ & $\phantom{xxxxxxxx}$ & $\phantom{xxxxxxxx}$ & $\phantom{xxxxxxxx}$ \end{tabular} \\
+\begin{tabular}{c} (1,2) \\ (2,3) \\ (2,4) \\ (3,4) \\ (3,5) \\ (4,5) \\ (5,1) \\ (5,3) \end{tabular}
+$\left[ \begin{array}{ccccc} 
+ 1 & 1 & 1 & 0 & 0 \\
+ 1 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 1 & 0 & 0 \\
+ 1 & 0 & 0 & 1 & 0 \\
+ 0 & 1 & 0 & 0 & 1 \\
+ 1 & 0 & 1 & 1 & 0 \\
+ 1 & 1 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 1 & 1 
+\end{array}\right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{array} \right] = \left[ 
+\begin{array}{r} 13.15 \\ 5.95 \\ 7.20 \\ 9.79 \\ 14.97 \\ 16.99 \\ 13.15 \\ 18.81 \end{array} \right] .$ 
+\end{center}
+
+}
+
+
+
+\frame{
+
+Let $P=\{ x\ |\ \Lambda x=e,\ x\ge 0\}$ and $N(\Lambda)$ denote the nullspace of $\Lambda$. 
+
+\bigskip
+For ``simple" life cycle graphs, $P$ consists of a single point. For organisms with complex life histories, dim $N(\Lambda)>0$ and $P$ is a nontrivial bounded, convex polytope in $I\!\!R^l$.
+ 
+\bigskip 
+$P$ is the feasible set for a {\bf linear programming problem}.  The extreme points of $P$ are basic feasible solutions and correspond to decompositions over linearly independent sets of loops.  
+
+\bigskip
+{\bf We can find loop decompositions which maximize or minimize functions of the elasticities.}  For example, we can find loop decompositions which minimize the total consumption of resources given the resource requirements of each life history. 
+
+}
+
+
+
+\frame{
+Given $x,y\in P$, $b=y-x\in N(\Lambda)$.  
+
+\bigskip
+Let $b^+=\{ i\ :\ b_i>0 \}$ and $b^-=\{ i\ :\ b_i<0 \}$.  Let $l_i$ denote the length of loop $L_i$.
+
+\bigskip
+Moving from $x$ to $y$ increases the elasticity of each loop $L_i$ by the amount $l_ib_i$ where $i\in b^+$ and decreases the elasticity of each loop $L_j$ by the amount $l_jb_j$ where $j\in b^-$. 
+
+\bigskip 
+This can be interpreted as describing the tradeoffs in their contributions to $\lambda$ between life histories in a population indexed by $b^-$ and those indexed by $b^+$ {\bf independent of any particular loop decomposition.}  
+
+
+}
+
+
+
+\frame{
+Example: $P$ consists of the line segment determined by two vertices, $p_1$ and $p_2$ which, respectively, minimize or maximize the contribution to $\lambda$ of the life history pathway represented by $L_1$. $N(\Lambda)$ is spanned by $b=[1,-1,0,-1,1]$ and $p_2-p_1=5.95 b$.
+
+\begin{center}
+\begin{tabular}{|l||r|r|r|r|r|}
+\hline
+Loop & $L_1$ & $L_2$ & $L_3$ & $L_4$ & $L_5$ \\
+\hline 
+\hline 
+$p_1$ char. elast. & 0.00 & 5.95 & 7.20 & 9.79 & 9.02 \\
+\hline 
+$p_2$ char. elast. & 5.95 & 0.00 & 7.20 & 3.84 & 14.97 \\
+\hline
+midpt. char. elast. & 2.975 & 2.975 & 7.20 & 6.815 & 11.995 \\
+\hline 
+$p_1$ loop elast. & 0.00 & 23.80 & 28.80 & 29.37 & 18.04 \\
+\hline
+$p_2$ loop elast. & 29.75 & 0.00 & 28.80 & 11.52 & 29.94 \\
+\hline
+midpt. loop elast. & 14.87 & 11.90 & 28.80 & 20.44 & 23.99 \\
+\hline
+\end{tabular}
+ 
+
+
+\end{center}
+
+
+}
+
+\frame{ 
+{Summary}
+
+The advantages of this approach to loop analysis include: 
+\begin{itemize}
+  \item It allows for loop decompositions over linearly dependent sets of loops.
+  \item $N(\Lambda)$ provides information about relative contributions of life history pathways to $\lambda$. 
+  \item It is relatively easy to implement, especially for ``complex" graphs.	
+  \item A variety of optimization techniques can be employed to select biologically interesting loop decompositions.
+\end{itemize}
+
+}
+
+
+
+\frame{
+
+\begin{enumerate}
+  \item de Kroon, H., Plaisier, A., van Groenendael, J., Caswell, H. 1986. {\it Elasticity: The Relative Contribution of Demographic Parameters to Population Growth Rate.} Ecology {\bf 67}: 1427-1431.
+  \item Sun, L., Wang, M. 2007. {\it An algorithm for a decomposition of weighted digraphs: with applications to life cycle analysis in ecology.} Journal of Mathematical Biology {\bf 54}: 199-226.
+  \item Thomassen, C. 1999. {\it Parity, Cycle Space, and $K_4$-Subdivisions in Graphs.} London Mathematical Society Lecture Note Series {\bf 267}, Surveys in Combinatorics, 1999, edited by J. D. Lamb \& D. A. Preece. Cambridge University Press, Cambridge, UK.
+  \item van Groenendael, J., de Kroon, H., Kalisz, S., Tuljapurkar, S. 1994. {\it Loop Analysis: Evaluating Life History Pathways in Population Projection Matrices.} Ecology {\bf 75}: 2410-2415.
+  \item Wardle, G. M. 1998. {\it A Graph Theory Approach to Demographic Loop Analysis.} Ecology {\bf 79}: 2539-2549.
+\end{enumerate}
+
+}
+
+
+
+\end{document}
+
+
+\bigskip
+$Z(D)$ is spanned by the columns of the $m\times l$ edge-loop incidence matrix $\Lambda$.   
+
+\bigskip
+Example:
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+  & $L_1$ & $L_2$ & $L_3$ & $L_4$ & $L_5$ \\
+\hline 
+ (1,2) & 1 & 1 & 1 & 0 & 0 \\
+ (2,3) & 1 & 1 & 0 & 0 & 0 \\
+ (2,4) & 0 & 0 & 1 & 0 & 0 \\
+ (3,4) & 1 & 0 & 0 & 1 & 0 \\
+ (3,5) & 0 & 1 & 0 & 0 & 1 \\
+ (4,5) & 1 & 0 & 1 & 1 & 0 \\
+ (5,1) & 1 & 1 & 1 & 0 & 0 \\
+ (5,3) & 0 & 0 & 0 & 1 & 1 
+\end{tabular}
+\end{center}
+
+\frame{
+
+
+Stages for teasel: 
+
+1) first-year dormant seed, 2) second-year dormant seeds, 3) small rosettes, 4) medium rosettes, 5) rosettes, 6) flowering plants. 
+
+\medskip 
+The population projection matrix $A$ is 
+$$\left[ \begin{array}{llllll}
+0 & 0 & 0 & 0 & 0 & 322.38 \\
+0.966 & 0 & 0 & 0 & 0 & 0 \\
+0.013 & 0.01 & 0.125 & 0  & 0  & 3.448  \\
+0.007 & 0 & 0.125 & 0.238 & 0 & 30.17 \\
+0.008 & 0 & 0.038 & 0.245 & 0.167 & 0.862 \\
+0 & 0 & 0 & 0.023 & 0.75 & 0 
+\end{array} \right].$$
+
+}
+
+\frame{
+
+For an excellent introduction to applications of linear algebra to ecology I would recommend:
+
+\bigskip  
+
+Caswell, H. 2001. {\it Matrix Population Models: Construction, Analysis, and Interpretation}, second edition, Sinauer Associates, Sunderland, Massachusetts.
+
+}
+
