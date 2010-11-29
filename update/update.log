@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2010.10.16)  28 NOV 2010 16:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2010.10.16)  28 NOV 2010 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -275,10 +275,10 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 Here is how much of TeX's memory you used:
  1986 strings out of 493849
  26682 string characters out of 1152845
- 83173 words of memory out of 3000000
+ 85173 words of memory out of 3000000
  5262 multiletter control sequences out of 15000+50000
  19726 words of font info for 63 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  34i,9n,24p,210b,194s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on update.dvi (1 page, 2872 bytes).
+Output written on update.dvi (1 page, 4332 bytes).
