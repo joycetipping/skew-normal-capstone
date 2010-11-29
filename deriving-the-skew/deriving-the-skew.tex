@@ -20,10 +20,17 @@ where $\mu_z = \sqrt{\frac{2}{\pi}} \cdot \frac{\alpha}{\sqrt{1 + \alpha^2}}$. F
 \begin{align}
   E(Y^2) &= Var(Y) + E(Y)^2 \nonumber \\
   &= \omega^2 (1 - \mu_z^2) + (\xi + \omega \mu_z)^2 \nonumber \\
-  &= \xi^2 + 2 \mu_z \omega \xi + \omega^2
+  &= \xi^2 + 2 \omega \xi \mu_z + \omega^2
 \end{align}
 
-To find $E(Y^3)$, we must first find $E(Z^3)$ where $Z \sim SN(0, 1, \alpha)$. According to equation
+At this point, it is handy to note that, taking $\xi = 0$ and $\omega = 1$ in the above equations,
+we find that
+
+\begin{equation}
+  E(Z) = \mu_z, \quad E(Z^2) = 1, \quad Var(Z) = 1 - \mu_z^2
+\end{equation}
+
+To get $E(Y^3)$, we must first find $E(Z^3)$ where $Z \sim SN(0, 1, \alpha)$. According to equation
 (6.5?) in Azzalini (2005),
 
 \[
@@ -43,7 +50,8 @@ So, for $E(Z^3)$, we have $r = 2k + 1 = 3$ and $k = 1$:
   &= \frac{3\sqrt{2}}{\sqrt{\pi}} \cdot \frac{\alpha}{(1 + \alpha^2)^{3/2}} \cdot \left( \frac{0!
       (2\alpha)^0}{1!1!} + \frac{1! (2\alpha)^2}{3!0!} \right) \nonumber \\
   &= \frac{3\sqrt{2}}{\sqrt{\pi}} \cdot \frac{\alpha}{(1 + \alpha^2)^{3/2}} \cdot \left( 1 +
-    \frac{2}{3}\alpha^2 \right)
+    \frac{2}{3}\alpha^2 \right) \nonumber \\
+  &= \sqrt{\frac{2}{\pi}} \cdot \frac{\alpha}{(\sqrt{1 + \alpha^2})^3} \cdot (3 + 2 \alpha^2)
 \end{align}
 
 Since $Y = \xi + \omega Z$, we have $Y^3 = (\xi + \omega Z)^3 = \omega^3 Z^3 + 3 \omega^2 \xi Z^2 +
@@ -52,24 +60,25 @@ Since $Y = \xi + \omega Z$, we have $Y^3 = (\xi + \omega Z)^3 = \omega^3 Z^3 + 3
 \begin{align}
   E(Y^3) &= E [(\xi + \omega Z)^3] \nonumber \\
   &= E[\omega^3 Z^3 + 3 \omega^2 \xi Z^2 + 3 \omega \xi^2 Z + \xi^3] \nonumber \\
-  &= \omega^3\;E(Z^3) + 3 \omega^2 \xi\;E(Z^2) + 3 \omega \xi^2\;E(Z) + \xi^3
+  &= \omega^3\;E(Z^3) + 3 \omega^2 \xi\;E(Z^2) + 3 \omega \xi^2\;E(Z) + \xi^3 \nonumber \\
+  &= \omega^3\;E(Z^3) + 3 \omega^2 \xi + 3 \omega \xi^2\;\mu_z + \xi^3
 \end{align}
 
 So, we have
 
-\begin{alignat*}{10}
-  \mu_1' &= E(Y) &=& \xi + \omega \mu_z \\
+\begin{alignat}{10}
+  \mu_1' &= E(Y) &=& \xi + \omega \mu_z \nonumber \\
   \mu_2' &= E(Y^2) &=& \xi^2 + 2 \mu_z \omega \xi + \omega^2 \\
-  \mu_3' &= E(Y^3) &=& \omega^3\;E(Z^3) + 3 \omega^2 \xi\;E(Z^2) + 3 \omega \xi^2\;E(Z) + \xi^3
-\end{alignat*}
+  \mu_3' &= E(Y^3) &=& \omega^3\;E(Z^3) + 3 \omega^2 \xi\;E(Z^2) + 3 \omega \xi^2\;E(Z) + \xi^3 \nonumber
+\end{alignat}
 
 Also:
 
-\begin{align*}
-  M_1' &= \bar Y \\
+\begin{align}
+  M_1' &= \bar Y \nonumber \\
   M_2' &= \frac{1}{n} \sum_{i=1}^n Y_i^2 \\
-  M_3' &= \frac{1}{n} \sum_{i=1}^n Y_i^3
-\end{align*}
+  M_3' &= \frac{1}{n} \sum_{i=1}^n Y_i^3 \nonumber
+\end{align}
 
 So we have:
 
@@ -86,7 +95,5 @@ So we have:
     \frac{1}{n} \sum_{i=1}^n Y_i^3 &= \omega^3\;E(Z^3) + 3 \omega^2 \xi\;E(Z^2) + 3 \omega \xi^2\;E(Z) + \xi^3
   \end{dcases}
 \end{equation*}
-
-Taking $\xi = 0$ and $\omega = 1$, we find that $E(Z) = \mu_z$ and $E(Z^2) = 1$.
 
 \end{document}
