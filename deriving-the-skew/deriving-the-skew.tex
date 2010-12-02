@@ -9,62 +9,59 @@
 
 \section{Method of Moments}
 
-Let $B \sim Bin(n, p)$ and $Y \sim SN(\xi, \omega^2, \lambda)$. We will find approximations for
-$\xi$, $\omega$, and $\lambda$ by comparing the first, second, and third moments about the mean of
-$B$ and $Y$.
+Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma^2, \lambda)$. We will find
+approximations for $\mu$, $\sigma$, and $\lambda$ by comparing the first,
+second, and third moments about the mean of $B$ and $Y$.
 
 \subsection{The Moments of the Binomial}
 
-For $B$, our binomial, the first two moments, the mean and variance, are straightforward
+The first two moments, the mean and variance, are simply
 
-\begin{align}
-  E(B) &= np \\
-  Var(B) &= np(1-p) \nonumber
-\end{align}
+\begin{equation*}
+  E(B) = np, \quad Var(B) = np(1-p)
+\end{equation*}
 
-From here, we can easily find
+We can also easily find
 
-\begin{equation}
+\begin{equation*}
   E(B^2) = Var(B) + [E(B)]^2 = np(1-p) + n^2p^2 = np - np^2 + n^2p^2
-\end{equation}
+\end{equation*}
 
-which we will need for the third moment. We will also need $E(B^3)$, for which we take a quick
-detour through the third factorial moment:
+which we will need for the third moment. We will also need $E(B^3)$, which we
+will get via the third factorial moment:
 
-\begin{align}
-  E[B(B-1)(B-2)] &= \sum_{x=0}^n x (x-1) (x-2) \cdot \left\{ \binom{n}{x} p^x q^{n-x} \right\}
-  \nonumber \\
-  &= \sum_{x=3}^n x(x-1)(x-2) \cdot \frac{n!}{x!\;(n-x)!} \; p^x q^{n-x} \nonumber \\
-  &= \sum_{x=3}^n \frac{n!}{(x-3)!\;(n-x)!} \; p^x q^{n-x} \nonumber \\
-  &= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x} \nonumber \\
+\begin{align*}
+  E[B(B-1)(B-2)] &= \sum_{x=0}^n x (x-1) (x-2) \cdot \left\{ \binom{n}{x} p^x q^{n-x} \right\} \\
+  &= \sum_{x=3}^n x(x-1)(x-2) \cdot \frac{n!}{x!\;(n-x)!} \; p^x q^{n-x} \\
+  &= \sum_{x=3}^n \frac{n!}{(x-3)!\;(n-x)!} \; p^x q^{n-x} \\
+  &= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x} \\
   \intertext{Let $y=x-3$. Then $x=y+3$, and $x=3 \rightarrow y=0$ and $x=n \rightarrow y=n-3$.}
-  &= n(n-1)(n-2)p^3 \cdot \sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;(n-(y+3))!} \; p^y q^{n-(y+3)} \nonumber \\
-  &= n(n-1)(n-2)p^3 \cdot \underbrace {\sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;((n-3)-y)!} \; p^y
-    q^{(n-3)-y}}_{\mathclap{\text{[pdf of $Bin(n-3,p)$ summed from 0 to $n-3$] = 1}}} \nonumber \\
-  &= n(n-1)(n-2)p^3 \nonumber \\
-  &= n^3p^3 - 3n^2p^3 + 2np^3 \nonumber
+  &= n(n-1)(n-2)p^3 \cdot \sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;(n-(y+3))!} \; p^y q^{n-(y+3)} \\
+  &= n(n-1)(n-2)p^3 \cdot \underbrace {\sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;((n-3)-y)!} \; p^y q^{(n-3)-y}}_{\mathclap{\text{[pdf of $Bin(n-3,p)$ summed from 0 to $n-3$] = 1}}} \\
+  &= n(n-1)(n-2)p^3 \\
+  &= n^3p^3 - 3n^2p^3 + 2np^3 \\
   \intertext{Further expanding the left side and solving for $E(B^3)$,}
-  E[B^3 - 3B^2 + 2B] &= n^3p^3 - 3n^2p^3 + 2np^3 \nonumber \\
-  E(B^3) - 3E(B^2) + 2E(B) &= \nonumber \\
-  E(B^3) - 3(np - np^2 + n^2p^2) + 2np &= \nonumber \\
-  E(B^3) &= n^3p^3 - 3n^2p^3 + 2np^3 + 3np - 3np^2 + 3n^2p^2 - 2np \nonumber \\
+  E \left[ B^3 - 3B^2 + 2B \right] &= n^3p^3 - 3n^2p^3 + 2np^3 \\
+  E(B^3) - 3E(B^2) + 2E(B) &= \\
+  E(B^3) - 3(np - np^2 + n^2p^2) + 2np &= \\
+  \Rightarrow \qquad E(B^3) &= n^3p^3 - 3n^2p^3 + 2np^3 + 3np - 3np^2 + 3n^2p^2 - 2np \\
   &= n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np
-\end{align}
+\end{align*}
 
-With these results (and a bit of elbow grease), we can easily obtain the third moment:
+With these results (and a bit of elbow grease), we can obtain the third moment
+without too much trouble:
 
-\begin{align}
-  E([B - E(B)]^3) &= E(B^3 - 3B^2 E(B) + 3B [E(B)]^2 - [E(B)]^3) \nonumber \\
-  &= E(B^3) - 3 E(B^2) E(B) + 3 E(B) [E(B)]^2 - [E(B)]^3 \nonumber \\
-  &= E(B^3) - 3 E(B^2) E(B) + 2 [E(B)]^3 \nonumber \\
-  &= (n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np) - 3np(np - np^2 + n^2p^2) + 2n^3p^3 \nonumber \\
-  &= n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np - 3n^2p^2 + 3n^2p^3 - 3n^3p^3 + 2n^3p^3
-  \nonumber \\
-  &= 2np^3 - 3np^2 + np \nonumber \\
+\begin{align*}
+  E \left( [B - E(B)]^3 \right) &= E \left( B^3 - 3B^2 E(B) + 3B [E(B)]^2 - [E(B)]^3 \right) \\
+  &= E(B^3) - 3 E(B^2) E(B) + 3 E(B) [E(B)]^2 - [E(B)]^3 \\
+  &= E(B^3) - 3 E(B^2) E(B) + 2 [E(B)]^3 \\
+  &= (n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np) - 3np(np - np^2 + n^2p^2) + 2n^3p^3 \\
+  &= \cancel{n^3p^3} - \cancel{3n^2p^3} + 2np^3 - 3np^2 + \cancel{3n^2p^2} + np - \cancel{3n^2p^2} + \cancel{3n^2p^3} - \cancel{3n^3p^3} + \cancel{2n^3p^3} \\
+  &= 2np^3 - 3np^2 + np \\
   &= np(p-1)(2p-1)
-\end{align}
+\end{align*}
 
-For our future convenience, we'll restate our three moments here:
+Our hard-earned results, restated for convenience:
 
 \begin{align}
   E(B) &= np \nonumber \\
@@ -74,93 +71,164 @@ For our future convenience, we'll restate our three moments here:
 
 \subsection{The Moments of the Skew Normal}
 
-Now we'll take a look at the moments of the skew normal. According to Equation 1 in Pewsey (2000)
+Now we'll take a look at the moments of the skew normal. According to Equation
+1 in Pewsey (2000)
 
-\begin{align}
-  E(Y) &= \xi + \omega b \delta \nonumber \\
-  E(Y^2) &= \xi^2 + 2\xi \omega b \delta + \omega^2 \\
-  Var(Y) &= \omega^2 (1 - b^2 \delta^2) \nonumber \\
-  E(Y^3) &= \xi^3 + 3 b \xi^2 \omega \delta + 3 \xi \omega^2 + 3 b \omega^3 \delta - b \omega^3
-  \delta^3 \nonumber
-\end{align}
+\begin{align*}
+  E(Y) &= \mu + b \delta \sigma \\
+  E(Y^2) &= \mu^2 + 2b \delta \mu \sigma + \sigma^2 \\
+  Var(Y) &= \sigma^2 (1 - b^2 \delta^2) \\
+  E(Y^3) &= \mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3 \nonumber
+\end{align*}
 
-where $b = \sqrt{\frac{2}{\pi}}$ and $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}}$.
+where $b = \sqrt{\frac{2}{\pi}}$ and $\delta = \frac{\lambda}{\sqrt{1 +
+\lambda^2}}$. This takes care of our first two moments; again the third is a
+little more complicated:
 
-Again, our first two moments are already taken care of. The third is a little more complicated:
-
-\begin{align}
-  E([Y - E(Y)]^3) &= E(Y^3) - 3E(Y^2)E(Y) + 2[E(Y)]^3 \nonumber \\
-  &= (\xi^3 + 3 b \xi^2 \omega \delta + 3 \xi \omega^2 + 3 b \omega^3 \delta - b \omega^3 \delta^3)
-  - 3 (\xi^2 + 2\xi \omega b \delta + \omega^2) (\xi + \omega b \delta) \nonumber \\
-  & \quad + 2(\xi + \omega b \delta)^3 \nonumber \\
-  &= \xi^3 + 3 b \xi^2 \omega \delta + 3 \xi \omega^2 + 3 b \omega^3 \delta - b \omega^3 \delta^3 -
-  3 \xi^3 - 9 b \xi^2 \omega \delta - 6 b^2 \xi \omega^2 \delta^2 - 3 \xi \omega^2 \nonumber \\
-  & \quad - 3 b \omega^3 \delta + 2 \xi^3 + 6 b \xi^2 \omega \delta + 6 b^2 \xi \omega^2 \delta^2 +
-  2 b^3 \omega^3 \delta^3 \nonumber \\
-  &= 2 \omega^3 b^3 \delta^3 - b \omega^3 \delta^3 \nonumber \\
-  &= b \omega^3 \delta^3 (2b^2 - 1)
-\end{align}
+\begin{align*}
+  E([Y - E(Y)]^3) &= E(Y^3) - 3E(Y^2)E(Y) + 2[E(Y)]^3 \\
+  &= (\mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3) - 3 (\mu^2 + 2b \delta \mu \sigma + \sigma^2) (\mu + b \delta \sigma) \\
+  & \quad + 2\;(\mu + b \delta \sigma)^3 \\
+  &= \cancel{\mu^3} + \cancel{3 b \delta \mu^2 \sigma} + \cancel{3 \mu \sigma^2} + \cancel{3 b \delta \sigma^3} - b \delta^3 \sigma^3 - \cancel{3 \mu^3} - \cancel{9 b \delta \mu^2 \sigma} -
+    \cancel{6 b^2 \delta^2 \mu \sigma^2} - \cancel{3 \mu \sigma^2} \\
+  & \quad - \cancel{3 b \delta \sigma^3} + \cancel{2 \mu^3} + \cancel{6 b \delta \mu^2 \sigma} + \cancel{6 b^2 \delta^2 \mu \sigma^2} + 2 b^3 \delta^3 \sigma^3 \\
+  &= 2 b^3 \delta^3 \sigma^3 - b \delta^3 \sigma^3 \\
+  &= b \delta^3 \sigma^3 (2b^2 - 1)
+\end{align*}
 
 We restate our results:
 
+\begin{alignat}{4}
+  E(Y) &= \mu + b \delta \sigma \;&=&\; \mu + \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \nonumber \\
+  E([Y - E(Y)]^2) &= \sigma^2 (1 - b^2 \delta^2) \;&=&\; \sigma^2 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right) \\
+  E([Y - E(Y)]^3) &= b \delta^3 \sigma^3 (2b^2 - 1) \;&=&\; \sigma^3 \sqrt{\frac{2}{\pi}} \left( \frac{\lambda}{\sqrt{1 + \lambda^2}} \right)^3 \left( \frac{4}{\pi} - 1 \right) \nonumber
+\end{alignat}
+
+\subsection{Solving for $\mu$, $\sigma$, $\lambda$}
+
+Now we set the two sets of moments equal to each other and, taking $n$ and $p$
+as constants, solve for $\mu$, $\sigma$ and $\lambda$.
+
+\begin{subequations}
 \begin{align}
-  E(B) &= \xi + b \omega \delta \nonumber \\
-  E([B - E(B)]^2) &= \omega^2 (1 - b^2 \delta^2) \\
-  E([B - E(B)]^3) &= b \omega^3 \delta^3 (2b^2 - 1) \nonumber
+  np &= \mu + \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \label{eq:first-moment-set} \\
+  np(1-p) &= \sigma^2 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right) \label{eq:second-moment-set} \\
+  np(p-1)(2p-1) &= \sigma^3 \sqrt{\frac{2}{\pi}} \left( \frac{\lambda}{\sqrt{1 + \lambda^2}} \right)^3 \left( \frac{4}{\pi} - 1 \right) \label{eq:third-moment-set}
+\end{align}
+\end{subequations}
+
+To get $\lambda$, we divide the cube of \eqref{eq:second-moment-set} by the
+square of \eqref{eq:third-moment-set}:
+
+\begin{align}
+  \frac{\sigma^6 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right)^3}{\sigma^6 \cdot \frac{2}{\pi} \left( \frac{\lambda}{\sqrt{1 + \lambda^2}} \right)^6 \left(
+    \frac{4}{\pi} - 1 \right)^2} &= \frac{n^3p^3(1-p)^3}{n^2p^2(p-1)^2(2p-1)^2} \nonumber \\
+  \Rightarrow \quad \frac{\left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1+\lambda^2} \right)^3}{\frac{2}{\pi} \left( \frac{\lambda^2}{1+\lambda^2} \right)^3 \left( \frac{4}{\pi} - 1
+    \right)^2} &= \frac{np(1-p)}{(1-2p)^2} \label{eq:solving-for-lambda}
 \end{align}
 
-\subsection{Curiosity}
+The above equation \eqref{eq:solving-for-lambda} is a rational expression in
+$\lambda^2$ that can be solved with either a considerable amount of manual
+labor or, more efficiently, with a computer algebra system. Once we have
+$\lambda^2$, then $\lambda$ is simply either the positive or negative square
+root, as determined by the sign of $(1-2p)$: When $p < 0.5$, the binomial skews
+left, so $\lambda$ should be negative; when $p > 0.5$, the binomial skews
+right, so $\lambda$ should be positive. Thus:
 
-As a curiosity, I was unable to get Pewsey and Azzalini to agree with each other on
-$E(Z^3)$. According to Pewsey (2000),
-
-\begin{equation} \label{ey3-pewsey}
-  E(Y^3) = \xi^3 + 3 b \xi^2 \omega \delta + 3 \xi \omega^2 + 3 b \omega^3 \delta - b \omega^3 \delta^3
+\begin{equation}
+  \lambda = \textnormal{\{sign of $(1-2p)$\}} \sqrt{\lambda^2}
 \end{equation}
 
-where $b = \sqrt{\frac{2}{\pi}}$ and $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}} \in (-1,
-1)$. Since $Y = \xi + \omega Z$, by the linearity of expected value, we also have
+\textbf{\textit{Note to Dr. Guffey:} I am trying to find an algebraic reason
+for the sign, but I'm not seeing it in the equations.}
+
+Having secured $\lambda$, we can find $\sigma$ using
+\eqref{eq:second-moment-set}:
+
+\begin{equation}
+  np(1-p) = \sigma^2 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right) \quad\Rightarrow\quad
+  \sigma = \sqrt{\frac{np(1-p)}{1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2}}}
+\end{equation}
+
+Similarly, with both $\lambda$ and $\sigma$, equation
+\eqref{eq:first-moment-set} yields $\mu$:
+
+\begin{equation}
+  np = \mu + \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \quad\Rightarrow\quad
+  \mu = np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}}
+\end{equation}
+
+\appendix
+\section{Solving for $\lambda$}
+
+
+\begin{gather*}
+  \left. \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1+\lambda^2} \right)^3 \middle/ \left[ \frac{2}{\pi} \left( \frac{\lambda^2}{1+\lambda^2} \right)^3 \left( \frac{4}{\pi} - 1
+    \right)^2 \right] \right. \;-\; \frac{np(1-p)}{(1-2p)^2} \\
+  \left. \left( \frac{\pi(1+\lambda^2) - 2\lambda^2}{\pi(1+\lambda^2)} \right)^3 \middle/ \left( \frac{2(4-\pi)^2\lambda^6} {\pi^3(1+\lambda^2)^3} \right) \right. \;-\; \frac{np(1-p)}{(1-2p)^2} \\
+  \left( \frac{\pi^3(1+\lambda^2)^3 - 3\pi^2(1+\lambda^2)^2 \cdot 2\lambda^2 + 3\pi(1+\lambda^2) \cdot 4\lambda^4 - 8\lambda^6}{\cancel{\pi^3 (1+\lambda^2)^3}} \right) \cdot \left(
+    \frac{\cancel{\pi^3(1+\lambda^2)^3}}{2(4-\pi)^2\lambda^6} \right) \;-\; \frac{np(1-p)}{(1-2p)^2} \\
+  \frac{\pi^3(1+3\lambda^2+3\lambda^4+\lambda^6) - 6\pi^2\lambda^2(1+2\lambda^2+4\lambda^4) + 12\pi\lambda^4(1+\lambda^2) - 8\lambda^6}{2(4-\pi)^2\lambda^6} \;-\; \frac{np(1-p)}{(1-2p)^2} \\
+  \frac{\pi^3 + 3\pi^3\lambda^2 + 3\pi^3\lambda^4 + \pi^3\lambda^6 - 6\pi^2\lambda^2 - 12\pi^2\lambda^4 - 24\pi^2\lambda^6 + 12\pi\lambda^4 + 12\pi\lambda^6 - 8\lambda^6}{2(4-\pi)^2\lambda^6}
+    \;-\; \frac{np(1-p)}{(1-2p)^2} \\
+  \frac{\lambda^6(\pi^3-24\pi^2+12\pi-8) + \lambda^4(3\pi^3-12\pi^2+12\pi) + \lambda^2(3\pi^3-6\pi^2) + \pi^3}{2(4-\pi)^2\lambda^6} \;-\; \frac{np(1-p)}{(1-2p)^2}
+  \intertext{Taking $c_1 = \pi^3 - 24\pi^2 + 12\pi - 8$, $c_2 = 3\pi^3 - 12\pi^2 + 12\pi$, $c_3 = 3\pi^3 - 6\pi^2$, $c_4 = \pi^3$, and $c_5 = 2(4-\pi)^2$, we can simplify this to}
+  \frac{c_1\lambda^6 + c_2\lambda^4 + c_3\lambda^2 + c_4}{c_5\lambda^6} - \frac{np(1-p)}{(1-2p)^2} \\
+  \frac{c_1(1-2p)^2\lambda^6 + c_2(1-2p)^2\lambda^4 + c_3(1-2p)^2\lambda^2 + c_4(1-2p)^2 - c_5\;np(1-p)\lambda^6}{c_5(1-2p)^2\lambda^6} \\
+  \frac{\left[c_1(1-2p)^2 - c_5\;np(1-p)\right]\lambda^6 + \left[c_2(1-2p)^2\right]\lambda^4 + \left[c_3(1-2p)^2\right]\lambda^2 + c_4(1-2p)^2}{c_5(1-2p)^2\;\lambda^6}
+\end{gather*}
+
+
+\section{Curiosity}
+
+As a curiosity, I was unable to get Pewsey and Azzalini to agree with each
+other on $E(Z^3)$. According to Pewsey (2000),
+
+\begin{equation} \label{eq:ey3-pewsey}
+  E(Y^3) = \mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3
+\end{equation}
+
+where $b = \sqrt{\frac{2}{\pi}}$ and $\delta = \frac{\lambda}{\sqrt{1 +
+\lambda^2}} \in (-1, 1)$. Since $Y = \mu + \sigma Z$, by the linearity of
+expected value, we also have
 
 \begin{align}
-  E(Y^3) &= E [(\xi + \omega Z)^3] \nonumber \\
-  &= E[\xi^3 + 3 \xi^2 \omega Z + 3 \xi \omega^2 Z^2 + \omega^3 Z^3] \nonumber \\
-  &= \xi^3 + 3 \xi^2 \omega\;E(Z) + 3 \xi \omega^2\;E(Z^2) + \omega^3\;E(Z^3) \nonumber \\
-  &= \xi^3 + 3 \xi^2 \omega\ b \delta + 3 \xi \omega^2 + \omega^3\;E(Z^3) \label{ey3-linear-expansion}
+  E(Y^3) &= E \left[ (\mu + \sigma Z)^3 \right] \nonumber \\
+  &= E (\mu^3 + 3 \mu^2 \sigma Z + 3 \mu \sigma^2 Z^2 + \sigma^3 Z^3) \nonumber \\
+  &= \mu^3 + 3 \mu^2 \sigma\;E(Z) + 3 \mu \sigma^2\;E(Z^2) + \sigma^3\;E(Z^3) \nonumber \\
+  &= \mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + \sigma^3\;E(Z^3) \label{eq:ey3-linear-expansion}
 \end{align}
 
-By comparing equations \ref{ey3-pewsey} and \ref{ey3-linear-expansion} and eliminating terms, we
-arrive at
+By comparing equations \eqref{eq:ey3-pewsey} and
+\eqref{eq:ey3-linear-expansion} and eliminating terms, we arrive at
 
 \begin{align}
-  \omega^3\;E(Z^3) &= 3 b \omega^3 \delta - b \omega^3 \delta^3 \nonumber \\
+  \sigma^3\;E(Z^3) &= 3 b \delta \sigma^3 - b \delta^3 \sigma^3 \nonumber \\
   \Rightarrow \quad E(Z^3) &= 3 b \delta - b \delta^3 \nonumber \\
   &= b \delta (3 - \delta^2) \nonumber \\
-  &= \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \cdot \left( 3 -
-    \frac{\lambda^2}{1 + \lambda^2} \right)
+  &= \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \cdot \left( 3 - \frac{\lambda^2}{1 + \lambda^2} \right) \label{eq:ez3-pewsey-derived}
 \end{align}
 
 However, according to equation (6.5?) in Azzalini (2005),
 
-\[
-E(Z^r) =
- \begin{dcases*}
-   1 \times 3 \times \cdots \times (r -1) & if r is even \\
-   \frac{\sqrt{2}\;(2k + 1)!\;\lambda}{\sqrt{\pi}\;(1 + \lambda^2)^{k + 1/2}\;2^k}
-   \sum_{m=0}^k\;\frac{m!\;(2\lambda)^{2m}}{(2m+1)!\;(k-m)!} & if $r = 2k+1$ and $k = 0, 1, ...$
-\end{dcases*}
-\]
+\begin{equation}
+  E(Z^r) =
+  \begin{dcases*}
+    1 \times 3 \times \cdots \times (r -1) & if r is even \\
+    \frac{\sqrt{2}\;(2k + 1)!\;\lambda}{\sqrt{\pi}\;(1 + \lambda^2)^{k + 1/2}\;2^k} \sum_{m=0}^k\;\frac{m!\;(2\lambda)^{2m}}{(2m+1)!\;(k-m)!} & if $r = 2k+1$ and $k = 0, 1, ...$
+  \end{dcases*}
+\end{equation}
 
 So, for $E(Z^3)$, we have $r = 2k + 1 = 3$ and $k = 1$:
 
 \begin{align}
-  E(Z^3) &= \frac{\sqrt{2} \cdot 3! \cdot \alpha}{\sqrt{\pi} \cdot (1 + \alpha^2)^{3/2} \cdot 2} \;
-  \sum_{m=0}^1 \frac{m!\;(2\alpha)^{2m}}{(2m + 1)!\;(1 - m)!} \nonumber \\
-  &= \frac{3\sqrt{2}}{\sqrt{\pi}} \cdot \frac{\alpha}{(1 + \alpha^2)^{3/2}} \cdot \left( \frac{0!
-      (2\alpha)^0}{1!1!} + \frac{1! (2\alpha)^2}{3!0!} \right) \nonumber \\
-  &= \frac{3\sqrt{2}}{\sqrt{\pi}} \cdot \frac{\alpha}{(1 + \alpha^2)^{3/2}} \cdot \left( 1 +
-    \frac{2}{3}\alpha^2 \right) \nonumber \\
-  &= \sqrt{\frac{2}{\pi}} \cdot \frac{\alpha}{(\sqrt{1 + \alpha^2})^3} \cdot (3 + 2 \alpha^2)
+  E(Z^3) &= \frac{\sqrt{2} \cdot 3! \cdot \lambda}{\sqrt{\pi} \cdot (1 + \lambda^2)^{3/2} \cdot 2} \; \sum_{m=0}^1 \frac{m!\;(2\lambda)^{2m}}{(2m + 1)!\;(1 - m)!} \nonumber \\
+  &= \frac{3\sqrt{2}}{\sqrt{\pi}} \cdot \frac{\lambda}{(1 + \lambda^2)^{3/2}} \cdot \left( \frac{0! (2\lambda)^0}{1!1!} + \frac{1! (2\lambda)^2}{3!0!} \right) \nonumber \\
+  &= \frac{3\sqrt{2}}{\sqrt{\pi}} \cdot \frac{\lambda}{(1 + \lambda^2)^{3/2}} \cdot \left( 1 + \frac{2}{3}\lambda^2 \right) \nonumber \\
+  &= \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{(\sqrt{1 + \lambda^2})^3} \cdot (3 + 2 \lambda^2) \label{eq:ez3-azzalini}
 \end{align}
 
+Alas, equations \eqref{eq:ez3-pewsey-derived} and \eqref{eq:ez3-azzalini} do
+not remotely line up.
 
 \end{document}
