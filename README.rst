@@ -18,6 +18,6 @@ License
 -------
 
 All of my original work is licensed under the `MIT license`_, which I realize
-is for code, but embodies the intent:
+is for code, but embodies the intent.
 
 .. _MIT license: http://www.opensource.org/licenses/mit-license.php

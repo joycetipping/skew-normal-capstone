@@ -2,16 +2,16 @@
 \usepackage {joyce-math}
 
 \begin{document}
-\title {Deriving $\lambda$ with the Method of Moments}
+\title {The Method of Moments}
 \author {Joyce Tipping}
 \date{}
 \maketitle
 
-\section{Method of Moments}
+\section{The Method of Moments}
 
 Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma^2, \lambda)$. We will find
-approximations for $\mu$, $\sigma$, and $\lambda$ by comparing the first,
-second, and third moments about the mean of $B$ and $Y$.
+approximations for $\mu$, $\sigma$, and $\lambda$ by comparing their first,
+second, and third moments about the mean.
 
 \subsection{The Moments of the Binomial}
 
@@ -21,7 +21,7 @@ The first two moments, the mean and variance, are simply
   E(B) = np, \quad Var(B) = np(1-p)
 \end{equation*}
 
-We can also easily find
+Having these, we can easily find
 
 \begin{equation*}
   E(B^2) = Var(B) + [E(B)]^2 = np(1-p) + n^2p^2 = np - np^2 + n^2p^2
@@ -131,9 +131,12 @@ The above equation \eqref{eq:solving-for-lambda} is a rational expression in
 $\lambda^2$ that can be solved with either a considerable amount of manual
 labor or, more efficiently, with a computer algebra system. Once we have
 $\lambda^2$, then $\lambda$ is simply either the positive or negative square
-root, as determined by the sign of $(1-2p)$: When $p < 0.5$, the binomial skews
-left, so $\lambda$ should be negative; when $p > 0.5$, the binomial skews
-right, so $\lambda$ should be positive. Thus:
+root, as determined by the sign of $(1-2p)$: When $p \rightarrow 0$, the
+binomial skews left and converges on the positive half normal, so $\lambda$
+should be positive; when $p \rightarrow 1$, the binomial skews right and
+converges on the negative half normal, so $\lambda$ should be negative; and
+when $p = 0.5$, the binomial is symmetric and $\lambda$ is 0, eliminating the
+need for a sign. Thus:
 
 \begin{equation}
   \label{eq:lambda-solved}
@@ -155,8 +158,8 @@ Having secured $\lambda$, we can find $\sigma$ using
   \sigma = \sqrt{\frac{np(1-p)}{1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2}}}
 \end{equation}
 
-Similarly, with both $\lambda$ and $\sigma$, \eqref{eq:first-moment-set} yields
-$\mu$:
+Similarly, with both $\lambda$ and $\sigma$, a simple rearrangement of
+\eqref{eq:first-moment-set} yields $\mu$:
 
 \begin{equation}
   \label{eq:mu-solved}
@@ -171,7 +174,7 @@ out how he's getting it from these equations. He refers to his equation (c),
 which is my equation \eqref{eq:mu-solved}. Substituting $p=0.5$ into
 \eqref{eq:mu-solved}, however, doesn't get me anywhere; neither does
 substituting $p=0.5$ into \eqref{eq:sigma-solved} and then substituting that
-into \eqref{eq:mu-solved}. As far as I can tell, equation
+into \eqref{eq:mu-solved}. And as far as I can tell, equation
 \eqref{eq:lambda-solved} is for all practical purposes useless. Alas.}
 
 \subsection{Restrictions}
@@ -189,7 +192,7 @@ left hand side of \eqref{eq:solving-for-lambda} as
 we can see that it is increasing in $v$, which is always $\geq 1$. Therefore:
 
 \begin{equation}
-  \min_{v} \textnormal{\{Eq. \eqref{eq:lhs-solving-for-lambda}\}} = \textnormal{\{Eq. \eqref{eq:lhs-solving-for-lambda}\}} |_{v=1} = 
+  \min_{v} \textnormal{\{Eq. \ref{eq:lhs-solving-for-lambda}\}} = \textnormal{\{Eq. \ref{eq:lhs-solving-for-lambda}\}} |_{v=1} = 
   \left( 1 - \frac{2}{\pi} \right)^3 \left( \frac{\pi^3}{2(4-\pi)^2} \right) = 1.009524 \approx 1
 \end{equation}
 
