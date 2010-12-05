@@ -1,0 +1,9 @@
+#!/bin/bash
+
+endfile='comparison.js'
+
+cat head.js > $endfile
+
+for file in comparison-*.json; do
+  cat $file >> $endfile
+done

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      #comparison {
+        width: 900px;
+        height: 300px;
+      }
+    </style>
+
+    <script type='text/javascript' src='http://spencertipping.com/caterwaul/caterwaul.all.js'></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script type='text/javascript' src='jquery.flot.min.js'></script>
+    <script type='text/javascript' src='json/comparison.js'></script>
+    <script>
+      /*
+      $(caterwaul.clone('std seq')(function () {
+        var ns = [25];
+        var ps = [1, 2, 3];
+        var options = {
+          xaxis: {
+            min: -10
+          }
+        };
+        seq[~ns *!~n[~ps *!p[
+          let[key = 'n#{n}p0#{p}',
+              colors = ['#fc0', '#ff0', '#7c0'],
+              labels = ['N = #{n}, P = #{p}', 'Normal', 'Skew-normal'],
+              series(data, label, color, bars) = {
+                data: data,
+                label: label,
+                color: color,
+                bars: bars ? {show:true, barWidth:0} : false,
+                lines: {show:!bars},
+                points: {show:bars}
+              }]
+
+          [$('body').append('<div id="comparison-n#{n}p0#{p}" style="width:800px; height:300px"></div>'),
+           $.plot($('#comparison-n#{n}p0#{p}'),
+             seq[~[binomial, sn, normal] *[
+               series(_[key], labels[_i], colors[_i], _i === 0)]],
+             options)
+           ]]]];
+      }));
+      */
+
+      // When importing comparison.js, we get the following variables
+      //   binomial, normal, sn, ns, ps
+      //
+      // Our data will be properties on binomial, normal, and sn with names n#{n}p#{p}
+
+      // Plot the graphs
+      $(caterwaul.clone('std seq')(function () {
+        for (var i = 0; i < ns.length; ++i) {
+          var n = ns[i];
+          for (var j = 0; j < ps.length; ++j) {
+            var p = String(ps[j]).replace('.', '');
+            console.log ('n#{n} p#{p}');
+            var series = [
+              {
+                data: binomial['n#{n}p#{p}'],
+                label: 'Binomial',
+                bars: {show:true, barWidth:0},
+                points: {show:true}
+              },
+              {
+                data: normal['n#{n}p#{p}'],
+                label: 'Normal',
+                lines: {show:true}
+              },
+              {
+                data: sn['n#{n}p#{p}'],
+                label: 'Skew-normal',
+                lines: {show:true}
+              }
+            ];
+            var options = {
+              xaxis: {
+                min: -5,
+                max: 20
+              }
+            };
+
+            $('body').append('<div id="comparison-n#{n}p#{p}" style="width:800px; height:300px"></div>'),
+            $.plot($('#comparison-n#{n}p#{p}'), series, options);
+          }
+        }
+      }));
+    </script>
+  </head>
+  <body>
+    <h1>Hello world!</h1>
+    <div id='flot'></div>
+  </body>
+</html>
