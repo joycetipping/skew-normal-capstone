@@ -1,6 +1,4 @@
 import math
-import json
-from rpy import r
 
 def calc_skew (n, p):
   if (p == 0.5): return 0
@@ -33,16 +31,20 @@ def calc_skew (n, p):
 
     # Determine the sign from (1 - 2p)
     if (1.0 - 2.0*p < 0): skew *= -1.0
-
-    #print 'Constant:', rhs
-    #print 'lhs     :', lhs(skew)
-    #print 'Skew', skew
-    #print
     return skew
 
-ns = [25, 50, 75, 100]
-ps = [0.1, 0.2, 0.3, 0.4, 0.6, 0.7, 0.8, 0.9]
-#map(lambda x: map(lambda y: calc_skew(x, y), ps), ns)
+def calc_sigma (n, p):
+  skew = calc_skew(n, p)
+  a = 2.0 / math.pi
+  b = skew**2.0 / (1.0 + skew**2.0)
+  return math.sqrt( n*p*(1-p) / (1 - a*b) )
 
-binomial = r.dbinom(r.seq(1,10), 10, 0.2)
-print binomial
+def calc_mu (n, p):
+  sigma = calc_sigma(n, p)
+  skew  = calc_skew(n,p)
+  a = 2.0 / math.pi
+  b = skew**2.0 / (1.0 + skew**2.0)
+  return n*p - sigma*a*b
+
+def calc_params (n, p):
+ return ( calc_mu(n, p), calc_sigma(n,p), calc_skew(n, p) )
