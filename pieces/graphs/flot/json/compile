@@ -1,9 +1,13 @@
 #!/bin/bash
 
-endfile='comparison.js'
-
-cat head.js > $endfile
-
+compfile='comparison.js'
+cat comparison-headers.js > $compfile
 for file in comparison-*.json; do
-  cat $file >> $endfile
+  cat $file >> $compfile
+done
+
+mabsfile='mabs.js'
+cat mabs-headers.js > $mabsfile
+for file in mabs-*.json; do
+  cat $file >> $mabsfile
 done

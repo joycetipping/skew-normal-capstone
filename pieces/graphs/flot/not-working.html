@@ -45,24 +45,28 @@
 
       // Plot the graphs
       $(caterwaul.clone('std seq montenegro')(function () {
+        var indexes = fn[s1, s2, s3][seq[~s1 *[[Math.max(_, s2[_i], s3[_i]) /se[console.log(_)] > 0.01, _i]] %[_[0] > 0.001] *[_[1]]]];
+
         for (var i = 0; i < ns.length; ++i) {
           var n = ns[i];
           for (var j = 0; j < ps.length; ++j) {
+            var k = 'n#{n}p#{p}';
             var p = String(ps[j]).replace('.', '');
+            var is = indexes(binomial[k], normal[k], sn[k]);
             var series = [
               {
-                data: binomial['n#{n}p#{p}'],
+                data: seq[is *[binomial['n#{n}p#{p}'][_]]],
                 label: 'Binomial',
                 bars: {show:true, barWidth:0},
                 points: {show:true}
               },
               {
-                data: normal['n#{n}p#{p}'],
+                data: seq[is *[normal['n#{n}p#{p}'][_]]],
                 label: 'Normal',
                 lines: {show:true}
               },
               {
-                data: sn['n#{n}p#{p}'],
+                data: seq[is *[sn['n#{n}p#{p}'][_]]],
                 label: 'Skew-normal',
                 lines: {show:true}
               }

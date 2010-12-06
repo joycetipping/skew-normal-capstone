@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      div.box {
+        margin: 75px 0;
+        position: relative;
+      }
+      div.plot {
+        margin: 0 auto;
+        text-align: left;
+      }
+      .caption, .xlabel, .ylabel {
+        text-align: center;
+        font-family: Georgia, serif;
+      }
+      .caption {
+        font-size: 14px;
+      }
+      .xlabel, .ylabel {
+        position: absolute;
+        color: #666;
+        font-size: 12px;
+      }
+      .xlabel {
+        top: 325px;
+        left: 500px;
+      }
+      .ylabel {
+        top: 150px;
+        left: 220px;
+      }
+    </style>
+
+    <script type='text/javascript' src='caterwaul.all.js'></script>
+    <script type='text/javascript' src='montenegro.client.js'></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script type='text/javascript' src='jquery.flot.min.js'></script>
+    <script type='text/javascript' src='json/mabs.js'></script>
+    <script>
+      // When importing comparison.js, we get the following variables
+      //   normal, sn, ns
+      //
+      // Our data will be properties on normal and sn with names n#{n}
+
+      // Plot the graphs
+      $(caterwaul.clone('std seq montenegro')(function () {
+        for (var i = 0; i < ns.length; ++i) {
+          var n = ns[i];
+          var series = [
+            {
+              data: normal['n#{n}'],
+              label: 'Normal',
+              points: {show:true}
+            },
+            {
+              data: sn['n#{n}'],
+              label: 'Skew-normal',
+              points: {show:true}
+            }
+          ];
+          var options = {
+            xaxis: {
+              max: 0.501 
+            }
+          };
+
+          var name = 'mabs-n#{n}';
+          $('body').append(html[
+            div.box(
+              div.caption('n = #{n}'),
+              div.plot /attr('id', name) /css({width:400, height:300}),
+              div.xlabel('p'),
+              div.ylabel('MABS')
+            )
+          ]);
+          $.plot($('##{name}'), series, options);
+        }
+      }));
+    </script>
+  </head>
+  <body></body>
+</html>
