@@ -1,7 +1,7 @@
 # Written by Joyce Tipping <joyce@joycetipping.com>
 # License: MIT <http://www.opensource.org/licenses/mit-license.php>
 #
-# This library includes helpful functions for approximating the binomial with the skew normal
+# This library provides helpful functions for approximating the binomial with the skew normal
 
 from __future__ import division
 from rpy import r
@@ -13,7 +13,7 @@ r.library('sn')
 # Binomial
 #
 def binomial_pmf (n, p, pairs=False):
-  # Given n and p, returns a binomial pmf in two arrays of xs and ys, respectively;
+  # Given n and p, returns a binomial pmf in two arrays of xs and ys, respectively
   # If pairs is True, it returns the pmf as an array of points
   xs = r.seq(0, n)
   ys = r.dbinom(xs, n, p)
