@@ -1,0 +1,6 @@
+#!/bin/bash
+
+python flot_data.py
+
+cd flot/json/
+./compile
