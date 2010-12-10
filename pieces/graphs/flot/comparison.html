@@ -29,6 +29,7 @@
       .ylabel {
         top: 150px;
         left: 50px;
+        -webkit-transform: rotate(-90deg);
       }
     </style>
 
@@ -36,7 +37,7 @@
     <script type='text/javascript' src='lib/caterwaul.all.js'></script>
     <script type='text/javascript' src='lib/jquery.flot.min.js'></script>
     <script type='text/javascript' src='lib/montenegro.client.js'></script>
-    <script type='text/javascript' src='json/comparison.js'></script>
+    <script type='text/javascript' src='data/comparison.js'></script>
     <script>
       // When importing comparison.js, we get the following variables
       //   binomial, normal, sn, ns, ps
@@ -59,12 +60,14 @@
               {
                 data: normal['n#{n}p#{p}'],
                 label: 'Normal',
-                lines: {show:true}
+                lines: {show:true},
+                color: 6
               },
               {
                 data: sn['n#{n}p#{p}'],
                 label: 'Skew-normal',
-                lines: {show:true}
+                lines: {show:true},
+                color: 2
               }
             ];
             var options = {

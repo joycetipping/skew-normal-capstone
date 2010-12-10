@@ -29,6 +29,7 @@
       .ylabel {
         top: 150px;
         left: 250px;
+        -webkit-transform: rotate(-90deg);
       }
     </style>
 
@@ -36,27 +37,30 @@
     <script type='text/javascript' src='lib/caterwaul.all.js'></script>
     <script type='text/javascript' src='lib/jquery.flot.min.js'></script>
     <script type='text/javascript' src='lib/montenegro.client.js'></script>
-    <script type='text/javascript' src='json/mabs.js'></script>
+    <script type='text/javascript' src='data/mabs.js'></script>
     <script>
-      // When importing comparison.js, we get the following variables
-      //   normal, sn, ns
+      // When importing mabs.js, we get the following variables
+      //   normal, sn, ns, ps
       //
-      // Our data will be properties on normal and sn with names n#{n}
+      // Our data will be properties on normal and sn with names like n#{n} and p#{p}
 
       // Plot the graphs
       $(caterwaul.clone('std seq montenegro')(function () {
+        // Fixed n, varying p graphs
         for (var i = 0; i < ns.length; ++i) {
           var n = ns[i];
           var series = [
             {
               data: normal['n#{n}'],
               label: 'Normal',
-              points: {show:true}
+              points: {show:true},
+              color: 6
             },
             {
               data: sn['n#{n}'],
               label: 'Skew-normal',
-              points: {show:true}
+              points: {show:true},
+              color: 2
             }
           ];
           var options = {
@@ -71,6 +75,41 @@
               div.caption('n = #{n}'),
               div.plot /attr('id', name) /css({width:400, height:300}),
               div.xlabel('p'),
+              div.ylabel('MABS')
+            )
+          ]);
+          $.plot($('##{name}'), series, options);
+        }
+
+        // Fixed p, varying n graphs
+        for (var i = 0; i < ps.length; ++i) {
+          var p = ps[i];
+          var series = [
+            {
+              data: normal['p#{p}'],
+              label: 'Normal',
+              points: {show:true},
+              color: 6
+            },
+            {
+              data: sn['p#{p}'],
+              label: 'Skew-normal',
+              points: {show:true},
+              color: 2
+            }
+          ];
+          var options = {
+            xaxis: {
+              max: 200.1
+            }
+          };
+
+          var name = 'mabs-p#{p}';
+          $('body').append(html[
+            div.box(
+              div.caption('p = #{p.replace("0", "0.")}'),
+              div.plot /attr('id', name) /css({width:400, height:300}),
+              div.xlabel('n'),
               div.ylabel('MABS')
             )
           ]);

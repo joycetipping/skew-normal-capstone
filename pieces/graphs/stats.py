@@ -47,7 +47,11 @@ def sn_pdf (n, p, pairs=False):
   ys = r.dsn(xs, mu, sigma, skew)
   return pair(xs, ys) if pairs else {'xs':xs, 'ys':ys}
 
-def sn_p_range (n):
+def sn_restriction_least_n (p):
+  # Given p, finds the least viable n
+  return int(math.ceil( (1-2*p)**2 / (p*(1-p)) ))
+
+def sn_restriction_p_range (n):
   # Given n, finds the upper and lower bound of viable p's
   a = 1/2
   b = 1/2 * math.sqrt(n/(n+4))

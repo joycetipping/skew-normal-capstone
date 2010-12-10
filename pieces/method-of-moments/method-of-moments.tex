@@ -2,11 +2,6 @@
 \usepackage {joyce-math}
 
 \begin{document}
-\title {The Method of Moments}
-\author {Joyce Tipping}
-\date{}
-\maketitle
-
 \section{The Method of Moments}
 
 Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma^2, \lambda)$. We will find
@@ -206,14 +201,24 @@ that
 \begin{align}
   \textnormal{\{right hand side of \eqref{eq:solving-for-lambda}\}} &\geq \textnormal{\{min of left hand side of \eqref{eq:solving-for-lambda}\}} \nonumber \\
   \frac{np(1-p)}{(1-2p)^2} &\geq 1 \nonumber \\
-  np(1-p) &\geq (1-2p)^2 \nonumber \\
-  np - np^2 &\geq 1 - 4p + 4p^2 \nonumber \\
-  1 - 4p + 4p^2 - np + np^2 &\leq 0 \nonumber \\
-  (n+4)p^2 - (n+4)p + 1 &\leq 0 \label{eq:solving-the-restriction}
+  np(1-p) &\geq (1-2p)^2 \label{eq:solving-the-restriction}
 \end{align}
 
-If we let $n$ be a constant, we can solve for $p$ with the quadratic formula,
-taking $a = n+4$, $b = -(n+4)$, and $c = 1$
+From here, given a constant $p$, finding $n$ is very simple:
+
+\begin{equation}
+  n \geq \frac{(1-2p)^2}{p(1-p)} \label{eq: n for a given p}
+\end{equation}
+
+If, however, we wish to fix $n$ and solve for $p$, we further factor \eqref{eq:solving-the-restriction}
+
+\begin{align}
+  np - np^2 &\geq 1 - 4p + 4p^2 \nonumber \\
+  1 - 4p + 4p^2 - np + np^2 &\leq 0 \nonumber \\
+  (n+4)p^2 - (n+4)p + 1 &\leq 0 \label{eq: solving for p}
+\end{align}
+
+and apply the quadratic formula with $a = n+4$, $b = -(n+4)$, and $c = 1$:
 
 \begin{gather*}
   \frac{(n+4) \pm \sqrt{(n+4)^2 - 4 \cdot (n+4) \cdot 1}}{2(n+4)} \\
@@ -224,8 +229,8 @@ taking $a = n+4$, $b = -(n+4)$, and $c = 1$
 \end{gather*}
 
 Let $r_1 = \frac12 - \frac12 \sqrt{\frac{n}{n+4}}$ and $r_2 = \frac12 + \frac12
-\sqrt{\frac{n}{n+4}}$. Note that $r_1 < r_2$. Now we can rewrite
-\eqref{eq:solving-the-restriction} as
+\sqrt{\frac{n}{n+4}}$. (Note that $r_1 < r_2$.) Now we can rewrite \eqref{eq:
+solving for p} as
 
 \begin{equation*}
   (p - r_1)(p - r_2) \leq 0

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      div.box {
+        margin: 75px 0;
+        position: relative;
+      }
+      div.plot {
+        margin: 0 auto;
+        text-align: left;
+      }
+      .caption, .xlabel, .ylabel {
+        text-align: center;
+        font-family: Georgia, serif;
+      }
+      .caption {
+        font-size: 14px;
+      }
+      .xlabel, .ylabel {
+        position: absolute;
+        color: #666;
+        font-size: 12px;
+      }
+      .xlabel {
+        top: 325px;
+        left: 500px;
+      }
+      .ylabel {
+        top: 150px;
+        left: 270px;
+        vertical-align: center;
+      }
+    </style>
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script type='text/javascript' src='lib/caterwaul.all.js'></script>
+    <script type='text/javascript' src='lib/jquery.flot.min.js'></script>
+    <script type='text/javascript' src='lib/montenegro.client.js'></script>
+    <script type='text/javascript' src='data/restriction.js'></script>
+    <script>
+      // When importing restriction.js, we get the following variables
+      //   p_range_bars, p_bottom_points, least_n_points
+
+      $(caterwaul.clone('std seq montenegro')(function () {
+        // p range graph
+        var series = [
+          {
+            data: p_range_bars,
+            bars: {
+              show:true,
+              barWidth:0,
+              lineWidth:0
+            },
+            color: 0
+          },
+          {
+            data: p_top_points,
+            points: {show:true},
+            color: 1
+          },
+          {
+            data: p_bottom_points,
+            points: {show:true},
+            color: 1
+          }
+        ];
+        var options = {
+          yaxis: {
+            max: 1
+          }
+        };
+
+        var name = 'p-range-graph';
+        $('body').append(html[
+          div.box(
+            div.caption("Range of p's, given n"),
+            div.plot /attr('id', name) /css({width:400, height:300}),
+            div.xlabel('n'),
+            div.ylabel('p')
+          )
+        ]);
+        $.plot($('##{name}'), series, options);
+
+        // Least n graph
+        var series = [
+          {
+            data: least_n_points,
+            points: {show:true},
+            color: 2
+          }
+        ];
+        var options = {
+        };
+
+        name = 'least-n-graph';
+        $('body').append(html[
+          div.box(
+            div.caption('Least n, given p'),
+            div.plot /attr('id', name) /css({width:400, height:300}),
+            div.xlabel('p'),
+            div.ylabel('n')
+          )
+        ]);
+        $.plot($('##{name}'), series, options);
+      }));
+    </script>
+  </head>
+  <body></body>
+</html>

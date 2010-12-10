@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{joyce-math}
+
+\begin{document}
+\section{Demonstrating Improved Accuracy}
+
+\subsection{Maximal Absolute Error}
+
+Define the maximal absolute error of the approximation to be
+
+\begin{equation}
+  MABS(n, p) \eq \max_{k \in \{0, 1,...,n\}} \left| F_{B(n,p)} (k) -  F_{appr(n,p)}(k + 0.5) \right|
+\end{equation}
+
+where $F_{B(n,p)}$ is the cdf of the binomial and $F_{appr(n,p)}$ is the cdf of
+either the normal or skew-normal approximation; the 0.5 is a continuity
+correction.
+
+
+\end{document}

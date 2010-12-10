@@ -1,6 +1,23 @@
 #!/bin/bash
 
+rm flot/data/*.js
 python flot_data.py
 
-cd flot/json/
-./compile
+cd flot/data/
+compfile='comparison.js'
+cat comparison-headers.js > $compfile
+for file in comparison-*.js; do
+  cat $file >> $compfile
+done
+
+mabsfile='mabs.js'
+cat mabs-headers.js > $mabsfile
+for file in mabs-*.js; do
+  cat $file >> $mabsfile
+done
+
+restrictionfile='restriction.js'
+for file in restriction-*.js; do
+  cat $file >> $restrictionfile
+done
+cd ../../
