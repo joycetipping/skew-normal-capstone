@@ -1,11 +1,6 @@
 \documentclass{article}
 \usepackage{joyce-math}
-\numberwithin{equation}{section}
-
 \begin{document}
-\title{The Properties of the Standard Skew Normal}
-\date{}
-\maketitle
 
 The four properties of the skew normal listed in section 2 of ``A Note on Improved Approx \ldots''.
 
@@ -192,12 +187,11 @@ With this result, we can easily show our property:
 
 \section{Property 4}
 \begin{thm*}
-  According to equation 5 in Azzalini (2005), the MGF of $SN(0, 1, \lambda)$ is $M(t|\lambda) = 2
-  \cdot \Phi (\delta t) \cdot e^{t^2/2}$ where $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}}$ and
-  $t \in (-\infty, \infty)$.
+  The MGF of $SN(0, 1, \lambda)$ is $M(t|\lambda) = 2 \cdot \Phi (\delta t) \cdot e^{t^2/2}$ where
+  $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}}$ and $t \in (-\infty, \infty)$.
 \end{thm*}
 
-The MGF of $SN(\mu, \sigma^2, \lambda)$ is
+According to equation 5 in Azzalini (2005), the MGF of $SN(\mu, \sigma^2, \lambda)$ is
 \begin{equation}
   M(t) = E\{e^{tY}\} = 2 \cdot \exp \left( \mu t + \frac{\sigma^2 t^2}{2} \right) \cdot \Phi(\delta \sigma
   t)

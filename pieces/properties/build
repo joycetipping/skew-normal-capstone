@@ -1,0 +1,14 @@
+#!/bin/bash
+
+input='properties.tex'
+output='output.tex'
+
+echo \\documentclass\{article\}  > $output
+echo \\usepackage\{joyce-math\} >> $output
+echo \\begin\{document\}        >> $output
+echo                            >> $output
+cat $input                      >> $output
+echo                            >> $output
+echo \\end\{document\}          >> $output
+
+pdflatex $output
