@@ -1,14 +1,26 @@
 #!/bin/bash
 
-input='properties.tex'
-output='output.tex'
+input="$(basename $(pwd)).tex"
+biburl="$HOME/projects/capstone/pieces/bibliography/bibliography.bib"
 
-echo \\documentclass\{article\}  > $output
-echo \\usepackage\{joyce-math\} >> $output
-echo \\begin\{document\}        >> $output
-echo                            >> $output
-cat $input                      >> $output
-echo                            >> $output
-echo \\end\{document\}          >> $output
+echo \\documentclass\{article\}                      > output.tex
+echo \\usepackage\{joyce-math, natbib\}             >> output.tex
+echo \\bibpunct\{\(\}\{\)\}\{\;\}\{a\}\{,\}\{,\}    >> output.tex
+echo \\begin\{document\}                            >> output.tex
+echo                                                >> output.tex
+cat $input                                          >> output.tex
+echo                                                >> output.tex
+echo \\bibliography\{$biburl\}                      >> output.tex
+echo \\bibliographystyle\{plainnat\}                >> output.tex
+echo \\end\{document\}                              >> output.tex
 
-pdflatex $output
+pdflatex output.tex
+echo
+echo
+bibtex output
+echo
+echo
+pdflatex output.tex
+echo
+echo
+pdflatex output.tex

@@ -16,6 +16,9 @@
       }
       .caption {
         font-size: 14px;
+        display: inline-block;
+        position: relative;
+        left: 485px;
       }
       .xlabel, .ylabel {
         position: absolute;
@@ -23,11 +26,11 @@
         font-size: 12px;
       }
       .xlabel {
-        top: 325px;
-        left: 500px;
+        top: 375px;
+        left: 505px;
       }
       .ylabel {
-        top: 150px;
+        top: 175px;
         left: 250px;
         -webkit-transform: rotate(-90deg);
       }
@@ -65,6 +68,7 @@
           ];
           var options = {
             xaxis: {
+              min: 0,
               max: 0.501 
             }
           };
@@ -73,7 +77,7 @@
           $('body').append(html[
             div.box(
               div.caption('n = #{n}'),
-              div.plot /attr('id', name) /css({width:400, height:300}),
+              div.plot /attr('id', name) /css({width:400, height:350}),
               div.xlabel('p'),
               div.ylabel('MABS')
             )
@@ -100,6 +104,7 @@
           ];
           var options = {
             xaxis: {
+              min: 0,
               max: 200.1
             }
           };
@@ -108,7 +113,7 @@
           $('body').append(html[
             div.box(
               div.caption('p = #{p.replace("0", "0.")}'),
-              div.plot /attr('id', name) /css({width:400, height:300}),
+              div.plot /attr('id', name) /css({width:400, height:350}),
               div.xlabel('n'),
               div.ylabel('MABS')
             )
