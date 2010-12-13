@@ -1,0 +1,36 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Azzalini(2005)]{azzalini}
+Adelchi Azzalini.
+\newblock The skew-normal distribution and related multivariate families.
+\newblock \emph{Scandinavian Journal of Statistics}, 32:\penalty0 159--188,
+  2005.
+\newblock Advanced properties of the skew-normal.
+
+\bibitem[Bain and Engelhardt(1992)]{textbook}
+Lee~J. Bain and Max Engelhardt.
+\newblock \emph{Introduction to Probability and Mathematical Statistics}.
+\newblock Duxbury, 2nd edition, 1992.
+\newblock Stat 570/571 textbook.
+
+\bibitem[Chang et~al.(2008)Chang, Lin, Pal, and Chiang]{main}
+Ching-Hui Chang, Jyh-Jiuan Lin, Nabendu Pal, and Miao-Chen Chiang.
+\newblock A note on improved approximation of the binomial distribution by the
+  skew-normal distribution.
+\newblock \emph{American Statistical Association}, 62\penalty0 (2):\penalty0
+  167--170, May 2008.
+\newblock Main article.
+
+\bibitem[Pewsey(2000)]{pewsey}
+Arthur Pewsey.
+\newblock Problems of inference for azzalini's skew-normal distribution.
+\newblock \emph{Journal of Applied Statistics}, 27\penalty0 (7):\penalty0
+  859--870, 2000.
+\newblock Mean, variance, expected value of the skew normal.
+
+\end{thebibliography}

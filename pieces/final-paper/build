@@ -1,32 +1,40 @@
 #!/bin/bash
 
-input="$(basename $(pwd)).tex"
-biburl="$HOME/projects/capstone/pieces/bibliography/bibliography.bib"
+# Pieces
+root="$HOME/projects/capstone/pieces"
+biburl="$root/bibliography/bibliography.bib"
 
+intro="$root/final-paper/intro.tex"
+properties="$root/properties/properties.tex"
+moments="$root/method-of-moments/method-of-moments.tex"
+mabs="$root/mabs/mabs.tex"
+conclusion="$root/final-paper/conclusion.tex"
+
+
+# Build document
 echo \\documentclass\{article\}                      > output.tex
 echo \\usepackage\{jcapstone\}                      >> output.tex
 echo \\begin\{document\}                            >> output.tex
 echo                                                >> output.tex
-cat $input                                          >> output.tex
-echo                                                >> output.tex
 
-if [ -f appendix.tex ]; then
-  echo \\appendix                                   >> output.tex
-  cat appendix.tex                                  >> output.tex
-  echo                                              >> output.tex
-fi
+for file in $intro $properties $moments $mabs $conclusion; do
+  cat $file >> output.tex
+  echo      >> output.tex
+done
 
 echo \\bibliography\{$biburl\}                      >> output.tex
 echo \\bibliographystyle\{plainnat\}                >> output.tex
 echo \\end\{document\}                              >> output.tex
 
-latex output.tex
+
+# Compile document
+pdflatex output.tex
 echo
 echo
 bibtex output
 echo
 echo
-latex output.tex
+pdflatex output.tex
 echo
 echo
 pdflatex output.tex

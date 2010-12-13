@@ -1,8 +1,8 @@
 \section{Demonstrating Improved Accuracy}
 
-We have gone to considerable trouble to develop our skew-normal approximation
-for the binomial; now comes the time to justify our efforts by demonstrating
-its improved accuracy over the regular normal one.
+Having taken the trouble to develop our skew-normal approximation for the
+binomial, we now justify our efforts by demonstrating its improved accuracy
+over the regular normal approximation.
 
 \subsection{Visual Comparison}
 
@@ -13,21 +13,21 @@ small values of $p$ for $n=25$, $n=50$, and $n=100$, respectively. It is not
 hard to see that, especially at very small $n$ and $p$, our skew-normal curve
 follows the shape of the binomial much more accurately.
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=\textwidth]{../graphs/images/comparison-n25.png}
   \caption{Binomial, normal, and skew-normal, $n=25$}
   \label{fig:comparison-n25}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=\textwidth]{../graphs/images/comparison-n50.png}
   \caption{Binomial, normal, and skew-normal, $n=50$}
   \label{fig:comparison-n50}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=\textwidth]{../graphs/images/comparison-n100.png}
   \caption{Binomial, normal, and skew-normal, $n=100$}
@@ -47,24 +47,24 @@ where $F_{B(n,p)}$ is the cdf of the binomial and $F_{\textnormal{appr}(n,p)}$
 is the cdf of either the normal or skew-normal approximation; the 0.5 is a
 continuity correction.
 
-Figure \ref{fig:mabs-fixed-n} shows the MABS as a function of $p$, for $n=25$
-and $n=100$. Figure \ref{fig:mabs-fixed-p}, on the other hand, shows the MABS
-as a function of $n$, for $p=0.05$ and $p=0.1$. Again, the skew-normal
-outperforms the normal considerably in the extreme ranges, with the two
-approximations converging as $n \rightarrow \infty$ or $p \rightarrow 0.5$.
-
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=\textwidth]{../graphs/images/mabs-fixed-n.png}
   \caption{MABS as a function of p}
   \label{fig:mabs-fixed-n}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=\textwidth]{../graphs/images/mabs-fixed-p.png}
   \caption{MABS as a function of n}
   \label{fig:mabs-fixed-p}
 \end{figure}
 
-\nocite{*}
+Figure \ref{fig:mabs-fixed-n} shows the MABS as a function of $p$, for $n=25$
+and $n=100$. Figure \ref{fig:mabs-fixed-p}, on the other hand, shows the MABS
+as a function of $n$, for $p=0.05$ and $p=0.1$. Again, the skew-normal
+outperforms the normal considerably in the extreme ranges, with the two
+approximations converging as $n \rightarrow \infty$ or $p \rightarrow 0.5$.
+
+\clearpage

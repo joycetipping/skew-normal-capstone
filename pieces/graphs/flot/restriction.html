@@ -23,12 +23,12 @@
         font-size: 12px;
       }
       .xlabel {
-        top: 325px;
-        left: 500px;
+        top: 355px;
+        left: 505px;
       }
       .ylabel {
-        top: 150px;
-        left: 270px;
+        top: 170px;
+        left: 275px;
         vertical-align: center;
       }
     </style>
@@ -66,6 +66,10 @@
           }
         ];
         var options = {
+          xaxis: {
+            min: 0,
+            max: 50
+          },
           yaxis: {
             max: 1
           }
@@ -74,8 +78,8 @@
         var name = 'p-range-graph';
         $('body').append(html[
           div.box(
-            div.caption("Range of p's, given n"),
-            div.plot /attr('id', name) /css({width:400, height:300}),
+            //div.caption("Range of p's, given n"),
+            div.plot /attr('id', name) /css({width:400, height:350}),
             div.xlabel('n'),
             div.ylabel('p')
           )
@@ -91,13 +95,17 @@
           }
         ];
         var options = {
+          xaxis: {
+            min: 0,
+            max: 0.5 
+          }
         };
 
         name = 'least-n-graph';
         $('body').append(html[
           div.box(
-            div.caption('Least n, given p'),
-            div.plot /attr('id', name) /css({width:400, height:300}),
+            //div.caption('Least n, given p'),
+            div.plot /attr('id', name) /css({width:400, height:350}),
             div.xlabel('p'),
             div.ylabel('n')
           )

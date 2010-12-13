@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{joyce-math}
+\usepackage{jcapstone}
 \begin{document}
 
 \section{The Method of Moments}
@@ -67,7 +67,7 @@ Our hard-earned results, restated for convenience:
 \subsection{The Moments of the Skew Normal}
 
 Now we'll take a look at the moments of the skew normal. According to Equation
-1 in Pewsey (2000)
+1 in \citet{pewsey}
 
 \begin{align*}
   E(Y) &= \mu + b \delta \sigma \\
@@ -126,23 +126,25 @@ The above equation \eqref{eq:solving-for-lambda} is a rational expression in
 $\lambda^2$ that can be solved with either a considerable amount of manual
 labor or, more efficiently, with a computer algebra system. Once we have
 $\lambda^2$, then $\lambda$ is simply either the positive or negative square
-root, as determined by the sign of $(1-2p)$: When $p \rightarrow 0$, the
-binomial skews left and converges on the positive half normal, so $\lambda$
-should be positive; when $p \rightarrow 1$, the binomial skews right and
-converges on the negative half normal, so $\lambda$ should be negative; and
-when $p = 0.5$, the binomial is symmetric and $\lambda$ is 0, eliminating the
-need for a sign. Thus:
+root, as determined by the sign of $(1-2p)$. This can be explained by Property
+3 in Section \ref{sec:p3}: When $p \to 0$, the binomial skews left and
+converges toward the positive half normal, which by
+\eqref{eq:p2-positive-half-normal} corresponds to a positive $\lambda$. When $p
+\to 1$, the binomial skews right and converges toward the negative half normal,
+which by \eqref{eq:p2-negative-half-normal} corresponds to a negative
+$\lambda$. When $p = 0.5$, the binomial is symmetric and $\lambda$ is 0,
+eliminating the need for a sign. Thus:
 
 \begin{equation}
   \label{eq:lambda-solved}
   \lambda = \textnormal{\{sign of $(1-2p)$\}} \sqrt{\lambda^2}
 \end{equation}
 
-\textbf{\textit{Note to Dr. Guffey:} I am trying to find an algebraic reason
-for the sign, but I'm not seeing it in equation \eqref{eq:solving-for-lambda}
-nor its algebraic expansion, which I put in in appendix
-\ref{sec:solving-for-lambda} as it ended up providing little insight into this
-conclusion.}
+%\textbf{\textit{Note to Dr. Guffey:} I am trying to find an algebraic reason
+%for the sign, but I'm not seeing it in equation \eqref{eq:solving-for-lambda}
+%nor its algebraic expansion, which I put in in appendix
+%\ref{sec:solving-for-lambda} as it ended up providing little insight into this
+%conclusion.}
 
 Having secured $\lambda$, we can find $\sigma$ using
 \eqref{eq:second-moment-set}:
@@ -162,15 +164,22 @@ Similarly, with both $\lambda$ and $\sigma$, a simple rearrangement of
   \mu = np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}}
 \end{equation}
 
-\textbf{\textit{Another note to Dr. Guffey:} The author mentions here that when
-$p=0.5$, it forces $\lambda$ to be 0, bringing us back to the regular normal
-approximation. This seems like it ought to be a simple fact, but I can't figure
-out how he's getting it from these equations. He refers to his equation (c),
-which is my equation \eqref{eq:mu-solved}. Substituting $p=0.5$ into
-\eqref{eq:mu-solved}, however, doesn't get me anywhere; neither does
-substituting $p=0.5$ into \eqref{eq:sigma-solved} and then substituting that
-into \eqref{eq:mu-solved}. And as far as I can tell, equation
-\eqref{eq:lambda-solved} is for all practical purposes useless. Alas.}
+When $p = 0.5$, we would expect the binomial to be perfectly symmetrical and
+the mean therefore to be $n/2$. From \eqref{eq:mu-solved}, this implies that
+$\sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} =
+0 \Ra$ either $\sigma = 0$ or $\lambda = 0$ Since the former is impossible, we
+must conclude the latter, which brings us back to the familiar normal
+approximation.
+
+%\textbf{\textit{Another note to Dr. Guffey:} The author mentions here that when
+%$p=0.5$, it forces $\lambda$ to be 0, bringing us back to the regular normal
+%approximation. This seems like it ought to be a simple fact, but I can't figure
+%out how he's getting it from these equations. He refers to his equation (c),
+%which is my equation \eqref{eq:mu-solved}. Substituting $p=0.5$ into
+%\eqref{eq:mu-solved}, however, doesn't get me anywhere; neither does
+%substituting $p=0.5$ into \eqref{eq:sigma-solved} and then substituting that
+%into \eqref{eq:mu-solved}. And as far as I can tell, equation
+%\eqref{eq:lambda-solved} is for all practical purposes useless. Alas.}
 
 \subsection{Restrictions}
 
@@ -194,9 +203,8 @@ we can see that it is increasing in $v$, which is always $\geq 1$. Therefore:
 This means that the right hand side of \eqref{eq:solving-for-lambda}, which is
 supposed to be equal to the left hand side of \eqref{eq:solving-for-lambda},
 can't ever be less than 1. Unfortunately, it sometimes is; in particular,
-$\frac{np(1-p)}{(1-2p)^2} \rightarrow 0$ both when $p \rightarrow 0$ and $p
-\rightarrow 1$. So if we want a solution, we must restrict $n$ and $p$ such
-that
+$\frac{np(1-p)}{(1-2p)^2} \to 0$ both when $p \to 0$ and $p \to 1$. So if we
+want a solution, we must restrict $n$ and $p$ such that
 
 \begin{align}
   \textnormal{\{right hand side of \eqref{eq:solving-for-lambda}\}} &\geq \textnormal{\{min of left hand side of \eqref{eq:solving-for-lambda}\}} \nonumber \\
@@ -210,7 +218,14 @@ From here, given a constant $p$, finding $n$ is very simple:
   n \geq \frac{(1-2p)^2}{p(1-p)} \label{eq: n for a given p}
 \end{equation}
 
-If, however, we wish to fix $n$ and solve for $p$, we further factor \eqref{eq:solving-the-restriction}
+Figure \ref{fig:sn-restriction-least-n} shows the least sample size required to
+estimate $\lambda$, given a fixed $p$. As expected, the least $n$ is quite
+large when $p$ is small and $\to 0$ as $p \to 0.5$. For example, when $p =
+0.01$, $n \geq 98$; but at $p = 0.2$, $n$ must only be $\geq 3$, a trivial
+requirement to meet.
+
+It is also possible to fix $n$ and solve for $p$. We return to
+\eqref{eq:solving-the-restriction} for further factoring
 
 \begin{align}
   np - np^2 &\geq 1 - 4p + 4p^2 \nonumber \\
@@ -251,6 +266,15 @@ when $n=100$, our interval is $(0.00971, 0.99029)$; when $n=500$, it is
 
 For $p$ so close to 0 or 1 that this solution will not work, our authors
 suggest a Poission approximation.
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Least possible $n$, given a fixed $p$]{\label{fig:sn-restriction-least-n}\includegraphics[width=0.45\textwidth]{../graphs/images/restriction-least-n.png}}
+  \quad
+  \subfloat[Range of possible $p$, given a fixed $n$]{\label{fig:sn-restriction-p-range}\includegraphics[width=0.45\textwidth]{../graphs/images/restriction-p-range.png}}
+  \caption{Restrictions on $n$ and $p$ for estimating $\lambda$}
+  \label{fig:sn-restriction}
+\end{figure}
 
 \appendix
 \section{Solving for $\lambda$}
@@ -328,4 +352,6 @@ So, for $E(Z^3)$, we have $r = 2k + 1 = 3$ and $k = 1$:
 Unfortunately, equations \eqref{eq:ez3-pewsey-derived} and
 \eqref{eq:ez3-azzalini} do not really line up.
 
+\bibliography{/home/joycetipping/projects/capstone/pieces/bibliography/bibliography.bib}
+\bibliographystyle{plainnat}
 \end{document}
