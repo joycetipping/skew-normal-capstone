@@ -87,11 +87,11 @@ The $SN(0,1,\lambda)$ distribution is called the standard skew-normal; its pdf
 is
 
 \begin{equation} \label{eq:standard-sn-pdf}
-  f_z(x) = 2 \cdot \phi(x) \cdot \Phi (\lambda x)
+  f_Z(x) = 2 \cdot \phi(x) \cdot \Phi (\lambda x)
 \end{equation}
 
-Similar to the normal and standard normal, $X = \frac{Y - \mu}{\sigma}$ and $Y
-= \sigma X + \mu$.
+Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
+= \sigma Z + \mu$.
 
 A natural question to ask is how the skew-normal relates to the normal.
 Fortunately, the connection is very intuitive: When $\lambda = 0$, Equation
@@ -102,7 +102,7 @@ Fortunately, the connection is very intuitive: When $\lambda = 0$, Equation
   &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot 0.5 \\
   &= \frac1\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \\
   &= \frac1\sigma \cdot \frac{1}{\sqrt{2\pi}} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right) \\
-  &= \frac{1}{\sqrt{2\pi\sigma^2}} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
+  &= \frac{1}{\sqrt{2\pi}\sigma} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
 \end{align*}
 
 \subsection{Four Properties}
@@ -158,7 +158,7 @@ shed some light on our enigmatic new distribution:
     notation $\overset{d}{=}$ denotes equality in distribution.    
   \end{helper-cor}
 
-  Let $f_0 = \phi$ and $G = \Phi$. Then, $f_z(z) = 2 \cdot \phi(z) \cdot
+  Let $f_0 = \phi$ and $G = \Phi$. Then, $f_Z(z) = 2 \cdot \phi(z) \cdot
   \Phi(\lambda z)$ conforms to equation
   \eqref{eq:azzalini-perturbation-invariance}, and we can conclude that $phi$
   and $Z$ are equal in distribution.
@@ -166,7 +166,7 @@ shed some light on our enigmatic new distribution:
 %  Notice that $\phi(x)$ is a one-dimensional probability density function
 %  symmetric about 0, and $\Phi(x)$ is a one-dimensional distribution function
 %  such that $\Phi'$ exists and is a density symmetric about 0. Furthermore,
-%  $\lambda x$ is an odd function. Thus, $f_z(z) = 2 \cdot \phi(z) \cdot
+%  $\lambda x$ is an odd function. Thus, $f_Z(z) = 2 \cdot \phi(z) \cdot
 %  \Phi(\lambda z)$ conforms to equation
 %  \eqref{eq:azzalini-perturbation-invariance}. With that in mind, the corollary
 %  to this lemma provides a very useful result:
@@ -421,8 +421,8 @@ We restate our results:
 
 \subsection{Solving for $\mu$, $\sigma$, $\lambda$}
 
-Now we set the two sets of moments equal to each other and, taking $n$ and $p$
-as constants, solve for $\mu$, $\sigma$ and $\lambda$.
+Now we can set the moments of our two distributions equal to each other and,
+taking $n$ and $p$ as constants, solve for $\mu$, $\sigma$ and $\lambda$.
 
 \begin{subequations}
 \begin{align}
@@ -475,7 +475,7 @@ Having secured $\lambda$, we can find $\sigma$ using
   \sigma = \sqrt{\frac{np(1-p)}{1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2}}}
 \end{equation}
 
-Similarly, with both $\lambda$ and $\sigma$, a simple rearrangement of
+And with both $\lambda$ and $\sigma$, a simple rearrangement of
 \eqref{eq:first-moment-set} yields $\mu$:
 
 \begin{equation}
@@ -639,8 +639,8 @@ follows the shape of the binomial much more closely.
 
 \subsection{Maximal Absolute Error}
 
-Another more numerical method would be to compare the maximal absolute errors
-of our two approximations, defined by \citet{mabs} as
+A more numerical method would be to compare the maximal absolute errors of our
+two approximations, defined by \citet{mabs} as
 
 \begin{equation}
   \textnormal{MABS}(n, p) \eq \max_{k \in \{0, 1,...,n\}} \left| F_{B(n,p)} (k) -  F_{\textnormal{appr}(n,p)}(k + 0.5) \right|
