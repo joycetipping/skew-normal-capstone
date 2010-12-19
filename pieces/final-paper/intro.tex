@@ -18,7 +18,7 @@ even mediumly large. A common strategy is to use the normal distribution as an
 approximation:
 
 \begin{equation}
-  F_X(x) \approx \Phi \left( \frac{k + 0.5 - \mu}{\sigma} \right)
+  F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right)
 \end{equation}
 
 where $\Phi$ is the standard normal cdf and $\mu = np$ and $\sigma =
@@ -26,21 +26,26 @@ where $\Phi$ is the standard normal cdf and $\mu = np$ and $\sigma =
 
 This approximation works well when either $n$ is very large (invoking the
 Central Limit Theorem) or when $p$ is close to 0.5 (making $X$ roughly
-symmetric). These rules of thumb are captured in a requirement, often stated as
+symmetric). However, when $n$ is not large and $p$ is close to 0 or 1, the
+binomial distribution is skewed and the normal approximation can be inaccurate;
+sometimes, as demonstrated by \citet{mabs}, rather substantially. In these
+cases, the skew-normal approximation can provide an alternate -- and
+considerably more accurate -- method of approximation.
 
-\begin{equation*}
-  np(1-p) > 9
-\end{equation*}
+%\begin{equation*}
+%  np(1-p) > 9
+%\end{equation*}
+%
+%or
+%
+%\begin{align*}
+%      np &> 5 \quad \textnormal{for} \quad  0 < p \leq 0.5, \\
+%  n(1-p) &> 5 \quad \textnormal{for} \quad  0.5 < p < 1
+%\end{align*}
 
-or
-
-\begin{align*}
-      np &> 5 \quad \textnormal{for} \quad  0 < p \leq 0.5, \\
-  n(1-p) &> 5 \quad \textnormal{for} \quad  0.5 < p < 1
-\end{align*}
-
-However, when $n$ is not large and $p$ is close to 0 or 1, the binomial
-distribution is skewed and even if the above requrements are met, the
-approximation can be inaccurate; sometimes, as demonstrated by \citet{mabs},
-rather substantially. In these cases, the skew-normal approximation can provide
-an alternative -- and considerably more accurate -- method of approximation.
+%However, when $n$ is not large and $p$ is close to 0 or 1, the binomial
+%distribution is skewed and even if the above requirements are met, the
+%approximation can be inaccurate; sometimes, as demonstrated by \citet{mabs},
+%rather substantially. In these cases, the skew-normal approximation can
+%provide an alternate -- and considerably more accurate -- method of
+%approximation.

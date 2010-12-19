@@ -22,7 +22,7 @@ even mediumly large. A common strategy is to use the normal distribution as an
 approximation:
 
 \begin{equation}
-  F_X(x) \approx \Phi \left( \frac{k + 0.5 - \mu}{\sigma} \right)
+  F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right)
 \end{equation}
 
 where $\Phi$ is the standard normal cdf and $\mu = np$ and $\sigma =
@@ -30,35 +30,41 @@ where $\Phi$ is the standard normal cdf and $\mu = np$ and $\sigma =
 
 This approximation works well when either $n$ is very large (invoking the
 Central Limit Theorem) or when $p$ is close to 0.5 (making $X$ roughly
-symmetric). These rules of thumb are captured in a requirement, often stated as
+symmetric). However, when $n$ is not large and $p$ is close to 0 or 1, the
+binomial distribution is skewed and the normal approximation can be inaccurate;
+sometimes, as demonstrated by \citet{mabs}, rather substantially. In these
+cases, the skew-normal approximation can provide an alternate -- and
+considerably more accurate -- method of approximation.
 
-\begin{equation*}
-  np(1-p) > 9
-\end{equation*}
+%\begin{equation*}
+%  np(1-p) > 9
+%\end{equation*}
+%
+%or
+%
+%\begin{align*}
+%      np &> 5 \quad \textnormal{for} \quad  0 < p \leq 0.5, \\
+%  n(1-p) &> 5 \quad \textnormal{for} \quad  0.5 < p < 1
+%\end{align*}
 
-or
-
-\begin{align*}
-      np &> 5 \quad \textnormal{for} \quad  0 < p \leq 0.5, \\
-  n(1-p) &> 5 \quad \textnormal{for} \quad  0.5 < p < 1
-\end{align*}
-
-However, when $n$ is not large and $p$ is close to 0 or 1, the binomial
-distribution is skewed and even if the above requrements are met, the
-approximation can be inaccurate; sometimes, as demonstrated by \citet{mabs},
-rather substantially. In these cases, the skew-normal approximation can provide
-an alternative -- and considerably more accurate -- method of approximation.
+%However, when $n$ is not large and $p$ is close to 0 or 1, the binomial
+%distribution is skewed and even if the above requirements are met, the
+%approximation can be inaccurate; sometimes, as demonstrated by \citet{mabs},
+%rather substantially. In these cases, the skew-normal approximation can
+%provide an alternate -- and considerably more accurate -- method of
+%approximation.
 
 \section{The Skew-Normal}
 
 The skew-normal distribution is similar to the normal but with an added
-parameter for skew. In this section, we'll introduce
+parameter for skew, allowing it to lean asymmetrically to the left or right. In
+this section, we'll acquaint ourselves with some of its basic properties.
 
 \subsection{Basics}
 
 Let $Y$ be a skew-normal distribution, with location parameter $\mu \in \R$,
-scale parameter $\sigma > 0$, and shape parameter $\lambda \in \R$, denoted
-$SN(\mu, \sigma, \lambda)$. Then $Y$ has pdf
+scale parameter $\sigma > 0$, and shape parameter $\lambda \in \R$; we will
+denote it $SN(\mu, \sigma, \lambda)$. Then $Y$ has pdf
 
 \begin{equation} \label{eq:sn-pdf}
   f_Y(x) = \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi \left( \frac{\lambda(x-\mu)}{\sigma} \right)
@@ -70,22 +76,22 @@ Some other basic properties of $Y$, given by \citet{pewsey}, are
 \begin{align}
   E(Y) &= \mu + b \delta \sigma \nonumber \\
   E(Y^2) &= \mu^2 + 2b \delta \mu \sigma + \sigma^2 \label{eq:sn-basic-properties} \\
-  Var(Y) &= \sigma^2 (1 - b^2 \delta^2) \nonumber \\
-  E(Y^3) &= \mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3 \nonumber
+  E(Y^3) &= \mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3 \nonumber \\
+  Var(Y) &= \sigma^2 (1 - b^2 \delta^2) \nonumber
 \end{align}
 
 where $b = \sqrt{\frac{2}{\pi}}$ and $\delta = \frac{\lambda}{\sqrt{1 +
 \lambda^2}}$.
 
-The $SN(0,1,\lambda)$ distribution is called the standard skew-normal, and has
-pdf
+The $SN(0,1,\lambda)$ distribution is called the standard skew-normal; its pdf
+is
 
 \begin{equation} \label{eq:standard-sn-pdf}
-  f_z(x) = 2 \cdot \phi(x) \cdot \Phi (-\lambda x)
+  f_z(x) = 2 \cdot \phi(x) \cdot \Phi (\lambda x)
 \end{equation}
 
-Like the normal and standard normal, you can arrive at the standard skew normal
-by applying the transformation $\frac{Y - \mu}{\sigma}$.
+Similar to the normal and standard normal, $X = \frac{Y - \mu}{\sigma}$ and $Y
+= \sigma X + \mu$.
 
 A natural question to ask is how the skew-normal relates to the normal.
 Fortunately, the connection is very intuitive: When $\lambda = 0$, Equation
@@ -102,7 +108,8 @@ Fortunately, the connection is very intuitive: When $\lambda = 0$, Equation
 \subsection{Four Properties}
 \label{subsec:four-properties}
 
-\citet{main} gives four handy properties of the skew-normal distribution:
+The following four properties of the skew-normal, given by \citet{main}, help
+shed some light on our enigmatic new distribution:
 
 \begin{property} \label{prop:1}
   If $Z \sim SN(0, 1, \lambda)$, then $(-Z) \sim SN(0, 1, -\lambda)$.
@@ -125,6 +132,65 @@ Fortunately, the connection is very intuitive: When $\lambda = 0$, Equation
 \end{proof}
 
 \begin{property} \label{prop:2}
+  If $Z \sim SN(0, 1, \lambda)$, then $Z^2 \sim \chi^2_1$ (chi-square with 1 degree of freedom).
+\end{property}
+
+\begin{proof}
+  To prove our result, we make use of Lemma 1 in \citet{azzalini}:
+
+  \begin{helper-lem}
+    If $f_0$ is a one-dimensional probability density function symmetric about
+    0, and $G$ is a one-dimensional distribution function such that $G'$ exists
+    and is a density symmetric about 0, then
+
+    \begin{equation}
+      \label{eq:azzalini-perturbation-invariance}
+      f(z) = 2 \cdot f_0(z) \cdot G\{w(z)\} \quad (-\infty < z < \infty)
+    \end{equation}
+
+    is a density function for any odd function $w(\cdot)$.
+  \end{helper-lem}
+
+  This lemma provides a very useful corollary:
+
+  \begin{helper-cor}[Perturbation Invariance]
+    If $Y \sim f_0$ and $Z \sim f$, then $|Y| \overset{d}{=} |Z|$, where the
+    notation $\overset{d}{=}$ denotes equality in distribution.    
+  \end{helper-cor}
+
+  Let $f_0 = \phi$ and $G = \Phi$. Then, $f_z(z) = 2 \cdot \phi(z) \cdot
+  \Phi(\lambda z)$ conforms to equation
+  \eqref{eq:azzalini-perturbation-invariance}, and we can conclude that $phi$
+  and $Z$ are equal in distribution.
+
+%  Notice that $\phi(x)$ is a one-dimensional probability density function
+%  symmetric about 0, and $\Phi(x)$ is a one-dimensional distribution function
+%  such that $\Phi'$ exists and is a density symmetric about 0. Furthermore,
+%  $\lambda x$ is an odd function. Thus, $f_z(z) = 2 \cdot \phi(z) \cdot
+%  \Phi(\lambda z)$ conforms to equation
+%  \eqref{eq:azzalini-perturbation-invariance}. With that in mind, the corollary
+%  to this lemma provides a very useful result:
+
+  We will now show that $\phi^2 \sim \chi^2_1$:
+
+  \begin{align*}
+    M_{\phi^2}(t) &= E[e^{tx^2}] \\
+    &= \int_{-\infty}^\infty \; e^{tx^2} \left[ \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \right] dx \\
+    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{tx^2 - x^2/2} \; dx \\
+    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-\frac{x^2}{2}(1 - 2t)} \; dx \\
+    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-\frac{1}{2}(\sqrt{1-2t} \; x)^2} \; dx \\
+    \intertext{Let $u = (\sqrt{1-2t}) \, x$; then $du = (\sqrt{1-2t}) \, dx$, \enspace $dx = \frac{du}{\sqrt{1-2t}}$, \enspace and our limits become $x \to -\infty, x \to \infty \Ra
+      u \to -\infty, u \to \infty$.}
+    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-u^2/2} \; \left( \frac{1}{\sqrt{1-2t}} du \right) \\
+    &= \frac{1}{\sqrt{1-2t}} \; \underbrace{\left( \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-u^2/2} \; du \right)}_{\mathclap{\textnormal{$\phi(u)$ integrated over
+      $(-\infty,\infty)$ = 1}}} \label{phi-pdf} \\
+    &= \frac{1}{\sqrt{1-2t}}
+  \end{align*}
+
+  which is the MGF of the $\chi^2_1$. Since $Z$ is equal in distribution to
+  $\phi$, we can also conclude that $Z^2 \sim \chi^2_1$. \end{proof}
+
+\begin{property} \label{prop:3}
   As $\lambda \to \pm \infty$, \thinspace $SN(0,1,\lambda)$ tends to the half normal distribution, $\pm |N(0,1)|$.
 \end{property}
 
@@ -137,8 +203,8 @@ To prove our theorem, it is helpful to formally define the half normal distribut
   \begin{equation*}
     f_{|X|}(x) =
     \begin{dcases*}
-      2 \cdot f_X(x) & when $0 < x < \infty$ \\
-      0 & everywhere else
+      0              & when $-\infty < x \leq 0$ \\
+      2 \cdot f_X(x) & when $0 < x < \infty$ 
     \end{dcases*}
   \end{equation*}
 \end{helper-lem}
@@ -161,35 +227,34 @@ To prove our theorem, it is helpful to formally define the half normal distribut
   can then transform each piece separately using Theorem 6.3.2 from
   \citet{textbook}:
 
-  On $A_1$: $y = -x \lra x = -y$ and $\J = \left| \frac{dx}{dy} \right| = |-1|
+  On $A_1$: $y = -x \Ra x = -y$ and $\J = \left| \frac{dx}{dy} \right| = |-1|
   = 1$, yielding
 
-  \begin{align}
-    f_Y(y) &= f_X(x) \cdot \J \nonumber \\
-    &= f_X(-y) \cdot 1 \nonumber \\
-    &= \frac{1}{\sqrt{2\pi}\sigma} \; e^{-\frac{(-y)^2}{2\sigma}} \nonumber \\
-    &= \frac{1}{\sqrt{2\pi}\sigma} \; e^{-\frac{y^2}{2\sigma}} \nonumber \\
-    &= f_X(y) \label{eq:p2-transform-a1}
-  \end{align}
+  \begin{align*}
+    f_Y(y) &= f_X(x) \cdot \J \\
+    &= f_X(-y) \cdot 1 \\
+    &= \frac{1}{\sqrt{2\pi}\sigma} \; e^{-\frac{(-y)^2}{2\sigma^2}} \\
+    &= \frac{1}{\sqrt{2\pi}\sigma} \; e^{-\frac{y^2}{2\sigma^2}} \\
+    &= f_X(y)
+  \end{align*}
 
-  over the domain $A_1: -\infty < x < 0 \lra -\infty < -y < 0 \lra 0 < y < \infty :B_1$.
+  over the domain $A_1: -\infty < x < 0 \Ra -\infty < -y < 0 \Ra 0 < y < \infty :B_1$.
 
-  Similarly, on $A_2$: $y = x \lra x = y$ and $\J = \left| \frac{dx}{dy}
+  Similarly, on $A_2$: $y = x \Ra x = y$ and $\J = \left| \frac{dx}{dy}
   \right| = |1| = 1$, yielding
 
-  \begin{align}
-    f_Y(y) &= f_X(x) \cdot \J \nonumber \\
-    &= f_X(y) \cdot 1 \nonumber \\
-    &= f_X(y) \label{eq:p2-transform-a2}
-  \end{align}
+  \begin{align*}
+    f_Y(y) &= f_X(x) \cdot \J \\
+    &= f_X(y) \cdot 1 \\
+    &= f_X(y)
+  \end{align*}
 
-  over the domain $A_2: 0 < x < \infty \lra 0 < y < \infty :B_2$.
+  over the domain $A_2: 0 < x < \infty \Ra 0 < y < \infty :B_2$.
 
-  On $A_3$, we have $x = 0, y = 0$ and $\J = \left| \frac{dx}{dy} \right| = |0|
-  = 0$, yielding $f_Y(y) = f_X(x) \cdot \J = f_X(x) \cdot 0 = 0$.
+  On $A_3$, we have $x = 0 \Ra y = 0$ and $\J = \left| \frac{dx}{dy} \right| =
+  |0| = 0$, yielding $f_Y(y) = f_X(x) \cdot \J = f_X(x) \cdot 0 = 0$.
 
-  Now, by Theorem 6.3.10 from \citet{textbook}, we achieve our result by simply
-  summing \eqref{eq:p2-transform-a1} and \eqref{eq:p2-transform-a2}.
+  Now, by Theorem 6.3.10 from \citet{textbook}
 
   \begin{align}
     f_Y(y) &= \{ f_Y(y) \textrm{ over } A_1 \} + \{ f_Y(y) \textrm{ over } A_2 \} \nonumber \\
@@ -202,8 +267,8 @@ To prove our theorem, it is helpful to formally define the half normal distribut
 
 With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
 
-\begin{proof}[Proof of Property 2]
-  Let $Z \sim SN(0,1,\lambda)$. Recall that $f_z(x) = 2 \cdot \phi(x) \cdot
+\begin{proof}[Proof of Property 3]
+  Let $Z \sim SN(0,1,\lambda)$. Recall that $f_Z(x) = 2 \cdot \phi(x) \cdot
   \Phi(\lambda x)$.
 
   Consider $\lim_{\lambda \to \infty} f_X(x)$. When $x$ is negative, $\lambda x
@@ -235,58 +300,6 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
   \end{equation}
 \end{proof}
 
-\begin{property} \label{prop:3}
-  If $Z \sim SN(0, 1, \lambda)$, then $Z^2 \sim \chi^2_1$ (chi-square with 1 degree of freedom).
-\end{property}
-
-\begin{proof}
-  To prove our result, we make use of Lemma 1 in \citet{azzalini}:
-
-  \begin{helper-lem}
-    If $f_0$ is a one-dimensional probability density function symmetric about
-    0, and $G$ is a one-dimensional distribution function such that $G'$ exists
-    and is a density symmetric about 0, then
-
-    \begin{equation}
-      \label{eq:azzalini-perturbation-invariance}
-      f(z) = 2 \cdot f_0(z) \cdot G\{w(z)\} \quad (-\infty < z < \infty)
-    \end{equation}
-
-    is a density function for any odd function $w(\cdot)$.
-  \end{helper-lem}
-
-  Notice that $\phi(x)$ is a one-dimensional probability density function
-  symmetric about 0, and $\Phi(x)$ is a one-dimensional distribution function
-  such that $\Phi'$ exists and is a density symmetric about 0. Furthermore,
-  $\lambda x$ is an odd function. Thus, $f_z(z) = 2 \cdot \phi(z) \cdot
-  \Phi(\lambda z)$ conforms to equation
-  \eqref{eq:azzalini-perturbation-invariance}. With that in mind, the corollary
-  to this lemma provides a very useful result:
-
-  \begin{helper-cor}[Perturbation Invariance]
-    If $Y \sim f_0$ and $Z \sim f$, then $|Y| \overset{d}{=} |Z|$, where the
-    notation $\overset{d}{=}$ denotes equality in distribution.    
-  \end{helper-cor}
-
-  Thus, we can treat $\phi$ and $Z$ as being equal in distribution. We will now
-  show that $\phi^2 \sim \chi^2_1$:
-
-  \begin{align*}
-    M_{\phi^2}(t) &= E[e^{tx^2}] \\
-    &= \int_{-\infty}^\infty \; e^{tx^2} \left[ \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \right] dx \\
-    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{tx^2 - x^2/2} \; dx \\
-    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-\frac{x^2}{2}(1 - 2t)} \; dx \\
-    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-\frac{1}{2}(\sqrt{1-2t} \; x)^2} \; dx \\
-    \intertext{Let $u = (\sqrt{1-2t}) \, x$; then we have $du = \sqrt{1-2t}$, \enspace $dx = \frac{du}{\sqrt{1-2t}}$, \enspace and our limits become $x \to -\infty \Ra u \to -\infty$
-      and $x \to \infty \Ra u \to \infty$.}
-    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-u^2/2} \; \left( \frac{1}{\sqrt{1-2t}} \right) du \\
-    &= \frac{1}{\sqrt{1-2t}} \; \underbrace{\left( \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-u^2/2} \; du \right)}_{\mathclap{\textnormal{$\phi(u)$ integrated over
-      $(-\infty,\infty)$ = 1}}} \label{phi-pdf} \\
-    &= \frac{1}{\sqrt{1-2t}}
-  \end{align*}
-
-  which is the MGF of the $\chi^2_1$. Since $Z$ is equal in distribution to
-  $\phi$, we can also conclude that $Z^2 \sim \chi^2_1$. \end{proof}
 
 \begin{property} \label{prop:4}
   The MGF of $SN(0,1,\lambda)$ is
@@ -306,8 +319,8 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
     M(t) \eq E\{e^{tY}\} \eq 2 \cdot \exp \left( \mu t + \frac{\sigma^2 t^2}{2} \right) \cdot \Phi(\delta \sigma t)
   \end{equation*}
 
-  where $\delta = \frac{\lambda}{1 + \lambda^2} \in (-1, 1)$. It follows that
-  the MGF of the $SN(0, 1, \lambda)$ is
+  where $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}} \in (-1, 1)$. It follows
+  that the MGF of the $SN(0, 1, \lambda)$ is
 
   \begin{equation*}
     2 \cdot \exp \left( 0 \cdot t + \frac{1 \cdot t^2}{2} \right) \cdot \Phi(\delta \cdot 1 \cdot t) \eq 2 \cdot e^{t^2/2} \cdot \Phi(\delta t)
@@ -316,10 +329,12 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
 
 \section{Developing an Approximation}
 
-Next, we develop our skew-normal approximation of the binomial. Let $B \sim
-Bin(n, p)$ and $Y \sim SN(\mu, \sigma^2, \lambda)$. We will find estimates for
-$\mu$, $\sigma$, and $\lambda$ by comparing their first, second, and third
-moments about the mean.
+Now that we have gotten to know our new distribution a little better, we can
+use it to develop an approximation for the binomial.
+
+Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma^2, \lambda)$. We will find
+estimates for $\mu$, $\sigma$, and $\lambda$ by comparing the first, second,
+and third moments about the mean of $B$ and $Y$.
 
 \subsection{The Moments of the Binomial}
 
