@@ -104,7 +104,7 @@ shed some light on our enigmatic new distribution:
 
   Let $f_0 = \phi$ and $G = \Phi$. Then, $f_Z(z) = 2 \cdot \phi(z) \cdot
   \Phi(\lambda z)$ conforms to equation
-  \eqref{eq:azzalini-perturbation-invariance}, and we can conclude that $phi$
+  \eqref{eq:azzalini-perturbation-invariance}, and we can conclude that $\phi$
   and $Z$ are equal in distribution.
 
 %  Notice that $\phi(x)$ is a one-dimensional probability density function
@@ -198,13 +198,13 @@ To prove our theorem, it is helpful to formally define the half normal distribut
   On $A_3$, we have $x = 0 \Ra y = 0$ and $\J = \left| \frac{dx}{dy} \right| =
   |0| = 0$, yielding $f_Y(y) = f_X(x) \cdot \J = f_X(x) \cdot 0 = 0$.
 
-  Now, by Theorem 6.3.10 from \citet{textbook}
+  Then, by Theorem 6.3.10 from \citet{textbook},
 
-  \begin{align}
-    f_Y(y) &= \{ f_Y(y) \textrm{ over } A_1 \} + \{ f_Y(y) \textrm{ over } A_2 \} \nonumber \\
-    &= f_X(y) + f_X(y) \nonumber \\
-    &= 2 \cdot f_X(y) \label{eq:p2-transform-result}
-  \end{align}
+  \begin{align*}
+    f_Y(y) &= \{ f_Y(y) \textrm{ over } A_1 \} + \{ f_Y(y) \textrm{ over } A_2 \} \\
+    &= f_X(y) + f_X(y) \\
+    &= 2 \cdot f_X(y)
+  \end{align*}
 
   over $B = B_1 \cup B_2 = (0, \infty)$, and 0 otherwise.
 \end{proof}
