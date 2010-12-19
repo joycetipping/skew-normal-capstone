@@ -338,8 +338,8 @@ and third moments about the mean of $B$ and $Y$.
 
 \subsection{The Moments of the Binomial}
 
-We begin by examining the moments of the binomial. The first two, the mean and
-variance, are simply
+Let's start with the binomial. The first two moments are simply the mean and
+variance, which we can state from memory:
 
 \begin{equation*}
   E(B) = np, \quad Var(B) = np(1-p)
@@ -356,10 +356,11 @@ will get via the third factorial moment:
 
 \begin{align*}
   E[B(B-1)(B-2)] &= \sum_{x=0}^n x (x-1) (x-2) \cdot \left\{ \binom{n}{x} p^x q^{n-x} \right\} \\
+  \intertext{Notice that the first three terms of our sum are zero, so we can rewrite our sum beginning at $x = 3$:}
   &= \sum_{x=3}^n x(x-1)(x-2) \cdot \frac{n!}{x!\;(n-x)!} \; p^x q^{n-x} \\
   &= \sum_{x=3}^n \frac{n!}{(x-3)!\;(n-x)!} \; p^x q^{n-x} \\
   &= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x} \\
-  \intertext{Let $y=x-3$. Then $x=y+3$, and $x=3 \rightarrow y=0$ and $x=n \rightarrow y=n-3$.}
+  \intertext{Let $y=x-3$. Then $x=y+3$, and $x=3, x=n \Ra y=0, y=n-3$.}
   &= n(n-1)(n-2)p^3 \cdot \sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;(n-(y+3))!} \; p^y q^{n-(y+3)} \\
   &= n(n-1)(n-2)p^3 \cdot \underbrace {\sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;((n-3)-y)!} \; p^y q^{(n-3)-y}}_{\mathclap{\textnormal{[pdf of $Bin(n-3,p)$ summed from 0 to $n-3$] = 1}}} \\
   &= n(n-1)(n-2)p^3 \\
@@ -372,14 +373,14 @@ will get via the third factorial moment:
   &= n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np
 \end{align*}
 
-With these results (and a bit of elbow grease), we can obtain the third moment
-without too much trouble:
+Now, finally, we have all the building blocks necessary to obtain the third
+moment:
 
 \begin{align*}
   E \left( [B - E(B)]^3 \right) &= E \left( B^3 - 3B^2 E(B) + 3B [E(B)]^2 - [E(B)]^3 \right) \\
   &= E(B^3) - 3 E(B^2) E(B) + 3 E(B) [E(B)]^2 - [E(B)]^3 \\
   &= E(B^3) - 3 E(B^2) E(B) + 2 [E(B)]^3 \\
-  &= (n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np) - 3np(np - np^2 + n^2p^2) + 2n^3p^3 \\
+  &= (n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np) - 3(np - np^2 + n^2p^2)(np) + 2(np)^3 \\
   &= \cancel{n^3p^3} - \cancel{3n^2p^3} + 2np^3 - 3np^2 + \cancel{3n^2p^2} + np - \cancel{3n^2p^2} + \cancel{3n^2p^3} - \cancel{3n^3p^3} + \cancel{2n^3p^3} \\
   &= 2np^3 - 3np^2 + np \\
   &= np(p-1)(2p-1)
@@ -403,8 +404,8 @@ third moment is a little more complicated:
   E([Y - E(Y)]^3) &= E(Y^3) - 3E(Y^2)E(Y) + 2[E(Y)]^3 \\
   &= (\mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3) - 3 (\mu^2 + 2b \delta \mu \sigma + \sigma^2) (\mu + b \delta \sigma) \\
   & \quad + 2\;(\mu + b \delta \sigma)^3 \\
-  &= \cancel{\mu^3} + \cancel{3 b \delta \mu^2 \sigma} + \cancel{3 \mu \sigma^2} + \cancel{3 b \delta \sigma^3} - b \delta^3 \sigma^3 - \cancel{3 \mu^3} - \cancel{9 b \delta \mu^2 \sigma} -
-    \cancel{6 b^2 \delta^2 \mu \sigma^2} - \cancel{3 \mu \sigma^2} \\
+  &= \cancel{\mu^3} + \cancel{3 b \delta \mu^2 \sigma} + \cancel{3 \mu \sigma^2} + \cancel{3 b \delta \sigma^3} - b \delta^3 \sigma^3 - \cancel{3 \mu^3} - \cancel{3 b \delta \mu^2 \sigma} -
+    \cancel{6 b \delta \mu^2 \sigma} - \cancel{6 b^2 \delta^2 \mu \sigma^2} - \cancel{3 \mu \sigma^2} \\
   & \quad - \cancel{3 b \delta \sigma^3} + \cancel{2 \mu^3} + \cancel{6 b \delta \mu^2 \sigma} + \cancel{6 b^2 \delta^2 \mu \sigma^2} + 2 b^3 \delta^3 \sigma^3 \\
   &= 2 b^3 \delta^3 \sigma^3 - b \delta^3 \sigma^3 \\
   &= b \delta^3 \sigma^3 (2b^2 - 1)
@@ -484,7 +485,7 @@ Similarly, with both $\lambda$ and $\sigma$, a simple rearrangement of
 \end{equation}
 
 When $p = 0.5$, we would expect the binomial to be perfectly symmetrical and
-the mean therefore to be $n/2$. From \eqref{eq:mu-solved}, this implies that
+therefore $\mu = np = n/2$. From \eqref{eq:mu-solved}, this implies that
 $\sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} =
 0 \Ra$ either $\sigma = 0$ or $\lambda = 0$. Since the former is impossible, we
 must conclude the latter, which brings us back to the normal distribution.
@@ -524,8 +525,8 @@ we can see that it is increasing in $v$, which is always $\geq 1$. Therefore:
 This means that the right hand side of \eqref{eq:solving-for-lambda}, which is
 supposed to be equal to the left hand side of \eqref{eq:solving-for-lambda},
 can't ever be less than 1. Unfortunately, it sometimes is; in particular,
-$\frac{np(1-p)}{(1-2p)^2} \to 0$ both when $p \to 0$ and $p \to 1$. So if we
-want a solution, we must restrict $n$ and $p$ such that
+$\frac{np(1-p)}{(1-2p)^2} \to 0$ when $p \to 0$ or $p \to 1$. So if we want a
+solution, we must restrict $n$ and $p$ such that
 
 \begin{align}
   \textnormal{\{right hand side of \eqref{eq:solving-for-lambda}\}} &\geq \textnormal{\{min of left hand side of \eqref{eq:solving-for-lambda}\}} \nonumber \\
@@ -533,17 +534,19 @@ want a solution, we must restrict $n$ and $p$ such that
   np(1-p) &\geq (1-2p)^2 \label{eq:solving-the-restriction}
 \end{align}
 
-From here, given a constant $p$, finding $n$ is very simple:
+Here, two scenarios arise. The first is when we have a fixed $p$ and wish to
+find the minimum $n$ necessary to derive a skew-normal approximation. From
+\eqref{eq:solving-the-restriction}, this is very simple:
 
 \begin{equation}
   n \geq \frac{(1-2p)^2}{p(1-p)} \label{eq: n for a given p}
 \end{equation}
 
 Figure \ref{fig:sn-restriction-least-n} shows the least sample size required to
-estimate $\lambda$, given a fixed $p$. As expected, the least $n$ is quite
-large when $p$ is small and $\to 0$ as $p \to 0.5$. For example, when $p =
-0.01$, $n \geq 98$; but at $p = 0.2$, $n$ must only be $\geq 3$, a trivial
-requirement to meet.
+estimate $\lambda$ as a function of $p$. As expected, it is quite large when
+$p$ is small and rapidly goes to 0 as $p$ increases; for example, when $p =
+0.01$, $n$ must be $\geq 98$, but at $p = 0.2$, $n$ need only be $\geq 3$, a
+trivial requirement to meet.
 
 \begin{figure}
   \centering
@@ -554,8 +557,8 @@ requirement to meet.
   \label{fig:sn-restriction}
 \end{figure}
 
-It is also possible to fix $n$ and solve for $p$. We return to
-\eqref{eq:solving-the-restriction} for further factoring
+The second scenario is when $n$ is fixed and we wish to solve for $p$. In this
+case, we return to \eqref{eq:solving-the-restriction} for further factoring
 
 \begin{align}
   np - np^2 &\geq 1 - 4p + 4p^2 \nonumber \\
@@ -568,7 +571,7 @@ and apply the quadratic formula with $a = n+4$, $b = -(n+4)$, and $c = 1$:
 \begin{gather*}
   \frac{(n+4) \pm \sqrt{(n+4)^2 - 4 \cdot (n+4) \cdot 1}}{2(n+4)} \\
   \frac{(n+4) \pm \sqrt{n^2 + 8n + 16 - 4n - 16}}{2(n+4)} \\
-  \frac{(n+4) \pm \sqrt{n^2 + 4n}}{2(n-4)} \\
+  \frac{(n+4) \pm \sqrt{n^2 + 4n}}{2(n+4)} \\
   \frac{n+4}{2(n+4)} \pm \frac12 \sqrt{\frac{n(n+4)}{(n+4)^2}} \\
   \frac12 \pm \frac12 \sqrt{\frac{n}{n+4}}
 \end{gather*}
@@ -590,28 +593,28 @@ leading the product to be positive. Therefore, our solution lies where $r_1
  \frac12 - \frac12 \sqrt{\frac{n}{n+4}} \; \leq \; p \; \leq \; \frac12 + \frac12 \sqrt{\frac{n}{n+4}}
 \end{equation}
 
-As shown in figure \ref{fig:sn-restriction-p-range}, this interval grows
-quickly as $n$ increases, and for sufficiently large $n$, it becomes almost
-$(0, 1)$. For example, when $n=100$, our interval is $(0.00971, 0.99029)$; when
-$n=500$, it is (0.00199, 0.99801).
+Shown in figure \ref{fig:sn-restriction-p-range} as a function of $n$, this
+interval grows quickly as $n$ increases, and for sufficiently large $n$, it
+becomes almost $(0, 1)$. For example, when $n=100$, our interval is $(0.00971,
+0.99029)$; when $n=500$, it is (0.00199, 0.99801).
 
-For $p$ so close to 0 or 1 that this solution will not work, our authors
-suggest a Poission approximation.
+For those unfortunate combinations of $n$ and $p$ so extreme that our
+skew-normal approximation will not work, our authors suggest a Poission
+approximation.
 
 \section{Demonstrating Improved Accuracy}
 
-Having taken the trouble to develop our skew-normal approximation for the
-binomial, we now justify our efforts by demonstrating its improved accuracy
-over the regular normal approximation.
+Now comes the time to justify our efforts by comparing the accuracy of our
+skew-normal approximation to that of the normal.
 
 \subsection{Visual Comparison}
 
-The first, and most obvious, way of judging accuracy is by visual inspection.
+The first and most obvious way of judging accuracy is by visual inspection.
 Figures \ref{fig:comparison-n25}, \ref{fig:comparison-n50}, and
 \ref{fig:comparison-n100} compare the binomial, normal, and skew-normal at
 small values of $p$ for $n=25$, $n=50$, and $n=100$, respectively. It is not
 hard to see that, especially at very small $n$ and $p$, our skew-normal curve
-follows the shape of the binomial much more accurately.
+follows the shape of the binomial much more closely.
 
 \begin{figure}
   \centering
@@ -661,11 +664,11 @@ continuity correction.
   \label{fig:mabs-fixed-p}
 \end{figure}
 
-Figure \ref{fig:mabs-fixed-n} shows the MABS as a function of $p$, for $n=25$
-and $n=100$. Figure \ref{fig:mabs-fixed-p}, on the other hand, shows the MABS
-as a function of $n$, for $p=0.05$ and $p=0.1$. Again, the skew-normal
-outperforms the normal considerably in the extreme ranges, with the two
-approximations converging as $n \rightarrow \infty$ or $p \rightarrow 0.5$.
+Figures \ref{fig:mabs-fixed-n} and \ref{fig:mabs-fixed-p} shows the MABS of the
+skew-normal and normal approximations as a function of $p$ and $n$,
+respectively. Again, the skew-normal outperforms the normal considerably in the
+extreme ranges, with the two approximations converging as $n \rightarrow
+\infty$ or $p \rightarrow 0.5$.
 
 \clearpage
 

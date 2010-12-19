@@ -1,17 +1,16 @@
 \section{Demonstrating Improved Accuracy}
 
-Having taken the trouble to develop our skew-normal approximation for the
-binomial, we now justify our efforts by demonstrating its improved accuracy
-over the regular normal approximation.
+Now comes the time to justify our efforts by comparing the accuracy of our
+skew-normal approximation to that of the normal.
 
 \subsection{Visual Comparison}
 
-The first, and most obvious, way of judging accuracy is by visual inspection.
+The first and most obvious way of judging accuracy is by visual inspection.
 Figures \ref{fig:comparison-n25}, \ref{fig:comparison-n50}, and
 \ref{fig:comparison-n100} compare the binomial, normal, and skew-normal at
 small values of $p$ for $n=25$, $n=50$, and $n=100$, respectively. It is not
 hard to see that, especially at very small $n$ and $p$, our skew-normal curve
-follows the shape of the binomial much more accurately.
+follows the shape of the binomial much more closely.
 
 \begin{figure}
   \centering
@@ -61,10 +60,10 @@ continuity correction.
   \label{fig:mabs-fixed-p}
 \end{figure}
 
-Figure \ref{fig:mabs-fixed-n} shows the MABS as a function of $p$, for $n=25$
-and $n=100$. Figure \ref{fig:mabs-fixed-p}, on the other hand, shows the MABS
-as a function of $n$, for $p=0.05$ and $p=0.1$. Again, the skew-normal
-outperforms the normal considerably in the extreme ranges, with the two
-approximations converging as $n \rightarrow \infty$ or $p \rightarrow 0.5$.
+Figures \ref{fig:mabs-fixed-n} and \ref{fig:mabs-fixed-p} shows the MABS of the
+skew-normal and normal approximations as a function of $p$ and $n$,
+respectively. Again, the skew-normal outperforms the normal considerably in the
+extreme ranges, with the two approximations converging as $n \rightarrow
+\infty$ or $p \rightarrow 0.5$.
 
 \clearpage
