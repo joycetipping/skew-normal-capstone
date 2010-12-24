@@ -11,17 +11,17 @@ scale parameter $\sigma > 0$, and shape parameter $\lambda \in \R$; we will
 denote it $SN(\mu, \sigma, \lambda)$. Then $Y$ has pdf
 
 \begin{equation} \label{eq:sn-pdf}
-  f_Y(x) = \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi \left( \frac{\lambda(x-\mu)}{\sigma} \right)
+  f_Y(x) = \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi \left( \frac{\lambda(x-\mu)}{\sigma} \right), \quad x \in \R,
 \end{equation}
 
 where $\phi$ is the standard normal pdf and $\Phi$ is the standard normal cdf.
 Some other basic properties of $Y$, given by \citet{pewsey}, are
 
 \begin{align}
-  E(Y) &= \mu + b \delta \sigma \nonumber \\
-  E(Y^2) &= \mu^2 + 2b \delta \mu \sigma + \sigma^2 \label{eq:sn-basic-properties} \\
-  E(Y^3) &= \mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3 \nonumber \\
-  Var(Y) &= \sigma^2 (1 - b^2 \delta^2) \nonumber
+  E(Y) &= \mu + b \delta \sigma, \nonumber \\
+  E(Y^2) &= \mu^2 + 2b \delta \mu \sigma + \sigma^2, \label{eq:sn-basic-properties} \\
+  E(Y^3) &= \mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3, \nonumber \\
+  Var(Y) &= \sigma^2 (1 - b^2 \delta^2), \nonumber
 \end{align}
 
 where $b = \sqrt{\frac{2}{\pi}}$ and $\delta = \frac{\lambda}{\sqrt{1 +
@@ -31,7 +31,7 @@ The $SN(0,1,\lambda)$ distribution is called the standard skew-normal; its pdf
 is
 
 \begin{equation} \label{eq:standard-sn-pdf}
-  f_Z(x) = 2 \cdot \phi(x) \cdot \Phi (\lambda x)
+  f_Z(x) = 2 \cdot \phi(x) \cdot \Phi (\lambda x), \quad x \in \R.
 \end{equation}
 
 Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
@@ -39,21 +39,23 @@ Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
 
 A natural question to ask is how the skew-normal relates to the normal.
 Fortunately, the connection is very intuitive: When $\lambda = 0$, Equation
-\eqref{eq:sn-pdf} reverts to the normal pdf:
+\eqref{eq:sn-pdf} becomes
 
 \begin{align*}
   f_Y(x|\lambda=0) &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi(0) \\
   &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot 0.5 \\
   &= \frac1\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \\
   &= \frac1\sigma \cdot \frac{1}{\sqrt{2\pi}} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right) \\
-  &= \frac{1}{\sqrt{2\pi}\sigma} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
+  &= \frac{1}{\sqrt{2\pi}\sigma} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right),
 \end{align*}
+
+which is the pdf of the normal distribution.
 
 \subsection{Four Properties}
 \label{subsec:four-properties}
 
 The following four properties of the skew-normal, given by \citet{main}, help
-shed some light on our enigmatic new distribution:
+shed light on our enigmatic new distribution:
 
 \begin{property} \label{prop:1}
   If $Z \sim SN(0, 1, \lambda)$, then $(-Z) \sim SN(0, 1, -\lambda)$.
@@ -63,13 +65,13 @@ shed some light on our enigmatic new distribution:
   The standard normal pdf is an even function: $\phi(-x) =
   \frac{1}{\sqrt{2\pi}}\;e^{-(-x)^2/2} = \frac{1}{\sqrt{2\pi}}\;e^{-x^2/2} =
   \phi(x)$. But the standard normal cdf, \thinspace $\Phi(x) =
-  \int_{-\infty}^\infty \phi(x)$, \thinspace is not, being 0 near $-\infty$ and
-  1 near $\infty$. Thus,
+  \int_{-\infty}^\infty \phi(x)$, \thinspace is not even, being 0 near
+  $-\infty$ and 1 near $\infty$. Thus,
   
   \begin{align*}
     f_{(-Z)}(x) &= f_Z(-x) \\
     & = 2 \cdot \phi(-x) \cdot \Phi (-\lambda x) \\
-    & = 2 \cdot \phi(x) \cdot \Phi (-\lambda x)
+    & = 2 \cdot \phi(x) \cdot \Phi (-\lambda x),
   \end{align*}
 
   which is the pdf of $SN(0, 1, -\lambda)$.
@@ -108,14 +110,6 @@ shed some light on our enigmatic new distribution:
   \eqref{eq:azzalini-perturbation-invariance}, and we can conclude that $\phi$
   and $Z$ are equal in distribution.
 
-%  Notice that $\phi(x)$ is a one-dimensional probability density function
-%  symmetric about 0, and $\Phi(x)$ is a one-dimensional distribution function
-%  such that $\Phi'$ exists and is a density symmetric about 0. Furthermore,
-%  $\lambda x$ is an odd function. Thus, $f_Z(z) = 2 \cdot \phi(z) \cdot
-%  \Phi(\lambda z)$ conforms to equation
-%  \eqref{eq:azzalini-perturbation-invariance}. With that in mind, the corollary
-%  to this lemma provides a very useful result:
-
   We will now show that $\phi^2 \sim \chi^2_1$:
 
   \begin{align*}
@@ -123,13 +117,13 @@ shed some light on our enigmatic new distribution:
     &= \int_{-\infty}^\infty \; e^{tx^2} \left[ \frac{1}{\sqrt{2\pi}} e^{-x^2/2} \right] dx \\
     &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{tx^2 - x^2/2} \; dx \\
     &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-\frac{x^2}{2}(1 - 2t)} \; dx \\
-    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-\frac{1}{2}(\sqrt{1-2t} \; x)^2} \; dx \\
-    \intertext{Let $u = (\sqrt{1-2t}) \, x$; then $du = (\sqrt{1-2t}) \, dx$, \enspace $dx = \frac{du}{\sqrt{1-2t}}$, \enspace and our limits become $x \to -\infty, x \to \infty \Ra
-      u \to -\infty, u \to \infty$.}
+    &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-\frac{1}{2}(\sqrt{1-2t} \; x)^2} \; dx \;; \\
+    \intertext{let $u = (\sqrt{1-2t}) \, x$; then $du = (\sqrt{1-2t}) \, dx$, \enspace $dx = \frac{du}{\sqrt{1-2t}}$, \enspace and our limits become $x \to -\infty, x \to \infty \Ra
+      u \to -\infty, u \to \infty$:}
     &= \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-u^2/2} \; \left( \frac{1}{\sqrt{1-2t}} du \right) \\
     &= \frac{1}{\sqrt{1-2t}} \; \underbrace{\left( \int_{-\infty}^\infty \; \frac{1}{\sqrt{2\pi}} \; e^{-u^2/2} \; du \right)}_{\mathclap{\textnormal{$\phi(u)$ integrated over
       $(-\infty,\infty)$ = 1}}} \label{phi-pdf} \\
-    &= \frac{1}{\sqrt{1-2t}}
+    &= \frac{1}{\sqrt{1-2t}} \;,
   \end{align*}
 
   which is the MGF of the $\chi^2_1$. Since $Z$ is equal in distribution to
@@ -151,6 +145,7 @@ To prove our theorem, it is helpful to formally define the half normal distribut
       0              & when $-\infty < x \leq 0$ \\
       2 \cdot f_X(x) & when $0 < x < \infty$ 
     \end{dcases*}
+    .
   \end{equation*}
 \end{helper-lem}
 
@@ -164,6 +159,7 @@ To prove our theorem, it is helpful to formally define the half normal distribut
       0 & if $x = 0$ \\
       x & if $x > 0$ \\
     \end{dcases*}
+    .
   \end{equation*}
 
   $Y$ is not one-to-one over $A$. However, we can partition $A$ into disjoint
@@ -218,7 +214,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
 
   Consider $\lim_{\lambda \to \infty} f_X(x)$. When $x$ is negative, $\lambda x
   \to -\infty$ and thus $\Phi(\lambda x) \to 0$. When $x$ is positive, however,
-  $\lambda x \to \infty$ and $\Phi(\lambda x) \to 1$. Thus
+  $\lambda x \to \infty$ and $\Phi(\lambda x) \to 1$. Thus,
 
   \begin{equation}
     \label{eq:p2-positive-half-normal}
@@ -227,7 +223,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
       0 & when $x \leq 0$ \\
       2 \cdot \phi(x) & when $x > 0$
     \end{dcases*}
-    \eq |N(0,1)|
+    \eq |N(0,1)|.
   \end{equation}
 
   In $\lim_{\lambda \to -\infty} f_X(x)$, the signs are reversed. When $x$ is
@@ -241,7 +237,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
       2 \cdot \phi(x) & when $x < 0$ \\
       0 & when $x \geq 0$
     \end{dcases*}
-    \eq -|N(0,1)|
+    \eq -|N(0,1)|.
   \end{equation}
 \end{proof}
 
@@ -250,7 +246,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
   The MGF of $SN(0,1,\lambda)$ is
 
   \begin{equation} \label{eq:p4-sn-mgf}
-    M(t|\lambda) = 2 \cdot \Phi (\delta t) \cdot e^{t^2/2}
+    M(t|\lambda) = 2 \cdot \Phi (\delta t) \cdot e^{t^2/2},
   \end{equation}
     
   where $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}}$ and $t \in (-\infty, \infty)$.
@@ -261,13 +257,13 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
   \lambda)$ is
 
   \begin{equation*}
-    M(t) \eq E\{e^{tY}\} \eq 2 \cdot \exp \left( \mu t + \frac{\sigma^2 t^2}{2} \right) \cdot \Phi(\delta \sigma t)
+    M(t) \eq E\{e^{tY}\} \eq 2 \cdot \exp \left( \mu t + \frac{\sigma^2 t^2}{2} \right) \cdot \Phi(\delta \sigma t),
   \end{equation*}
 
   where $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}} \in (-1, 1)$. It follows
   that the MGF of the $SN(0, 1, \lambda)$ is
 
   \begin{equation*}
-    2 \cdot \exp \left( 0 \cdot t + \frac{1 \cdot t^2}{2} \right) \cdot \Phi(\delta \cdot 1 \cdot t) \eq 2 \cdot e^{t^2/2} \cdot \Phi(\delta t)
+    2 \cdot \exp \left( 0 \cdot t + \frac{1 \cdot t^2}{2} \right) \cdot \Phi(\delta \cdot 1 \cdot t) \eq 2 \cdot e^{t^2/2} \cdot \Phi(\delta t).
   \end{equation*}
 \end{proof}
