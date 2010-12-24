@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.10.16)  24 DEC 2010 09:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.10.16)  24 DEC 2010 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -29,8 +29,7 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-)
-(/home/joycetipping/.texmf-var/tex/jcapstone.sty
+) (./jcapstone.sty
 (/home/joycetipping/.texmf-var/tex/jbib.sty)
 (/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
 Package: natbib 2009/07/16 8.31 (PWD, AO)
@@ -246,6 +245,9 @@ Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR)
 \c@cor=\count119
 \c@defn=\count120
 )
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen128
+)
 \c@property=\count121
 \c@helper-lem=\count122
 \c@helper-cor=\count123
@@ -272,13 +274,13 @@ File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count124
-\scratchdimen=\dimen128
+\scratchdimen=\dimen129
 \scratchbox=\box29
 \nofMPsegments=\count125
 \nofMParguments=\count126
 \everyMPshowfont=\toks29
 \MPscratchCnt=\count127
-\MPscratchDim=\dimen129
+\MPscratchDim=\dimen130
 \MPnumerator=\count128
 \everyMPtoPDFconversion=\toks30
 )
@@ -442,32 +444,34 @@ File: ../images/mabs-fixed-p.png Graphic file (type png)
 
 <use ../images/mabs-fixed-p.png> [14] [15 <../images/comparison-n25.png>]
 [16 <../images/comparison-n50.png>] [17 <../images/comparison-n100.png>]
-[18 <../images/mabs-fixed-n.png> <../images/mabs-fixed-p.png>] (./output.bbl)
-[19
+[18 <../images/mabs-fixed-n.png> <../images/mabs-fixed-p.png>] [19
 
-] [20] (./output.aux) ) 
+] [20]
+(./output.bbl) [21
+
+] (./output.aux) ) 
 Here is how much of TeX's memory you used:
- 4402 strings out of 493848
- 63522 string characters out of 1152822
- 142743 words of memory out of 3000000
- 7569 multiletter control sequences out of 15000+50000
+ 4415 strings out of 493848
+ 63736 string characters out of 1152822
+ 142951 words of memory out of 3000000
+ 7578 multiletter control sequences out of 15000+50000
  41714 words of font info for 126 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,18n,46p,220b,346s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/ma
-thpazo/fplmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/mathpazo/fplmr.p
-fb></usr/share/texmf-texlive/fonts/type1/public/mathpazo/fplmri.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texm
-f-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/t
-ype1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino
-/uplri8a.pfb>
-Output written on output.pdf (20 pages, 549137 bytes).
+ 56i,18n,46p,220b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/mathpaz
+o/fplmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/mathpazo/fplmr.pfb></
+usr/share/texmf-texlive/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-tex
+live/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/
+urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr
+i8a.pfb>
+Output written on output.pdf (21 pages, 551297 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
+ 130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

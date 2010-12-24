@@ -23,18 +23,19 @@ Before I dive into explaining this repository, here's a list of the things
 you're most likely looking for. All paths are relative to the repository.
 
 - *A pdf of my final paper*: ``skew-normal-approx.pdf`` (actually a symlink)
-- *The tex file for my final paper*: Run ``pieces/final-paper/build`` (important! see below) and then look for ``pieces/final-paper/output.tex``
+- *The tex file for my final paper*: Run ``pieces/paper/build`` (important! see below) and then look for ``pieces/paper/output.tex``
 - *Stats library*: ``pieces/calculations/stats.py`` (requires you have python and rpy installed)
 
-``pieces/``
+``project/``
 ~~~~~~~~~~~
 
-Houses most of my project.
+The home of my project.
 
-- ``proposal.pdf``: My capstone proposal
-- ``properties/``, ``method-of-moments/``, ``mabs/``, ``final-paper/``, and ``bibliography/``: The pieces of my final paper. I keep my paper split across half a dozen tex files
-  which are stitched together last minute using bash and run through the latex compiler.
-- ``calculations/``: Everything calculation related is stored here, including the python programs, the flot graphs, and the generated data.
+- ``proposal.pdf``: My capstone proposal.
+- ``paper/``: The pieces of my final paper. I keep each section of my paper in its own tex file. These files (``intro.tex``, ``properties.tex``, ``method-of-moments.tex``, ``mabs.tex``,
+  ``conclusion.tex``) are stitched together last minute into ``output.tex`` and run through the latex compiler.
+- ``calculations/``: Everything calculation related. ``stats.py`` is my stats library for the skew-normal approximation. ``flot_data.py`` and ``approx_table.py`` generate the data for
+  the float graphs and approximation table and store them in ``flot/json/`` and ``approx-table/``, respecitvely. The html files that generate the flot graphs are also in ``flot/``.
 - ``images/``: Figures and graphs
 
 ``papers/``
@@ -46,9 +47,8 @@ are used in my capstone.)
 ``beamer/``
 ~~~~~~~~~~~
 
-My beamer presentations. Right now, it contains only my capstone seminar
-introduction to my capstone project. Eventually, it will contain my final
-presentation.
+My beamer presentations. Right now, it contains only an introduction to my
+capstone project. Eventually, it will also contain my final presentation.
 
 
 License

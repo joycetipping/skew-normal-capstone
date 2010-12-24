@@ -1,0 +1,34 @@
+#!/bin/bash
+
+cd $HOME/projects/capstone/pieces/final-paper/
+
+# Pieces
+pieces='intro.tex properties.tex method-of-moments.tex mabs.tex conclusion.tex'
+appendices='appendices.tex'
+bib='bibliography.bib'
+
+
+# Build document
+echo \\documentclass\{article\}          > output.tex
+echo \\usepackage\{jcapstone\}          >> output.tex
+echo \\begin\{document\}                >> output.tex
+echo                                    >> output.tex
+
+for file in $pieces; do
+  cat $file                             >> output.tex
+  echo                                  >> output.tex
+done
+
+echo \\appendix                         >> output.tex
+cat $appendices                         >> output.tex
+
+echo \\bibliography\{$bib\}          >> output.tex
+echo \\bibliographystyle\{plainnat\}    >> output.tex
+echo \\end\{document\}                  >> output.tex
+
+
+# Compile document
+pdflatex output.tex; echo; echo;
+bibtex output; echo; echo;
+pdflatex output.tex; echo; echo;
+pdflatex output.tex

@@ -46,6 +46,12 @@ where $F_{B(n,p)}$ is the cdf of the binomial and $F_{\textnormal{appr}(n,p)}$
 is the cdf of either the normal or skew-normal approximation; the 0.5 is a
 continuity correction.
 
+Figures \ref{fig:mabs-fixed-n} and \ref{fig:mabs-fixed-p} shows the MABS of the
+skew-normal and normal approximations as a function of $p$ and $n$,
+respectively. Again, the skew-normal outperforms the normal considerably in the
+extreme ranges, with the two approximations converging as $n \rightarrow
+\infty$ or $p \rightarrow 0.5$.
+
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{../images/mabs-fixed-n.png}
@@ -59,11 +65,5 @@ continuity correction.
   \caption{MABS as a function of n}
   \label{fig:mabs-fixed-p}
 \end{figure}
-
-Figures \ref{fig:mabs-fixed-n} and \ref{fig:mabs-fixed-p} shows the MABS of the
-skew-normal and normal approximations as a function of $p$ and $n$,
-respectively. Again, the skew-normal outperforms the normal considerably in the
-extreme ranges, with the two approximations converging as $n \rightarrow
-\infty$ or $p \rightarrow 0.5$.
 
 \clearpage
