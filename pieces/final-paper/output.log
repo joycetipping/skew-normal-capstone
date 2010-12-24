@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.10.16)  23 DEC 2010 20:09
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.10.16)  24 DEC 2010 09:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -65,6 +65,18 @@ File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
+(/usr/share/texmf-texlive/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count89
+\rotFPtop=\skip45
+\rotFPbot=\skip46
+\rot@float@box=\box26
+\rot@mess@toks=\toks15
+)
 (/usr/share/texmf-texlive/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
@@ -80,26 +92,27 @@ Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
 \caption@parindent=\dimen109
 \caption@hangindent=\dimen110
 )
-\c@ContinuedFloat=\count89
+\c@ContinuedFloat=\count90
+Package caption Info: rotating package is loaded.
 )
-\c@KVtest=\count90
-\sf@farskip=\skip45
+\c@KVtest=\count91
+\sf@farskip=\skip47
 \sf@captopadj=\dimen111
-\sf@capskip=\skip46
-\sf@nearskip=\skip47
-\c@subfigure=\count91
-\c@subfigure@save=\count92
-\c@lofdepth=\count93
-\c@subtable=\count94
-\c@subtable@save=\count95
-\c@lotdepth=\count96
-\sf@top=\skip48
-\sf@bottom=\skip49
+\sf@capskip=\skip48
+\sf@nearskip=\skip49
+\c@subfigure=\count92
+\c@subfigure@save=\count93
+\c@lofdepth=\count94
+\c@subtable=\count95
+\c@subtable@save=\count96
+\c@lotdepth=\count97
+\sf@top=\skip50
+\sf@bottom=\skip51
 )
 (/home/joycetipping/.texmf-var/tex/jmath.sty
 (/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\@emptytoks=\toks15
+\@emptytoks=\toks16
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -107,7 +120,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip50
+\@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
@@ -115,7 +128,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks16
+\@emptytoks=\toks17
 \ex@=\dimen112
 ))
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
@@ -125,55 +138,55 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count97
+\inf@bad=\count98
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count98
-\leftroot@=\count99
+\uproot@=\count99
+\leftroot@=\count100
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count100
-\DOTSCASE@=\count101
+\classnum@=\count101
+\DOTSCASE@=\count102
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
+\Mathstrutbox@=\box27
+\strutbox@=\box28
 \big@size=\dimen114
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count102
-\c@MaxMatrixCols=\count103
+\macc@depth=\count103
+\c@MaxMatrixCols=\count104
 \dotsspace@=\muskip10
-\c@parentequation=\count104
-\dspbrk@lvl=\count105
-\tag@help=\toks17
-\row@=\count106
-\column@=\count107
-\maxfields@=\count108
-\andhelp@=\toks18
+\c@parentequation=\count105
+\dspbrk@lvl=\count106
+\tag@help=\toks18
+\row@=\count107
+\column@=\count108
+\maxfields@=\count109
+\andhelp@=\toks19
 \eqnshift@=\dimen115
 \alignsep@=\dimen116
 \tagshift@=\dimen117
 \tagwidth@=\dimen118
 \totwidth@=\dimen119
 \lineht@=\dimen120
-\@envbody=\toks19
-\multlinegap=\skip51
-\multlinetaggap=\skip52
-\mathdisplay@stack=\toks20
+\@envbody=\toks20
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
 (/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks21
-\thm@bodyfont=\toks22
-\thm@headfont=\toks23
-\thm@notefont=\toks24
-\thm@headpunct=\toks25
-\thm@preskip=\skip53
-\thm@postskip=\skip54
-\thm@headsep=\skip55
-\dth@everypar=\toks26
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip55
+\thm@postskip=\skip56
+\thm@headsep=\skip57
+\dth@everypar=\toks27
 )
 (/usr/share/texmf-texlive/tex/latex/ltxmisc/cancel.sty
 Package: cancel 2000/03/12 v2.1 Cancel math terms
@@ -189,14 +202,14 @@ Package ifpdf Info: pdfTeX in pdf mode detected.
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count109
-\Gm@cntv=\count110
-\c@Gm@tempcnt=\count111
+\Gm@cnth=\count110
+\Gm@cntv=\count111
+\c@Gm@tempcnt=\count112
 \Gm@bindingoffset=\dimen121
 \Gm@wd@mp=\dimen122
 \Gm@odd@mp=\dimen123
 \Gm@even@mp=\dimen124
-\Gm@dimlist=\toks27
+\Gm@dimlist=\toks28
 
 (/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
 (/usr/share/texmf-texlive/tex/latex/psnfss/mathpazo.sty
@@ -208,34 +221,34 @@ Package: mathtools 2008/08/01 v1.06 mathematical typesetting tools (MH)
 
 (/usr/share/texmf-texlive/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count112
-\calc@Bcount=\count113
+\calc@Acount=\count113
+\calc@Bcount=\count114
 \calc@Adimen=\dimen125
 \calc@Bdimen=\dimen126
-\calc@Askip=\skip56
-\calc@Bskip=\skip57
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count114
-\calc@Cskip=\skip58
+\calc@Ccount=\count115
+\calc@Cskip=\skip60
 )
 (/usr/share/texmf-texlive/tex/latex/mh/mhsetup.sty
 Package: mhsetup 2007/12/03 v1.2 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count115
+\g_MT_multlinerow_int=\count116
 \l_MT_multwidth_dim=\dimen127
 )
 (/usr/share/texmf-texlive/tex/latex/psnfss/palatino.sty
 Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-\c@thm=\count116
-\c@lem=\count117
-\c@cor=\count118
-\c@defn=\count119
+\c@thm=\count117
+\c@lem=\count118
+\c@cor=\count119
+\c@defn=\count120
 )
-\c@property=\count120
-\c@helper-lem=\count121
-\c@helper-cor=\count122
+\c@property=\count121
+\c@helper-lem=\count122
+\c@helper-cor=\count123
 ) (./output.aux)
 \openout1 = `output.aux'.
 
@@ -258,16 +271,16 @@ File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count123
+\scratchcounter=\count124
 \scratchdimen=\dimen128
-\scratchbox=\box28
-\nofMPsegments=\count124
-\nofMParguments=\count125
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count126
+\scratchbox=\box29
+\nofMPsegments=\count125
+\nofMParguments=\count126
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count127
 \MPscratchDim=\dimen129
-\MPnumerator=\count127
-\everyMPtoPDFconversion=\toks29
+\MPnumerator=\count128
+\everyMPtoPDFconversion=\toks30
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
@@ -391,72 +404,70 @@ File: omsppl.fd
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 437.
  [10]
-<../graphs/images/restriction-least-n.png, id=44, 428.60126pt x 368.37625pt>
-File: ../graphs/images/restriction-least-n.png Graphic file (type png)
+<../images/restriction-least-n.png, id=44, 428.60126pt x 368.37625pt>
+File: ../images/restriction-least-n.png Graphic file (type png)
 
-<use ../graphs/images/restriction-least-n.png> [11] [12 <../graphs/images/restr
-iction-least-n.png>]
-<../graphs/images/restriction-p-range.png, id=53, 423.5825pt x 365.365pt>
-File: ../graphs/images/restriction-p-range.png Graphic file (type png)
+<use ../images/restriction-least-n.png> [11] [12 <../images/restriction-least-n
+.png>] <../images/restriction-p-range.png, id=53, 423.5825pt x 365.365pt>
+File: ../images/restriction-p-range.png Graphic file (type png)
 
-<use ../graphs/images/restriction-p-range.png> [13 <../graphs/images/restrictio
-n-p-range.png>]
-<../graphs/images/comparison-n25.png, id=59, 836.12375pt x 1072.005pt>
-File: ../graphs/images/comparison-n25.png Graphic file (type png)
+<use ../images/restriction-p-range.png> [13 <../images/restriction-p-range.png>
+] <../images/comparison-n25.png, id=59, 836.12375pt x 1072.005pt>
+File: ../images/comparison-n25.png Graphic file (type png)
 
-<use ../graphs/images/comparison-n25.png>
+<use ../images/comparison-n25.png>
 
 LaTeX Warning: Float too large for page by 16.85156pt on input line 589.
 
-<../graphs/images/comparison-n50.png, id=60, 836.12375pt x 1072.005pt>
-File: ../graphs/images/comparison-n50.png Graphic file (type png)
+<../images/comparison-n50.png, id=60, 836.12375pt x 1072.005pt>
+File: ../images/comparison-n50.png Graphic file (type png)
 
-<use ../graphs/images/comparison-n50.png>
+<use ../images/comparison-n50.png>
 
 LaTeX Warning: Float too large for page by 16.85156pt on input line 596.
 
-<../graphs/images/comparison-n100.png, id=61, 843.15pt x 1072.005pt>
-File: ../graphs/images/comparison-n100.png Graphic file (type png)
+<../images/comparison-n100.png, id=61, 843.15pt x 1072.005pt>
+File: ../images/comparison-n100.png Graphic file (type png)
 
-<use ../graphs/images/comparison-n100.png>
+<use ../images/comparison-n100.png>
 
 LaTeX Warning: Float too large for page by 12.25513pt on input line 603.
 
-<../graphs/images/mabs-fixed-n.png, id=62, 953.5625pt x 401.5pt>
-File: ../graphs/images/mabs-fixed-n.png Graphic file (type png)
+<../images/mabs-fixed-n.png, id=62, 953.5625pt x 401.5pt>
+File: ../images/mabs-fixed-n.png Graphic file (type png)
 
-<use ../graphs/images/mabs-fixed-n.png>
-<../graphs/images/mabs-fixed-p.png, id=63, 953.5625pt x 401.5pt>
-File: ../graphs/images/mabs-fixed-p.png Graphic file (type png)
+<use ../images/mabs-fixed-n.png>
+<../images/mabs-fixed-p.png, id=63, 953.5625pt x 401.5pt>
+File: ../images/mabs-fixed-p.png Graphic file (type png)
 
-<use ../graphs/images/mabs-fixed-p.png> [14] [15 <../graphs/images/comparison-n
-25.png>] [16 <../graphs/images/comparison-n50.png>] [17 <../graphs/images/compa
-rison-n100.png>] [18 <../graphs/images/mabs-fixed-n.png> <../graphs/images/mabs
--fixed-p.png>] (./output.bbl) [19
+<use ../images/mabs-fixed-p.png> [14] [15 <../images/comparison-n25.png>]
+[16 <../images/comparison-n50.png>] [17 <../images/comparison-n100.png>]
+[18 <../images/mabs-fixed-n.png> <../images/mabs-fixed-p.png>] (./output.bbl)
+[19
 
-] (./output.aux) ) 
+] [20] (./output.aux) ) 
 Here is how much of TeX's memory you used:
- 4295 strings out of 493848
- 62347 string characters out of 1152822
- 141042 words of memory out of 3000000
- 7469 multiletter control sequences out of 15000+50000
+ 4402 strings out of 493848
+ 63522 string characters out of 1152822
+ 142743 words of memory out of 3000000
+ 7569 multiletter control sequences out of 15000+50000
  41714 words of font info for 126 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,18n,46p,220b,285s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/mathpaz
-o/fplmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/mathpazo/fplmr.pfb></
-usr/share/texmf-texlive/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-tex
-live/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/
-urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr
-i8a.pfb>
-Output written on output.pdf (19 pages, 548260 bytes).
+ 56i,18n,46p,220b,346s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/ma
+thpazo/fplmbb.pfb></usr/share/texmf-texlive/fonts/type1/public/mathpazo/fplmr.p
+fb></usr/share/texmf-texlive/fonts/type1/public/mathpazo/fplmri.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texm
+f-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/t
+ype1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino
+/uplri8a.pfb>
+Output written on output.pdf (20 pages, 549137 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
+ 127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

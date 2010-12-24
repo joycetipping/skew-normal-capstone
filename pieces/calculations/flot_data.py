@@ -7,6 +7,9 @@ from stats import *
 # Skew-normal Restriction Graphs
 #
 def sn_restriction_p_range_graph ():
+  # Builds data for the "fixed n, viable p range" graph and writes it to an
+  # appropriately named json file
+
   def range_pt (n):
     range = sn_restriction_p_range(n)
     return [n, range[0], range[1]]
@@ -22,6 +25,9 @@ def sn_restriction_p_range_graph ():
   f.close()
 
 def sn_restriction_least_n_graph ():
+  # Builds data for the "fixed p, least n" graph and writes it to an
+  # appropriately named json file
+
   ps = r.seq(0.01, 0.5, 0.01)
   points = map(lambda p: [p, sn_restriction_least_n(p)], ps)
 

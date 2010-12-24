@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd $HOME/projects/capstone/pieces/final-paper/
+
 # Pieces
 root="$HOME/projects/capstone/pieces"
 biburl="$root/bibliography/bibliography.bib"

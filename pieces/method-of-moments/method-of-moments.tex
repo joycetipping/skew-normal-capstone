@@ -3,7 +3,7 @@
 Now that we have gotten to know our new distribution a little better, we can
 use it to develop an approximation for the binomial.
 
-Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma^2, \lambda)$. We will find
+Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma, \lambda)$. We will find
 estimates for $\mu$, $\sigma$, and $\lambda$ by comparing the first, second,
 and third moments about the mean of $B$ and $Y$.
 
@@ -207,7 +207,7 @@ trivial requirement to meet.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.6\textwidth]{../graphs/images/restriction-least-n.png}
+  \includegraphics[width=0.6\textwidth]{../images/restriction-least-n.png}
   \caption{Least possible $n$, given a fixed $p$}
   \label{fig:sn-restriction-least-n}
 \end{figure}
@@ -256,7 +256,7 @@ becomes almost $(0, 1)$. For example, when $n=100$, our interval is $(0.00971,
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.6\textwidth]{../graphs/images/restriction-p-range.png}
+  \includegraphics[width=0.6\textwidth]{../images/restriction-p-range.png}
   \caption{Range of possible $p$, given a fixed $n$}
   \label{fig:sn-restriction-p-range}
 \end{figure}

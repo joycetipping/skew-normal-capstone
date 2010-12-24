@@ -289,7 +289,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
 \end{property}
 
 \begin{proof}
-  According to Equation 5 in \citet{azzalini}, the MGF of $SN(\mu, \sigma^2,
+  According to Equation 5 in \citet{azzalini}, the MGF of $SN(\mu, \sigma,
   \lambda)$ is
 
   \begin{equation*}
@@ -309,7 +309,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
 Now that we have gotten to know our new distribution a little better, we can
 use it to develop an approximation for the binomial.
 
-Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma^2, \lambda)$. We will find
+Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma, \lambda)$. We will find
 estimates for $\mu$, $\sigma$, and $\lambda$ by comparing the first, second,
 and third moments about the mean of $B$ and $Y$.
 
@@ -513,7 +513,7 @@ trivial requirement to meet.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.6\textwidth]{../graphs/images/restriction-least-n.png}
+  \includegraphics[width=0.6\textwidth]{../images/restriction-least-n.png}
   \caption{Least possible $n$, given a fixed $p$}
   \label{fig:sn-restriction-least-n}
 \end{figure}
@@ -562,7 +562,7 @@ becomes almost $(0, 1)$. For example, when $n=100$, our interval is $(0.00971,
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.6\textwidth]{../graphs/images/restriction-p-range.png}
+  \includegraphics[width=0.6\textwidth]{../images/restriction-p-range.png}
   \caption{Range of possible $p$, given a fixed $n$}
   \label{fig:sn-restriction-p-range}
 \end{figure}
@@ -583,21 +583,21 @@ follows the shape of the binomial much more closely.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{../graphs/images/comparison-n25.png}
+  \includegraphics[width=\textwidth]{../images/comparison-n25.png}
   \caption{Binomial, normal, and skew-normal, $n=25$}
   \label{fig:comparison-n25}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{../graphs/images/comparison-n50.png}
+  \includegraphics[width=\textwidth]{../images/comparison-n50.png}
   \caption{Binomial, normal, and skew-normal, $n=50$}
   \label{fig:comparison-n50}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{../graphs/images/comparison-n100.png}
+  \includegraphics[width=\textwidth]{../images/comparison-n100.png}
   \caption{Binomial, normal, and skew-normal, $n=100$}
   \label{fig:comparison-n100}
 \end{figure}
@@ -617,14 +617,14 @@ continuity correction.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{../graphs/images/mabs-fixed-n.png}
+  \includegraphics[width=\textwidth]{../images/mabs-fixed-n.png}
   \caption{MABS as a function of p}
   \label{fig:mabs-fixed-n}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{../graphs/images/mabs-fixed-p.png}
+  \includegraphics[width=\textwidth]{../images/mabs-fixed-p.png}
   \caption{MABS as a function of n}
   \label{fig:mabs-fixed-p}
 \end{figure}
@@ -637,6 +637,22 @@ extreme ranges, with the two approximations converging as $n \rightarrow
 
 \clearpage
 
+\begin{sidewaystable}
+  \centering
+  \begin{tabular}{ l l l l l l l l l }
+    (  0.89,    2.2,   2.31) & (  2.97,   2.94,   1.74) & (  7.44,   3.94,    1.4) & ( 16.77,   5.33,   1.16) \\
+    (  3.23,   2.67,    1.5) & (  7.76,   3.61,   1.24) & ( 17.18,   4.89,   1.04) & ( 36.45,   6.68,   0.89) \\
+    (   5.8,   2.85,   1.12) & ( 12.86,   3.88,   0.95) & ( 27.31,   5.32,   0.82) & (  56.6,   7.32,   0.72) \\
+    (  8.59,   2.83,    0.8) & ( 18.23,   3.89,    0.7) & ( 37.76,   5.39,   0.61) & ( 77.18,   7.48,   0.54) \\
+    (  12.5,    2.5,    0.0) & (  25.0,   3.54,    0.0) & (  50.0,    5.0,    0.0) & ( 100.0,   7.07,    0.0) \\
+    ( 16.41,   2.83,   -0.8) & ( 31.77,   3.89,   -0.7) & ( 62.24,   5.39,  -0.61) & (122.82,   7.48,  -0.54) \\
+    (  19.2,   2.85,  -1.12) & ( 37.14,   3.88,  -0.95) & ( 72.69,   5.32,  -0.82) & ( 143.4,   7.32,  -0.72) \\
+    ( 21.77,   2.67,   -1.5) & ( 42.24,   3.61,  -1.24) & ( 82.82,   4.89,  -1.04) & (163.55,   6.68,  -0.89) \\
+    ( 24.11,    2.2,  -2.31) & ( 47.03,   2.94,  -1.74) & ( 92.56,   3.94,   -1.4) & (183.23,   5.33,  -1.16) \\
+  \end{tabular}
+  \caption{foobarbif}
+  \label{table:sn-approx-table}
+\end{sidewaystable}
 
 \bibliography{/home/joycetipping/projects/capstone/pieces/bibliography/bibliography.bib}
 \bibliographystyle{plainnat}
