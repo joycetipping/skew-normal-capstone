@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.10.16)  24 DEC 2010 18:37
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.10.16)  24 DEC 2010 19:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -500,14 +500,15 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 12.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 12.
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 43.
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 45.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 13.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [1
+)
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 43.
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
@@ -607,7 +608,7 @@ File: ../images/mabs-fixed-p.png Graphic file (type png)
 <use ../images/mabs-fixed-p.png> [14] [15 <../images/comparison-n25.png>]
 [16 <../images/comparison-n50.png>] [17 <../images/comparison-n100.png>]
 [18 <../images/mabs-fixed-n.png> <../images/mabs-fixed-p.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 655.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 656.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
@@ -618,7 +619,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 ]
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 785.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 786.
  [22]
 (./output.bbl) [23
 
@@ -642,7 +643,7 @@ f-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-tex
 live/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8
 a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on output.pdf (23 pages, 593589 bytes).
+Output written on output.pdf (23 pages, 594416 bytes).
 PDF statistics:
  356 PDF objects out of 1000 (max. 8388607)
  90 named destinations out of 1000 (max. 500000)

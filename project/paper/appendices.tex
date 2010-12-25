@@ -19,9 +19,9 @@ with, so for this demonstration, we will take a numerical approach.
 
 The left hand side of \eqref{eq:calculating-lambda} is a function of lambda;
 let us denote it $f(\lambda)$. The right hand side is a constant in $n$ and
-$p$; let us call it $k_{n,p}$. Our goal is to find a value of lambda that comes
-within a certain margin of error, $e$. Since we are computing by hand, we will
-take $e$ to be a modest 0.01.
+$p$; let us call it $k_{n,p}$. Our goal is to find a value of $\lambda$ such
+that $f(\lambda)$ is within a certain margin of error, $e$, of $k_{n,p}$. Since
+we are computing by hand, we will take $e$ to be a modest 0.01.
 
 Recall that the sign of $\lambda$ is determined independently of the value. In
 fact, $f$ is never affected by the sign of $\lambda$, as all terms are squared.
@@ -51,11 +51,11 @@ values of $f$, and vice versa.)
   
     Our value: $\displaystyle k_{n,p} = \frac{25 \cdot 0.1 \cdot 0.9}{(1 - 2\cdot0.1)^2} = 3.5156$.
 
-  \item \textit{Find $a,b$ such that $f(a) > k_{n,p} > f(b)$.}
+  \item \textit{Find $a$ and $b$ such that $f(a) > k_{n,p} > f(b)$.}
     
     Our values: $a=1$, $b=3$.
   
-  \item \textit{Bisect $(a,b)$ until $f(c)$ is within $e$ of $k_{n,p}$.}
+  \item \textit{Repeatedly bisect $(a,b)$ until $f(c)$ is within $e$ of $k_{n,p}$.}
 
     Calculate $c=\frac{a+b}{2}$.
 
@@ -104,7 +104,7 @@ Once we have $\lambda$, we can easily find $\sigma$:
 And with $\lambda$ and $\sigma$, we can also find $\mu$:
 
 \begin{equation*}
-  \mu = np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} = 25 \cdot 0.1 - 2.2029 \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{2.3125}{\sqrt{1 + 2.3125^2}} = 0.8868.
+  \mu = np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} = 25 \cdot 0.1 - 2.2029 \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{2.3125}{\sqrt{1 + 2.3125^2}} = 0.8867.
 \end{equation*}
 
 \clearpage

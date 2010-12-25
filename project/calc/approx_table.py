@@ -1,3 +1,6 @@
+# Written by Joyce Tipping <joyce@joycetipping.com>
+# License: MIT <http://www.opensource.org/licenses/mit-license.php>
+
 from stats import *
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#

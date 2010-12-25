@@ -6,16 +6,16 @@
 \section{Introduction}
 
 One of the most basic distributions in statistics is the binomial, $X \sim
-Bin(n,p)$, with pdf
+Bin(n,p)$, $n \in \N$, $p \in (0, 1)$ with pdf
 
 \begin{equation*}
-  f_X(x) = \binom{n}{x} p^x q^{n-x}, \quad x = 0, 1, \ldots, n.
+  f_X(x) = \binom{n}{x} p^x q^{n-x}, \quad x = 0, 1, \ldots, n,
 \end{equation*}
 
-Calculating the binomial cdf, $F_X(x) = P(X \leq x) = \sum_{k=1}^x f_X(k)$, by
-hand is manageable for small $n$ but quickly becomes cumbersome as $n$ grows
-even moderately large. A common strategy is to use the normal distribution as
-an approximation:
+where $q=1-p$. Calculating the binomial cdf, $F_X(x) = P(X \leq x) =
+\sum_{k=1}^x f_X(k)$, by hand is manageable for small $n$ but quickly becomes
+cumbersome as $n$ grows even moderately large. A common strategy is to use the
+normal distribution as an approximation:
 
 \begin{equation}
   F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right),
@@ -26,6 +26,6 @@ where $\Phi$ is the standard normal cdf and $\mu = np$ and $\sigma =
 
 This approximation works best when the binomial is perfectly symmetrical, with
 $p=0.5$. However as $p$ travels away from 0.5 in either direction, the binomial
-becomes increasingly skewed, and one must either compensate by providing ever
-larger values of $n$ or face growing inaccuracy. In these cases, the
-skew-normal approximation can provide a better alternative.
+becomes increasingly skewed, and one must either provide larger values of $n$
+to compensate or face growing inaccuracy. In these cases, the skew-normal
+approximation can provide a better alternative.
