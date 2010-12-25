@@ -23,8 +23,8 @@ Before I dive into explaining this repository, here's a list of the things
 you're most likely looking for. All paths are relative to the repository.
 
 - *A pdf of my final paper*: ``skew-normal-approx.pdf`` (actually a symlink)
-- *The tex file for my final paper*: Run ``pieces/paper/build`` (important! see below) and then look for ``pieces/paper/output.tex``
-- *Stats library*: ``pieces/calculations/stats.py`` (requires you have python and rpy installed)
+- *The tex file for my final paper*: Run ``project/paper/build`` (important! see below) and then look for ``project/paper/output.tex``
+- *Stats library*: ``project/calculations/stats.py`` (requires you have python and rpy installed)
 
 ``project/``
 ~~~~~~~~~~~

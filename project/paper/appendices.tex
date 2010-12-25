@@ -1,0 +1,110 @@
+\section{Calculating a Skew-Normal Approximation}
+\label{app:calc-sn-approx}
+
+Although easier with a computer program, calculating estimates for $\mu$,
+$\sigma$, and $\lambda$ by hand is perfectly possible. Here, we will
+demonstrate using $n=25$, $p=0.1$.
+
+By far the largest battle is finding $\lambda$. We will use Equation
+\eqref{eq:solving-for-lambda} but with the simplified left hand side given by
+\eqref{eq:lhs-solving-for-lambda}:
+
+\begin{equation}
+  \label{eq:calculating-lambda}
+  \left( \frac{1+\lambda^2}{\lambda^2} - \frac{2}{\pi} \right)^3 \left( \frac{\pi^3}{2(4-\pi)^2} \right) = \frac{np(1-p)}{(1-2p)^2} \;.
+\end{equation}
+
+The closed-formed solution to this equation is long, hideous, and hard to work
+with, so for this demonstration, we will take a numerical approach.
+
+The left hand side of \eqref{eq:calculating-lambda} is a function of lambda;
+let us denote it $f(\lambda)$. The right hand side is a constant in $n$ and
+$p$; let us call it $k_{n,p}$. Our goal is to find a value of lambda that comes
+within a certain margin of error, $e$. Since we are computing by hand, we will
+take $e$ to be a modest 0.01.
+
+Recall that the sign of $\lambda$ is determined independently of the value. In
+fact, $f$ is never affected by the sign of $\lambda$, as all terms are squared.
+Thus, we can restrict our search for $\lambda$ to the interval $(0, \infty)$.
+
+Next, by taking $f$'s derivative, we can show that it is monotonically
+decreasing for positive $\lambda$:
+
+\begin{align*}
+  \frac{d}{d\lambda} \left[ \left( \frac{1+\lambda^2}{\lambda^2} - \frac{2}{\pi} \right)^3 \left( \frac{\pi^3}{2(4-\pi)^2} \right) \right] &= \left( \frac{\pi^3}{2(4-\pi)^2} \right) \cdot
+    3 \left( \frac{1+\lambda^2}{\lambda^2} - \frac{2}{\pi} \right)^2 \cdot \left( \frac{2\lambda}{\lambda^2} - \frac{2(1+\lambda^2)}{\lambda^3} \right) \\
+  &= \left( \frac{\pi^3}{2(4-\pi)^2} \right) \cdot 3 \left( \frac{1+\lambda^2}{\lambda^2} - \frac{2}{\pi} \right)^2 \cdot
+    \left( \cancel{\frac{2}{\lambda}} - \frac{2}{\lambda^3} - \cancel{\frac{2}{\lambda}} \right) \\
+  &= \underbrace{\left( \frac{\pi^3}{2(4-\pi)^2} \right) \cdot 3 \left( \frac{1+\lambda^2}{\lambda^2} - \frac{2}{\pi} \right)^2}_\textnormal{Always positive} \quad \cdot \quad
+     \underbrace{\left( -\frac{2}{\lambda^3} \right)}_{\mathclap{\textnormal{Negative when $\lambda > 0$}}}.
+\end{align*}
+
+This convenient fact allows us to find lower and upper bounds for $\lambda$ and
+repeatedly bisect our interval until we are within $e$ of $k_{n,p}$.
+
+(For the following calculations, it is helpful to keep in mind that because $f$
+is decreasing in $\lambda$, smaller values of $\lambda$ will produce larger
+values of $f$, and vice versa.)
+    
+\begin{enumerate}
+  \item \textit{Find $k_{n,p}$.}
+  
+    Our value: $\displaystyle k_{n,p} = \frac{25 \cdot 0.1 \cdot 0.9}{(1 - 2\cdot0.1)^2} = 3.5156$.
+
+  \item \textit{Find $a,b$ such that $f(a) > k_{n,p} > f(b)$.}
+    
+    Our values: $a=1$, $b=3$.
+  
+  \item \textit{Bisect $(a,b)$ until $f(c)$ is within $e$ of $k_{n,p}$.}
+
+    Calculate $c=\frac{a+b}{2}$.
+
+    \begin{itemize}
+      \item If $f(c) \leq k_{n,p} - 0.01$, we need a small value of $c$, so we
+      take our new interval to be $(a, c)$.
+    
+      \item If $f(c) \geq k_{n,p} + 0.01$, we need a larger value of $c$, so we
+      take our new interval to be $(c, b)$.
+    \end{itemize}
+    
+    Repeat this step until $f(c)$ is within $e$ of $k_{n,p}$, or more precisely
+    $k_{n,p} - 0.01 < f(c) < k_{n,p} + 0.01$.
+
+    The following table shows our iterations:
+
+    \renewcommand{\arraystretch}{1.3}
+    \begin{center}
+      \begin{tabular}{c c c c c c c}
+        Iteration & $a$  & $b$   & $c$    & $f(c)$ & $f(c) \leq k_{n,p} - 0.01$ & $f(c) \geq k_{n,p} + 0.01$ \\
+        \hline
+        1         & 2.00 & 3.000 & 2.5000 & 3.0164 & True                       & False \\
+        2         & 2.00 & 2.500 & 2.2500 & 3.7129 & False                      & True \\
+        3         & 2.25 & 2.500 & 2.3750 & 3.3252 & True                       & False \\
+        4         & 2.25 & 2.375 & 2.3125 & 3.5076 & False                      & False \\
+      \end{tabular}
+    \end{center}
+
+    We take the last value of $c$: 2.3125.
+
+  \item \textit{Find the sign of $(1-2p)$.}
+
+    Our $p = 0.1 \Ra (1 - 2\cdot0.1) = 0.8 \Ra$ positive.
+
+  \item \textit{Final answer: \{sign of $(1-2p)$\}$\lambda$}
+
+    Our final answer: $\lambda = 2.3125$.
+\end{enumerate}
+
+Once we have $\lambda$, we can easily find $\sigma$:
+
+\begin{equation*}
+  \sigma = \sqrt{\frac{np(1-p)}{1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2}}} = \sqrt{\frac{25 \cdot 0.1 \cdot 0.9}{1 - \frac{2}{\pi} \cdot \frac{2.3125^2}{1 + 2.3125^2}}} = 2.2029. \\
+\end{equation*}
+
+And with $\lambda$ and $\sigma$, we can also find $\mu$:
+
+\begin{equation*}
+  \mu = np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} = 25 \cdot 0.1 - 2.2029 \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{2.3125}{\sqrt{1 + 2.3125^2}} = 0.8868.
+\end{equation*}
+
+\clearpage

@@ -3,7 +3,7 @@
 cd $HOME/projects/capstone/pieces/final-paper/
 
 # Pieces
-pieces='intro.tex properties.tex method-of-moments.tex mabs.tex conclusion.tex'
+pieces='intro.tex properties.tex method-of-moments.tex mabs.tex resources.tex'
 appendices='appendices.tex'
 bib='bibliography.bib'
 

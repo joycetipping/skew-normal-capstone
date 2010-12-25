@@ -1,12 +1,22 @@
-\section{Conclusion}
-\label{sec:conclusion}
+\section{Practical Resources}
+\label{sec:practical-resources}
 
-As a conclusion, we will demonstrate how to derive a skew-normal approximation
-by hand.
+We leave you with a few practical resources:
 
+Table \ref{tab:sn-approx-table} shows estimations of $SN(\mu, \sigma, \lambda)$
+for common binomial distributions.
+
+Appendix \ref{app:calc-sn-approx} demonstrates how to calculate the skew-normal
+parameters by hand, for those who need an unusual combination not in the table.
+
+Finally, for rapidly approximating many binomial distributions, the author's
+Python library, which was used to compute all the values in this paper, is
+freely available online:
+
+\url{http://github.com/joycetipping/skew-normal-capstone/}
 
 \begin{sidewaystable}
-  \caption{Approximate Values of $SN(\mu, \sigma, \lambda)$ for $Bin(n,p)$}
+  \caption{Estimations of $SN(\mu, \sigma, \lambda)$ for $Bin(n,p)$}
   \centering
   \renewcommand{\arraystretch}{1.3}
   \begin{tabular}
@@ -35,7 +45,7 @@ by hand.
     & 0.90 & ( & 24.11 & 2.20 & -2.31 & ) & ( & 47.03 & 2.94 & -1.74 & ) & ( & 92.56 & 3.94 & -1.40 & ) & ( & 228.47 & 5.88 & -1.10 & ) & ( & 454.38 & 8.01 & -0.94 & ) \\
     & 0.95 & ( & 25.11 & 1.74 & -4.56 & ) & ( & 49.21 & 2.30 & -2.54 & ) & ( & 97.15 & 3.06 & -1.86 & ) & ( & 240.42 & 4.52 & -1.38 & ) & ( & 478.68 & 6.11 & -1.15 & ) \\
   \end{tabular}
-  \label{table:sn-approx-table}
+  \label{tab:sn-approx-table}
 \end{sidewaystable}
 
 \clearpage
