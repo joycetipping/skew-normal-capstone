@@ -22,20 +22,22 @@ About This Repository
 Before I dive into explaining this repository, here's a list of the things
 you're most likely looking for. All paths are relative to the repository.
 
-- *A pdf of my final paper*: ``skew-normal-approx.pdf`` (actually a symlink)
-- *The tex file for my final paper*: Run ``project/paper/build`` (important! see below) and then look for ``project/paper/output.tex``
-- *Stats library*: ``project/calculations/stats.py`` (requires you have python and rpy installed)
+- *A pdf of my final paper*: Run ``project/paper/build`` and then open ``skew-normal-approx.pdf`` (actually a symlink; the hard copy is in ``project/paper/output.pdf``)
+- *The tex file for my final paper*: Run ``project/paper/build`` and then open ``project/paper/output.tex``
+- *Stats library*: ``project/calculations/stats.py`` (requires python and rpy)
+
+Now for a more in-deph look. Here are the top-level directories and an
+explanation of their contents.
 
 ``project/``
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 The home of my project.
 
 - ``proposal.pdf``: My capstone proposal.
-- ``paper/``: The pieces of my final paper. I keep each section of my paper in its own tex file. These files (``intro.tex``, ``properties.tex``, ``method-of-moments.tex``, ``mabs.tex``,
-  ``conclusion.tex``) are stitched together last minute into ``output.tex`` and run through the latex compiler.
-- ``calculations/``: Everything calculation related. ``stats.py`` is my stats library for the skew-normal approximation. ``flot_data.py`` and ``approx_table.py`` generate the data for
-  the float graphs and approximation table and store them in ``flot/json/`` and ``approx-table/``, respecitvely. The html files that generate the flot graphs are also in ``flot/``.
+- ``paper/``: The pieces of my final paper. I keep each section of my paper in its own tex file; these are stitched together last minute using bash and run through the latex compiler.
+- ``calculations/``: Everything calculation related. My stats library, ``stats.py``, contains many useful functions for deriving a skew-normal approximation. The rest of the files all
+  generate specific graphs or data for my paper.
 - ``images/``: Figures and graphs
 
 ``papers/``
