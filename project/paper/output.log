@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.10.16)  24 DEC 2010 19:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.12)  19 JAN 2011 11:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -523,44 +523,7 @@ Overfull \hbox (11.08537pt too wide) in paragraph at lines 389--389
 [] 
  []
 
-[8]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sigma' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 399.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 399.
-
-[9]
+[8] [9]
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 437.
 
  (/usr/share/texmf-texlive/tex/latex/psnfss/omsppl.fd
@@ -626,7 +589,7 @@ LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <10> not available
 ] (./output.aux) ) 
 Here is how much of TeX's memory you used:
  7661 strings out of 493848
- 112844 string characters out of 1152822
+ 112844 string characters out of 1152823
  219870 words of memory out of 3000000
  10658 multiletter control sequences out of 15000+50000
  42229 words of font info for 128 fonts, out of 3000000 for 9000
@@ -643,7 +606,7 @@ f-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-tex
 live/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8
 a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on output.pdf (23 pages, 594416 bytes).
+Output written on output.pdf (23 pages, 594429 bytes).
 PDF statistics:
  356 PDF objects out of 1000 (max. 8388607)
  90 named destinations out of 1000 (max. 500000)
