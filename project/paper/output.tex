@@ -230,17 +230,18 @@ To prove our theorem, it is helpful to formally define the half normal distribut
   that $A = A_1 \cup A_2 \cup A_3$ and $Y$ is one-to-one over each $A_i$. We
   can then transform each piece separately using Theorem 6.3.2 from
   \citet{textbook}:\footnote{\textbf{Continuous transformations that are
-  one-to-one} (Theorem 6.3.2, \citealp{textbook}): Suppose that $X$ is a
-  continuous random variable with pdf $f_X(x)$, and assume that $Y = u(X)$
-  defines a one-to-one transformation from $A = \{x|f_X(x) > 0\}$ on to $B =
-  \{y|f_Y(y) > 0\}$ with inverse transformation $x = w(y)$. If the derivative
-  $(d/dy)w(y)$ is continuous and nonzero on $B$, then the pdf of $Y$ is
+  one-to-one}: Suppose that $X$ is a continuous random variable with pdf
+  $f_X(x)$, and assume that $Y = u(X)$ defines a one-to-one transformation from
+  $A = \{x|f_X(x) > 0\}$ on to $B = \{y|f_Y(y) > 0\}$ with inverse
+  transformation $x = w(y)$. If the derivative $(d/dy)w(y)$ is continuous and
+  nonzero on $B$, then the pdf of $Y$ is
 
   \begin{equation}
     \label{eq:transformations-1-to-1}
     f_Y(y) = f_X(w(y)) \left| \frac{d}{dy} w(y) \right| \qquad y \in B.
   \end{equation}
 
+  Theorem 6.3.2, \citet{textbook}.
   \label{fnote:transformations-1-to-1}
   }
 
@@ -272,14 +273,15 @@ To prove our theorem, it is helpful to formally define the half normal distribut
   |0| = 0$, yielding $f_Y(y) = f_X(x) \cdot \J = f_X(x) \cdot 0 = 0$.
 
   Then, by Equation 6.3.10 from \citet{textbook},\footnote{\textbf{Continuous
-  transformations that are not one-to-one} (Equation 6.3.10,
-  \citealp{textbook}): When $u(x)$ is not one-to-one over $A$, we can replace
-  equation \eqref{eq:transformations-1-to-1} in footnote
+  transformations that are not one-to-one}: When $u(x)$ is not one-to-one over
+  $A$, we can replace equation \eqref{eq:transformations-1-to-1} in footnote
   \ref{fnote:transformations-1-to-1} with 
 
   \begin{equation*}
     f_Y(y) = \sum_j f_X(w_j(y)) \left| \frac{d}{dy} w_j(y) \right|.
   \end{equation*}
+
+  Equation 6.3.10, \citet{textbook}.
   }
 
   \begin{align*}
