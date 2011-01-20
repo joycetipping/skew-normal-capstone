@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.12)  19 JAN 2011 11:28
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.12)  19 JAN 2011 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -540,38 +540,38 @@ File: ../images/restriction-least-n.png Graphic file (type png)
 File: ../images/restriction-p-range.png Graphic file (type png)
 
 <use ../images/restriction-p-range.png> [13 <../images/restriction-p-range.png>
-] <../images/comparison-n25.png, id=219, 836.12375pt x 1072.005pt>
+] <../images/comparison-n25.png, id=221, 836.12375pt x 1072.005pt>
 File: ../images/comparison-n25.png Graphic file (type png)
 
 <use ../images/comparison-n25.png>
 
-LaTeX Warning: Float too large for page by 16.85156pt on input line 589.
+LaTeX Warning: Float too large for page by 16.85156pt on input line 608.
 
-<../images/comparison-n50.png, id=220, 836.12375pt x 1072.005pt>
+<../images/comparison-n50.png, id=222, 836.12375pt x 1072.005pt>
 File: ../images/comparison-n50.png Graphic file (type png)
 
 <use ../images/comparison-n50.png>
 
-LaTeX Warning: Float too large for page by 16.85156pt on input line 596.
+LaTeX Warning: Float too large for page by 16.85156pt on input line 615.
 
-<../images/comparison-n100.png, id=221, 843.15pt x 1072.005pt>
+<../images/comparison-n100.png, id=223, 843.15pt x 1072.005pt>
 File: ../images/comparison-n100.png Graphic file (type png)
 
 <use ../images/comparison-n100.png>
 
-LaTeX Warning: Float too large for page by 12.25513pt on input line 603.
+LaTeX Warning: Float too large for page by 12.25513pt on input line 622.
 
-<../images/mabs-fixed-n.png, id=226, 953.5625pt x 401.5pt>
+<../images/mabs-fixed-n.png, id=228, 953.5625pt x 401.5pt>
 File: ../images/mabs-fixed-n.png Graphic file (type png)
 
 <use ../images/mabs-fixed-n.png>
-<../images/mabs-fixed-p.png, id=227, 953.5625pt x 401.5pt>
+<../images/mabs-fixed-p.png, id=229, 953.5625pt x 401.5pt>
 File: ../images/mabs-fixed-p.png Graphic file (type png)
 
 <use ../images/mabs-fixed-p.png> [14] [15 <../images/comparison-n25.png>]
 [16 <../images/comparison-n50.png>] [17 <../images/comparison-n100.png>]
 [18 <../images/mabs-fixed-n.png> <../images/mabs-fixed-p.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 656.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 676.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
@@ -582,16 +582,16 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 ]
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 786.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 806.
  [22]
 (./output.bbl) [23
 
 ] (./output.aux) ) 
 Here is how much of TeX's memory you used:
- 7661 strings out of 493848
- 112844 string characters out of 1152823
+ 7663 strings out of 493848
+ 112894 string characters out of 1152823
  219870 words of memory out of 3000000
- 10658 multiletter control sequences out of 15000+50000
+ 10660 multiletter control sequences out of 15000+50000
  42229 words of font info for 128 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  56i,19n,46p,268b,376s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -606,9 +606,9 @@ f-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-tex
 live/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8
 a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on output.pdf (23 pages, 594429 bytes).
+Output written on output.pdf (23 pages, 595713 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
+ 358 PDF objects out of 1000 (max. 8388607)
  90 named destinations out of 1000 (max. 500000)
  148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

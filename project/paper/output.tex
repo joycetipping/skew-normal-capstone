@@ -464,8 +464,9 @@ distribution.
 
 \subsection{Restrictions}
 
-To obtain an estimate for $\lambda$, we must put a few restrictions on $n$ and
-$p$.
+Unfortunately, although better than the normal approximation, the skew-normal
+is also not universally applicable. To obtain an estimate for $\lambda$, we
+must put a few restrictions on $n$ and $p$.
 
 If we let $u = \frac{\lambda^2}{1+\lambda^2}$ and $v = 1/u$, we can rewrite the
 left hand side of \eqref{eq:solving-for-lambda} as
@@ -506,7 +507,7 @@ find the minimum $n$ necessary to derive a skew-normal approximation. From
 \end{equation}
 
 Figure \ref{fig:sn-restriction-least-n} shows the least sample size required to
-estimate $\lambda$ as a function of $p$. As expected, it is quite large when
+estimate $\lambda$ as a function of $p$. As we would expect, it is larger when
 $p$ is small and rapidly goes to 0 as $p$ increases; for example, when $p =
 0.01$, $n$ must be $\geq 98$, but at $p = 0.2$, $n$ need only be $\geq 3$, a
 trivial requirement to meet.
@@ -518,8 +519,9 @@ trivial requirement to meet.
   \label{fig:sn-restriction-least-n}
 \end{figure}
 
-The second scenario is when $n$ is fixed and we wish to solve for $p$. In this
-case, we return to \eqref{eq:solving-the-restriction} for further factoring:
+The second scenario, primarily of academic interest, is when $n$ is fixed and
+we wish to solve for $p$. In this case, we return to
+\eqref{eq:solving-the-restriction} for further factoring:
 
 \begin{align}
   np(1-p) &\geq (1-2p)^2 \nonumber \\
@@ -567,7 +569,24 @@ becomes almost $(0, 1)$. For example, when $n=100$, our interval is $(0.00971,
   \label{fig:sn-restriction-p-range}
 \end{figure}
 
+Although the presence of these restrictions are somewhat disappointing, we can
+console ourselves with the observation that at the same $n$ and $p$, the
+skew-normal yields substantially more accurate approximations than the normal
+(see section \ref{subsec:mabs}). Thus while imperfect, it is nevertheless an
+improvement.
+
+Finally, one last consideration that bears mentioning is that the skew-normal
+approximation will sometimes provide us with parameters that violate our
+intuition. In particular, for small $p$ and $n$, equation \eqref{eq:mu-solved}
+can yield negative values of $\mu$, which is impossible for the binomial. This
+can be explained by the fact that as $n$ and $p$ grow more extreme, so does the
+inaccuracy of our approximation. Rather than impose a hard restriction on these
+cases, we would simply advise that the reader be aware of the limits of the
+skew-normal and, if more accuracy is necessary, seek another method of
+approximation.
+
 \section{Demonstrating Improved Accuracy}
+\label{sec:demonstrating-improved-accuracy}
 
 Now comes the time to justify our efforts by comparing the accuracy of our
 skew-normal approximation to that of the normal.
@@ -603,6 +622,7 @@ follows the shape of the binomial much more closely.
 \end{figure}
 
 \subsection{Maximal Absolute Error}
+\label{subsec:mabs}
 
 A quantitative method of judging accuracy is comparing the maximal absolute
 errors of our two approximations, defined by \citet{mabs} as
