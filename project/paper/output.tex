@@ -19,21 +19,33 @@ Bin(n,p)$, $n \in \N$, $p \in (0, 1)$ with probability density function (pdf)
 where $q=1-p$. Calculating the binomial cumulative distribution function (cdf),
 $F_X(x) = P(X \leq x) = \sum_{k=1}^x f_X(k)$, by hand is manageable for small
 $n$ but quickly becomes cumbersome as $n$ grows even moderately large. A common
-strategy is to use the normal distribution as an approximation:
+strategy is to use the normal distribution\footnote{A random variable $X$
+follows the normal distribution with mean $\mu$ and variance $\sigma^2$ if it
+has the pdf
 
-\begin{equation}
-  F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right),
-\end{equation}
+\begin{equation*}
+  f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\,\sigma} \; e^{-[(x-\mu)/\sigma]^2/2}
+\end{equation*}
 
-where $\Phi$ is the standard normal\footnote{Let $X \sim Z = N(0, 1)$. Then $X$
-is said to be a standard normal distribution with pdf
+for $-\infty < x < \infty$, where $-\infty < \mu < \infty$ and $0 < \sigma <
+\infty$. This is denoted by $X \sim N(\mu,\sigma^2)$.\\
+
+$N(0,1)$ is an important special case known as the standard normal (denoted
+$Z$) and has pdf
 
 \begin{equation*}
   \phi(z) = \frac{1}{\sqrt{2\pi}} \; e^{-z^2/2}, \quad -\infty < z < \infty
 \end{equation*}
 
-and cdf given by $\Phi(z) = \int_{-\infty}^z \phi(t) \; dt$. Equations 3.3.29
-and 3.3.30, \citet{textbook}.} cdf and $\mu = np$ and $\sigma =
+and cdf given by $\Phi(z) = \int_{-\infty}^z \phi(t)\;dt$.\\
+
+Equations 3.3.27, 3.3.29, and 3.3.30, \citet{textbook}.} as an approximation:
+
+\begin{equation}
+  F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right),
+\end{equation}
+
+where $\Phi$ is the standard normal cdf and $\mu = np$ and $\sigma =
 \sqrt{np(1-p)}$.
 
 This approximation works best when the binomial is perfectly symmetrical, with
@@ -614,16 +626,6 @@ console ourselves with the observation that at the same $n$ and $p$, the
 skew-normal yields substantially more accurate approximations than the normal
 (see section \ref{subsec:mabs}). Thus while imperfect, it is nevertheless an
 improvement.
-
-Finally, one last consideration that bears mentioning is that the skew-normal
-approximation will sometimes give us parameters that violate our intuition. In
-particular, for small $p$ and $n$, equation \eqref{eq:mu-solved} can yield
-negative values of $\mu$, which is impossible for the binomial. This can be
-explained by the fact that as $n$ and $p$ grow more extreme, so does the
-inaccuracy of our approximation. Rather than impose a hard restriction on these
-cases, we would simply advise that the reader be aware of the limits of the
-skew-normal and, if more accuracy is necessary, seek another method of
-approximation.
 
 \section{Demonstrating Improved Accuracy}
 \label{sec:demonstrating-improved-accuracy}
