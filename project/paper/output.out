@@ -3,8 +3,8 @@
 \BOOKMARK [2][-]{subsection.2.1}{Basics}{section.2}
 \BOOKMARK [2][-]{subsection.2.2}{Four Properties}{section.2}
 \BOOKMARK [1][-]{section.3}{Developing an Approximation}{}
-\BOOKMARK [2][-]{subsection.3.1}{The Moments of the Binomial}{section.3}
-\BOOKMARK [2][-]{subsection.3.2}{The Moments of the Skew Normal}{section.3}
+\BOOKMARK [2][-]{subsection.3.1}{The Central Moments of the Binomial}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{The Central Moments of the Skew Normal}{section.3}
 \BOOKMARK [2][-]{subsection.3.3}{Solving for mu, sigma, lambda}{section.3}
 \BOOKMARK [2][-]{subsection.3.4}{Restrictions}{section.3}
 \BOOKMARK [1][-]{section.4}{Demonstrating Improved Accuracy}{}

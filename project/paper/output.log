@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.12)  19 JAN 2011 19:21
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.12)  19 JAN 2011 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -521,69 +521,69 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 51.
  [2]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 104.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 106.
  [3] [4]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 231.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 233.
  [5] [6] [7]
-Overfull \hbox (9.32254pt too wide) in paragraph at lines 399--399
+Overfull \hbox (9.32254pt too wide) in paragraph at lines 402--402
 [] 
  []
 
 [8]
-Overfull \hbox (11.08537pt too wide) in paragraph at lines 424--424
+Overfull \hbox (11.08537pt too wide) in paragraph at lines 427--427
 [] 
  []
 
 [9]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 472.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 477.
 
  (/usr/share/texmf-texlive/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 472.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 477.
  [10] [11]
-<../images/restriction-least-n.png, id=211, 428.60126pt x 368.37625pt>
+<../images/restriction-least-n.png, id=212, 428.60126pt x 368.37625pt>
 File: ../images/restriction-least-n.png Graphic file (type png)
 
 <use ../images/restriction-least-n.png> [12] [13 <../images/restriction-least-n
-.png>] <../images/restriction-p-range.png, id=231, 423.5825pt x 365.365pt>
+.png>] <../images/restriction-p-range.png, id=232, 423.5825pt x 365.365pt>
 File: ../images/restriction-p-range.png Graphic file (type png)
 
 <use ../images/restriction-p-range.png> [14 <../images/restriction-p-range.png>
-] <../images/comparison-n25.png, id=244, 836.12375pt x 1072.005pt>
+] <../images/comparison-n25.png, id=245, 836.12375pt x 1072.005pt>
 File: ../images/comparison-n25.png Graphic file (type png)
 
 <use ../images/comparison-n25.png>
 
-LaTeX Warning: Float too large for page by 16.85156pt on input line 643.
+LaTeX Warning: Float too large for page by 16.85156pt on input line 648.
 
-<../images/comparison-n50.png, id=245, 836.12375pt x 1072.005pt>
+<../images/comparison-n50.png, id=246, 836.12375pt x 1072.005pt>
 File: ../images/comparison-n50.png Graphic file (type png)
 
 <use ../images/comparison-n50.png>
 
-LaTeX Warning: Float too large for page by 16.85156pt on input line 650.
+LaTeX Warning: Float too large for page by 16.85156pt on input line 655.
 
-<../images/comparison-n100.png, id=246, 843.15pt x 1072.005pt>
+<../images/comparison-n100.png, id=247, 843.15pt x 1072.005pt>
 File: ../images/comparison-n100.png Graphic file (type png)
 
 <use ../images/comparison-n100.png>
 
-LaTeX Warning: Float too large for page by 12.25513pt on input line 657.
+LaTeX Warning: Float too large for page by 12.25513pt on input line 662.
 
-<../images/mabs-fixed-n.png, id=251, 953.5625pt x 401.5pt>
+<../images/mabs-fixed-n.png, id=252, 953.5625pt x 401.5pt>
 File: ../images/mabs-fixed-n.png Graphic file (type png)
 
 <use ../images/mabs-fixed-n.png>
-<../images/mabs-fixed-p.png, id=252, 953.5625pt x 401.5pt>
+<../images/mabs-fixed-p.png, id=253, 953.5625pt x 401.5pt>
 File: ../images/mabs-fixed-p.png Graphic file (type png)
 
 <use ../images/mabs-fixed-p.png> [15] [16 <../images/comparison-n25.png>]
 [17 <../images/comparison-n50.png>] [18 <../images/comparison-n100.png>]
 [19 <../images/mabs-fixed-n.png> <../images/mabs-fixed-p.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 711.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 716.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
@@ -594,19 +594,19 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 ]
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 841.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 846.
  [23]
 (./output.bbl) [24
 
 ] (./output.aux) ) 
 Here is how much of TeX's memory you used:
- 7694 strings out of 493848
- 113224 string characters out of 1152823
- 220870 words of memory out of 3000000
- 10672 multiletter control sequences out of 15000+50000
+ 7695 strings out of 493848
+ 113260 string characters out of 1152823
+ 219870 words of memory out of 3000000
+ 10673 multiletter control sequences out of 15000+50000
  49979 words of font info for 150 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,19n,46p,268b,402s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,19n,46p,268b,417s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
 hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
 texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
@@ -618,9 +618,9 @@ f-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-tex
 live/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8
 a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on output.pdf (24 pages, 603136 bytes).
+Output written on output.pdf (24 pages, 603585 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
+ 383 PDF objects out of 1000 (max. 8388607)
  96 named destinations out of 1000 (max. 500000)
  148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

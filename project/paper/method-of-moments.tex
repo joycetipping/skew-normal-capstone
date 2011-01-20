@@ -5,25 +5,26 @@ use it to develop an approximation for the binomial.
 
 Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma, \lambda)$. We will find
 estimates for $\mu$, $\sigma$, and $\lambda$ by comparing the first, second,
-and third moments about the mean of $B$ and $Y$.
+and third central moments of $B$ and $Y$.
 
-\subsection{The Moments of the Binomial}
+\subsection{The Central Moments of the Binomial}
 
-Let's start with the binomial. The first two moments are simply the mean and
-variance, which we can state from memory:
+Let's start with the binomial. The first two central moments are simply the
+mean and variance, which we can state from memory:
 
 \begin{equation*}
   E(B) = np, \quad Var(B) = np(1-p).
 \end{equation*}
 
-Having these, we can easily find
+Having these, we can easily find $E(B^2)$: Recall that $Var(B) = E(B^2) -
+[E(B)]^2$ and thus
 
 \begin{equation*}
   E(B^2) = Var(B) + [E(B)]^2 = np(1-p) + n^2p^2 = np - np^2 + n^2p^2,
 \end{equation*}
 
-which we will need for the third moment. We will also need $E(B^3)$, which we
-will get via the third factorial moment:
+a fact we will need for the third central moment. We will also need $E(B^3)$,
+which we will get via the third factorial moment:
 
 \begin{align*}
   E[B(B-1)(B-2)] &= \sum_{x=0}^n x (x-1) (x-2) \cdot \left\{ \binom{n}{x} p^x q^{n-x} \right\} \;; \\
@@ -45,7 +46,7 @@ will get via the third factorial moment:
 \end{align*}
 
 Now, finally, we have all the building blocks necessary to obtain the third
-moment:
+central moment:
 
 \begin{align*}
   E \left( [B - E(B)]^3 \right) &= E \left( B^3 - 3B^2 E(B) + 3B [E(B)]^2 - [E(B)]^3 \right) \\
@@ -65,11 +66,11 @@ Our hard-earned results, restated for convenience:
   E([B - E(B)]^3) &= np(p-1)(2p-1). \nonumber
 \end{align}
 
-\subsection{The Moments of the Skew Normal}
+\subsection{The Central Moments of the Skew Normal}
 
-Now we'll take a look at the moments of the skew normal. Equation
+Now we'll take a look at the skew normal. Equation
 \eqref{eq:sn-basic-properties} takes care of the mean and variance; again the
-third moment is a little more complicated:
+third central moment is a little more complicated:
 
 \begin{align*}
   E([Y - E(Y)]^3) &= E(Y^3) - 3E(Y^2)E(Y) + 2[E(Y)]^3 \\
@@ -91,9 +92,11 @@ We restate our results:
 \end{alignat}
 
 \subsection[Solving for mu, sigma, lambda]{Solving for $\mu$, $\sigma$, $\lambda$}
+\label{subsec:solving-for-mu-sigma-lambda}
 
-Now we can set the moments of our two distributions equal to each other and,
-taking $n$ and $p$ as constants, solve for $\mu$, $\sigma$ and $\lambda$:
+To derive our approximation, we set the central moments of our two
+distributions equal to each other and, taking $n$ and $p$ as constants, solve
+for $\mu$, $\sigma$ and $\lambda$:
 
 \begin{subequations}
 \begin{align}
@@ -270,10 +273,10 @@ skew-normal yields substantially more accurate approximations than the normal
 improvement.
 
 Finally, one last consideration that bears mentioning is that the skew-normal
-approximation will sometimes provide us with parameters that violate our
-intuition. In particular, for small $p$ and $n$, equation \eqref{eq:mu-solved}
-can yield negative values of $\mu$, which is impossible for the binomial. This
-can be explained by the fact that as $n$ and $p$ grow more extreme, so does the
+approximation will sometimes give us parameters that violate our intuition. In
+particular, for small $p$ and $n$, equation \eqref{eq:mu-solved} can yield
+negative values of $\mu$, which is impossible for the binomial. This can be
+explained by the fact that as $n$ and $p$ grow more extreme, so does the
 inaccuracy of our approximation. Rather than impose a hard restriction on these
 cases, we would simply advise that the reader be aware of the limits of the
 skew-normal and, if more accuracy is necessary, seek another method of
