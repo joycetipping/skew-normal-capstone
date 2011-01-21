@@ -4,10 +4,11 @@ Now that we have gotten to know our new distribution a little better, we can
 use it to develop an approximation for the binomial.
 
 Let $B \sim Bin(n, p)$ and $Y \sim SN(\mu, \sigma, \lambda)$. We will find
-estimates for $\mu$, $\sigma$, and $\lambda$ by comparing the first, second,
-and third central moments of $B$ and $Y$.
+estimates for $\mu$, $\sigma$, and $\lambda$ using the method of moments, that
+is, by comparing the first, second, and third moments about the mean (also
+referred to as central moments) of $B$ and $Y$.
 
-\subsection{The Central Moments of the Binomial}
+\subsection{The Moments of the Binomial}
 
 Let's start with the binomial. The first two central moments are simply the
 mean and variance, which we can state from memory:
@@ -66,7 +67,7 @@ Our hard-earned results, restated for convenience:
   E([B - E(B)]^3) &= np(p-1)(2p-1). \nonumber
 \end{align}
 
-\subsection{The Central Moments of the Skew Normal}
+\subsection{The Moments of the Skew Normal}
 
 Now we'll take a look at the skew normal. Equation
 \eqref{eq:sn-basic-properties} takes care of the mean and variance; again the
@@ -94,9 +95,9 @@ We restate our results:
 \subsection[Solving for mu, sigma, lambda]{Solving for $\mu$, $\sigma$, $\lambda$}
 \label{subsec:solving-for-mu-sigma-lambda}
 
-To derive our approximation, we set the central moments of our two
-distributions equal to each other and, taking $n$ and $p$ as constants, solve
-for $\mu$, $\sigma$ and $\lambda$:
+To derive our approximation, we set the above moments of our two distributions
+equal to each other and, taking $n$ and $p$ as constants, solve for $\mu$,
+$\sigma$ and $\lambda$:
 
 \begin{subequations}
 \begin{align}
