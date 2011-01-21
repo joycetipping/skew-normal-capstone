@@ -36,10 +36,10 @@ which we will get via the third factorial moment:
   &= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x} \;; \\
   \intertext{let $y=x-3$; then $x=y+3$, and $x=3, x=n \Ra y=0, y=n-3$:}
   &= n(n-1)(n-2)p^3 \cdot \sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;(n-(y+3))!} \; p^y q^{n-(y+3)} \\
-  &= n(n-1)(n-2)p^3 \cdot \underbrace {\sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;((n-3)-y)!} \; p^y q^{(n-3)-y}}_{\mathclap{\textnormal{[pdf of $Bin(n-3,p)$ summed from 0 to $n-3$] = 1}}} \\
+  &= n(n-1)(n-2)p^3 \cdot \underbrace {\sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;((n-3)-y)!} \; p^y q^{(n-3)-y}}_{\mathclap{\textnormal{[pdf of $Bin(n-3,p)$ summed over its domain] = 1}}} \\
   &= n(n-1)(n-2)p^3 \\
   &= n^3p^3 - 3n^2p^3 + 2np^3 \;; \\
-  \intertext{further expanding the left side and solving for $E(B^3)$:}
+  \intertext{We now expand the left side of the previous equation and solve for $E(B^3)$:}
   E \left[ B^3 - 3B^2 + 2B \right] &= n^3p^3 - 3n^2p^3 + 2np^3 \\
   E(B^3) - 3E(B^2) + 2E(B) &= \\
   E(B^3) - 3(np - np^2 + n^2p^2) + 2np &= \\
