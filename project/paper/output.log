@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.12)  20 JAN 2011 22:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.12)  21 JAN 2011 08:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -500,99 +500,89 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 12.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 12.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 44.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 44.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 44.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 44.
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
-
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 85.
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 88.
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 88.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 13.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [2] [3] [4]
+)
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 13.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 13.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 13.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 13.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 96.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 99.
+ [2] [3] [4]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 289.
- [5] [6]
-[7] [8]
-Overfull \hbox (9.32254pt too wide) in paragraph at lines 461--461
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 300.
+ [5] [6] [7] [8]
+Overfull \hbox (9.32254pt too wide) in paragraph at lines 472--472
 [] 
  []
 
 [9]
-Overfull \hbox (11.08537pt too wide) in paragraph at lines 486--486
+Overfull \hbox (11.08537pt too wide) in paragraph at lines 497--497
 [] 
  []
 
 [10]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 536.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 547.
 
  (/usr/share/texmf-texlive/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 536.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 547.
  [11]
-<../images/restriction-least-n.png, id=243, 428.60126pt x 368.37625pt>
+<../images/restriction-least-n.png, id=245, 428.60126pt x 368.37625pt>
 File: ../images/restriction-least-n.png Graphic file (type png)
 
 <use ../images/restriction-least-n.png> [12] [13 <../images/restriction-least-n
-.png>] <../images/restriction-p-range.png, id=265, 423.5825pt x 365.365pt>
+.png>] <../images/restriction-p-range.png, id=267, 423.5825pt x 365.365pt>
 File: ../images/restriction-p-range.png Graphic file (type png)
 
 <use ../images/restriction-p-range.png> [14] [15 <../images/restriction-p-range
 .png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 746.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 757.
 
  (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<../images/comparison-n25.png, id=294, 836.12375pt x 1072.005pt>
+<../images/comparison-n25.png, id=296, 836.12375pt x 1072.005pt>
 File: ../images/comparison-n25.png Graphic file (type png)
 
 <use ../images/comparison-n25.png>
 
-LaTeX Warning: Float too large for page by 16.85156pt on input line 753.
+LaTeX Warning: Float too large for page by 16.85156pt on input line 764.
 
-<../images/comparison-n50.png, id=295, 836.12375pt x 1072.005pt>
+<../images/comparison-n50.png, id=297, 836.12375pt x 1072.005pt>
 File: ../images/comparison-n50.png Graphic file (type png)
 
 <use ../images/comparison-n50.png>
 
-LaTeX Warning: Float too large for page by 16.85156pt on input line 760.
+LaTeX Warning: Float too large for page by 16.85156pt on input line 771.
 
-<../images/comparison-n100.png, id=296, 843.15pt x 1072.005pt>
+<../images/comparison-n100.png, id=298, 843.15pt x 1072.005pt>
 File: ../images/comparison-n100.png Graphic file (type png)
 
 <use ../images/comparison-n100.png>
 
-LaTeX Warning: Float too large for page by 12.25513pt on input line 767.
+LaTeX Warning: Float too large for page by 12.25513pt on input line 778.
 
-<../images/mabs-fixed-n.png, id=297, 953.5625pt x 401.5pt>
+<../images/mabs-fixed-n.png, id=299, 953.5625pt x 401.5pt>
 File: ../images/mabs-fixed-n.png Graphic file (type png)
 
 <use ../images/mabs-fixed-n.png>
-<../images/mabs-fixed-p.png, id=298, 953.5625pt x 401.5pt>
+<../images/mabs-fixed-p.png, id=300, 953.5625pt x 401.5pt>
 File: ../images/mabs-fixed-p.png Graphic file (type png)
 
 <use ../images/mabs-fixed-p.png> [16] [17 <../images/comparison-n25.png>]
@@ -601,15 +591,15 @@ File: ../images/mabs-fixed-p.png Graphic file (type png)
 
 ]
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 912.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 923.
 
 [23] (./output.bbl) [24
 
 ] (./output.aux) ) 
 Here is how much of TeX's memory you used:
- 7712 strings out of 493848
- 113480 string characters out of 1152823
- 220870 words of memory out of 3000000
+ 7713 strings out of 493848
+ 113491 string characters out of 1152823
+ 219870 words of memory out of 3000000
  10684 multiletter control sequences out of 15000+50000
  49979 words of font info for 150 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
@@ -625,9 +615,9 @@ f-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-tex
 live/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8
 a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on output.pdf (24 pages, 612077 bytes).
+Output written on output.pdf (24 pages, 612759 bytes).
 PDF statistics:
- 414 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
+ 417 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
  148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

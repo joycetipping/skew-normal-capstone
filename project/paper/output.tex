@@ -10,8 +10,8 @@
 \section{Introduction}
 
 One of the most basic distributions in statistics is the binomial, $X \sim
-Bin(n,p)$, $n = 0, 1, 2 \ldots$, $p \in (0, 1)$ with probability density
-function (pdf)
+Bin(n,p)$, $n \in \N$\footnote{That is, integers greater than 0.}, $p \in (0,
+1)$ with probability density function (pdf)
 
 \begin{equation*}
   f_X(x) = \binom{n}{x} p^x q^{n-x}, \quad x = 0, 1, \ldots, n,
@@ -23,25 +23,36 @@ $n$ but quickly becomes cumbersome as $n$ grows even moderately large. A common
 strategy is to use the normal distribution\footnotemark as an approximation:
 
 \footnotetext{A random variable $X$ follows the normal distribution with mean
-$\mu$ and variance $\sigma^2$ if it has the pdf
-
-\begin{equation*}
-  f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\,\sigma} \; e^{-[(x-\mu)/\sigma]^2/2}
-\end{equation*}
-
-for $-\infty < x < \infty$, where $-\infty < \mu < \infty$ and $0 < \sigma <
-\infty$. This is denoted by $X \sim N(\mu,\sigma^2)$.\\
+$\mu$ and variance $\sigma^2$ (denoted $X \sim N(\mu,\sigma^2)$) if it has the
+pdf $f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\,\sigma} \;
+e^{-[(x-\mu)/\sigma]^2/2}$ for $-\infty < x < \infty$, where $-\infty < \mu <
+\infty$ and $0 < \sigma < \infty$.
 
 $N(0,1)$ is an important special case known as the standard normal (denoted
-$Z$) and has pdf
-
-\begin{equation*}
-  \phi(z) = \frac{1}{\sqrt{2\pi}} \; e^{-z^2/2}, \quad -\infty < z < \infty
-\end{equation*}
-
-and cdf given by $\Phi(z) = \int_{-\infty}^z \phi(t)\;dt$.\\
-
+$Z$) and has pdf $\phi(z) = \frac{1}{\sqrt{2\pi}} \; e^{-z^2/2}, \quad -\infty
+< z < \infty$ and cdf given by $\Phi(z) = \int_{-\infty}^z \phi(t)\;dt$.
 Equations 3.3.27, 3.3.29, and 3.3.30, \citet{textbook}.}
+
+%\footnotetext{A random variable $X$ follows the normal distribution with mean
+%$\mu$ and variance $\sigma^2$ if it has the pdf
+%
+%\begin{equation*}
+%  f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\,\sigma} \; e^{-[(x-\mu)/\sigma]^2/2}
+%\end{equation*}
+%
+%for $-\infty < x < \infty$, where $-\infty < \mu < \infty$ and $0 < \sigma <
+%\infty$. This is denoted by $X \sim N(\mu,\sigma^2)$.\\
+%
+%$N(0,1)$ is an important special case known as the standard normal (denoted
+%$Z$) and has pdf
+%
+%\begin{equation*}
+%  \phi(z) = \frac{1}{\sqrt{2\pi}} \; e^{-z^2/2}, \quad -\infty < z < \infty
+%\end{equation*}
+%
+%and cdf given by $\Phi(z) = \int_{-\infty}^z \phi(t)\;dt$.\\
+%
+%Equations 3.3.27, 3.3.29, and 3.3.30, \citet{textbook}.}
 
 \begin{equation}
   F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right),
