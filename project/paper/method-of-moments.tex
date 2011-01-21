@@ -153,12 +153,16 @@ And with both $\lambda$ and $\sigma$, a simple rearrangement of
   \mu = np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \;.
 \end{equation}
 
-When $p = 0.5$, we would expect the binomial to be perfectly symmetrical and
-therefore $\mu = np = n/2$. This equation, together with \eqref{eq:mu-solved},
-implies that $\sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 +
-\lambda^2}} = 0 \Ra$ either $\sigma = 0$ or $\lambda = 0$. Since the former is
-impossible, we must conclude the latter, which brings us back to the normal
-distribution.
+One notable case where the above skew-normal approximation fails is when $p =
+0.5$; the right side of \eqref{eq:solving-for-lambda} becomes undefined, and we
+are unable to obtain $\lambda$. Fortunately, here we can fall back on our
+intuition, which tells us that since the binomial is perfectly symmetrical, the
+skew should be 0. A few observations support this conclusion: When $p = 0.5$,
+equation \eqref{eq:lambda-solved} fails to yield a sign. Furthermore, when
+$\lambda = 0$, equations \eqref{eq:sigma-solved} and \eqref{eq:mu-solved}
+return us to the normal approximation ($\mu = np$ and $\sigma =
+\sqrt{np(1-p)}$, respectively), which is after all a natural choice for a
+symmetric binomial curve.
 
 \subsection{Restrictions}
 
