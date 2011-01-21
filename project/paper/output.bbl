@@ -1,18 +1,11 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Arnold and Lin(2004)]{ref-arnold}
-B.~C. Arnold and G.~D. Lin.
-\newblock Characterizations of the skew-normal and generalized chi
-  distributions.
-\newblock \emph{Sankhyã: The Indian Journal of Statistics}, 66\penalty0
-  (4):\penalty0 593--606, 2004.
-
-\bibitem[Azzalini(1985)]{ref-azzalini}
+\bibitem[Azzalini(1985)]{azzalini-1985}
 Adelchi Azzalini.
 \newblock A class of distributions which includes the normal ones.
 \newblock \emph{Scandinavian Journal of Statistics}, 12:\penalty0 171--178,
@@ -36,15 +29,9 @@ Ching-Hui Chang, Jyh-Jiuan Lin, Nabendu Pal, and Miao-Chen Chiang.
 \newblock \emph{American Statistical Association}, 62\penalty0 (2):\penalty0
   167--170, May 2008.
 
-\bibitem[Gupta et~al.(2004)Gupta, Nguyen, and Sanqui]{ref-gupta}
-A.~K. Gupta, T.~T. Nguyen, and J.~A.~T. Sanqui.
-\newblock Characterization of the skew-normal distribution.
-\newblock \emph{Annals of the Institute of Statistical Mathematics},
-  56:\penalty0 351--360, 2004.
-
-\bibitem[O'Hagan and Leonard(1976)]{ref-o'hagan}
+\bibitem[O'Hagan and Leonard(1976)]{o'hagan}
 A.~O'Hagan and Tom Leonard.
-\newblock Bayes estimation subject to unvertainty about parameter constraints.
+\newblock Bayes estimation subject to uncertainty about parameter constraints.
 \newblock \emph{Biometrika}, 63:\penalty0 201--203, 1976.
 
 \bibitem[Pewsey(2000)]{pewsey}

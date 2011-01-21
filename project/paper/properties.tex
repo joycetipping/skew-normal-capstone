@@ -35,9 +35,9 @@ section, we'll get to know some of its basic properties.
 
 \end{defn}
 
-The skew-normal was first introduced by \citet{ref-o'hagan} and further
-developed by \citet{ref-azzalini}, \citet{ref-gupta}, and \citet{ref-arnold}.
-Some of its other basic properties, given by \citet{pewsey}, are
+The skew-normal was first introduced by \citet{o'hagan} and was most notably
+further developed by \citet{azzalini-1985}. Some of its other basic properties,
+given by \citet{pewsey}, are
 
 \begin{align}
   E(Y) &= \mu + b \delta \sigma, \nonumber \\
@@ -53,7 +53,7 @@ The $SN(0,1,\lambda)$ distribution is called the standard skew-normal; its pdf
 is
 
 \begin{equation} \label{eq:standard-sn-pdf}
-  f(x) = 2 \cdot \phi(x) \cdot \Phi (\lambda x), \quad x \in \R.
+  f(x|\lambda) = 2 \cdot \phi(x) \cdot \Phi (\lambda x), \quad x \in \R.
 \end{equation}
 
 Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
@@ -64,7 +64,7 @@ Fortunately, the connection is very intuitive: When $\lambda = 0$, Equation
 \eqref{eq:sn-pdf} becomes
 
 \begin{align*}
-  f_Y(x|\lambda=0) &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi(0) \\
+  f(x|\lambda=0) &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi(0) \\
   &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot 0.5 \\
   &= \frac1\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \\
   &= \frac1\sigma \cdot \frac{1}{\sqrt{2\pi}} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right) \\
@@ -72,7 +72,7 @@ Fortunately, the connection is very intuitive: When $\lambda = 0$, Equation
 \end{align*}
 
 which is the pdf of the normal distribution. Furthermore, when $\lambda > 0$,
-the curve skews to the left, and when $\lambda > 0$, it skews to the right (a
+the curve skews to the left, and when $\lambda < 0$, it skews to the right (a
 property we will prove in section \ref{subsec:four-properties}).
 
 \subsection{Four Properties}
