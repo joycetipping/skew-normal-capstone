@@ -10,7 +10,8 @@
 \section{Introduction}
 
 One of the most basic distributions in statistics is the binomial, $X \sim
-Bin(n,p)$, $n \in \N$, $p \in (0, 1)$ with probability density function (pdf)
+Bin(n,p)$, $n = 0, 1, 2 \ldots$, $p \in (0, 1)$ with probability density
+function (pdf)
 
 \begin{equation*}
   f_X(x) = \binom{n}{x} p^x q^{n-x}, \quad x = 0, 1, \ldots, n,
@@ -19,9 +20,10 @@ Bin(n,p)$, $n \in \N$, $p \in (0, 1)$ with probability density function (pdf)
 where $q=1-p$. Calculating the binomial cumulative distribution function (cdf),
 $F_X(x) = P(X \leq x) = \sum_{k=1}^x f_X(k)$, by hand is manageable for small
 $n$ but quickly becomes cumbersome as $n$ grows even moderately large. A common
-strategy is to use the normal distribution\footnote{A random variable $X$
-follows the normal distribution with mean $\mu$ and variance $\sigma^2$ if it
-has the pdf
+strategy is to use the normal distribution\footnotemark as an approximation:
+
+\footnotetext{A random variable $X$ follows the normal distribution with mean
+$\mu$ and variance $\sigma^2$ if it has the pdf
 
 \begin{equation*}
   f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi}\,\sigma} \; e^{-[(x-\mu)/\sigma]^2/2}
@@ -39,7 +41,7 @@ $Z$) and has pdf
 
 and cdf given by $\Phi(z) = \int_{-\infty}^z \phi(t)\;dt$.\\
 
-Equations 3.3.27, 3.3.29, and 3.3.30, \citet{textbook}.} as an approximation:
+Equations 3.3.27, 3.3.29, and 3.3.30, \citet{textbook}.}
 
 \begin{equation}
   F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right),
@@ -51,10 +53,30 @@ where $\Phi$ is the standard normal cdf and $\mu = np$ and $\sigma =
 This approximation works best when the binomial is perfectly symmetrical, with
 $p=0.5$. However as $p$ travels away from 0.5 in either direction, the binomial
 becomes increasingly skewed, and one must either provide larger values of $n$
-to compensate or face growing inaccuracy. In these cases, the skew-normal
-approximation can provide a better alternative.
+to compensate or face growing inaccuracy.
+
+To protect against these cases, many textbooks impose a condition on the normal
+approximation, often stated as either (1) $np(1-p) > 9$ \; or \; (2) $np > 5$
+for $0 < p \leq 0.5$, and $n(1-p) > 5$ for $0.5 < p < 1$. However, \citet{mabs}
+show that even when these conditions are met, the inaccuracy of the normal
+approximation can be surprisingly large. So, the natural question arises: Can
+we do better?
+
+Perhaps so. Intuitively speaking, the main problem with the normal
+approximation is that the normal is always symmetric while the binomial is
+sometimes skewed. This naturally suggests the skew-normal distribution, which
+adds an extra parameter to capture an assymetrical lean.
+
+In this paper, we will explore the aptness of the skew-normal as a method of
+approximating the binomial. First, we'll acquaint ourselves with its basic
+properties (section \ref{sec:properties}). We'll then derive an approximation
+via the method of moments (section \ref{sec:method-of-moments}) and compare its
+accuracy to that of the normal approximation (section \ref{sec:accuracy}).
+Finally, we will leave the reader with a few practical resources for applying
+our new method (section \ref{sec:resources}).
 
 \section{The Skew-Normal}
+\label{sec:properties}
 
 The skew-normal distribution is similar to the normal but with an added
 parameter for skew, allowing it to lean asymmetrically to the left or right. In
@@ -377,6 +399,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
 \end{proof}
 
 \section{Developing an Approximation}
+\label{sec:method-of-moments}
 
 Now that we have gotten to know our new distribution a little better, we can
 use it to develop an approximation for the binomial.
@@ -656,7 +679,7 @@ skew-normal yields substantially more accurate approximations than the normal
 improvement.
 
 \section{Demonstrating Improved Accuracy}
-\label{sec:demonstrating-improved-accuracy}
+\label{sec:accuracy}
 
 Now comes the time to justify our efforts by comparing the accuracy of our
 skew-normal approximation to that of the normal.
@@ -728,7 +751,7 @@ extreme ranges, with the two approximations converging as $n \rightarrow
 \clearpage
 
 \section{Practical Resources}
-\label{sec:practical-resources}
+\label{sec:resources}
 
 We conclude our dicussion by offering the reader a few practical resources:
 
