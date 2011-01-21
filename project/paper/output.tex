@@ -610,10 +610,14 @@ find the minimum $n$ necessary to derive a skew-normal approximation. From
 \end{equation}
 
 Figure \ref{fig:sn-restriction-least-n} shows the least sample size required to
-estimate $\lambda$ as a function of $p$. As we would expect, it is larger when
-$p$ is small and rapidly goes to 0 as $p$ increases; for example, when $p =
-0.01$, $n$ must be $\geq 98$, but at $p = 0.2$, $n$ need only be $\geq 3$, a
-trivial requirement to meet.
+estimate $\lambda$ as a function of $p$.\footnotemark As we would expect, it is
+larger when $p$ is small and rapidly goes to 0 as $p$ approaches 0.5; for
+example, when $p = 0.01$, $n$ must be $\geq 98$, but at $p = 0.2$, $n$ need
+only be $\geq 3$, a trivial requirement to meet.
+
+\footnotetext{Since $Bin(n, p)$ and $Bin(n, 1-p)$ are mirror image curves, it
+is often only necessary to examine either $p \in (0, 0.5)$ or $p \in (0.5, 1)$.
+We will usually consider the former range of $p$'s. \label{fnote:half-p-range}}
 
 \begin{figure}
   \centering
@@ -682,16 +686,64 @@ improvement.
 \label{sec:accuracy}
 
 Now comes the time to justify our efforts by comparing the accuracy of our
-skew-normal approximation to that of the normal.
+skew-normal approximation to that of the normal. Naturally, we are primarily
+interested in cases where the normal approximation performs poorly, that is
+binomials where $n$ is small and $p$ is either close to 0 or 1.\footnotemark
+
+\footnotetext{Again, we examine only $p \in (0, 0.5)$. (See footnote
+\ref{fnote:half-p-range}.)}
 
 \subsection{Visual Comparison}
 
 The first and most obvious way of judging accuracy is by visual inspection.
 Figures \ref{fig:comparison-n25}, \ref{fig:comparison-n50}, and
 \ref{fig:comparison-n100} compare the binomial, normal, and skew-normal at
-small values of $p$ for $n=25$, $n=50$, and $n=100$, respectively. It is not
-hard to see that, especially at very small $n$ and $p$, our skew-normal curve
-follows the shape of the binomial much more closely.
+small values of $p$ for $n=25$, $n=50$, and $n=100$, respectively.
+
+At very small $n$ and $p$, our skew-normal curve follows the shape of the
+binomial much more closely than the normal. However, as $n$ grows, the Central
+Limit Theorem begins to exert its effect; even at a moderate $n = 100$ and a
+smallish $p = 0.2$, the normal and skew-normal become nearly identical. Thus,
+as we would expect, the skew-normal method is most valuable at small $n$ and
+extreme $p$.
+
+\subsection{Maximal Absolute Error}
+\label{subsec:mabs}
+
+Another more quantitative method of judging accuracy is comparing the maximal
+absolute errors of our two approximations, defined by \citet{mabs} as
+
+\begin{equation}
+  \textnormal{MABS}(n, p) \eq \max_{k \in \{0, 1,...,n\}} \left| F_{B(n,p)} (k) -  F_{\textnormal{appr}(n,p)}(k + 0.5) \right|
+\end{equation}
+
+where $F_{B(n,p)}$ is the cdf of the binomial and $F_{\textnormal{appr}(n,p)}$
+is the cdf of either the normal or skew-normal approximation; the 0.5 is a
+continuity correction.
+
+Figures \ref{fig:mabs-fixed-n} and \ref{fig:mabs-fixed-p} shows the MABS of the
+skew-normal and normal approximations as a function of $p$ and $n$,
+respectively. Again, the skew-normal outperforms the normal considerably in the
+extreme ranges, with the two approximations converging as $n \rightarrow
+\infty$ or $p \rightarrow 0.5$.
+
+\section{Practical Resources}
+\label{sec:resources}
+
+We conclude our dicussion by offering the reader a few practical resources:
+
+Table \ref{tab:sn-approx-table} shows estimations of $SN(\mu, \sigma, \lambda)$
+for common binomial distributions.
+
+For those with an unusual combination of $n$ and $p$ not in the table, Appendix
+\ref{app:calc-sn-approx} demonstrates how to calculate the skew-normal
+parameters by hand.
+
+Finally, for rapidly approximating many binomial distributions, the author's
+Python library, which was used to compute all values presented in this paper,
+is freely available online:
+
+\url{http://github.com/joycetipping/skew-normal-capstone/}
 
 \begin{figure}
   \centering
@@ -714,25 +766,6 @@ follows the shape of the binomial much more closely.
   \label{fig:comparison-n100}
 \end{figure}
 
-\subsection{Maximal Absolute Error}
-\label{subsec:mabs}
-
-A quantitative method of judging accuracy is comparing the maximal absolute
-errors of our two approximations, defined by \citet{mabs} as
-
-\begin{equation}
-  \textnormal{MABS}(n, p) \eq \max_{k \in \{0, 1,...,n\}} \left| F_{B(n,p)} (k) -  F_{\textnormal{appr}(n,p)}(k + 0.5) \right|
-\end{equation}
-
-where $F_{B(n,p)}$ is the cdf of the binomial and $F_{\textnormal{appr}(n,p)}$
-is the cdf of either the normal or skew-normal approximation; the 0.5 is a
-continuity correction.
-
-Figures \ref{fig:mabs-fixed-n} and \ref{fig:mabs-fixed-p} shows the MABS of the
-skew-normal and normal approximations as a function of $p$ and $n$,
-respectively. Again, the skew-normal outperforms the normal considerably in the
-extreme ranges, with the two approximations converging as $n \rightarrow
-\infty$ or $p \rightarrow 0.5$.
 
 \begin{figure}
   \centering
@@ -747,26 +780,6 @@ extreme ranges, with the two approximations converging as $n \rightarrow
   \caption{MABS as a function of n}
   \label{fig:mabs-fixed-p}
 \end{figure}
-
-\clearpage
-
-\section{Practical Resources}
-\label{sec:resources}
-
-We conclude our dicussion by offering the reader a few practical resources:
-
-Table \ref{tab:sn-approx-table} shows estimations of $SN(\mu, \sigma, \lambda)$
-for common binomial distributions.
-
-For those with an unusual combination of $n$ and $p$ not in the table, Appendix
-\ref{app:calc-sn-approx} demonstrates how to calculate the skew-normal
-parameters by hand.
-
-Finally, for rapidly approximating many binomial distributions, the author's
-Python library, which was used to compute all values presented in this paper,
-is freely available online:
-
-\url{http://github.com/joycetipping/skew-normal-capstone/}
 
 \begin{sidewaystable}
   \caption{Estimations of $SN(\mu, \sigma, \lambda)$ for $Bin(n,p)$}

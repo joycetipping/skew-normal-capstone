@@ -210,10 +210,14 @@ find the minimum $n$ necessary to derive a skew-normal approximation. From
 \end{equation}
 
 Figure \ref{fig:sn-restriction-least-n} shows the least sample size required to
-estimate $\lambda$ as a function of $p$. As we would expect, it is larger when
-$p$ is small and rapidly goes to 0 as $p$ increases; for example, when $p =
-0.01$, $n$ must be $\geq 98$, but at $p = 0.2$, $n$ need only be $\geq 3$, a
-trivial requirement to meet.
+estimate $\lambda$ as a function of $p$.\footnotemark As we would expect, it is
+larger when $p$ is small and rapidly goes to 0 as $p$ approaches 0.5; for
+example, when $p = 0.01$, $n$ must be $\geq 98$, but at $p = 0.2$, $n$ need
+only be $\geq 3$, a trivial requirement to meet.
+
+\footnotetext{Since $Bin(n, p)$ and $Bin(n, 1-p)$ are mirror image curves, it
+is often only necessary to examine either $p \in (0, 0.5)$ or $p \in (0.5, 1)$.
+We will usually consider the former range of $p$'s. \label{fnote:half-p-range}}
 
 \begin{figure}
   \centering
