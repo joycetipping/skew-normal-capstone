@@ -1,6 +1,8 @@
 # Written by Joyce Tipping <joyce@joycetipping.com>
 # License: MIT <http://www.opensource.org/licenses/mit-license.php>
 
+import sys
+sys.path.append('..')
 from stats import *
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
@@ -8,7 +10,7 @@ from stats import *
 #
 
 def build_approximation_table (ns, ps):
-  f = open('approx-table/approx-table-data.txt', 'w')
+  f = open('approx-table-data.txt', 'w')
   f.write('{ r r | ' + 'r@{}r@{,\\;}r@{,\\;}r@{}l '*len(ns) + '}\n')
   f.write('\\hline \\hline\n')
   f.write('& & ' + '\\multicolumn{5}{c}{} & '*2 + '\\multicolumn{5}{c}{$n$}' + ' & \\multicolumn{5}{c}{}'*2 + '\\\\\n')

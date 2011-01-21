@@ -1,9 +1,9 @@
 # Written by Joyce Tipping <joyce@joycetipping.com>
 # License: MIT <http://www.opensource.org/licenses/mit-license.php>
 
-# Python modules
 import json
-# My modules
+import sys
+sys.path.append('..')
 from stats import *
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
@@ -21,7 +21,7 @@ def sn_restriction_p_range_graph ():
   p_top_points = map(lambda range_pt: [range_pt[0], range_pt[1]], p_range_bars)
   p_bottom_points = map(lambda range_pt: [range_pt[0], range_pt[2]], p_range_bars)
 
-  f = open('flot/data/restriction-p-range.js', 'w');
+  f = open('data/restriction-p-range.js', 'w');
   f.write('var p_range_bars = ' + json.dumps(p_range_bars) + ';\n')
   f.write('var p_top_points = ' + json.dumps(p_top_points) + ';\n')
   f.write('var p_bottom_points = ' + json.dumps(p_bottom_points) + ';\n')
@@ -34,7 +34,7 @@ def sn_restriction_least_n_graph ():
   ps = r.seq(0.01, 0.5, 0.01)
   points = map(lambda p: [p, sn_restriction_least_n(p)], ps)
 
-  f = open('flot/data/restriction-least-n.js', 'w')
+  f = open('data/restriction-least-n.js', 'w')
   f.write('var least_n_points = ' + json.dumps(points) + ';\n')
   f.close()
 
@@ -53,7 +53,7 @@ def comparison_graph (n, p):
                                   normal_pdf(n, p, pairs=True),
                                   sn_pdf(n, p, pairs=True) )
   np = 'n' + str(n) + 'p' + str(p).replace('.', '')
-  f = open('flot/data/comparison-' + np + '.js', 'w')
+  f = open('data/comparison-' + np + '.js', 'w')
   f.write('binomial.' + np + ' = ' + json.dumps(binomial) + ';\n')
   f.write('normal.' + np + ' = ' + json.dumps(normal) + ';\n')
   f.write('sn.' + np + ' = ' + json.dumps(sn) + ';\n')
@@ -74,7 +74,7 @@ def compile_comparison_data ():
   ps = [0.05, 0.1, 0.2]
 
   # Write some necessary headers
-  f = open('flot/data/comparison-headers.js', 'w')
+  f = open('data/comparison-headers.js', 'w')
   f.write('var binomial = {}; var normal = {}; var sn = {};\n')
   f.write('var ns = ' + json.dumps(map(str, ns)) + ';\n')
   f.write('var ps = ' + json.dumps(map(str, ps)) + ';\n')
@@ -95,7 +95,7 @@ def mabs_fixed_n_graph (n):
   sn_mabs_points = map(lambda p: [p, mabs_sn(n, p)], ps)
   normal_mabs_points = map(lambda p: [p, mabs_normal(n, p)], ps)
 
-  f = open('flot/data/mabs-n' + str(n) + '.js', 'w')
+  f = open('data/mabs-n' + str(n) + '.js', 'w')
   f.write('sn.n' + str(n) + ' = ' + json.dumps(sn_mabs_points) + ';\n')
   f.write('normal.n' + str(n) + ' = ' + json.dumps(normal_mabs_points) + ';\n')
   f.close()
@@ -111,7 +111,7 @@ def mabs_fixed_p_graph (p):
   normal_mabs_points = map(lambda n: [n, mabs_normal(n, p)], ns)
 
   str_p = str(p).replace('.', '')
-  f = open('flot/data/mabs-p' + str_p + '.js', 'w')
+  f = open('data/mabs-p' + str_p + '.js', 'w')
   f.write('sn.p' + str_p + ' = ' + json.dumps(sn_mabs_points) + ';\n')
   f.write('normal.p' + str_p + ' = ' + json.dumps(normal_mabs_points) + ';\n')
   f.close()
@@ -123,7 +123,7 @@ def compile_mabs_data ():
   ps = [0.05, 0.1]
 
   # Write some necessary headers
-  f = open('flot/data/mabs-headers.js', 'w')
+  f = open('data/mabs-headers.js', 'w')
   f.write('var normal = {}; var sn = {};\n')
   f.write('var ns = ' + json.dumps(map(str, ns)) + ';\n')
   f.write('var ps = ' + json.dumps(map(lambda p: str(p).replace('.', ''), ps)) + ';\n')

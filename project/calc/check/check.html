@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      #box {
+        width: 800px;
+        height: 300px;
+      }
+    </style>
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script type='text/javascript' src='flot/lib/jquery.flot.min.js'></script>
+    <script type='text/javascript' src='check.js'></script>
+    <script>
+      $(function () {
+        var series = [
+          {
+            data: binomial,
+            label: 'Binomial',
+            bars: {show:true, barWidth:0},
+            points: {show:true}
+          },
+          {
+            data: normal,
+            label: 'Normal',
+            lines: {show:true},
+            color: 6
+          },
+          {
+            data: sn,
+            label: 'Skew-normal',
+            lines: {show:true},
+            color: 2
+          }
+        ];
+        var options = {};
+
+        $.plot($('#box'), series, options);
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id='box'></div>
+  </body>
+</html>

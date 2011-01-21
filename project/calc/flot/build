@@ -1,9 +1,9 @@
 #!/bin/bash
 
-rm flot/data/*.js
+rm data/*.js
 python flot_data.py
 
-cd flot/data/
+cd data/
 compfile='comparison.js'
 cat comparison-headers.js > $compfile
 for file in comparison-*.js; do
@@ -20,4 +20,3 @@ restrictionfile='restriction.js'
 for file in restriction-*.js; do
   cat $file >> $restrictionfile
 done
-cd ../../
