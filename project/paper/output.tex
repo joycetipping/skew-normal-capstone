@@ -62,16 +62,37 @@ this section, we'll acquaint ourselves with some of its basic properties.
 
 \subsection{Basics}
 
-Let $Y$ be a skew-normal distribution, with location parameter $\mu \in \R$,
-scale parameter $\sigma > 0$, and shape parameter $\lambda \in \R$; we will
-denote it $SN(\mu, \sigma, \lambda)$. Then $Y$ has pdf
+\begin{defn}
+  Let $Y$ be a skew-normal distribution, with location parameter $\mu \in \R$,
+  scale parameter $\sigma > 0$, and shape parameter $\lambda \in \R$; we will
+  denote it $SN(\mu, \sigma, \lambda)$.\footnotemark Then $Y$ has pdf
 
-\begin{equation} \label{eq:sn-pdf}
-  f_Y(x) = \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi \left( \frac{\lambda(x-\mu)}{\sigma} \right), \quad x \in \R,
-\end{equation}
+  \begin{equation} \label{eq:sn-pdf}
+    f(x|\mu, \sigma, \lambda) = \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi \left( \frac{\lambda(x-\mu)}{\sigma} \right), \quad x \in \R,
+  \end{equation}
 
-where $\phi$ is the standard normal pdf and $\Phi$ is the standard normal cdf.
-Some other basic properties of $Y$, given by \citet{pewsey}, are
+  where $\phi$ is the standard normal pdf and $\Phi$ is the standard normal
+  cdf. \citet{main}
+  
+  \footnotetext{In this paper, we have followed the notation established by
+  \citet{main} in naming our parameters $\mu$, $\sigma$, and $\lambda$. It does
+  seem intuitive, after all, for the skew-normal to simply "extend" the normal
+  with an extra parameter.
+  
+  An unfortunate consequence of this choice, however, is the misconception that
+  $\mu$ and $\sigma$ are related to the mean and variance the way they are in
+  the normal distribution. In the case of the skew-normal, it is more
+  productive to think of them as abstract location and scale parameters. In
+  fact, a quick comparison of figures \ref{fig:comparison-n25},
+  \ref{fig:comparison-n50}, and \ref{fig:comparison-n100} and the corresponding
+  parameters in Table \ref{tab:sn-approx-table} shows that $\mu$ and $\sigma$
+  are not visually related to the curve in any intuitive way.}
+
+\end{defn}
+
+The skew-normal was first introduced by \citet{ref-o'hagan} and further
+developed by \citet{ref-azzalini}, \citet{ref-gupta}, and \citet{ref-arnold}.
+Some of its other basic properties, given by \citet{pewsey}, are
 
 \begin{align}
   E(Y) &= \mu + b \delta \sigma, \nonumber \\
@@ -87,7 +108,7 @@ The $SN(0,1,\lambda)$ distribution is called the standard skew-normal; its pdf
 is
 
 \begin{equation} \label{eq:standard-sn-pdf}
-  f_Z(x) = 2 \cdot \phi(x) \cdot \Phi (\lambda x), \quad x \in \R.
+  f(x) = 2 \cdot \phi(x) \cdot \Phi (\lambda x), \quad x \in \R.
 \end{equation}
 
 Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
@@ -122,9 +143,9 @@ shed light on our enigmatic new distribution:
 \begin{proof}
   The standard normal pdf is an even function: $\phi(-x) =
   \frac{1}{\sqrt{2\pi}}\;e^{-(-x)^2/2} = \frac{1}{\sqrt{2\pi}}\;e^{-x^2/2} =
-  \phi(x)$. But the standard normal cdf, \thinspace $\Phi(x) =
-  \int_{-\infty}^\infty \phi(x)$, \thinspace is not even, being 0 near
-  $-\infty$ and 1 near $\infty$. Thus,
+  \phi(x)$. But the standard normal cdf, \thinspace $\Phi(x) = \int_{-\infty}^t
+  \phi(t)\;dt$, \thinspace is not even, being 0 near $-\infty$ and 1 near
+  $\infty$. Thus,
   
   \begin{align*}
     f_{(-Z)}(x) &= f_Z(-x) \\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.12)  20 JAN 2011 18:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.1.12)  20 JAN 2011 19:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -529,95 +529,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--42
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 63.
- [2]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 118.
- [3] [4]
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 66.
+ [2] [3] [4]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 246.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 267.
  [5] [6]
-[7]
-Overfull \hbox (9.32254pt too wide) in paragraph at lines 417--417
+[7] [8]
+Overfull \hbox (9.32254pt too wide) in paragraph at lines 438--438
 [] 
  []
 
-[8]
-Overfull \hbox (11.08537pt too wide) in paragraph at lines 442--442
+
+Overfull \hbox (11.08537pt too wide) in paragraph at lines 463--463
 [] 
  []
 
-[9]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 492.
+[9] [10]
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 513.
 
  (/usr/share/texmf-texlive/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 492.
- [10] [11]
-<../images/restriction-least-n.png, id=215, 428.60126pt x 368.37625pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 513.
+ [11]
+<../images/restriction-least-n.png, id=241, 428.60126pt x 368.37625pt>
 File: ../images/restriction-least-n.png Graphic file (type png)
 
 <use ../images/restriction-least-n.png> [12] [13 <../images/restriction-least-n
-.png>] <../images/restriction-p-range.png, id=235, 423.5825pt x 365.365pt>
+.png>] <../images/restriction-p-range.png, id=262, 423.5825pt x 365.365pt>
 File: ../images/restriction-p-range.png Graphic file (type png)
 
-<use ../images/restriction-p-range.png> [14 <../images/restriction-p-range.png>
-] <../images/comparison-n25.png, id=247, 836.12375pt x 1072.005pt>
+<use ../images/restriction-p-range.png> [14]
+<../images/comparison-n25.png, id=273, 836.12375pt x 1072.005pt>
 File: ../images/comparison-n25.png Graphic file (type png)
 
 <use ../images/comparison-n25.png>
 
-LaTeX Warning: Float too large for page by 16.85156pt on input line 657.
+LaTeX Warning: Float too large for page by 16.85156pt on input line 678.
 
-<../images/comparison-n50.png, id=248, 836.12375pt x 1072.005pt>
+<../images/comparison-n50.png, id=274, 836.12375pt x 1072.005pt>
 File: ../images/comparison-n50.png Graphic file (type png)
 
 <use ../images/comparison-n50.png>
 
-LaTeX Warning: Float too large for page by 16.85156pt on input line 664.
+LaTeX Warning: Float too large for page by 16.85156pt on input line 685.
 
-<../images/comparison-n100.png, id=249, 843.15pt x 1072.005pt>
+<../images/comparison-n100.png, id=275, 843.15pt x 1072.005pt>
 File: ../images/comparison-n100.png Graphic file (type png)
 
 <use ../images/comparison-n100.png>
 
-LaTeX Warning: Float too large for page by 12.25513pt on input line 671.
+LaTeX Warning: Float too large for page by 12.25513pt on input line 692.
 
-<../images/mabs-fixed-n.png, id=254, 953.5625pt x 401.5pt>
+<../images/mabs-fixed-n.png, id=280, 953.5625pt x 401.5pt>
 File: ../images/mabs-fixed-n.png Graphic file (type png)
 
 <use ../images/mabs-fixed-n.png>
-<../images/mabs-fixed-p.png, id=255, 953.5625pt x 401.5pt>
+<../images/mabs-fixed-p.png, id=281, 953.5625pt x 401.5pt>
 File: ../images/mabs-fixed-p.png Graphic file (type png)
 
-<use ../images/mabs-fixed-p.png> [15] [16 <../images/comparison-n25.png>]
-[17 <../images/comparison-n50.png>] [18 <../images/comparison-n100.png>]
-[19 <../images/mabs-fixed-n.png> <../images/mabs-fixed-p.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 725.
+<use ../images/mabs-fixed-p.png> [15 <../images/restriction-p-range.png>]
+[16 <../images/comparison-n25.png>] [17 <../images/comparison-n50.png>]
+[18 <../images/comparison-n100.png>] [19 <../images/mabs-fixed-n.png> <../image
+s/mabs-fixed-p.png>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 746.
 
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+ (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [20
+)
+[20
 
 ] [21] [22
 
 ]
 LaTeX Font Info:    Font shape `OMS/ppl/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 855.
- [23]
-(./output.bbl) [24
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 876.
+ [23] (./output.bbl
+Missing character: There is no Ã in font pplri7t!
+Missing character: There is no £ in font pplri7t!
+) [24
 
 ] (./output.aux) ) 
 Here is how much of TeX's memory you used:
- 7695 strings out of 493848
- 113260 string characters out of 1152823
+ 7715 strings out of 493848
+ 113578 string characters out of 1152823
  219870 words of memory out of 3000000
- 10673 multiletter control sequences out of 15000+50000
+ 10687 multiletter control sequences out of 15000+50000
  49979 words of font info for 150 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 56i,19n,46p,268b,417s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,19n,46p,268b,404s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/s
 hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-
 texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
@@ -629,9 +631,9 @@ f-texlive/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-tex
 live/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/u
 rw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8
 a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on output.pdf (24 pages, 604113 bytes).
+Output written on output.pdf (24 pages, 610233 bytes).
 PDF statistics:
- 385 PDF objects out of 1000 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
+ 409 PDF objects out of 1000 (max. 8388607)
+ 102 named destinations out of 1000 (max. 500000)
  148 words of extra memory for PDF output out of 10000 (max. 10000000)
 
