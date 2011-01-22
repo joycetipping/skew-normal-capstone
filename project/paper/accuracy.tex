@@ -2,9 +2,13 @@
 \label{sec:accuracy}
 
 Now comes the time to justify our efforts by comparing the accuracy of our
-skew-normal approximation to that of the normal. Naturally, we are primarily
-interested in cases where the normal approximation performs poorly, that is
-binomials where $n$ is small and $p$ is either close to 0 or 1.\footnotemark
+skew-normal approximation to that of the normal.
+
+We are naturally most interested in cases where other solutions perform poorly.
+Recall that when $n$ is small, it is feasible to calculate the binomial
+directly, and when $n$ is large or $p$ is close to 0.5, the normal distribution
+provides an adequate approximation. Therefore, our interest is primarily in
+cases where $n$ is moderate and $p$ is extreme (close to 0 or 1).\footnotemark
 
 \footnotetext{Again, we examine only $p \in (0, 0.5)$. (See footnote
 \ref{fnote:half-p-range}.)}
@@ -17,12 +21,11 @@ Figures \ref{fig:comparison-n25}, \ref{fig:comparison-n50}, and
 normal, and skew-normal at small values of $p$ for $n=25$, $n=50$, and $n=100$,
 respectively.
 
-At very small $n$ and $p$, our skew-normal curve follows the shape of the
-binomial much more closely than the normal. However, as $n$ grows, the Central
-Limit Theorem begins to exert its effect; even at a moderate $n = 100$ and a
-smallish $p = 0.2$, the normal and skew-normal become nearly identical. Thus,
-as we would expect, the skew-normal method is most valuable at small $n$ and
-extreme $p$.
+The graphs show that at moderate $n$ and small $p$, our skew-normal curve
+follows the shape of the binomial much more closely than the normal. As $n$
+grows, however, the Central Limit Theorem begins to exert its effect and the
+normal distribution "catches up" in accuracy. Thus as we would expect, the
+skew-normal approximation is of greatest value in the former set of cases.
 
 \subsection{Maximal Absolute Error}
 \label{subsec:mabs}
@@ -38,8 +41,17 @@ where $F_{B(n,p)}$ is the cdf of the binomial and $F_{\textnormal{appr}(n,p)}$
 is the cdf of either the normal or skew-normal approximation; the 0.5 is a
 continuity correction.
 
-Figures \ref{fig:mabs-fixed-n} and \ref{fig:mabs-fixed-p} in appendix
+Figure \ref{fig:mabs-fixed-n} and \ref{fig:mabs-fixed-p} in appendix
 \ref{app:figures} shows the MABS of the skew-normal and normal approximations
-as a function of $p$ and $n$, respectively. Again, the skew-normal outperforms
-the normal considerably in the extreme ranges, with the two approximations
-converging as $n \rightarrow \infty$ or $p \rightarrow 0.5$.
+as a function of $p$ and $n$, respectively.
+
+In figure \ref{fig:mabs-fixed-n}, the MABS of the normal approximation is more
+than four times that of the skew-normal when $p$ is very close to 0. The two
+error curves converge and eventually meet as $p$ approaches 0.5 and the
+binomial becomes symmetrical.
+
+Similarly, in figure \ref{fig:mabs-fixed-p}, the normal MABS is roughly six
+times the skew-normal MABS. Interesting, the error curves converge much more
+slowly this time, leading to the pleasant (if surprising) conclusion that when
+$p$ is extreme, the skew-normal gains us a measure of accuracy even at very
+large $n$.
