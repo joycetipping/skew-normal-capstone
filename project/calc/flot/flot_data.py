@@ -106,7 +106,7 @@ def mabs_fixed_p_graph (p):
   # an appropriately-named file
 
   least_n = sn_restriction_least_n(p)
-  ns = r.seq(least_n, 200, 2)
+  ns = r.seq(least_n, 500, 5)
   sn_mabs_points = map(lambda n: [n, mabs_sn(n, p)], ns)
   normal_mabs_points = map(lambda n: [n, mabs_normal(n, p)], ns)
 
