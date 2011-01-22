@@ -12,20 +12,18 @@ referred to as central moments) of $B$ and $Y$.
 \subsection{The Moments of the Binomial Distribution}
 
 Let's start with the binomial. The first two central moments are simply the
-mean and variance, which we can state from memory:
+mean and variance:
 
 \begin{equation*}
   E(B) = np, \quad Var(B) = np(1-p).
 \end{equation*}
 
-Having these, we can easily find $E(B^2)$: Recall that $Var(B) = E(B^2) -
-[E(B)]^2$ and thus
+From these, we can find $E(B^2)$: Recall that $Var(B) = E(B^2) - [E(B)]^2$ and
+thus
 
 \begin{equation*}
-  E(B^2) = Var(B) + [E(B)]^2 = np(1-p) + n^2p^2 = np - np^2 + n^2p^2,
+  E(B^2) = Var(B) + [E(B)]^2 = np(1-p) + n^2p^2 = np - np^2 + n^2p^2.
 \end{equation*}
-
-a fact we will need for the third central moment.
 
 We will also need $E(B^3)$, which we will get via the third factorial moment:
 
@@ -62,8 +60,8 @@ for $E(B^3)$:
   \Rightarrow \qquad E(B^3) &= n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np. \label{eq:binomial-third-moment}
 \end{align}
 
-Now, finally, we have all the building blocks necessary to obtain the third
-central moment:
+Now, finally, we have all the information necessary to obtain the third central
+moment:
 
 \begin{align*}
   E \left( [B - E(B)]^3 \right) &= E \left( B^3 - 3B^2 E(B) + 3B [E(B)]^2 - [E(B)]^3 \right) \\
