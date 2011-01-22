@@ -16,7 +16,7 @@ def sn_restriction_p_range_graph ():
   def range_pt (n):
     range = sn_restriction_p_range(n)
     return [n, range[0], range[1]]
-  ns = r.seq(0, 50)
+  ns = r.seq(0, 100)
   p_range_bars = map(range_pt, ns)
   p_top_points = map(lambda range_pt: [range_pt[0], range_pt[1]], p_range_bars)
   p_bottom_points = map(lambda range_pt: [range_pt[0], range_pt[2]], p_range_bars)
@@ -31,7 +31,7 @@ def sn_restriction_least_n_graph ():
   # Builds data for the "fixed p, least n" graph and writes it to an
   # appropriately named json file
 
-  ps = r.seq(0.01, 0.5, 0.01)
+  ps = r.seq(0.01, 0.5, 0.005)
   points = map(lambda p: [p, sn_restriction_least_n(p)], ps)
 
   f = open('data/restriction-least-n.js', 'w')
@@ -91,7 +91,7 @@ def mabs_fixed_n_graph (n):
   # an appropriately-named file
 
   least_p = sn_restriction_p_range(n)[0]
-  ps = r.seq(least_p + 0.01, 0.5, 0.01)
+  ps = r.seq(least_p + 0.01, 0.5, 0.005)
   sn_mabs_points = map(lambda p: [p, mabs_sn(n, p)], ps)
   normal_mabs_points = map(lambda p: [p, mabs_normal(n, p)], ps)
 
@@ -106,7 +106,7 @@ def mabs_fixed_p_graph (p):
   # an appropriately-named file
 
   least_n = sn_restriction_least_n(p)
-  ns = r.seq(least_n, 200, 5)
+  ns = r.seq(least_n, 200, 2)
   sn_mabs_points = map(lambda n: [n, mabs_sn(n, p)], ns)
   normal_mabs_points = map(lambda n: [n, mabs_normal(n, p)], ns)
 

@@ -609,13 +609,6 @@ only be $\geq 3$, a trivial requirement to meet.
 is often only necessary to examine either $p \in (0, 0.5)$ or $p \in (0.5, 1)$.
 We will usually consider the former range of $p$'s. \label{fnote:half-p-range}}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.6\textwidth]{../images/restriction-least-n.png}
-  \caption{Least possible $n$, given a fixed $p$}
-  \label{fig:sn-restriction-least-n}
-\end{figure}
-
 The second scenario, primarily of academic interest, is when $n$ is fixed and
 we wish to solve for $p$. In this case, we return to
 \eqref{eq:solving-the-restriction} for further factoring:
@@ -654,17 +647,11 @@ leading the product to be positive. Therefore, our solution lies where $r_1
  \frac12 - \frac12 \sqrt{\frac{n}{n+4}} \; \leq \; p \; \leq \; \frac12 + \frac12 \sqrt{\frac{n}{n+4}} \;.
 \end{equation}
 
-Shown in figure \ref{fig:sn-restriction-p-range} as a function of $n$, this
-interval grows quickly as $n$ increases, and for sufficiently large $n$, it
-becomes almost $(0, 1)$. For example, when $n=100$, our interval is $(0.00971,
-0.99029)$; when $n=500$, it is (0.00199, 0.99801).
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.6\textwidth]{../images/restriction-p-range.png}
-  \caption{Range of possible $p$, given a fixed $n$}
-  \label{fig:sn-restriction-p-range}
-\end{figure}
+Figure \ref{fig:sn-restriction-p-range} in appendix \ref{app:graphs} shows this
+range as a function of $n$, this interval grows quickly as $n$ increases, and
+for sufficiently large $n$, it becomes almost $(0, 1)$. For example, when
+$n=100$, our interval is $(0.00971, 0.99029)$; when $n=500$, it is (0.00199,
+0.99801).
 
 Although the presence of these restrictions are somewhat disappointing, we can
 console ourselves with the observation that at the same $n$ and $p$, the
@@ -735,6 +722,21 @@ is freely available online:
 
 \url{http://github.com/joycetipping/skew-normal-capstone/}
 
+\clearpage
+
+\appendix
+\section{Figures}
+\label{app:figures}
+
+\begin{figure}[h]
+  \centering
+  \subfloat[Least possible $n$, given a fixed $p$]{\label{fig:sn-restriction-least-n}\includegraphics[width=0.76\textwidth]{../images/restriction-least-n.png}}
+  \\ \vspace{5mm}
+  \subfloat[Range of possible $p$, given a fixed $n$]{\label{fig:sn-restriction-p-range}\includegraphics[width=0.76\textwidth]{../images/restriction-p-range.png}}
+  \caption{Restrictions on $n$ and $p$ necessary to obtain $\lambda$}
+  \label{fig:sn-restriction}
+\end{figure}
+
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{../images/comparison-n25.png}
@@ -756,20 +758,37 @@ is freely available online:
   \label{fig:comparison-n100}
 \end{figure}
 
-
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{../images/mabs-fixed-n.png}
+  \includegraphics[width=0.8\textwidth]{../images/mabs-fixed-n.png}
   \caption{MABS as a function of p}
   \label{fig:mabs-fixed-n}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{../images/mabs-fixed-p.png}
+  \includegraphics[width=0.8\textwidth]{../images/mabs-fixed-p.png}
   \caption{MABS as a function of n}
   \label{fig:mabs-fixed-p}
 \end{figure}
+
+%\begin{figure}
+%  \centering
+%  \subfloat{\label{fig:mabs-n25}\includegraphics[width=0.8\textwidth]{../images/mabs-n25.png}}                
+%  \\ \vspace{5mm}
+%  \subfloat{\label{fig:mabs-n100}\includegraphics[width=0.8\textwidth]{../images/mabs-n100.png}}
+%  \caption{MABS as a function of p}
+%  \label{fig:mabs-fixed-n}
+%\end{figure}
+%
+%\begin{figure}
+%  \centering
+%  \subfloat{\label{fig:mabs-p0.05}\includegraphics[width=0.8\textwidth]{../images/mabs-p005.png}}                
+%  \\ \vspace{5mm}
+%  \subfloat{\label{fig:mabs-p0.1}\includegraphics[width=0.8\textwidth]{../images/mabs-p01.png}}
+%  \caption{MABS as a function of n}
+%  \label{fig:mabs-fixed-p}
+%\end{figure}
 
 \begin{sidewaystable}
   \caption{Estimations of $SN(\mu, \sigma, \lambda)$ for $Bin(n,p)$}
@@ -805,8 +824,6 @@ is freely available online:
 \end{sidewaystable}
 
 \clearpage
-
-\appendix
 \section{Calculating a Skew-Normal Approximation}
 \label{app:calc-sn-approx}
 

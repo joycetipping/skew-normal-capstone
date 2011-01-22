@@ -23,12 +23,12 @@
         font-size: 12px;
       }
       .xlabel {
-        top: 355px;
+        top: 405px;
         left: 505px;
       }
       .ylabel {
-        top: 170px;
-        left: 275px;
+        top: 185px;
+        left: 170px;
         vertical-align: center;
       }
     </style>
@@ -66,10 +66,6 @@
           }
         ];
         var options = {
-          xaxis: {
-            min: 0,
-            max: 50
-          },
           yaxis: {
             max: 1
           }
@@ -79,7 +75,7 @@
         $('body').append(html[
           div.box(
             //div.caption("Range of p's, given n"),
-            div.plot /attr('id', name) /css({width:400, height:350}),
+            div.plot /attr('id', name) /css({width:600, height:400}),
             div.xlabel('n'),
             div.ylabel('p')
           )
@@ -96,8 +92,7 @@
         ];
         var options = {
           xaxis: {
-            min: 0,
-            max: 0.5 
+            min: 0
           }
         };
 
@@ -105,7 +100,7 @@
         $('body').append(html[
           div.box(
             //div.caption('Least n, given p'),
-            div.plot /attr('id', name) /css({width:400, height:350}),
+            div.plot /attr('id', name) /css({width:600, height:400}),
             div.xlabel('p'),
             div.ylabel('n')
           )

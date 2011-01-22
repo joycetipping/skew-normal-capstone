@@ -3,8 +3,8 @@
 cd $HOME/projects/capstone/project/paper/
 
 # Pieces
-pieces='intro.tex properties.tex method-of-moments.tex accuracy.tex resources.tex graphs.tex'
-appendices='appendices.tex'
+pieces='intro.tex properties.tex method-of-moments.tex accuracy.tex resources.tex'
+appendices='figures.tex calc-sn-demo.tex'
 bib='bibliography.bib'
 
 
