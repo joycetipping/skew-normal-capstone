@@ -65,14 +65,14 @@ accuracy to that of the normal approximation (section \ref{sec:accuracy}).
 Finally, we will leave the reader with a few practical resources for applying
 our new method (section \ref{sec:resources}).
 
-\section{The Skew-Normal}
+\section{The Skew-Normal Distribution}
 \label{sec:properties}
 
 The skew-normal distribution is similar to the normal but with an added
 parameter for skew that allows it to lean to the left or right. In this
 section, we'll get to know some of its basic properties.
 
-\subsection{Basics}
+\subsection{Foundations}
 
 \begin{defn}
   Let $Y$ be a skew-normal distribution, with location parameter $\mu \in \R$,
@@ -138,15 +138,16 @@ Fortunately, the connection is very intuitive: When $\lambda = 0$, Equation
   &= \frac{1}{\sqrt{2\pi}\sigma} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right),
 \end{align*}
 
-which is the pdf of the normal distribution. Furthermore, when $\lambda > 0$,
-the curve skews to the left, and when $\lambda < 0$, it skews to the right (a
-property we will prove in section \ref{subsec:four-properties}).
+which is the pdf of the normal distribution ($\mu$, $\sigma$). Furthermore,
+when $\lambda > 0$, the curve skews to the left, and when $\lambda < 0$, it
+skews to the right (a property we will prove in section
+\ref{subsec:four-properties}).
 
-\subsection{Four Properties}
+\subsection{Properties of the Standard Skew-Normal Distribution}
 \label{subsec:four-properties}
 
-The following four properties of the skew-normal, given by \citet{main}, help
-shed light on our enigmatic new distribution:
+The following four properties of the standard skew-normal, given by
+\citet{main}, help shed light on our enigmatic new distribution:
 
 \begin{property} \label{prop:1}
   If $Z \sim SN(0, 1, \lambda)$, then $(-Z) \sim SN(0, 1, -\lambda)$.
@@ -173,8 +174,8 @@ shed light on our enigmatic new distribution:
 \end{property}
 
 \begin{proof}
-  To prove our result, we make use of Lemma 1 in \citet{azzalini}, which we
-  restate here:
+  To prove our result, we begin by examining Lemma 1 in \citet{azzalini}, which
+  we restate here:
 
   \begin{helper-lem}
     If $f_0$ is a one-dimensional probability density function symmetric about
@@ -189,7 +190,8 @@ shed light on our enigmatic new distribution:
     is a density function for any odd function $w(\cdot)$.
   \end{helper-lem}
 
-  This lemma provides a very useful corollary:
+  This lemma is extended by a corollary which gives a very helpful result for
+  the above defined $f_0$ and $f$:
 
   \begin{helper-cor}[Perturbation Invariance]
     If $Y \sim f_0$ and $Z \sim f$, then $|Y| \overset{d}{=} |Z|$, where the
@@ -222,7 +224,7 @@ shed light on our enigmatic new distribution:
     &= \frac{1}{\sqrt{1-2t}} \;,
   \end{align*}
 
-  which is the MGF of the $\chi^2_1$. Since $Z$ is equal in distribution to
+  which is the mgf of the $\chi^2_1$. Since $Z$ is equal in distribution to
   $\phi$, we can also conclude that $Z^2 \sim \chi^2_1$. \end{proof}
 
 \begin{property} \label{prop:3}
@@ -278,8 +280,8 @@ To prove our theorem, it is helpful to formally define the half normal distribut
   \label{fnote:transformations-1-to-1}
   }
 
-  On $A_1$: $y = -x \Ra x = -y$ and $\J = \left| \frac{dx}{dy} \right| = |-1|
-  = 1$, yielding
+  On $A_1$: $y = -x \Ra x = -y$ and the Jacobian $\J = \left| \frac{dx}{dy}
+  \right| = |-1| = 1$, yielding
 
   \begin{align*}
     f_Y(y) &= f_X(x) \cdot \J \\
@@ -291,8 +293,8 @@ To prove our theorem, it is helpful to formally define the half normal distribut
 
   over the domain $A_1: -\infty < x < 0 \Ra -\infty < -y < 0 \Ra 0 < y < \infty :B_1$.
 
-  Similarly, on $A_2$: $y = x \Ra x = y$ and $\J = \left| \frac{dx}{dy}
-  \right| = |1| = 1$, yielding
+  Similarly, on $A_2$: $y = x \Ra x = y$ and the Jacobian $\J = \left|
+  \frac{dx}{dy} \right| = |1| = 1$, yielding
 
   \begin{align*}
     f_Y(y) &= f_X(x) \cdot \J \\
@@ -302,8 +304,8 @@ To prove our theorem, it is helpful to formally define the half normal distribut
 
   over the domain $A_2: 0 < x < \infty \Ra 0 < y < \infty :B_2$.
 
-  On $A_3$, we have $x = 0 \Ra y = 0$ and $\J = \left| \frac{dx}{dy} \right| =
-  |0| = 0$, yielding $f_Y(y) = f_X(x) \cdot \J = f_X(x) \cdot 0 = 0$.
+  On $A_3$, we have $x = 0 \Ra y = 0$ and Jacobian $\J = \left| \frac{dx}{dy}
+  \right| = |0| = 0$, yielding $f_Y(y) = f_X(x) \cdot \J = f_X(x) \cdot 0 = 0$.
 
   Then, by Equation 6.3.10 from \citet{textbook},\footnote{\textbf{Continuous
   transformations that are not one-to-one}: When $u(x)$ is not one-to-one over
@@ -363,7 +365,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
 
 
 \begin{property} \label{prop:4}
-  The MGF of $SN(0,1,\lambda)$ is
+  The moment generating function of $SN(0,1,\lambda)$ is
 
   \begin{equation} \label{eq:p4-sn-mgf}
     M(t|\lambda) = 2 \cdot \Phi (\delta t) \cdot e^{t^2/2},
@@ -373,7 +375,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
 \end{property}
 
 \begin{proof}
-  According to Equation 5 in \citet{azzalini}, the MGF of $SN(\mu, \sigma,
+  According to Equation 5 in \citet{azzalini}, the mgf of $SN(\mu, \sigma,
   \lambda)$ is
 
   \begin{equation*}
@@ -381,7 +383,7 @@ With Lemma \ref{lem:p2-half-normal}, we can easily show our property:
   \end{equation*}
 
   where $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}} \in (-1, 1)$. It follows
-  that the MGF of the $SN(0, 1, \lambda)$ is
+  that the mgf of the $SN(0, 1, \lambda)$ is
 
   \begin{equation*}
     2 \cdot \exp \left( 0 \cdot t + \frac{1 \cdot t^2}{2} \right) \cdot \Phi(\delta \cdot 1 \cdot t) \eq 2 \cdot e^{t^2/2} \cdot \Phi(\delta t).
