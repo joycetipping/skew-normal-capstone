@@ -17,8 +17,8 @@ The first two central moments of the binomial are simply the mean and variance:
   E(B) = np, \quad Var(B) = np(1-p).
 \end{equation*}
 
-From these, we can find $E(B^2)$: Recall that $Var(B) = E(B^2) - [E(B)]^2$ and
-thus
+From these facts, we can find $E(B^2)$: Recall that $Var(B) = E[(B - E(B))^2] =
+E(B^2) - [E(B)]^2$ and thus
 
 \begin{equation*}
   E(B^2) = Var(B) + [E(B)]^2 = np(1-p) + n^2p^2 = np - np^2 + n^2p^2.
@@ -50,9 +50,8 @@ Here we take a moment to expand the left side of the previous equation:
   &= E(B^3) + 3np^2 - 3n^2p^2 - np. \label{eq:binomial-third-moment-lhs}
 \end{align}
 
-We now set the left hand side \eqref{eq:binomial-third-moment-lhs} and right
-hand side \eqref{eq:binomial-third-moment-rhs} equal to each other and solve
-for $E(B^3)$:
+Since \eqref{eq:binomial-third-moment-rhs} and
+\eqref{eq:binomial-third-moment-lhs} are equal, we can solve for $E(B^3)$:
 
 \begin{align}
   E(B^3) + 3np^2 - 3n^2p^2 - np &= n^3p^3 - 3n^2p^3 + 2np^3 \nonumber \\
@@ -133,15 +132,18 @@ square of \eqref{eq:third-moment-set}:
 The above equation \eqref{eq:solving-for-lambda} is a rational expression in
 $\lambda^2$ that can be solved with either a considerable amount of manual
 labor or, more efficiently, with a computer algebra system. Once we have
-$\lambda^2$, then $\lambda$ is simply either the positive or negative square
-root, as determined by the sign of $(1-2p)$. The sign can be explained with a
-little assistance from Property \ref{prop:3}: When $p \to 0$, the binomial
-skews left and converges toward the positive half normal, which by
+$\lambda^2$, then $\lambda$ is simply the positive or negative square root, as
+determined by the sign of $(1-2p)$.
+
+The sign can be explained with a little assistance from Property \ref{prop:3}:
+When $p \to 0$, the binomial shifts its weight towards the smaller values on
+the left and converges toward the positive half normal, which by
 \eqref{eq:p2-positive-half-normal} corresponds to a positive $\lambda$. When $p
-\to 1$, the binomial skews right and converges toward the negative half normal,
-which by \eqref{eq:p2-negative-half-normal} corresponds to a negative
-$\lambda$. When $p = 0.5$, the binomial is symmetric and $\lambda$ is 0,
-eliminating the need for a sign. Thus:
+\to 1$, the binomial shifts its weight towards the the larger values on the
+right and converges toward the negative half normal, which by
+\eqref{eq:p2-negative-half-normal} corresponds to a negative $\lambda$. When $p
+= 0.5$, the binomial is symmetric and $\lambda$ is 0, eliminating the need for
+a sign. Thus:
 
 \begin{equation}
   \label{eq:lambda-solved}
@@ -175,7 +177,7 @@ equation \eqref{eq:lambda-solved} fails to yield a sign. Furthermore, when
 $\lambda = 0$, equations \eqref{eq:sigma-solved} and \eqref{eq:mu-solved}
 return us to the normal approximation ($\mu = np$ and $\sigma =
 \sqrt{np(1-p)}$, respectively), which is after all a natural choice for a
-symmetric binomial curve.
+symmetric binomial distribution.
 
 \subsection{Restrictions}
 
