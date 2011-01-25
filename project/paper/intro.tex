@@ -14,7 +14,7 @@ probability density function (pdf)
 \end{equation*}
 
 where $q=1-p$. Calculating the binomial cumulative distribution function (cdf),
-$F_X(x) = P(X \leq x) = \sum_{k=1}^x f_X(k)$, by hand is manageable for small
+$F_X(x) = P(X \leq x) = \sum_{k=0}^x f_X(k)$, by hand is manageable for small
 $n$ but quickly becomes cumbersome as $n$ grows even moderately large. A common
 strategy is to use the normal distribution\footnotemark as an approximation:
 
@@ -50,8 +50,9 @@ we do better?
 
 Perhaps so. Intuitively speaking, the main problem with the normal
 approximation is that the normal is always symmetric while the binomial is
-sometimes skewed. This suggests the skew-normal distribution, which adds an
-extra parameter to capture an assymetrical lean.
+skewed for all values of $p$ not equal to 0.5. This fact suggests using the
+skew-normal distribution, which adds an extra parameter to capture an
+assymetrical lean.
 
 In this paper, we will explore the aptness of the skew-normal as a method of
 approximating the binomial. First, we'll acquaint ourselves with its basic
