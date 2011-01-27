@@ -239,7 +239,7 @@ To prove our theorem, it is helpful to formally define the half normal distribut
   \left| \frac{dx}{dy} \right| = |-1| = 1$, yielding
 
   \begin{align*}
-    f_Y(y) &= f_X(x) \cdot \J \\
+    f_Y(y) &= f_X(x) \cdot |\J| \\
     &= f_X(-y) \cdot 1 \\
     &= \frac{1}{\sqrt{2\pi}\sigma} \; e^{-\frac{(-y)^2}{2\sigma^2}} \\
     &= \frac{1}{\sqrt{2\pi}\sigma} \; e^{-\frac{y^2}{2\sigma^2}} \\
@@ -252,7 +252,7 @@ To prove our theorem, it is helpful to formally define the half normal distribut
   Jacobian $|\J| = \left| \frac{dx}{dy} \right| = |1| = 1$, yielding
 
   \begin{align*}
-    f_Y(y) &= f_X(x) \cdot \J \\
+    f_Y(y) &= f_X(x) \cdot |\J| \\
     &= f_X(y) \cdot 1 \\
     &= f_X(y)
   \end{align*}
@@ -261,7 +261,7 @@ To prove our theorem, it is helpful to formally define the half normal distribut
 
   On $A_3$, we have $x = 0 \Ra y = 0$, and the absolute value of the Jacobian
   $|\J| = \left| \frac{dx}{dy} \right| = |0| = 0$, yielding $f_Y(y) = f_X(x)
-  \cdot \J = f_X(x) \cdot 0 = 0$.
+  \cdot |\J| = f_X(x) \cdot 0 = 0$.
 
   Then, by Equation 6.3.10 from \citet{textbook},\footnote{\textbf{Continuous
   transformations that are not one-to-one}: When $u(x)$ is not one-to-one over
