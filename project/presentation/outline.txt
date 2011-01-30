@@ -1,0 +1,9 @@
+Introduction
+  binomial & normal approximation n=500 p=0.1
+  binomial & normal approximation n=25  p=0.5
+  binomial & normal approximation n=25  p=0.1
+  binomial & normal & skew-normal n=25  p=0.1
+Properties
+Method of Moments
+Accuracy
+Resources
