@@ -28,7 +28,7 @@
       }
       .ylabel {
         top: 200px;
-        left: 150px;
+        left: 50px;
         -webkit-transform: rotate(-90deg);
       }
     </style>
@@ -72,7 +72,7 @@
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.05)'),
-            div.plot /attr('id', 'comparison-n25p005-no-sn') /css({width:600, height:400}),
+            div.plot /attr('id', 'comparison-n25p005-no-sn') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
@@ -113,7 +113,7 @@
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.05)'),
-            div.plot /attr('id', 'comparison-n25p005-with-sn') /css({width:600, height:400}),
+            div.plot /attr('id', 'comparison-n25p005-with-sn') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
