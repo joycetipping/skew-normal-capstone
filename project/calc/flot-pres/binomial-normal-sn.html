@@ -45,7 +45,35 @@
       // Our data will be properties on binomial, normal, and sn with names n#{n}p#{p}
 
       $(caterwaul.clone('std seq montenegro')(function () {
-        // n=25, p=0.05, no skew-normal
+        // n=25, p=0.05, binomial
+        var series = [
+          {
+            data: binomial.n25p005,
+            label: 'Binomial',
+            bars: {show:true, barWidth:0},
+            points: {show:true}
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: -2,
+            max: 7 
+          },
+          yaxis: {
+            max:0.45
+          }
+        };
+        $('body').append(html[
+          div.box(
+            div.caption('Binomial (n = 25, p = 0.05)'),
+            div.plot /attr('id', 'binomial') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#binomial'), series, options);
+
+        // n=25, p=0.05, binomial, normal
         var series = [
           {
             data: binomial.n25p005,
@@ -72,15 +100,15 @@
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.05)'),
-            div.plot /attr('id', 'comparison-n25p005-no-sn') /css({width:800, height:400}),
+            div.plot /attr('id', 'binomial-normal') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
         ]);
-        $.plot($('#comparison-n25p005-no-sn'), series, options);
+        $.plot($('#binomial-normal'), series, options);
 
 
-        // n=25, p=0.05, with skew-normal
+        // n=25, p=0.05, binomial, normal, skew-normal
         var series = [
           {
             data: binomial.n25p005,
@@ -113,12 +141,12 @@
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.05)'),
-            div.plot /attr('id', 'comparison-n25p005-with-sn') /css({width:800, height:400}),
+            div.plot /attr('id', 'binomial-normal-sn') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
         ]);
-        $.plot($('#comparison-n25p005-with-sn'), series, options);
+        $.plot($('#binomial-normal-sn'), series, options);
       }));
     </script>
   </head>
