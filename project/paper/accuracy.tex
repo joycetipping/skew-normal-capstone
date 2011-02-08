@@ -19,14 +19,17 @@ primarily in cases where $n$ is moderate and $p$ is extreme (close to 0 or
 The first and most obvious way of judging accuracy is by visual inspection.
 Figures \ref{fig:comparison-n25}, \ref{fig:comparison-n50}, and
 \ref{fig:comparison-n100} in appendix \ref{app:figures} compare the binomial,
-normal, and skew-normal at small values of $p$ for $n=25$, $n=50$, and $n=100$,
-respectively.
+normal, and skew-normal at the small values of $p=0.05$, $p=0.1$, and $p=0.2$
+for $n=25$, $n=50$, and $n=100$, respectively.
 
-The graphs show that at moderate $n$ and small $p$, our skew-normal curve
-follows the shape of the binomial much more closely than the normal. As $n$
-grows, however, the Central Limit Theorem begins to exert its effect and the
-normal distribution "catches up" in accuracy. Thus as we would expect, the
-skew-normal approximation is of greatest value in the former set of cases.
+The graphs in figures \ref{fig:comparison-n25}, \ref{fig:comparison-n50}, and
+\ref{fig:comparison-n100} indicate that at moderate $n$ and small $p$, our
+skew-normal curve follows the shape of the binomial much more closely than the
+normal. As $n$ grows for each value of $p$, however, the Central Limit Theorem
+begins to exert its effect and the normal distribution "catches up" in
+accuracy, slowly for for more extreme values of $p$ and faster as $p$
+approaches 0.5. Thus as we would expect, the skew-normal approximation is of
+greatest value when $n$ is moderate and $p$ is extreme.
 
 \subsection{Maximal Absolute Error}
 \label{subsec:mabs}
