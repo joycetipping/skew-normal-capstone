@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rm data/*.js
+python flot_data.py
+
+cd data/
+compfile='comparison.js'
+cat comparison-headers.js > $compfile
+for file in comparison-*.js; do
+  cat $file >> $compfile
+done

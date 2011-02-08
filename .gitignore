@@ -1,8 +1,14 @@
 output.*
+
 *.aux
 *.bbl
 *.blg
 *.log
+*.nav
 *.out
 *.pyc
+*.snm
+*.toc
+
 *.swp
+*~

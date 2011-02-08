@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      div.box {
+        margin: 75px 0;
+        position: relative;
+      }
+      div.plot {
+        margin: 0 auto;
+        text-align: left;
+      }
+      .caption, .xlabel, .ylabel {
+        text-align: center;
+        font-family: Georgia, serif;
+      }
+      .caption {
+        font-size: 14px;
+      }
+      .xlabel, .ylabel {
+        position: absolute;
+        color: #666;
+        font-size: 12px;
+      }
+      .xlabel {
+        top: 425px;
+        left: 504px;
+      }
+      .ylabel {
+        top: 200px;
+        left: 50px;
+        -webkit-transform: rotate(-90deg);
+      }
+    </style>
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script type='text/javascript' src='../lib/caterwaul.all.js'></script>
+    <script type='text/javascript' src='../lib/jquery.flot.min.js'></script>
+    <script type='text/javascript' src='../lib/montenegro.client.js'></script>
+    <script type='text/javascript' src='data/comparison.js'></script>
+    <script>
+      // When importing comparison.js, we get the following variables
+      //   binomial, normal, sn, ns, ps
+      //
+      // Our data will be properties on binomial, normal, and sn with names n#{n}p#{p}
+
+      $(caterwaul.clone('std seq montenegro')(function () {
+
+        // n=25, p=0.5
+        var series = [
+          {
+            data: binomial.n25p05,
+            label: 'Binomial',
+            bars: {show:true, barWidth:0},
+            points: {show:true}
+          },
+          {
+            data: normal.n25p05,
+            label: 'Normal',
+            lines: {show:true},
+            color: 6
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: 0,
+            max: 25
+          }
+        };
+        $('body').append(html[
+          div.box(
+            div.caption('Binomial (n = 25, p = 0.5)'),
+            div.plot /attr('id', 'comparison-n25p05') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#comparison-n25p05'), series, options);
+
+
+        // n=500, p=0.1
+        var series = [
+          {
+            data: binomial.n500p005,
+            label: 'Binomial',
+            bars: {show:true, barWidth:0},
+            points: {show:true}
+          },
+          {
+            data: normal.n500p005,
+            label: 'Normal',
+            lines: {show:true},
+            color: 6
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: 0,
+            max: 50 
+          }
+        };
+        $('body').append(html[
+          div.box(
+            div.caption('Binomial (n = 500, p = 0.05)'),
+            div.plot /attr('id', 'comparison-n500p005') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#comparison-n500p005'), series, options);
+      }));
+    </script>
+  </head>
+  <body></body>
+</html>
