@@ -1,18 +1,3 @@
-\documentclass{beamer}
-\usepackage{jmath}
-
-\usetheme{default}
-\usefonttheme{structuresmallcapsserif}
-\setbeamertemplate{blocks}[rounded][shadow=true]
-
-\newcommand{\vsep}{\vspace{0.2cm}}
-
-\begin{document}
-\title[The Skew-Normal Approx of the Binomial]{The Skew-Normal Approximation\\of the Binomial Distribution}
-\author{Joyce Tipping}
-\institute{Truman State University}
-\date{Spring 2011}
-
 \frame{\titlepage}
 
 %% Introduction
@@ -106,44 +91,3 @@
     \item Accuracy -- compare to the normal approximation
   \end{enumerate}
 }
-
-%% The Skew-Normal Distribution
-\frame{
-  \frametitle{The Skew-Normal Distribution}
-  \begin{definition}[Skew-normal]
-    Let $Y$ be a skew-normal distribution, with location parameter $\mu \in
-    \R$, scale parameter $\sigma > 0$, and shape parameter $\lambda \in \R$.
-    Then $Y$ has pdf
-
-    \begin{equation*}
-      f(x|\mu, \sigma, \lambda) = \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi \left( \frac{\lambda(x-\mu)}{\sigma} \right), \quad x \in \R,
-    \end{equation*}
-
-    where $\phi$ is the standard normal pdf and $\Phi$ is the standard normal
-    cdf.
-
-    \vsep
-    We write $Y \sim SN(\mu, \sigma, \lambda)$.
-  \end{definition}
-}
-\frame{
-  \frametitle{The Skew-Normal Distribution}
-  A few notes:
-}
-\frame{
-  \frametitle{The Skew-Normal Distribution}
-}
-\frame{
-  \frametitle{The Skew-Normal Distribution}
-}
-\frame{
-  \frametitle{The Skew-Normal Distribution}
-}
-\frame{
-  \frametitle{The Skew-Normal Distribution}
-}
-\frame{
-  \frametitle{The Skew-Normal Distribution}
-}
-
-\end{document}

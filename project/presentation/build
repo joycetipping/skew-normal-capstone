@@ -1,0 +1,17 @@
+#!/bin/bash
+
+headers='headers.tex'
+closers='closers.tex'
+files='intro.tex skew-normal.tex'
+
+output='presentation.tex'
+
+cat $headers  > $output
+echo         >> $output
+for file in $files; do
+  cat $file  >> $output
+  echo       >> $output
+done
+cat $closers >> $output
+
+pdflatex $output
