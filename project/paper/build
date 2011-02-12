@@ -1,34 +1,33 @@
 #!/bin/bash
 
-cd $HOME/projects/capstone/project/paper/
-
 # Pieces
+headers='headers.tex'
+closers='closers.tex'
+output='paper.tex'
+
 pieces='intro.tex skew-normal.tex method-of-moments.tex accuracy.tex resources.tex'
 appendices='figures.tex calc-sn-demo.tex'
 bib='bibliography.bib'
 
 
 # Build document
-echo \\documentclass\{article\}          > output.tex
-echo \\usepackage\{jcapstone\}          >> output.tex
-echo \\begin\{document\}                >> output.tex
-echo                                    >> output.tex
+cat $headers                > $output
+echo                       >> $output
 
 for file in $pieces; do
-  cat $file                             >> output.tex
-  echo                                  >> output.tex
+  cat $file                >> $output
+  echo                     >> $output
 done
 
-echo \\appendix                         >> output.tex
-cat $appendices                         >> output.tex
+echo \\appendix            >> $output
+cat $appendices            >> $output
+echo                       >> $output
 
-echo \\bibliography\{$bib\}          >> output.tex
-echo \\bibliographystyle\{plainnat\}    >> output.tex
-echo \\end\{document\}                  >> output.tex
+cat $closers               >> $output
 
 
 # Compile document
-pdflatex output.tex; echo; echo;
-bibtex output; echo; echo;
-pdflatex output.tex; echo; echo;
-pdflatex output.tex
+pdflatex $output; echo; echo;
+bibtex $(echo $output | sed 's/.tex//'); echo; echo;
+pdflatex $output; echo; echo;
+pdflatex $output
