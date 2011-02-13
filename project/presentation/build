@@ -2,7 +2,7 @@
 
 headers='headers.tex'
 closers='closers.tex'
-files='intro.tex skew-normal.tex'
+files='intro.tex skew-normal.tex method-of-moments.tex accuracy.tex resources.tex'
 
 output='presentation.tex'
 
@@ -14,4 +14,8 @@ for file in $files; do
 done
 cat $closers >> $output
 
+# Compile document
+pdflatex $output; echo; echo;
+bibtex $(echo $output | sed 's/.tex//'); echo; echo;
+pdflatex $output; echo; echo;
 pdflatex $output
