@@ -1,0 +1,11 @@
+\usepackage{jbib, jmath, jtable}
+
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+\theoremstyle{plain}
+\newtheorem{property}{Property}
+\newtheorem{helper-lem}{Lemma}[property]
+\newtheorem{helper-cor}{Corollary}[property]
+
+% We have to define \newblock so that natbib will work with beamer
+\def\newblock{\hskip .11em plus .33em minus .07em}

@@ -1,6 +1,5 @@
 % The Skew-Normal Distribution
-\frame{
-  \frametitle{The Skew-Normal Distribution}
+\frame{ \frametitle{The Skew-Normal Distribution: Foundations}
   \begin{definition}[Skew-normal]
     Let $Y$ be a skew-normal distribution, with location parameter $\mu \in
     \R$, scale parameter $\sigma > 0$, and shape parameter $\lambda \in \R$.
@@ -17,88 +16,85 @@
     We write $Y \sim SN(\mu, \sigma, \lambda)$.
   \end{definition}
 }
-\frame{
-  \frametitle{The Skew-Normal Distribution}
-  \begin{lem}
-    \label{lem:azzalini-lemma-1}
-
+\frame{ \frametitle{The Skew-Normal Distribution: Foundations}
+  \begin{lem*}
     If $f_0$ is a one-dimensional probability density function symmetric about
     0, and $G$ is a one-dimensional distribution function such that $G'$ exists
     and is a density symmetric about 0, then
 
-    \begin{equation}
-      \label{eq:azzalini-skewed-distribution}
+    \begin{equation*}
       f(z) = 2 \cdot f_0(z) \cdot G\{w(z)\} \quad (-\infty < z < \infty)
-    \end{equation}
+    \end{equation*}
 
     is a density function for any odd function $w(\cdot)$. (Lemma 1,
     \citealp{azzalini})
-  \end{lem}
+  \end{lem*}
 }
-\frame{
-  \frametitle{The Skew-Normal Distribution}
+\frame{ \frametitle{The Skew-Normal Distribution: Foundations}
+
+  Basic properties:
 
   \begin{align*}
-    E(Y) &= \mu + b \delta \sigma, \\
-    E(Y^2) &= \mu^2 + 2b \delta \mu \sigma + \sigma^2, \label{eq:sn-moments-about-origin} \\
-    E(Y^3) &= \mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3, \\
-    Var(Y) &= \sigma^2 (1 - b^2 \delta^2). \label{eq:sn-variance}
+    E(Y) &= \mu + b \delta \sigma \\
+    E(Y^2) &= \mu^2 + 2b \delta \mu \sigma + \sigma^2 \\
+    E(Y^3) &= \mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3 \\
+    Var(Y) &= \sigma^2 (1 - b^2 \delta^2)
   \end{align*}
+
+  where $b = \sqrt{\frac{2}{\pi}}$ and $\delta = \frac{\lambda}{\sqrt{1 +
+  \lambda^2}}$. \citep{pewsey}
 }
-\frame{
-  \frametitle{The Skew-Normal Distribution}
+\frame{ \frametitle{The Skew-Normal Distribution: Foundations}
 
-  The $SN(0,1,\lambda)$ distribution is called the standard skew-normal; its pdf
-  is
-
-  \begin{equation} \label{eq:standard-sn-pdf}
-    f_Z(x|\lambda) = 2 \cdot \phi(x) \cdot \Phi (\lambda x), \quad x \in \R.
-  \end{equation}
-
-  Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
-  = \sigma Z + \mu$.
-}
-\frame{
-  \frametitle{The Skew-Normal Distribution}
+  What happens when $\lambda=0$?
 
   \begin{align*}
     f(x|\mu, \sigma, \lambda=0) &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi(0) \\
     &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot 0.5 \\
     &= \frac1\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \\
-    &= \frac1\sigma \cdot \frac{1}{\sqrt{2\pi}} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right) \\
     &= \frac{1}{\sqrt{2\pi}\sigma} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right),
   \end{align*}
 
-  which is the pdf of the normal distribution ($\mu$, $\sigma$). Furthermore,
-  when $\lambda > 0$, the curve skews to the right, and when $\lambda < 0$, it
-  skews to the left (a property we will prove in section
-  \ref{subsec:four-properties}).
+  which is the pdf of the normal distribution ($\mu$, $\sigma$).
 }
-\frame{
-  \frametitle{The Skew-Normal Distribution}
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
 
-  \begin{property} \label{prop:1}
+  \begin{definition}[Standard skew-normal]
+    The $SN(0,1,\lambda)$ distribution is called the standard skew-normal and
+    has pdf
+
+    \begin{equation*}
+      f_Z(x|\lambda) = 2 \cdot \phi(x) \cdot \Phi (\lambda x), \quad x \in \R.
+    \end{equation*}
+  \end{definition}
+
+  Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
+  = \sigma Z + \mu$.
+}
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
+
+  \begin{property}
     If $Z \sim SN(0, 1, \lambda)$, then $(-Z) \sim SN(0, 1, -\lambda)$.
   \end{property}
-
-  \begin{property} \label{prop:2}
+  \vsep
+  \begin{property}
     If $Z \sim SN(0, 1, \lambda)$, then $Z^2 \sim \chi^2_1$ (chi-square with 1 degree of freedom).
   \end{property}
+}
+\frame{ \frametitle{The Skew-Normal Distribution}
+  \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
 
-  \begin{property} \label{prop:3}
+  \begin{property}
     As $\lambda \to \pm \infty$, \thinspace $SN(0,1,\lambda)$ tends to the half normal distribution, $\pm |N(0,1)|$.
   \end{property}
-
-  \begin{property} \label{prop:4}
+  \vsep
+  \begin{property}
     The moment generating function of $SN(0,1,\lambda)$ is
 
-    \begin{equation} \label{eq:p4-sn-mgf}
+    \begin{equation*}
       M(t|\lambda) = 2 \cdot \Phi (\delta t) \cdot e^{t^2/2},
-    \end{equation}
+    \end{equation*}
     
     where $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}}$ and $t \in (-\infty, \infty)$.
   \end{property}
-}
-\frame{
-  \frametitle{The Skew-Normal Distribution}
 }
