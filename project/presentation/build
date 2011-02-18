@@ -15,7 +15,8 @@ done
 cat $closers >> $output
 
 # Compile document
-pdflatex $output; echo; echo;
-bibtex $(echo $output | sed 's/.tex//'); echo; echo;
-pdflatex $output; echo; echo;
 pdflatex $output
+#pdflatex $output; echo; echo;
+#bibtex $(echo $output | sed 's/.tex//'); echo; echo;
+#pdflatex $output; echo; echo;
+#pdflatex $output

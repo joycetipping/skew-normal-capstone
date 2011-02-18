@@ -1,6 +1,8 @@
 % Method of Moments
 
 \frame{ \frametitle{Method of Moments: Overview}
+  Now we're going to derive the approximation!
+
   Game plan:
   \begin{enumerate}[<+->]
     \item Find the first three central moments of the binomial and the first
@@ -172,7 +174,13 @@
   \end{equation*}
 }
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
-  When $p = 0.5$, $\lambda=0$.
+  When $p = 0.5$, the binomial is symmetric, so $\lambda=0$.
+
+  This takes us back to the usual normal approximation:
+  \begin{align*}
+    \sigma &= \sqrt{\frac{np(1-p)}{1 - \frac{2}{\pi} \cdot \frac{0^2}{1 + 0^2}}} = \sqrt{\frac{np(1-p)}{1}} = \sqrt{np(1-p)} \\
+    \mu &= np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{0}{\sqrt{1 + 0^2}}  = np - 0 = np
+  \end{align*}
 }
 
 %% Restrictions
@@ -201,19 +209,33 @@
     \frac{np(1-p)}{(1-2p)^2} &\geq 1 \nonumber \\
     np(1-p) &\geq (1-2p)^2. \label{eq:solving-the-restriction}
   \end{align}
+  From \eqref{eq:solving-the-restriction}, we can answer two questions:
 }
 \frame{ \frametitle{Method of Moments: Restrictions}
-  From \eqref{eq:solving-the-restriction}, we can answer two questions:
+  One:
 
   Given $p$, what is the least $n$ necessary?
   \begin{equation*}
     n \geq \frac{(1-2p)^2}{p(1-p)}
   \end{equation*}
+}
+\frame{ \frametitle{Method of Moments: Restrictions}
+  Least possible $n$, given a fixed $p$:
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{../images/restriction-least-n.png}
+  \end{center}
+}
+\frame{ \frametitle{Method of Moments: Restrictions}
+  Two:
+
   Given $n$, what is the range of possible $p$'s?
   \begin{equation*}
    \frac12 - \frac12 \sqrt{\frac{n}{n+4}} \; \leq \; p \; \leq \; \frac12 + \frac12 \sqrt{\frac{n}{n+4}}
   \end{equation*}
 }
 \frame{ \frametitle{Method of Moments: Restrictions}
-  % figures
+  Range of possible $p$, given a fixed $n$:
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{../images/restriction-p-range.png}
+  \end{center}
 }

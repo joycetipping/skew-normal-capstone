@@ -13,10 +13,8 @@
 \frame{ \frametitle{Introduction}
   The binomial cdf is easy to calculate for small $n$ ...
 
-  \pause
   But as $n$ gets larger, it becomes increasingly difficult.
 
-  \pause
   For example ...
 }
 \frame{ \frametitle{Introduction}
@@ -25,7 +23,6 @@
     F(1) = \binom{3}{1} \; p^1 q^2 + \binom{3}{0} \; p^0 q^3
   \end{equation*}
 
-  \pause
   When $n=25$,
   \begin{align*}
     F(12) =& \binom{25}{12} \; p^{12} q^{13} + \binom{25}{11} \; p^{11} q^{14} + \binom{25}{10} \; p^{10} q^{15} + \binom{25}{9} \; p^9 q^{16} \\
@@ -36,11 +33,9 @@
 }
 \frame{ \frametitle{Introduction}
   Normal Approximation of the Binomial:
-
   \begin{equation*}
     F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right),
   \end{equation*}
-
   where $\mu = np$, $\sigma = \sqrt{np(1-p)}$, and $\Phi$ is the standard
   normal cdf.
 
@@ -48,36 +43,29 @@
   When does this work well? ... \pause In a nutshell, when the binomial is symmetric.
 }
 \frame{ \frametitle{Introduction}
-
   The binomial is symmetric when
   \only<1->{$p=0.5$}
   \only<2>{or $n$ is very large.}
-
   \begin{center}
     \only<1>{\includegraphics[width=\textwidth]{../images/binomial-normal-1.png}}
     \only<2>{\includegraphics[width=\textwidth]{../images/binomial-normal-2.png}}
   \end{center}
 }
 \frame{ \frametitle{Introduction}
-
   However, when $n$ is medium and $p$ is extreme ...
-
   \begin{center}
     \only<1>{\includegraphics[width=\textwidth]{../images/binomial-normal-sn-1.png}}
-    \only<2-3>{\includegraphics[width=\textwidth]{../images/binomial-normal-sn-2.png}}
-    \only<4>{\includegraphics[width=\textwidth]{../images/binomial-normal-sn-3.png}}
+    \only<2>{\includegraphics[width=\textwidth]{../images/binomial-normal-sn-2.png}}
+    \only<3>{\includegraphics[width=\textwidth]{../images/binomial-normal-sn-3.png}}
   \end{center}
-
-  \only<1>{the binomial is very skewed.}
-  \only<2>{the normal approximation doesn't work very well.}
-  \only<3->{\textbf{Can we do better?}}
-  \only<4>{Introducing ... the skew-normal distribution.}
+  \only<1>{the binomial is very skewed ...}
+  \only<2>{and the normal approximation doesn't work very well.}
+  \only<3>{Introducing ... the skew-normal distribution.}
 }
 
 %% Outline
 \frame{ \frametitle{Outline}
   What we're going to cover:
-  \pause
   \begin{enumerate}[<+->]
     \item Skew-Normal distribution -- basic properties
     \item Method of Moments -- derive an approximation
