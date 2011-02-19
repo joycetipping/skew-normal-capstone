@@ -9,7 +9,7 @@ from stats import *
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 # Skew-normal Restriction Graphs
 #
-def sn_restriction_p_range_graph ():
+def write_sn_restriction_p_range_graph ():
   # Builds data for the "fixed n, viable p range" graph and writes it to an
   # appropriately named json file
 
@@ -27,7 +27,7 @@ def sn_restriction_p_range_graph ():
   f.write('var p_bottom_points = ' + json.dumps(p_bottom_points) + ';\n')
   f.close()
 
-def sn_restriction_least_n_graph ():
+def write_sn_restriction_least_n_graph ():
   # Builds data for the "fixed p, least n" graph and writes it to an
   # appropriately named json file
 
@@ -39,13 +39,13 @@ def sn_restriction_least_n_graph ():
   f.close()
 
 def compile_sn_restriction_data ():
-  sn_restriction_p_range_graph()
-  sn_restriction_least_n_graph()
+  write_sn_restriction_p_range_graph()
+  write_sn_restriction_least_n_graph()
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 # Comparison Graphs
 #
-def comparison_graph (n, p):
+def write_comparison_graph (n, p):
   # Builds data for one comparison graph (binomial, normal, and skew-normal)
   # and writes it to an appropriately-named json file
 
@@ -81,12 +81,12 @@ def compile_comparison_data ():
   f.close()
 
   # Write our graphs
-  map(lambda n: map(lambda p: comparison_graph(n, p), ps), ns)
+  map(lambda n: map(lambda p: write_comparison_graph(n, p), ps), ns)
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 # MABS
 #
-def mabs_fixed_n_graph (n):
+def write_mabs_fixed_n_graph (n):
   # Builds data for one mabs graph with fixed n and varying p, and writes it to
   # an appropriately-named file
 
@@ -101,7 +101,7 @@ def mabs_fixed_n_graph (n):
   f.close()
   return
 
-def mabs_fixed_p_graph (p):
+def write_mabs_fixed_p_graph (p):
   # Builds data for one mabs graph with fixed p and varying n, and write it to
   # an appropriately-named file
 
@@ -130,8 +130,8 @@ def compile_mabs_data ():
   f.close()
 
   # Write our graphs
-  map(lambda n: mabs_fixed_n_graph(n), ns)
-  map(lambda p: mabs_fixed_p_graph(p), ps)
+  map(lambda n: write_mabs_fixed_n_graph(n), ns)
+  map(lambda p: write_mabs_fixed_p_graph(p), ps)
 
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#

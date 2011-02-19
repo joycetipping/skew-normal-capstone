@@ -10,7 +10,7 @@ from stats import *
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 # Comparison Graphs
 #
-def comparison_graph (n, p):
+def write_comparison_graph (n, p):
   # Builds data for one comparison graph (binomial, normal, and skew-normal)
   # and writes it to an appropriately-named json file
 
@@ -37,7 +37,7 @@ def compile_comparison_data ():
   f.close()
 
   # Write our graphs
-  map(lambda n: map(lambda p: comparison_graph(n, p), ps), ns)
+  map(lambda n: map(lambda p: write_comparison_graph(n, p), ps), ns)
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 # Action, baby!
