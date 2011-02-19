@@ -49,7 +49,7 @@ def write_comparison_graph (n, p):
   # Builds data for one comparison graph (binomial, normal, and skew-normal)
   # and writes it to an appropriately-named json file
 
-  (binomial, normal, sn) = frame( binomial_pmf(n, p, pairs=True),
+  [binomial, normal, sn] = frame( binomial_pmf(n, p, pairs=True),
                                   normal_approx_pdf(n, p, pairs=True),
                                   sn_approx_pdf(n, p, pairs=True) )
   np = 'n' + str(n) + 'p' + str(p).replace('.', '')
