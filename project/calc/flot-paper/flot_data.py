@@ -50,8 +50,8 @@ def comparison_graph (n, p):
   # and writes it to an appropriately-named json file
 
   (binomial, normal, sn) = frame( binomial_pmf(n, p, pairs=True),
-                                  normal_pdf(n, p, pairs=True),
-                                  sn_pdf(n, p, pairs=True) )
+                                  normal_approx_pdf(n, p, pairs=True),
+                                  sn_approx_pdf(n, p, pairs=True) )
   np = 'n' + str(n) + 'p' + str(p).replace('.', '')
   f = open('data/comparison-' + np + '.js', 'w')
   f.write('binomial.' + np + ' = ' + json.dumps(binomial) + ';\n')

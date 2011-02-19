@@ -17,7 +17,7 @@ def build_approximation_table (ns, ps):
   f.write('\\multirow{' + str(len(ps) + 1) + '}{*}{$p$} & & ' + ' & '.join(map(lambda n: '\\multicolumn{5}{c}{' + str(n) + '}', ns)) + ' \\\\\n\\hline\n');
   for p in ps: f.write('& ' + '{0:.2f}'.format(p) + ' & ' + ' & '.join(table_row(ns, p)) + ' \\\\\n');
   f.close()
-    
+
 def table_row (ns, p):
   return map(lambda n: sn_params_pretty(n, p), ns)
 

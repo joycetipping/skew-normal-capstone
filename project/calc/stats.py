@@ -23,13 +23,18 @@ def binomial_pmf (n, p, pairs=False):
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 # Normal Approximation
 #
-def normal_pdf (n, p, pairs=False):
+def normal_pdf (mu, sigma, pairs=False):
+  # Given mu and sigma, returns a normal pdf in two arrays of xs and ys, respectively
+  # If pairs is True, it returns the pdf as an array of points
+  xs = r.seq(mu - 5*sigma, mu + 5*sigma, 0.1)
+  ys = r.dnorm(xs, mu, sigma)
+  return pair(xs, ys) if pairs else {'xs':xs, 'ys':ys}
+
+def normal_approx_pdf (n, p, pairs=False):
   # Given bin(n, p), returns an approximating normal pdf in two arrays of xs and ys, respectively
   # If pairs is True, it returns the pdf as an array of points
   (mu, sigma) = normal_params(n, p)
-  xs = r.seq(-n/2, 1.5*n, 0.1)
-  ys = r.dnorm(xs, mu, sigma)
-  return pair(xs, ys) if pairs else {'xs':xs, 'ys':ys}
+  return normal_pdf(mu, sigma, pairs)
 
 def normal_params (n, p):
   # Given n and p, returns the parameters of the normal approximation as a tuple (mu, sigma)
@@ -39,13 +44,18 @@ def normal_params (n, p):
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 # Skew-normal Approximation
 #
-def sn_pdf (n, p, pairs=False):
+def sn_pdf (mu, sigma, skew, pairs=False):
+  # Given mu, sigma, and skew, returns a skew-normal pdf in two arrays of xs and ys, respectively
+  # If pairs is True, it returns the pdf as an array of points
+  xs = r.seq(mu - 5*sigma, mu + 5*sigma, 0.1)
+  ys = r.dsn(xs, mu, sigma, skew)
+  return pair(xs, ys) if pairs else {'xs':xs, 'ys':ys}
+
+def sn_approx_pdf (n, p, pairs=False):
   # Given bin(n, p), returns an approximating skew-normal pdf in two arrays of xs and ys, respectively
   # If pairs is True, it returns the pdf as an array of points
   (mu, sigma, skew) = sn_params(n, p)
-  xs = r.seq(-n/2, 1.5*n, 0.1)
-  ys = r.dsn(xs, mu, sigma, skew)
-  return pair(xs, ys) if pairs else {'xs':xs, 'ys':ys}
+  return sn_pdf(mu, sigma, skew, pairs)
 
 def sn_restriction_least_n (p):
   # Given p, finds the least viable n
