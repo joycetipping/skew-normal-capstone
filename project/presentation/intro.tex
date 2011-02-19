@@ -2,18 +2,30 @@
 
 %% Introduction
 \frame{ \frametitle{Introduction}
-  $X \sim Bin(n,p)$ where $0<p<1$ and $n = 1, 2, 3, \ldots$
+  \begin{definition}[Binomial]
+    Let $X$ represent the number of successes in a sequence of $n$ independent Bernoulli trials with probability of success $p$ on each trial.
 
-  \pause
-  \begin{align*}
-    \uncover<2->{f_X(x) &= \binom{n}{x} \; p^x q^{n-x} \\}
-    \uncover<3->{F_X(x) &= P(X \leq x) = \sum_{k=0}^x f_X(k)}
-  \end{align*}
+    \vsep
+    \uncover<2->{
+      $X$ has discrete pdf
+      \begin{equation*}
+        f_X(x) = \binom{n}{x} \; p^x q^{n-x}
+      \end{equation*}
+    }
+    \uncover<3->{
+      and cdf
+      \begin{equation*}
+        F_X(x) = P(X \leq x) = \sum_{k=0}^x f_X(k).
+      \end{equation*}
+    }
+  \end{definition}
 }
 \frame{ \frametitle{Introduction}
   The binomial cdf is easy to calculate for small $n$ ...
+  \pause
 
   But as $n$ gets larger, it becomes increasingly difficult.
+  \pause
 
   For example ...
 }
@@ -22,7 +34,7 @@
   \begin{equation*}
     F(1) = \binom{3}{1} \; p^1 q^2 + \binom{3}{0} \; p^0 q^3
   \end{equation*}
-
+  \pause
   When $n=25$,
   \begin{align*}
     F(12) =& \binom{25}{12} \; p^{12} q^{13} + \binom{25}{11} \; p^{11} q^{14} + \binom{25}{10} \; p^{10} q^{15} + \binom{25}{9} \; p^9 q^{16} \\
@@ -32,20 +44,21 @@
   \end{align*}
 }
 \frame{ \frametitle{Introduction}
-  Normal Approximation of the Binomial:
+  A common technique is to use the normal distribution as an approximation:
   \begin{equation*}
     F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right),
   \end{equation*}
   where $\mu = np$, $\sigma = \sqrt{np(1-p)}$, and $\Phi$ is the standard
   normal cdf.
+  \pause
 
   \vsep
   When does this work well? ... \pause In a nutshell, when the binomial is symmetric.
 }
 \frame{ \frametitle{Introduction}
   The binomial is symmetric when
-  \only<1->{$p=0.5$}
-  \only<2>{or $n$ is very large.}
+  \uncover<1->{$p=0.5$}
+  \uncover<2>{or $n$ is very large.}
   \begin{center}
     \only<1>{\includegraphics[width=\textwidth]{../images/binomial-normal-1.png}}
     \only<2>{\includegraphics[width=\textwidth]{../images/binomial-normal-2.png}}
@@ -65,7 +78,7 @@
 
 %% Outline
 \frame{ \frametitle{Outline}
-  What we're going to cover:
+  Today's itinerary:
   \begin{enumerate}[<+->]
     \item Skew-Normal distribution -- basic properties
     \item Method of Moments -- derive an approximation

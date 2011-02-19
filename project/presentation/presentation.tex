@@ -17,19 +17,31 @@
 
 %% Introduction
 \frame{ \frametitle{Introduction}
-  $X \sim Bin(n,p)$ where $0<p<1$ and $n = 1, 2, 3, \ldots$
+  \begin{definition}[Binomial]
+    Let $X$ represent the number of successes in a sequence of $n$ independent Bernoulli trials with probability of success $p$ on each trial.
 
-  \pause
-  \begin{align*}
-    \uncover<2->{f_X(x) &= \binom{n}{x} \; p^x q^{n-x} \\}
-    \uncover<3->{F_X(x) &= P(X \leq x) = \sum_{k=0}^x f_X(k)}
-  \end{align*}
+    \vsep
+    \uncover<2->{
+      $X$ has discrete pdf
+      \begin{equation*}
+        f_X(x) = \binom{n}{x} \; p^x q^{n-x}
+      \end{equation*}
+    }
+    \uncover<3->{
+      and cdf
+      \begin{equation*}
+        F_X(x) = P(X \leq x) = \sum_{k=0}^x f_X(k).
+      \end{equation*}
+    }
+  \end{definition}
 }
 \frame{ \frametitle{Introduction}
   The binomial cdf is easy to calculate for small $n$ ...
 
+  \pause
   But as $n$ gets larger, it becomes increasingly difficult.
 
+  \pause
   For example ...
 }
 \frame{ \frametitle{Introduction}
@@ -38,6 +50,7 @@
     F(1) = \binom{3}{1} \; p^1 q^2 + \binom{3}{0} \; p^0 q^3
   \end{equation*}
 
+  \pause
   When $n=25$,
   \begin{align*}
     F(12) =& \binom{25}{12} \; p^{12} q^{13} + \binom{25}{11} \; p^{11} q^{14} + \binom{25}{10} \; p^{10} q^{15} + \binom{25}{9} \; p^9 q^{16} \\
@@ -47,20 +60,21 @@
   \end{align*}
 }
 \frame{ \frametitle{Introduction}
-  Normal Approximation of the Binomial:
+  A common technique is to use the normal distribution as an approximation:
   \begin{equation*}
     F_X(x) \approx \Phi \left( \frac{x + 0.5 - \mu}{\sigma} \right),
   \end{equation*}
   where $\mu = np$, $\sigma = \sqrt{np(1-p)}$, and $\Phi$ is the standard
   normal cdf.
 
+  \pause
   \vsep
   When does this work well? ... \pause In a nutshell, when the binomial is symmetric.
 }
 \frame{ \frametitle{Introduction}
   The binomial is symmetric when
-  \only<1->{$p=0.5$}
-  \only<2>{or $n$ is very large.}
+  \uncover<1->{$p=0.5$}
+  \uncover<2>{or $n$ is very large.}
   \begin{center}
     \only<1>{\includegraphics[width=\textwidth]{../images/binomial-normal-1.png}}
     \only<2>{\includegraphics[width=\textwidth]{../images/binomial-normal-2.png}}
@@ -80,7 +94,7 @@
 
 %% Outline
 \frame{ \frametitle{Outline}
-  What we're going to cover:
+  Today's itinerary:
   \begin{enumerate}[<+->]
     \item Skew-Normal distribution -- basic properties
     \item Method of Moments -- derive an approximation
@@ -139,15 +153,13 @@
 \frame{ \frametitle{The Skew-Normal Distribution: Foundations}
 
   What happens when $\lambda=0$?
-
   \begin{align*}
-    f(x|\mu, \sigma, \lambda=0) &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi(0) \\
-    &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot 0.5 \\
-    &= \frac1\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \\
-    &= \frac{1}{\sqrt{2\pi}\sigma} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right),
+    \uncover<+->{f(x|\mu, \sigma, \lambda=0) &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi(0) \\}
+    \uncover<+->{&= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot 0.5 \\}
+    \uncover<+->{&= \frac1\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \\}
+    \uncover<+->{&= \frac{1}{\sqrt{2\pi}\sigma} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right),}
   \end{align*}
-
-  which is the pdf of the normal distribution ($\mu$, $\sigma$).
+  \uncover<+->{which is the pdf of the normal distribution ($\mu$, $\sigma$).}
 }
 \frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
 
@@ -160,6 +172,7 @@
     \end{equation*}
   \end{definition}
 
+  \pause
   Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
   = \sigma Z + \mu$.
 }
@@ -168,6 +181,7 @@
   \begin{property}[1]
     If $Z \sim SN(0, 1, \lambda)$, then $(-Z) \sim SN(0, 1, -\lambda)$.
   \end{property}
+  \pause
   \vsep
   \begin{property}[2]
     If $Z \sim SN(0, 1, \lambda)$, then $Z^2 \sim \chi^2_1$ (chi-square with 1 degree of freedom).
@@ -179,6 +193,7 @@
   \begin{property}[3]
     As $\lambda \to \pm \infty$, \thinspace $SN(0,1,\lambda)$ tends to the half normal distribution, $\pm |N(0,1)|$.
   \end{property}
+  \pause
   \vsep
   \begin{property}[4]
     The moment generating function of $SN(0,1,\lambda)$ is
@@ -193,8 +208,10 @@
 
 \frame{ \frametitle{Method of Moments: Overview}
   Now we're going to derive the approximation!
+  \pause
 
   Game plan:
+  \pause
   \begin{enumerate}[<+->]
     \item Find the first three central moments of the binomial and the first
           three central moments of the skew-normal.\\
@@ -208,22 +225,26 @@
 
 %% The Central Moments of the Binomial
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
-  The first two are easy:
+  Let's start with the binomial ...
+}
+\frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
+  The first two central moments are just the mean and variance:
   \begin{align*}
-    E(B) &= np \\
-    E([B - E(B)]^2) &= Var(B) = np(1-p)
+    \uncover<+->{E(B) &= np \\}
+    \uncover<+->{E([B - E(B)]^2) &= Var(B) = np(1-p)}
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
   The third one takes some elbow grease.
-  
+  \pause
+
   First we'll need to find $E(B^2)$ and $E(B^3)$.
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
   \begin{align*}
-    E(B^2) &= Var(B) + [E(B)]^2 \\
-    &= np(1-p) + n^2p^2 \\
-    &= np - np^2 + n^2p^2
+    \uncover<+->{E(B^2) &= Var(B) + [E(B)]^2 \\}
+    \uncover<+->{&= np(1-p) + n^2p^2 \\}
+    \uncover<+->{&= np - np^2 + n^2p^2}
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
@@ -231,59 +252,64 @@
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
   \begin{align*}
-    &E[B(B-1)(B-2)] \\
-    &= \sum_{x=0}^n x (x-1) (x-2) \cdot \left\{ \binom{n}{x} p^x q^{n-x} \right\} \\
-    &= \sum_{x=3}^n x (x-1) (x-2) \cdot \left\{ \binom{n}{x} p^x q^{n-x} \right\} \\
-    &= \sum_{x=3}^n x(x-1)(x-2) \cdot \frac{n!}{x!\;(n-x)!} \; p^x q^{n-x} \\
-    &= \sum_{x=3}^n \frac{n!}{(x-3)!\;(n-x)!} \; p^x q^{n-x} \\
-    &= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x} \\
+    \uncover<+->{&E[B(B-1)(B-2)] \\}
+    \uncover<+->{&= \sum_{x=0}^n x (x-1) (x-2) \cdot \left\{ \binom{n}{x} p^x q^{n-x} \right\} \\}
+    \uncover<+->{&= \sum_{x=3}^n x (x-1) (x-2) \cdot \left\{ \binom{n}{x} p^x q^{n-x} \right\} \\}
+    \uncover<+->{&= \sum_{x=3}^n x(x-1)(x-2) \cdot \frac{n!}{x!\;(n-x)!} \; p^x q^{n-x} \\}
+    \uncover<+->{&= \sum_{x=3}^n \frac{n!}{(x-3)!\;(n-x)!} \; p^x q^{n-x} \\}
+    \uncover<+->{&= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x} \\}
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
   Let $y=x-3$; then $x=y+3$, and $x=3$, $x=n \Ra y=0$, $y=n-3$:
+  \pause
   \begin{align*}
-    &= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x} \\
-    &= n(n-1)(n-2)p^3 \cdot \sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;(n-(y+3))!} \; p^y q^{n-(y+3)} \\
-    &= n(n-1)(n-2)p^3 \cdot \underbrace {\sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;((n-3)-y)!} \; p^y q^{(n-3)-y}}_{\mathclap{\textnormal{[pdf of $Bin(n-3,p)$ summed over its domain] = 1}}} \\
-    &= n(n-1)(n-2)p^3 \\
-    &= n^3p^3 - 3n^2p^3 + 2np^3
+    \uncover<+->{&= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x} \\}
+    \uncover<+->{&= n(n-1)(n-2)p^3 \cdot \sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;(n-(y+3))!} \; p^y q^{n-(y+3)} \\}
+    \uncover<+->{&= n(n-1)(n-2)p^3 \cdot \underbrace {\sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;((n-3)-y)!} \; p^y q^{(n-3)-y}}_{\mathclap{\textnormal{[pdf of $Bin(n-3,p)$ summed over its domain] = 1}}} \\}
+    \uncover<+->{&= n(n-1)(n-2)p^3 \\}
+    \uncover<+->{&= n^3p^3 - 3n^2p^3 + 2np^3}
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
   To get $E(B^3)$, we expand the left side of the previous equation:
+  \pause
   \begin{align*}
-    &E[B(B-1)(B-2)] \\
-    &= E \left[ B^3 - 3B^2 + 2B \right] \\
-    &= E(B^3) - 3E(B^2) + 2E(B) \\
-    &= E(B^3) - 3(np - np^2 + n^2p^2) + 2np \\
-    &= E(B^3) - 3np + 3np^2 - 3n^2p^2 + 2np \\
-    &= E(B^3) + 3np^2 - 3n^2p^2 - np
+    \uncover<+->{&E[B(B-1)(B-2)] \\}
+    \uncover<+->{&= E \left[ B^3 - 3B^2 + 2B \right] \\}
+    \uncover<+->{&= E(B^3) - 3E(B^2) + 2E(B) \\}
+    \uncover<+->{&= E(B^3) - 3(np - np^2 + n^2p^2) + 2np \\}
+    \uncover<+->{&= E(B^3) - 3np + 3np^2 - 3n^2p^2 + 2np \\}
+    \uncover<+->{&= E(B^3) + 3np^2 - 3n^2p^2 - np}
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
   Left side: $E(B^3) + 3np^2 - 3n^2p^2 - np$
 
   Right side: $n^3p^3 - 3n^2p^3 + 2np^3$
+  \pause
 
   Set them equal and solve for $E(B^3)$:
+  \pause
   \begin{align*}
-    &E(B^3) + 3np^2 - 3n^2p^2 - np = n^3p^3 - 3n^2p^3 + 2np^3 \\
-    &\Rightarrow \qquad E(B^3) = n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np
+    \uncover<+->{&E(B^3) + 3np^2 - 3n^2p^2 - np = n^3p^3 - 3n^2p^3 + 2np^3 \\}
+    \uncover<+->{&\Rightarrow \qquad E(B^3) = n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np}
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
   Now we can (finally!) compute the third central moment:
+  \pause
   \begin{align*}
-    &E \left( [B - E(B)]^3 \right) \\
-    &= E \left( B^3 - 3B^2 E(B) + 3B [E(B)]^2 - [E(B)]^3 \right) \\
-    &= E(B^3) - 3 E(B^2) E(B) + 3 E(B) [E(B)]^2 - [E(B)]^3 \\
-    &= E(B^3) - 3 E(B^2) E(B) + 2 [E(B)]^3 \\
-    &= (n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np) \\
-    &\quad - 3(np - np^2 + n^2p^2)(np) + 2(np)^3 \\
-    &= \cancel{n^3p^3} - \cancel{3n^2p^3} + 2np^3 - 3np^2 + \cancel{3n^2p^2} + np \\
-    &\quad - \cancel{3n^2p^2} + \cancel{3n^2p^3} - \cancel{3n^3p^3} + \cancel{2n^3p^3} \\
-    &= 2np^3 - 3np^2 + np \\
-    &= np(p-1)(2p-1)
+    \uncover<+->{&E \left( [B - E(B)]^3 \right) \\}
+    \uncover<+->{&= E \left( B^3 - 3B^2 E(B) + 3B [E(B)]^2 - [E(B)]^3 \right) \\}
+    \uncover<+->{&= E(B^3) - 3 E(B^2) E(B) + 3 E(B) [E(B)]^2 - [E(B)]^3 \\}
+    \uncover<+->{&= E(B^3) - 3 E(B^2) E(B) + 2 [E(B)]^3 \\}
+    \uncover<+->{&= (n^3p^3 - 3n^2p^3 + 2np^3 - 3np^2 + 3n^2p^2 + np) \\
+                 &\quad - 3(np - np^2 + n^2p^2)(np) + 2(np)^3 \\}
+    \uncover<+->{&= \cancel{n^3p^3} - \cancel{3n^2p^3} + 2np^3 - 3np^2 + \cancel{3n^2p^2} + np \\
+                 &\quad - \cancel{3n^2p^2} + \cancel{3n^2p^3} - \cancel{3n^3p^3} + \cancel{2n^3p^3} \\}
+    \uncover<+->{&= 2np^3 - 3np^2 + np \\}
+    \uncover<+->{&= np(p-1)(2p-1)}
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
@@ -297,7 +323,11 @@
 
 %% The Central Moments of the Skew-Normal
 \frame{ \frametitle{Method of Moments: Central Moments of the Skew-Normal}
-  The first and second central moments are the mean and variance.
+  Now lets move on to skew-normal ...
+}
+\frame{ \frametitle{Method of Moments: Central Moments of the Skew-Normal}
+  Again, the first and second central moments are the mean and variance.
+  \pause
   \begin{align*}
     E(Y) &= \mu + b \delta \sigma \\
     Var(Y) &= \sigma^2 (1 - b^2 \delta^2)
@@ -305,16 +335,17 @@
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Skew-Normal}
   Again, the third one is a little harder:
+  \pause
   \begin{align*}
-    &E([Y - E(Y)]^3) \\
-    &= E(Y^3) - 3E(Y^2)E(Y) + 2[E(Y)]^3 \\
-    &= (\mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3) \\
-    &\quad - 3 (\mu^2 + 2b \delta \mu \sigma + \sigma^2) (\mu + b \delta \sigma) + 2\;(\mu + b \delta \sigma)^3 \\
-    &= \cancel{\mu^3} + \cancel{3 b \delta \mu^2 \sigma} + \cancel{3 \mu \sigma^2} + \cancel{3 b \delta \sigma^3} - b \delta^3 \sigma^3 - \cancel{3 \mu^3} - \cancel{3 b \delta \mu^2 \sigma} \\
-    &\quad - \cancel{6 b \delta \mu^2 \sigma} - \cancel{6 b^2 \delta^2 \mu \sigma^2} - \cancel{3 \mu \sigma^2} - \cancel{3 b \delta \sigma^3} + \cancel{2 \mu^3} + \cancel{6 b \delta \mu^2 \sigma} \\
-    &\quad + \cancel{6 b^2 \delta^2 \mu \sigma^2} + 2 b^3 \delta^3 \sigma^3 \\
-    &= 2 b^3 \delta^3 \sigma^3 - b \delta^3 \sigma^3 \\
-    &= b \delta^3 \sigma^3 (2b^2 - 1)
+    \uncover<+->{&E([Y - E(Y)]^3) \\}
+    \uncover<+->{&= E(Y^3) - 3E(Y^2)E(Y) + 2[E(Y)]^3 \\}
+    \uncover<+->{&= (\mu^3 + 3 b \delta \mu^2 \sigma + 3 \mu \sigma^2 + 3 b \delta \sigma^3 - b \delta^3 \sigma^3) \\
+                 &\quad - 3 (\mu^2 + 2b \delta \mu \sigma + \sigma^2) (\mu + b \delta \sigma) + 2\;(\mu + b \delta \sigma)^3 \\}
+    \uncover<+->{&= \cancel{\mu^3} + \cancel{3 b \delta \mu^2 \sigma} + \cancel{3 \mu \sigma^2} + \cancel{3 b \delta \sigma^3} - b \delta^3 \sigma^3 - \cancel{3 \mu^3} - \cancel{3 b \delta \mu^2 \sigma} \\
+                 &\quad - \cancel{6 b \delta \mu^2 \sigma} - \cancel{6 b^2 \delta^2 \mu \sigma^2} - \cancel{3 \mu \sigma^2} - \cancel{3 b \delta \sigma^3} + \cancel{2 \mu^3} + \cancel{6 b \delta \mu^2 \sigma} \\
+                 &\quad + \cancel{6 b^2 \delta^2 \mu \sigma^2} + 2 b^3 \delta^3 \sigma^3 \\}
+    \uncover<+->{&= 2 b^3 \delta^3 \sigma^3 - b \delta^3 \sigma^3 \\}
+    \uncover<+->{&= b \delta^3 \sigma^3 (2b^2 - 1)}
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Skew-Normal}
@@ -329,83 +360,100 @@
 %% Deriving an Approximation
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
   Set the central moments of the binomial equal to the central moments of the skew-normal:
+  \pause
   \begin{subequations}
-  \begin{align}
-    np &= \mu + \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \label{eq:first-moment-set} \\
-    np(1-p) &= \sigma^2 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right) \label{eq:second-moment-set} \\
-    np(p-1)(2p-1) &= \sigma^3 \sqrt{\frac{2}{\pi}} \left( \frac{\lambda}{\sqrt{1 + \lambda^2}} \right)^3 \left( \frac{4}{\pi} - 1 \right) \label{eq:third-moment-set}
-  \end{align}
+    \begin{align}
+      \uncover<+->{np &= \mu + \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \label{eq:first-moment-set} \\}
+      \uncover<+->{np(1-p) &= \sigma^2 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right) \label{eq:second-moment-set} \\}
+      \uncover<+->{np(p-1)(2p-1) &= \sigma^3 \sqrt{\frac{2}{\pi}} \left( \frac{\lambda}{\sqrt{1 + \lambda^2}} \right)^3 \left( \frac{4}{\pi} - 1 \right) \label{eq:third-moment-set} \\}
+      \notag
+    \end{align}
   \end{subequations}
 }
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
   To get $\lambda$, divide the cube of \eqref{eq:second-moment-set} by the
   square of \eqref{eq:third-moment-set}:
+  \pause
   \begin{align}
-    \frac{\sigma^6 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right)^3}{\sigma^6 \cdot \frac{2}{\pi} \left( \frac{\lambda}{\sqrt{1 + \lambda^2}} \right)^6 \left(
-      \frac{4}{\pi} - 1 \right)^2} &= \frac{n^3p^3(1-p)^3}{n^2p^2(p-1)^2(2p-1)^2} \nonumber \\
-    \Rightarrow \quad \frac{\left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1+\lambda^2} \right)^3}{\frac{2}{\pi} \left( \frac{\lambda^2}{1+\lambda^2} \right)^3 \left( \frac{4}{\pi} - 1
-      \right)^2} &= \frac{np(1-p)}{(1-2p)^2} \label{eq:solving-for-lambda}
+    \uncover<+->{\frac{\sigma^6 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right)^3}{\sigma^6 \cdot \frac{2}{\pi} \left( \frac{\lambda}{\sqrt{1 + \lambda^2}} \right)^6 \left(
+                 \frac{4}{\pi} - 1 \right)^2} &= \frac{n^3p^3(1-p)^3}{n^2p^2(p-1)^2(2p-1)^2} \nonumber \\}
+    \uncover<+->{\Rightarrow \quad \frac{\left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1+\lambda^2} \right)^3}{\frac{2}{\pi} \left( \frac{\lambda^2}{1+\lambda^2} \right)^3 \left( \frac{4}{\pi} - 1
+                 \right)^2} &= \frac{np(1-p)}{(1-2p)^2} \label{eq:solving-for-lambda}}
   \end{align}
 }
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
-  Equation \eqref{eq:solving-for-lambda} can be solved for $\lambda^2$. Then take $\lambda$ to be
+  Equation \eqref{eq:solving-for-lambda} can be solved for $\lambda^2$.
+  \pause
+
+  Then take $\lambda$ to be
   \begin{equation*}
     \lambda = \textnormal{\{sign of $(1-2p)$\}} \sqrt{\lambda^2}.
   \end{equation*}
 }
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
   Once you have $\lambda$, solve for $\sigma$ and then $\mu$.
+  \pause
   \begin{equation*}
-    np(1-p) = \sigma^2 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right) \quad\Rightarrow\quad
-    \sigma = \sqrt{\frac{np(1-p)}{1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2}}}
+    \uncover<+->{np(1-p) = \sigma^2 \left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2} \right) \quad\Rightarrow\quad
+                 \sigma = \sqrt{\frac{np(1-p)}{1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1 + \lambda^2}}}}
   \end{equation*}
   \begin{equation*}
-    np = \mu + \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \quad\Rightarrow\quad
-    \mu = np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}}
+    \uncover<+->{np = \mu + \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}} \quad\Rightarrow\quad
+                 \mu = np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{\lambda}{\sqrt{1 + \lambda^2}}}
   \end{equation*}
 }
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
   When $p = 0.5$, the binomial is symmetric, so $\lambda=0$.
+  \pause
 
   This takes us back to the usual normal approximation:
+  \pause
   \begin{align*}
-    \sigma &= \sqrt{\frac{np(1-p)}{1 - \frac{2}{\pi} \cdot \frac{0^2}{1 + 0^2}}} = \sqrt{\frac{np(1-p)}{1}} = \sqrt{np(1-p)} \\
-    \mu &= np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{0}{\sqrt{1 + 0^2}}  = np - 0 = np
+    \uncover<+->{\sigma &= \sqrt{\frac{np(1-p)}{1 - \frac{2}{\pi} \cdot \frac{0^2}{1 + 0^2}}} = \sqrt{\frac{np(1-p)}{1}} = \sqrt{np(1-p)} \\}
+    \uncover<+->{\mu &= np - \sigma \cdot \sqrt{\frac{2}{\pi}} \cdot \frac{0}{\sqrt{1 + 0^2}}  = np - 0 = np}
   \end{align*}
 }
 
 %% Restrictions
 \frame{ \frametitle{Method of Moments: Restrictions}
-  Let $u = \frac{\lambda^2}{1+\lambda^2}$ and $v = 1/u = \frac{1+\lambda^2}{\lambda^2}$.
+  Unfortunately, though better than the normal approximation, our skew-normal method isn't universal.
+  \pause
 
-  Then we can rewrite \eqref{eq:solving-for-lambda}:
+  To be able to solve for $\lambda$, we must put a few restrictions on $n$ and $p$.
+}
+\frame{ \frametitle{Method of Moments: Restrictions}
+  Let $u = \frac{\lambda^2}{1+\lambda^2}$ and $v = 1/u = \frac{1+\lambda^2}{\lambda^2}$.
+  \pause
+
+  \uncover<+->{Then we can rewrite \eqref{eq:solving-for-lambda}:
   \begin{gather*}
-    \frac{\left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1+\lambda^2} \right)^3}{\frac{2}{\pi} \left( \frac{\lambda^2}{1+\lambda^2} \right)^3 \left( \frac{4}{\pi} - 1 \right)^2} \\
-    \vdots \\
-    (magic) \\
-    \vdots \\
-    \left( v - \frac{2}{\pi} \right)^3 \left( \frac{\pi^3}{2(4-\pi)^2} \right) = g(v)
+    \frac{\left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1+\lambda^2} \right)^3}{\frac{2}{\pi} \left( \frac{\lambda^2}{1+\lambda^2} \right)^3 \left( \frac{4}{\pi} - 1 \right)^2} \\}
+    \uncover<+->{\vdots \\
+                 (magic) \\
+                 \vdots \\}
+    \uncover<+->{\left( v - \frac{2}{\pi} \right)^3 \left( \frac{\pi^3}{2(4-\pi)^2} \right) = g(v)}
   \end{gather*}
 }
 \frame{ \frametitle{Method of Moments: Restrictions}
-  $g(v)$ is increasing in $v = \frac{1+\lambda^2}{\lambda^2} \geq 1$. Therefore:
+  $g(v)$ is increasing in $v = \frac{1+\lambda^2}{\lambda^2} \geq 1$. \pause Therefore:
   \begin{equation*}
-    \min_{v} g(v) = g(1) = \left( 1 - \frac{2}{\pi} \right)^3 \left( \frac{\pi^3}{2(4-\pi)^2} \right) = 1.009524 \approx 1
+    \uncover<+->{\min_{v} g(v)} \uncover<+->{= g(1)} \uncover<+->{= \left( 1 - \frac{2}{\pi} \right)^3 \left( \frac{\pi^3}{2(4-\pi)^2} \right)} \uncover<+->{= 1.009524 \approx 1}
   \end{equation*}
 }
 \frame{ \frametitle{Method of Moments: Restrictions}
   To be able to solve \eqref{eq:solving-for-lambda} for $\lambda$, we must have
   \begin{align}
-    \textnormal{\{right hand side of \eqref{eq:solving-for-lambda}\}} &\geq \textnormal{\{min of left hand side of \eqref{eq:solving-for-lambda}\}} \nonumber \\
-    \frac{np(1-p)}{(1-2p)^2} &\geq 1 \nonumber \\
-    np(1-p) &\geq (1-2p)^2. \label{eq:solving-the-restriction}
+    \uncover<+->{\textnormal{\{right hand side of \eqref{eq:solving-for-lambda}\}} &\geq \textnormal{\{min of left hand side of \eqref{eq:solving-for-lambda}\}} \nonumber \\}
+    \uncover<+->{\frac{np(1-p)}{(1-2p)^2} &\geq 1 \nonumber \\}
+    \uncover<+->{np(1-p) &\geq (1-2p)^2. \label{eq:solving-the-restriction}}
   \end{align}
-  From \eqref{eq:solving-the-restriction}, we can answer two questions:
+  \uncover<+->{From \eqref{eq:solving-the-restriction}, we can answer two questions:}
 }
 \frame{ \frametitle{Method of Moments: Restrictions}
   One:
 
   Given $p$, what is the least $n$ necessary?
+  \pause
   \begin{equation*}
     n \geq \frac{(1-2p)^2}{p(1-p)}
   \end{equation*}
@@ -420,6 +468,7 @@
   Two:
 
   Given $n$, what is the range of possible $p$'s?
+  \pause
   \begin{equation*}
    \frac12 - \frac12 \sqrt{\frac{n}{n+4}} \; \leq \; p \; \leq \; \frac12 + \frac12 \sqrt{\frac{n}{n+4}}
   \end{equation*}

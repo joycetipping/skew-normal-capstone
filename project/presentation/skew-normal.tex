@@ -49,15 +49,13 @@
 \frame{ \frametitle{The Skew-Normal Distribution: Foundations}
 
   What happens when $\lambda=0$?
-
   \begin{align*}
-    f(x|\mu, \sigma, \lambda=0) &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi(0) \\
-    &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot 0.5 \\
-    &= \frac1\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \\
-    &= \frac{1}{\sqrt{2\pi}\sigma} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right),
+    \uncover<+->{f(x|\mu, \sigma, \lambda=0) &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi(0) \\}
+    \uncover<+->{&= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot 0.5 \\}
+    \uncover<+->{&= \frac1\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \\}
+    \uncover<+->{&= \frac{1}{\sqrt{2\pi}\sigma} \;\cdot\; \exp \left( -\frac{(x-\mu)^2}{2\sigma^2} \right),}
   \end{align*}
-
-  which is the pdf of the normal distribution ($\mu$, $\sigma$).
+  \uncover<+->{which is the pdf of the normal distribution ($\mu$, $\sigma$).}
 }
 \frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
 
@@ -69,6 +67,7 @@
       f_Z(x|\lambda) = 2 \cdot \phi(x) \cdot \Phi (\lambda x), \quad x \in \R.
     \end{equation*}
   \end{definition}
+  \pause
 
   Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
   = \sigma Z + \mu$.
@@ -78,6 +77,7 @@
   \begin{property}[1]
     If $Z \sim SN(0, 1, \lambda)$, then $(-Z) \sim SN(0, 1, -\lambda)$.
   \end{property}
+  \pause
   \vsep
   \begin{property}[2]
     If $Z \sim SN(0, 1, \lambda)$, then $Z^2 \sim \chi^2_1$ (chi-square with 1 degree of freedom).
@@ -89,6 +89,7 @@
   \begin{property}[3]
     As $\lambda \to \pm \infty$, \thinspace $SN(0,1,\lambda)$ tends to the half normal distribution, $\pm |N(0,1)|$.
   \end{property}
+  \pause
   \vsep
   \begin{property}[4]
     The moment generating function of $SN(0,1,\lambda)$ is
