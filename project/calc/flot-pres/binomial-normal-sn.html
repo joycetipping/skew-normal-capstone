@@ -45,6 +45,79 @@
       // Our data will be properties on binomial, normal, and sn with names n#{n}p#{p}
 
       $(caterwaul.clone('std seq montenegro')(function () {
+        //******************************************************************************************
+        // Binomial and Normal
+        //
+
+        // n=25, p=0.5
+        var series = [
+          {
+            data: binomial.n25p05,
+            label: 'Binomial',
+            bars: {show:true, barWidth:0},
+            points: {show:true}
+          },
+          {
+            data: normal.n25p05,
+            label: 'Normal',
+            lines: {show:true},
+            color: 6
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: 0,
+            max: 25
+          }
+        };
+        $('body').append(html[
+          div.box(
+            div.caption('Binomial (n = 25, p = 0.5)'),
+            div.plot /attr('id', 'normal-approx-n25p05') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#normal-approx-n25p05'), series, options);
+
+
+        // n=500, p=0.1
+        var series = [
+          {
+            data: binomial.n500p005,
+            label: 'Binomial',
+            bars: {show:true, barWidth:0},
+            points: {show:true}
+          },
+          {
+            data: normal.n500p005,
+            label: 'Normal',
+            lines: {show:true},
+            color: 6
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: 0,
+            max: 50 
+          }
+        };
+        $('body').append(html[
+          div.box(
+            div.caption('Binomial (n = 500, p = 0.05)'),
+            div.plot /attr('id', 'normal-approx-n500p005') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#normal-approx-n500p005'), series, options);
+
+
+
+        //******************************************************************************************
+        // Binomial, Normal, and Skew-Normal
+        //
+
         // n=25, p=0.05, binomial
         var series = [
           {
