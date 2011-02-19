@@ -13,6 +13,16 @@
 \institute{Truman State University}
 \date{Spring 2011}
 
+% TikZ
+% For every picture that defines or uses external nodes, you'll have to
+% apply the 'remember picture' style. To avoid some typing, we'll apply
+% the style to all pictures.
+\tikzstyle{every picture}+=[remember picture]
+
+% By default all math in TikZ nodes are set in inline mode. Change this to
+% displaystyle so that we don't get small fractions.
+\everymath{\displaystyle}
+
 \frame{\titlepage}
 
 %% Introduction
@@ -37,11 +47,11 @@
 }
 \frame{ \frametitle{Introduction}
   The binomial cdf is easy to calculate for small $n$ ...
-
   \pause
+
   But as $n$ gets larger, it becomes increasingly difficult.
-
   \pause
+
   For example ...
 }
 \frame{ \frametitle{Introduction}
@@ -49,7 +59,6 @@
   \begin{equation*}
     F(1) = \binom{3}{1} \; p^1 q^2 + \binom{3}{0} \; p^0 q^3
   \end{equation*}
-
   \pause
   When $n=25$,
   \begin{align*}
@@ -66,8 +75,8 @@
   \end{equation*}
   where $\mu = np$, $\sigma = \sqrt{np(1-p)}$, and $\Phi$ is the standard
   normal cdf.
-
   \pause
+
   \vsep
   When does this work well? ... \pause In a nutshell, when the binomial is symmetric.
 }
@@ -121,20 +130,49 @@
   \end{definition}
 }
 \frame{ \frametitle{The Skew-Normal Distribution: Foundations}
+  \tikzstyle{na} = [baseline=-.5ex]
+
   So where did this funny-looking pdf come from? ...
   \pause
   \begin{lem*}
     If $f_0$ is a one-dimensional probability density function symmetric about
     0, and $G$ is a one-dimensional distribution function such that $G'$ exists
     and is a density symmetric about 0, then
-
+    % Below we mix an ordinary equation with TikZ nodes. Note that we have to
+    % adjust the baseline of the nodes to get proper alignment with the rest of
+    % the equation.
     \begin{equation*}
-      f(z) = 2 \cdot f_0(z) \cdot G\{w(z)\} \quad (-\infty < z < \infty)
+      f(z) = 2 \; \cdot
+            \tikz[baseline]{
+                \node[fill=blue!20,anchor=base] (t1)
+                {$f_0(z)$};
+            } \cdot
+            \tikz[baseline]{
+                \node[fill=red!20,ellipse,anchor=base] (t2)
+                {$G\{w(z)\}$};
+            }
+      \quad (-\infty < z < \infty)
     \end{equation*}
-
     is a density function for any odd function $w(\cdot)$. (Lemma 1,
     \citealp{azzalini})
   \end{lem*}
+  \begin{itemize}
+    \uncover<3->{
+      \item Kernel
+        \tikz[na] \node[coordinate] (n1) {};
+    }
+    \uncover<4->{
+      \item CDF
+        \tikz[na] \node[coordinate] (n2) {};
+    }
+  \end{itemize}
+
+  % Now it's time to draw some edges between the global nodes. Note that we
+  % have to apply the 'overlay' style.
+  \begin{tikzpicture}[overlay]
+    \path[->]<3-> (n1) edge [bend right] (t1);
+    \path[->]<4-> (n2) edge [bend right] (t2);
+  \end{tikzpicture}
 }
 \frame{ \frametitle{The Skew-Normal Distribution: Foundations}
 
@@ -153,6 +191,7 @@
 \frame{ \frametitle{The Skew-Normal Distribution: Foundations}
 
   What happens when $\lambda=0$?
+  \pause
   \begin{align*}
     \uncover<+->{f(x|\mu, \sigma, \lambda=0) &= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot \Phi(0) \\}
     \uncover<+->{&= \frac2\sigma \cdot \phi \left( \frac{x-\mu}{\sigma} \right) \cdot 0.5 \\}
@@ -171,8 +210,8 @@
       f_Z(x|\lambda) = 2 \cdot \phi(x) \cdot \Phi (\lambda x), \quad x \in \R.
     \end{equation*}
   \end{definition}
-
   \pause
+
   Similar to the normal and standard normal, $Z = \frac{Y - \mu}{\sigma}$ and $Y
   = \sigma Z + \mu$.
 }
@@ -213,9 +252,9 @@
   Game plan:
   \pause
   \begin{enumerate}[<+->]
-    \item Find the first three central moments of the binomial and the first
-          three central moments of the skew-normal.\\
-          \vsep         
+    \item Find the first three moments about the mean (central moments) of the binomial and the skew-normal.\\
+          \pause
+          \vsep
           What are central moments?: $E(X)$, $E([X - E(X)]^2)$, $E([X -
           E(X)]^3)$.
     \item Set them equal to each other.
@@ -229,9 +268,10 @@
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
   The first two central moments are just the mean and variance:
+  \pause
   \begin{align*}
-    \uncover<+->{E(B) &= np \\}
-    \uncover<+->{E([B - E(B)]^2) &= Var(B) = np(1-p)}
+    E(B) &= np \\
+    E([B - E(B)]^2) &= Var(B) = np(1-p)
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
