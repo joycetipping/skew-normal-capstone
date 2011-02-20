@@ -29,9 +29,6 @@
 % displaystyle so that we don't get small fractions.
 \everymath{\displaystyle}
 
-% Misc
-\newcommand{\vsep}{\vspace{0.2cm}}
-
 
 
 \begin{document}
@@ -47,7 +44,7 @@
   \begin{definition}[Binomial]
     Let $X$ represent the number of successes in a sequence of $n$ independent Bernoulli trials with probability of success $p$ on each trial.
 
-    \vsep
+    \vspace{3mm}
     \uncover<2->{
       $X$ has discrete pdf
       \begin{equation*}
@@ -92,9 +89,9 @@
   \end{equation*}
   where $\mu = np$, $\sigma = \sqrt{np(1-p)}$, and $\Phi$ is the standard
   normal cdf.
-  \pause
 
-  \vsep
+  \pause
+  \vspace{3mm}
   When does this work well? ... \pause In a nutshell, when the binomial is symmetric.
 }
 \frame{ \frametitle{Introduction}
@@ -142,7 +139,7 @@
     where $\phi$ is the standard normal pdf and $\Phi$ is the standard normal
     cdf.
 
-    \vsep
+    \vspace{2mm}
     We write $Y \sim SN(\mu, \sigma, \lambda)$.
   \end{definition}
 }
@@ -348,7 +345,7 @@
   \pause
   \begin{enumerate}
     \uncover<+->{\item Find the first three moments about the mean (central moments) of the binomial and the skew-normal.\\}
-          \uncover<+->{\vsep
+          \uncover<+->{\vspace{2mm}
                        What are central moments?: $E(X)$, $E([X - E(X)]^2)$, $E([X - E(X)]^3)$.}
     \uncover<+->{\item Set them equal to each other.}
     \uncover<+->{\item Take $n$ and $p$ to be constants; solve for $\mu$, $\sigma$, and $\lambda$.}
@@ -699,11 +696,9 @@
 }
 
 \begin{frame}[shrink=47]{Resources}
-  \vsep
-  \vsep
-
+  \vspace{5mm}
   Estimations of $SN(\mu, \sigma, \lambda)$ for $Bin(n,p)$
-  \vsep
+  \vspace{2mm}
 
   \renewcommand{\arraystretch}{1.3}
   \begin{tabular}
