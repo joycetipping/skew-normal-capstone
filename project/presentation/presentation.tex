@@ -330,6 +330,7 @@
     \end{equation*}
     where $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}}$ and $t \in (-\infty, \infty)$.
   \end{property}
+  \pause
   According to Equation 5 in \citet{azzalini}, the mgf of $SN(\mu, \sigma, \lambda)$ is
   \begin{equation*}
     M(t) \eq E\{e^{tY}\} \eq 2 \cdot \exp \left( \mu t + \frac{\sigma^2 t^2}{2} \right) \cdot \Phi(\delta \sigma t).
@@ -523,6 +524,33 @@
   \begin{equation*}
     \lambda = \textnormal{\{sign of $(1-2p)$\}} \sqrt{\lambda^2}.
   \end{equation*}
+
+  \pause
+  Why?
+  \pause
+  Recall Property 3 ...
+}
+\frame{ \frametitle{Method of Moments: Deriving an Approximation}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../images/binomial-sn-n25p005.png}
+  \end{center}
+  When $p < 0.5$:
+  \pause
+  \begin{itemize}[<+->]
+    \item $(1-2p)$ is positive
+    \item The binomial skews right (weight shifts left) and approaches $+|N(0,1)|$ $\lra$ $\lambda$ is positive
+  \end{itemize}
+}
+\frame{ \frametitle{Method of Moments: Deriving an Approximation}
+  \begin{center}
+    \includegraphics[width=\textwidth]{../images/binomial-sn-n25p095.png}
+  \end{center}
+  When $p > 0.5$:
+  \pause
+  \begin{itemize}[<+->]
+    \item $(1-2p)$ is negative
+    \item The binomial skews left (weight shifts right) and approaches $-|N(0,1)|$ $\lra$ $\lambda$ is negative
+  \end{itemize}
 }
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
   Once you have $\lambda$, solve for $\sigma$ and then $\mu$.
