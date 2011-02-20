@@ -55,7 +55,7 @@
           var series = [
             {
               data: std_sn['skew' + str_skew],
-              label: 'Standard Skew-Normal',
+              label: 'SN(0, 1, &lambda; = #{skew})',
               color: 2
             }
           ];
@@ -71,7 +71,6 @@
           };
           $('body').append(html[
             div.box(
-            div.caption /html('Standard Skew-Normal (&lambda; = #{skew})'),
             div.plot /attr('id', 'std-sn-skew#{skew}') /css({width:800, height:400}),
               div.xlabel('X'),
               div.ylabel('P(X)')
@@ -85,7 +84,7 @@
           {
             data: positive_half_normal,
             label: 'Positive Half Normal',
-            color: 1
+            color: 6
           }
         ];
         var options = {
@@ -112,7 +111,7 @@
           {
             data: negative_half_normal,
             label: 'Negative Half Normal',
-            color: 1
+            color: 6
           }
         ];
         var options = {
@@ -127,7 +126,6 @@
         };
         $('body').append(html[
           div.box(
-          div.caption /html('Standard Skew-Normal (&lambda; = #{skew})'),
           div.plot /attr('id', 'negative-half-normal') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
@@ -141,12 +139,12 @@
         var series = [
           {
             data: std_sn.skew5,
-            label: 'Standard Skew-Normal (&lambda; = 5)',
+            label: 'SN(0, 1, &lambda; = 5)',
             color: 0
           },
           {
             data: std_sn.skewneg5,
-            label: 'Standard Skew-Normal (&lambda; = -5)',
+            label: 'SN(0, 1, &lambda; = -5)',
             color: 1
           }
         ];
