@@ -1,24 +1,39 @@
 \documentclass{beamer}
-\usepackage{capstone-presentation}
+\usepackage{jbib, jmath, jtable, tikz}
 
+% Beamer Style
 \usetheme{default}
 \usefonttheme{structuresmallcapsserif}
 \setbeamertemplate{blocks}[rounded][shadow=true]
 
+% Bibliography
+\bibpunct{(}{)}{;}{a}{,}{,}
+% We have to define \newblock so that natbib will work with beamer
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+% Math
+\theoremstyle{plain}
+\newtheorem{property}{Property}
+\newtheorem{helper-lem}{Lemma}[property]
+\newtheorem{helper-cor}{Corollary}[property]
+
+% TikZ
+\usetikzlibrary{arrows,shapes}
+% For every picture that defines or uses external nodes, you'll have to
+% apply the 'remember picture' style. To avoid some typing, we'll apply
+% the style to all pictures.
+\tikzstyle{every picture}+=[remember picture]
+% By default all math in TikZ nodes are set in inline mode. Change this to
+% displaystyle so that we don't get small fractions.
+\everymath{\displaystyle}
+
+% Misc
 \newcommand{\vsep}{\vspace{0.2cm}}
+
+
 
 \begin{document}
 \title[The Skew-Normal Approx of the Binomial]{The Skew-Normal Approximation\\of the Binomial Distribution}
 \author{Joyce Tipping}
 \institute{Truman State University}
 \date{Spring 2011}
-
-% TikZ
-% For every picture that defines or uses external nodes, you'll have to
-% apply the 'remember picture' style. To avoid some typing, we'll apply
-% the style to all pictures.
-\tikzstyle{every picture}+=[remember picture]
-
-% By default all math in TikZ nodes are set in inline mode. Change this to
-% displaystyle so that we don't get small fractions.
-\everymath{\displaystyle}
