@@ -24,7 +24,7 @@
       }
       .xlabel {
         top: 410px;
-        left: 504px;
+        left: 500px;
       }
       .ylabel {
         top: 183px;
@@ -131,7 +131,7 @@
         };
         $('body').append(html[
           div.box(
-          div.plot /attr('id', 'negative-half-normal') /css({width:800, height:400}),
+            div.plot /attr('id', 'negative-half-normal') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
@@ -161,9 +161,9 @@
         };
         $('body').append(html[
           div.box(
-          div.plot /attr('id', 'property3') /css({width:800, height:400}),
-            div.xlabel('X'),
-            div.ylabel('P(X)')
+            div.plot /attr('id', 'property3') /css({width:800, height:250}),
+            div.xlabel('X') /css({top:'260px'}),
+            div.ylabel('P(X)') /css({top:'112px'})
           )
         ]);
         $.plot($('#property3'), series, options);
