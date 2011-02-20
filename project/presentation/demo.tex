@@ -1,42 +1,3 @@
-\documentclass{beamer}
-\usepackage{jbib, jmath, jtable, tikz}
-
-% Beamer Style
-\usetheme{default}
-\usefonttheme{structuresmallcapsserif}
-\setbeamertemplate{blocks}[rounded][shadow=true]
-%\setbeamertemplate{proof}[rounded=false][shadow=false]
-
-% Bibliography
-\bibpunct{(}{)}{;}{a}{,}{,}
-% We have to define \newblock so that natbib will work with beamer
-\def\newblock{\hskip .11em plus .33em minus .07em}
-
-% Math
-\theoremstyle{plain}
-\newtheorem{property}{Property}
-\newtheorem{helper-lem}{Lemma}[property]
-\newtheorem{helper-cor}{Corollary}[property]
-\newenvironment{pf}[1][]{\textrm{\textit{Short proof:\\}}}{\hfill $\mathcal{Q.E.D.}$\newline}
-
-% TikZ
-\usetikzlibrary{arrows,shapes}
-% For every picture that defines or uses external nodes, you'll have to
-% apply the 'remember picture' style. To avoid some typing, we'll apply
-% the style to all pictures.
-\tikzstyle{every picture}+=[remember picture]
-% By default all math in TikZ nodes are set in inline mode. Change this to
-% displaystyle so that we don't get small fractions.
-\everymath{\displaystyle}
-
-
-
-\begin{document}
-\title[The Skew-Normal Approx of the Binomial]{The Skew-Normal Approximation\\of the Binomial Distribution}
-\author{Joyce Tipping}
-\institute{Truman State University}
-\date{Spring 2011}
-
 % Calculating a Skew-Normal Approximation
 \frame{ \frametitle{Calculating a Skew-Normal Approximation}
   Although easier with a computer program, calculating estimates for $\mu$, $\sigma$, and $\lambda$ by hand is perfectly possible.
@@ -151,11 +112,3 @@
     &= 0.8867.
   \end{align*}
 }
-
-\begin{frame}[allowframebreaks]
-  \frametitle{Bibliography}
-  \nocite{*}
-  \bibliography{../bibliography.bib}
-  \bibliographystyle{plainnat}
-\end{frame}
-\end{document}
