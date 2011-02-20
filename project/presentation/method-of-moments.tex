@@ -240,65 +240,37 @@
 %% Restrictions
 \frame{ \frametitle{Method of Moments: Restrictions}
   Unfortunately, though better than the normal approximation, our skew-normal method isn't universal.
+}
+\frame{ \frametitle{Method of Moments: Restrictions}
+  To be able to solve for $\lambda$, we must restrict $n$ and $p$ by the following equation:
   \pause
-
-  To be able to solve for $\lambda$, we must put a few restrictions on $n$ and $p$.
-}
-\frame{ \frametitle{Method of Moments: Restrictions}
-  Let $u = \frac{\lambda^2}{1+\lambda^2}$ and $v = 1/u = \frac{1+\lambda^2}{\lambda^2}$.
+  \begin{equation}
+    np(1-p) \geq \frac{1}{(1-2p)^2} \label{eq:solving-the-restriction}
+  \end{equation}
   \pause
-
-  \uncover<+->{Then we can rewrite \eqref{eq:solving-for-lambda}:
-  \begin{gather*}
-    \frac{\left( 1 - \frac{2}{\pi} \cdot \frac{\lambda^2}{1+\lambda^2} \right)^3}{\frac{2}{\pi} \left( \frac{\lambda^2}{1+\lambda^2} \right)^3 \left( \frac{4}{\pi} - 1 \right)^2} \\}
-    \uncover<+->{\vdots \\
-                 (magic) \\
-                 \vdots \\}
-    \uncover<+->{\left( v - \frac{2}{\pi} \right)^3 \left( \frac{\pi^3}{2(4-\pi)^2} \right) = g(v)}
-  \end{gather*}
+  From \eqref{eq:solving-the-restriction}, we can answer two questions:
 }
 \frame{ \frametitle{Method of Moments: Restrictions}
-  $g(v)$ is increasing in $v = \frac{1+\lambda^2}{\lambda^2} \geq 1$. \pause Therefore:
-  \begin{equation*}
-    \uncover<+->{\min_{v} g(v)} \uncover<+->{= g(1)} \uncover<+->{= \left( 1 - \frac{2}{\pi} \right)^3 \left( \frac{\pi^3}{2(4-\pi)^2} \right)} \uncover<+->{= 1.009524 \approx 1}
-  \end{equation*}
-}
-\frame{ \frametitle{Method of Moments: Restrictions}
-  To be able to solve \eqref{eq:solving-for-lambda} for $\lambda$, we must have
-  \begin{align}
-    \uncover<+->{\textnormal{\{right hand side of \eqref{eq:solving-for-lambda}\}} &\geq \textnormal{\{min of left hand side of \eqref{eq:solving-for-lambda}\}} \nonumber \\}
-    \uncover<+->{\frac{np(1-p)}{(1-2p)^2} &\geq 1 \nonumber \\}
-    \uncover<+->{np(1-p) &\geq \frac{1}{(1-2p)^2}. \label{eq:solving-the-restriction}}
-  \end{align}
-  \uncover<+->{From \eqref{eq:solving-the-restriction}, we can answer two questions:}
-}
-\frame{ \frametitle{Method of Moments: Restrictions}
-  One:
-
-  Given $p$, what is the least $n$ necessary?
+  \vspace{5mm}
+  One: Given $p$, what is the least $n$ necessary?
   \pause
   \begin{equation*}
     n \geq \frac{(1-2p)^2}{p(1-p)}
   \end{equation*}
-}
-\frame{ \frametitle{Method of Moments: Restrictions}
-  Least possible $n$, given a fixed $p$:
+  \pause
   \begin{center}
     \includegraphics[width=0.7\textwidth]{../images/restriction-least-n.png}
   \end{center}
 }
 \frame{ \frametitle{Method of Moments: Restrictions}
-  Two:
-
-  Given $n$, what is the range of possible $p$'s?
+  \vspace{5mm}
+  Two: Given $n$, what is the range of possible $p$'s?
   \pause
   \begin{equation*}
-   \frac12 - \frac12 \sqrt{\frac{n}{n+4}} \; \leq \; p \; \leq \; \frac12 + \frac12 \sqrt{\frac{n}{n+4}}
+    \frac12 - \frac12 \sqrt{\frac{n}{n+4}} \; \leq \; p \; \leq \; \frac12 + \frac12 \sqrt{\frac{n}{n+4}}
   \end{equation*}
-}
-\frame{ \frametitle{Method of Moments: Restrictions}
-  Range of possible $p$, given a fixed $n$:
+  \pause
   \begin{center}
-    \includegraphics[width=0.8\textwidth]{../images/restriction-p-range.png}
+    \includegraphics[width=0.7\textwidth]{../images/restriction-p-range.png}
   \end{center}
 }
