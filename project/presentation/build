@@ -2,8 +2,11 @@
 
 headers='headers.tex'
 closers='closers.tex'
-files='intro.tex skew-normal.tex method-of-moments.tex accuracy.tex resources.tex'
-
+if [[ $* == '' ]]; then
+  files='intro.tex skew-normal.tex method-of-moments.tex accuracy.tex resources.tex demo.tex'
+else
+  files="$*"
+fi
 output='presentation.tex'
 
 cat $headers  > $output
