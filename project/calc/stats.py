@@ -26,7 +26,7 @@ def binomial_pmf (n, p, pairs=False):
 def normal_pdf (mu, sigma, pairs=False):
   # Given mu and sigma, returns a normal pdf in two arrays of xs and ys, respectively
   # If pairs is True, it returns the pdf as an array of points
-  xs = r.seq(mu - 5*sigma, mu + 5*sigma, 0.1)
+  xs = r.seq(mu - 5*sigma, mu + 5*sigma, 0.01)
   ys = r.dnorm(xs, mu, sigma)
   return pair(xs, ys) if pairs else {'xs':xs, 'ys':ys}
 
@@ -47,7 +47,7 @@ def normal_params (n, p):
 def sn_pdf (mu, sigma, skew, pairs=False):
   # Given mu, sigma, and skew, returns a skew-normal pdf in two arrays of xs and ys, respectively
   # If pairs is True, it returns the pdf as an array of points
-  xs = r.seq(mu - 5*sigma, mu + 5*sigma, 0.1)
+  xs = r.seq(mu - 5*sigma, mu + 5*sigma, 0.01)
   ys = r.dsn(xs, mu, sigma, skew)
   return pair(xs, ys) if pairs else {'xs':xs, 'ys':ys}
 
