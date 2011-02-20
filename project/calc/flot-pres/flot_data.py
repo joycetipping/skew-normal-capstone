@@ -27,7 +27,7 @@ def write_comparison_graph (n, p):
 def compile_comparison_data ():
   # Set ns and ps
   ns = [25, 500]
-  ps = [0.05, 0.5]
+  ps = [0.05, 0.5, 0.95]
 
   # Write some necessary headers
   f = open('data/comparison-headers.js', 'w')

@@ -23,12 +23,12 @@
         font-size: 12px;
       }
       .xlabel {
-        top: 425px;
+        top: 410px;
         left: 504px;
       }
       .ylabel {
-        top: 200px;
-        left: 50px;
+        top: 183px;
+        left: 60px;
         -webkit-transform: rotate(-90deg);
       }
     </style>
@@ -53,6 +53,11 @@
           var str_skew = skew > 0 ? String(skew) : 'neg' + String(-skew);
 
           var series = [
+            {
+              data: skew > 0 ? positive_half_normal : negative_half_normal,
+              label: skew > 0 ? 'Positive Half Normal' : 'Negative Half Normal',
+              color: 1
+            },
             {
               data: std_sn['skew' + str_skew],
               label: 'SN(0, 1, &lambda; = #{skew})',
@@ -84,7 +89,7 @@
           {
             data: positive_half_normal,
             label: 'Positive Half Normal',
-            color: 6
+            color: 1
           }
         ];
         var options = {
@@ -111,7 +116,7 @@
           {
             data: negative_half_normal,
             label: 'Negative Half Normal',
-            color: 6
+            color: 1
           }
         ];
         var options = {
