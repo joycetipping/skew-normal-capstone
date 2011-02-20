@@ -28,7 +28,7 @@
       }
       .ylabel {
         top: 200px;
-        left: 50px;
+        left: 60px;
         -webkit-transform: rotate(-90deg);
       }
     </style>
@@ -73,12 +73,12 @@
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.5)'),
-            div.plot /attr('id', 'normal-approx-n25p05') /css({width:800, height:400}),
+            div.plot /attr('id', 'binomial-normal-n25p05') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
         ]);
-        $.plot($('#normal-approx-n25p05'), series, options);
+        $.plot($('#binomial-normal-n25p05'), series, options);
 
 
         // n=500, p=0.1
@@ -105,12 +105,80 @@
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 500, p = 0.05)'),
-            div.plot /attr('id', 'normal-approx-n500p005') /css({width:800, height:400}),
+            div.plot /attr('id', 'binomial-normal-n500p005') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
         ]);
-        $.plot($('#normal-approx-n500p005'), series, options);
+        $.plot($('#binomial-normal-n500p005'), series, options);
+
+
+
+        //******************************************************************************************
+        // Binomial and Skew-Normal
+        //
+
+        // n=25, p=0.05
+        var series = [
+          {
+            data: binomial.n25p005,
+            label: 'Binomial',
+            bars: {show:true, barWidth:0},
+            points: {show:true}
+          },
+          {
+            data: sn.n25p005,
+            label: 'Skew-Normal',
+            lines: {show:true},
+            color: 6
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: -3,
+            max: 6
+          }
+        };
+        $('body').append(html[
+          div.box(
+            div.caption('Binomial (n = 25, p = 0.05)'),
+            div.plot /attr('id', 'binomial-sn-n25p005') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#binomial-sn-n25p005'), series, options);
+
+        // n=25, p=0.95
+        var series = [
+          {
+            data: binomial.n25p095,
+            label: 'Binomial',
+            bars: {show:true, barWidth:0},
+            points: {show:true}
+          },
+          {
+            data: sn.n25p095,
+            label: 'Skew-Normal',
+            lines: {show:true},
+            color: 6
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: 19,
+            max: 28
+          }
+        };
+        $('body').append(html[
+          div.box(
+            div.caption('Binomial (n = 25, p = 0.95)'),
+            div.plot /attr('id', 'binomial-sn-n25p095') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#binomial-sn-n25p095'), series, options);
 
 
 
@@ -139,12 +207,12 @@
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.05)'),
-            div.plot /attr('id', 'binomial') /css({width:800, height:400}),
+            div.plot /attr('id', 'binomial-n25p005') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
         ]);
-        $.plot($('#binomial'), series, options);
+        $.plot($('#binomial-n25p005'), series, options);
 
         // n=25, p=0.05, binomial, normal
         var series = [
@@ -173,12 +241,12 @@
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.05)'),
-            div.plot /attr('id', 'binomial-normal') /css({width:800, height:400}),
+            div.plot /attr('id', 'binomial-normal-n25p005') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
         ]);
-        $.plot($('#binomial-normal'), series, options);
+        $.plot($('#binomial-normal-n25p005'), series, options);
 
 
         // n=25, p=0.05, binomial, normal, skew-normal
@@ -214,12 +282,12 @@
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.05)'),
-            div.plot /attr('id', 'binomial-normal-sn') /css({width:800, height:400}),
+            div.plot /attr('id', 'binomial-normal-sn-n25p005') /css({width:800, height:400}),
             div.xlabel('X'),
             div.ylabel('P(X)')
           )
         ]);
-        $.plot($('#binomial-normal-sn'), series, options);
+        $.plot($('#binomial-normal-sn-n25p005'), series, options);
       }));
     </script>
   </head>
