@@ -135,16 +135,16 @@
         ];
         var options = {
           xaxis: {
-            min: -3,
+            min: -2,
             max: 6
           }
         };
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.05)'),
-            div.plot /attr('id', 'binomial-sn-n25p005') /css({width:800, height:400}),
-            div.xlabel('X'),
-            div.ylabel('P(X)')
+            div.plot /attr('id', 'binomial-sn-n25p005') /css({width:800, height:250}),
+            div.xlabel('X') /css({top:'270px'}),
+            div.ylabel('P(X)') /css({top:'125px'})
           )
         ]);
         $.plot($('#binomial-sn-n25p005'), series, options);
@@ -167,15 +167,15 @@
         var options = {
           xaxis: {
             min: 19,
-            max: 28
+            max: 27
           }
         };
         $('body').append(html[
           div.box(
             div.caption('Binomial (n = 25, p = 0.95)'),
-            div.plot /attr('id', 'binomial-sn-n25p095') /css({width:800, height:400}),
-            div.xlabel('X'),
-            div.ylabel('P(X)')
+            div.plot /attr('id', 'binomial-sn-n25p095') /css({width:800, height:250}),
+            div.xlabel('X') /css({top:'270px'}),
+            div.ylabel('P(X)') /css({top:'125px'})
           )
         ]);
         $.plot($('#binomial-sn-n25p095'), series, options);
