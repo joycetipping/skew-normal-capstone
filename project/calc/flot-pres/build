@@ -9,3 +9,9 @@ cat comparison-headers.js > $compfile
 for file in comparison-*.js; do
   cat $file >> $compfile
 done
+
+propfile='properties.js'
+cat properties-headers.js > $propfile
+for file in properties-*.js; do
+  cat $file >> $propfile
+done

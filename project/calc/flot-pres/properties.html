@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      div.box {
+        margin: 75px 0;
+        position: relative;
+      }
+      div.plot {
+        margin: 0 auto;
+        text-align: left;
+      }
+      .caption, .xlabel, .ylabel {
+        text-align: center;
+        font-family: Georgia, serif;
+      }
+      .caption {
+        font-size: 14px;
+      }
+      .xlabel, .ylabel {
+        position: absolute;
+        color: #666;
+        font-size: 12px;
+      }
+      .xlabel {
+        top: 425px;
+        left: 504px;
+      }
+      .ylabel {
+        top: 200px;
+        left: 50px;
+        -webkit-transform: rotate(-90deg);
+      }
+    </style>
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    <script type='text/javascript' src='../lib/caterwaul.all.js'></script>
+    <script type='text/javascript' src='../lib/jquery.flot.min.js'></script>
+    <script type='text/javascript' src='../lib/montenegro.client.js'></script>
+    <script type='text/javascript' src='data/properties.js'></script>
+    <script>
+      // When importing comparison.js, we get the following variable
+      //   std_sn, skews, positive_half_normal, negative_half_normal
+      //
+      // The skew-normal data will be properties on std_sn with names skew#{skew} or skewneg#{skew}
+
+      $(caterwaul.clone('std seq montenegro')(function () {
+        //******************************************************************************************
+        // Property 1
+        //
+        for (var i = 0, len = skews.length; i < len; i++) {
+          var skew = skews[i];
+          var str_skew = skew > 0 ? String(skew) : 'neg' + String(-skew);
+
+          var series = [
+            {
+              data: std_sn['skew' + str_skew],
+              label: 'Standard Skew-Normal',
+              color: 2
+            }
+          ];
+          var options = {
+            xaxis: {
+              min: -3,
+              max: 3
+            },
+            yaxis: {
+              min: 0,
+              max: 0.9
+            }
+          };
+          $('body').append(html[
+            div.box(
+            div.caption /html('Standard Skew-Normal (&lambda; = #{skew})'),
+            div.plot /attr('id', 'std-sn-skew#{skew}') /css({width:800, height:400}),
+              div.xlabel('X'),
+              div.ylabel('P(X)')
+            )
+          ]);
+          $.plot($('#std-sn-skew#{skew}'), series, options);
+        }
+
+        // Positive Half Normal
+        var series = [
+          {
+            data: positive_half_normal,
+            label: 'Positive Half Normal',
+            color: 1
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: -3,
+            max: 3
+          },
+          yaxis: {
+            min: 0,
+            max: 0.9
+          }
+        };
+        $('body').append(html[
+          div.box(
+          div.plot /attr('id', 'positive-half-normal') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#positive-half-normal'), series, options);
+
+        // Negative Half Normal
+        var series = [
+          {
+            data: negative_half_normal,
+            label: 'Negative Half Normal',
+            color: 1
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: -3,
+            max: 3
+          },
+          yaxis: {
+            min: 0,
+            max: 0.9
+          }
+        };
+        $('body').append(html[
+          div.box(
+          div.caption /html('Standard Skew-Normal (&lambda; = #{skew})'),
+          div.plot /attr('id', 'negative-half-normal') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#negative-half-normal'), series, options);
+
+        //******************************************************************************************
+        // Property 3
+        //
+        var series = [
+          {
+            data: std_sn.skew5,
+            label: 'Standard Skew-Normal (&lambda; = 5)',
+            color: 0
+          },
+          {
+            data: std_sn.skewneg5,
+            label: 'Standard Skew-Normal (&lambda; = -5)',
+            color: 1
+          }
+        ];
+        var options = {
+          xaxis: {
+            min: -3,
+            max: 3
+          }
+        };
+        $('body').append(html[
+          div.box(
+          div.plot /attr('id', 'property3') /css({width:800, height:400}),
+            div.xlabel('X'),
+            div.ylabel('P(X)')
+          )
+        ]);
+        $.plot($('#property3'), series, options);
+      }));
+    </script>
+  </head>
+  <body></body>
+</html>

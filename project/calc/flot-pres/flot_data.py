@@ -13,9 +13,10 @@ def write_comparison_graph (n, p):
   # Builds data for one comparison graph (binomial, normal, and skew-normal)
   # and writes it to an appropriately-named json file
 
-  (binomial, normal, sn) = ( binomial_pmf(n, p, pairs=True),
-                             normal_approx_pdf(n, p, pairs=True),
-                             sn_approx_pdf(n, p, pairs=True) )
+  binomial = binomial_pmf(n, p, pairs=True)
+  normal   = normal_approx_pdf(n, p, pairs=True)
+  sn       = sn_approx_pdf(n, p, pairs=True)
+
   np = 'n' + str(n) + 'p' + str(p).replace('.', '')
   f = open('data/comparison-' + np + '.js', 'w')
   f.write('binomial.' + np + ' = ' + json.dumps(binomial) + ';\n')
@@ -41,16 +42,35 @@ def compile_comparison_data ():
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 # Property Graphs:
 #
-def write_property_graph (mu, sigma, skew):
-  str_skew = str(skew) if skew > 0 else 'neg' + str(-skew)
-  sn_graph = frame( sn_pdf(mu, sigma, skew, pairs=True) )
-  #sn_graph = sn_pdf(mu, sigma, skew, pairs=True)
+def write_std_sn_graph (skew):
+  # Builds data for a standard skew-normal graph and writes it to an
+  # appropriately-named json file
 
-  f = open('data/properties-skew' + str_skew + '.js', 'w')
-  f.write('std_sn.skew' + str_skew + ' = ' + json.dumps(sn_graph) + ';\n')
+  str_skew = str(skew) if skew > 0 else 'neg' + str(-skew)
+  std_sn_pdf = sn_pdf(0, 1, skew, pairs=True)
+
+  f = open('data/properties-sn-skew' + str_skew + '.js', 'w')
+  f.write('std_sn.skew' + str_skew + ' = ' + json.dumps(std_sn_pdf) + ';\n')
+
+def write_half_normal_graphs ():
+  # Builds data for the positive and negative half normal graphs and writes
+  # them to an appropriately-named json file
+  std_normal_pdf = normal_pdf(0,1, pairs=True)
+
+  # To get the positive (negative) half normal, we select only points with positive (negative) x values and double the y values
+  #positive_half_normal = [[0, 0]] + map(lambda point: [point[0], 2*point[1]], filter(lambda point: point[0] > 0, std_normal_pdf))
+  #negative_half_normal = map(lambda point: [point[0], 2*point[1]], filter(lambda point: point[0] < 0, std_normal_pdf)) + [[0, 0]]
+  positive_half_normal = map(lambda point: [point[0], 2*point[1]] if point[0] > 0 else [point[0], 0], std_normal_pdf)
+  negative_half_normal = map(lambda point: [point[0], 2*point[1]] if point[0] < 0 else [point[0], 0], std_normal_pdf)
+
+  f = open('data/properties-half-normal.js', 'w')
+  f.write('var positive_half_normal = ' + json.dumps(positive_half_normal) + ';\n')
+  f.write('var negative_half_normal = ' + json.dumps(negative_half_normal) + ';\n')
+  f.close()
 
 def compile_property_graphs_data ():
-  skews = [-1000, -100, -10, -5, -3, -2, -1, 1, 2, 3, 5, 10, 100, 1000]
+  # Set skews
+  skews = [-1000, -10, -5, -2, 2, 5, 10, 1000]
 
   # Write some necessary headers
   f = open('data/properties-headers.js', 'w')
@@ -59,19 +79,8 @@ def compile_property_graphs_data ():
   f.close()
 
   # Write our graphs
-  map(lambda skew: write_property_graph(0, 1, skew), skews)
-
-#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
-# Common helpers
-#
-def frame (*args):
-  # Chops off the tails where all three graphs are less than 0.00001
-  tmp = map(lambda list: filter(lambda point: point[1] > 0.001, list), args)
-  left = right = 0
-  for i, v in enumerate(tmp):
-    if v[0][0] < left: left = v[0][0]
-    if v[-1][0] > right: right = v[-1][0]
-  return map(lambda list: filter(lambda point: left < point[0] < right, list), args)
+  map(lambda skew: write_std_sn_graph(skew), skews)
+  write_half_normal_graphs()
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
 # Action, baby!
