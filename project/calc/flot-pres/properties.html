@@ -56,7 +56,7 @@
             {
               data: skew > 0 ? positive_half_normal : negative_half_normal,
               label: skew > 0 ? '+|N(0,1)|' : '&ndash;|N(0,1)|',
-              color: 1
+              color: 6
             },
             {
               data: std_sn['skew' + str_skew],
@@ -89,7 +89,7 @@
           {
             data: positive_half_normal,
             label: '+|N(0,1)|',
-            color: 1
+            color: 6
           }
         ];
         var options = {
@@ -116,7 +116,7 @@
           {
             data: negative_half_normal,
             label: '&ndash;|N(0,1)|',
-            color: 1
+            color: 6
           }
         ];
         var options = {
@@ -145,12 +145,12 @@
           {
             data: std_sn.skew5,
             label: 'SN(0, 1, &lambda; = 5)',
-            color: 0
+            color: 2
           },
           {
             data: std_sn.skewneg5,
             label: 'SN(0, 1, &lambda; = -5)',
-            color: 1
+            color: 6
           }
         ];
         var options = {
