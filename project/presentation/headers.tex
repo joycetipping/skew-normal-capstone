@@ -5,6 +5,7 @@
 \usetheme{default}
 \usefonttheme{structuresmallcapsserif}
 \setbeamertemplate{blocks}[rounded][shadow=true]
+%\setbeamertemplate{proof}[rounded=false][shadow=false]
 
 % Bibliography
 \bibpunct{(}{)}{;}{a}{,}{,}
@@ -16,6 +17,7 @@
 \newtheorem{property}{Property}
 \newtheorem{helper-lem}{Lemma}[property]
 \newtheorem{helper-cor}{Corollary}[property]
+\newenvironment{pf}[1][]{\textrm{\textit{Short proof:\\}}}{\hfill $\mathcal{Q.E.D.}$\newline}
 
 % TikZ
 \usetikzlibrary{arrows,shapes}

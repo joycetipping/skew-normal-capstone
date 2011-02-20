@@ -1,27 +1,44 @@
 \documentclass{beamer}
-\usepackage{capstone-presentation}
+\usepackage{jbib, jmath, jtable, tikz}
 
+% Beamer Style
 \usetheme{default}
 \usefonttheme{structuresmallcapsserif}
 \setbeamertemplate{blocks}[rounded][shadow=true]
+%\setbeamertemplate{proof}[rounded=false][shadow=false]
 
+% Bibliography
+\bibpunct{(}{)}{;}{a}{,}{,}
+% We have to define \newblock so that natbib will work with beamer
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+% Math
+\theoremstyle{plain}
+\newtheorem{property}{Property}
+\newtheorem{helper-lem}{Lemma}[property]
+\newtheorem{helper-cor}{Corollary}[property]
+\newenvironment{pf}[1][]{\textrm{\textit{Short proof:\\}}}{\hfill $\mathcal{Q.E.D.}$\newline}
+
+% TikZ
+\usetikzlibrary{arrows,shapes}
+% For every picture that defines or uses external nodes, you'll have to
+% apply the 'remember picture' style. To avoid some typing, we'll apply
+% the style to all pictures.
+\tikzstyle{every picture}+=[remember picture]
+% By default all math in TikZ nodes are set in inline mode. Change this to
+% displaystyle so that we don't get small fractions.
+\everymath{\displaystyle}
+
+% Misc
 \newcommand{\vsep}{\vspace{0.2cm}}
+
+
 
 \begin{document}
 \title[The Skew-Normal Approx of the Binomial]{The Skew-Normal Approximation\\of the Binomial Distribution}
 \author{Joyce Tipping}
 \institute{Truman State University}
 \date{Spring 2011}
-
-% TikZ
-% For every picture that defines or uses external nodes, you'll have to
-% apply the 'remember picture' style. To avoid some typing, we'll apply
-% the style to all pictures.
-\tikzstyle{every picture}+=[remember picture]
-
-% By default all math in TikZ nodes are set in inline mode. Change this to
-% displaystyle so that we don't get small fractions.
-\everymath{\displaystyle}
 
 \frame{\titlepage}
 
@@ -216,24 +233,96 @@
   = \sigma Z + \mu$.
 }
 \frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
-
   \begin{property}[1]
     If $Z \sim SN(0, 1, \lambda)$, then $(-Z) \sim SN(0, 1, -\lambda)$.
   \end{property}
   \pause
-  \vsep
+  \begin{pf}
+    \pause
+    \begin{align*}
+      \uncover<+->{f_{(-Z)}(x) &= f_Z(-x) \\}
+      \uncover<+->{& = 2 \cdot \phi(-x) \cdot \Phi (-\lambda x) \\}
+      \uncover<+->{& = 2 \cdot \phi(x) \cdot \Phi (-\lambda x),}
+    \end{align*}
+    \uncover<+->{which is the pdf of $SN(0, 1, -\lambda)$.}
+  \end{pf}
+}
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
+  \textit{Property 1}:\; $-SN(0, 1, \lambda) \sim SN(0, 1, -\lambda)$
+
+  \includegraphics[width=\textwidth]{../images/std-sn-reflection.png}
+}
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
   \begin{property}[2]
     If $Z \sim SN(0, 1, \lambda)$, then $Z^2 \sim \chi^2_1$ (chi-square with 1 degree of freedom).
   \end{property}
-}
-\frame{ \frametitle{The Skew-Normal Distribution}
-  \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
+  \pause
+  \begin{pf}
+    \pause
+    We will use a result from page 161, \citet{azzalini}:
 
+    If $Y \sim f_0$ and $Z \sim f$, then $|Y| \overset{d}{=} |Z|$, where the
+    notation $\overset{d}{=}$ denotes equality in distribution.
+
+    \pause
+    Let $X \sim N(0,1)$. Since $X^2 \sim \chi^2_1$ and $|X| \overset{d}{=}
+    |Z|$, then $Z^2 \sim \chi^2_1$.
+  \end{pf}
+}
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
   \begin{property}[3]
     As $\lambda \to \pm \infty$, \thinspace $SN(0,1,\lambda)$ tends to the half normal distribution, $\pm |N(0,1)|$.
   \end{property}
   \pause
-  \vsep
+    Let $X \sim |N(0, 1)|$. Then
+    \begin{equation*}
+      f_X(x) =
+      \begin{dcases*}
+        0      & when $-\infty < x \leq 0$ \\
+        2 \phi & when $0 < x < \infty$ 
+      \end{dcases*}
+      .
+    \end{equation*}
+}
+% For some reason, I was obliged to split the following slide into 3 slides, to prevent bumping in between the images.
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
+  \textit{Property 3}: $SN(0, 1, \lambda) \rightarrow +|N(0,1)|$ as $\lambda \rightarrow \infty$:
+
+  \only<1>{\includegraphics[width=\textwidth]{../images/positive-half-normal.png}}
+}
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
+  \textit{Property 3}: $SN(0, 1, \lambda) \rightarrow +|N(0,1)|$ as $\lambda \rightarrow \infty$:
+
+  \only<1>{\includegraphics[width=\textwidth]{../images/std-sn-skew2.png}}
+  \only<2>{\includegraphics[width=\textwidth]{../images/std-sn-skew5.png}}
+}
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
+  \textit{Property 3}: $SN(0, 1, \lambda) \rightarrow +|N(0,1)|$ as $\lambda \rightarrow \infty$:
+
+  \only<1>{\includegraphics[width=\textwidth]{../images/std-sn-skew10.png}}
+  \only<2>{\includegraphics[width=\textwidth]{../images/std-sn-skew1000.png}}
+}
+% end
+% Same bumping issue for this slide
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
+  \textit{Property 3}: $SN(0, 1, \lambda) \rightarrow -|N(0,1)|$ as $\lambda \rightarrow -\infty$:
+
+  \only<1>{\includegraphics[width=\textwidth]{../images/negative-half-normal.png}}
+}
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
+  \textit{Property 3}: $SN(0, 1, \lambda) \rightarrow -|N(0,1)|$ as $\lambda \rightarrow -\infty$:
+
+  \only<1>{\includegraphics[width=\textwidth]{../images/std-sn-skewneg2.png}}
+  \only<2>{\includegraphics[width=\textwidth]{../images/std-sn-skewneg5.png}}
+}
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
+  \textit{Property 3}: $SN(0, 1, \lambda) \rightarrow -|N(0,1)|$ as $\lambda \rightarrow -\infty$:
+
+  \only<1>{\includegraphics[width=\textwidth]{../images/std-sn-skewneg10.png}}
+  \only<2>{\includegraphics[width=\textwidth]{../images/std-sn-skewneg1000.png}}
+}
+% end
+\frame{ \frametitle{The Skew-Normal Distribution: The Standard Skew-Normal}
   \begin{property}[4]
     The moment generating function of $SN(0,1,\lambda)$ is
     \begin{equation*}
@@ -241,6 +330,11 @@
     \end{equation*}
     where $\delta = \frac{\lambda}{\sqrt{1 + \lambda^2}}$ and $t \in (-\infty, \infty)$.
   \end{property}
+  According to Equation 5 in \citet{azzalini}, the mgf of $SN(\mu, \sigma, \lambda)$ is
+  \begin{equation*}
+    M(t) \eq E\{e^{tY}\} \eq 2 \cdot \exp \left( \mu t + \frac{\sigma^2 t^2}{2} \right) \cdot \Phi(\delta \sigma t).
+  \end{equation*}
+  Our result follows.
 }
 
 % Method of Moments
