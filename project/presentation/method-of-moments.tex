@@ -6,14 +6,12 @@
 
   Game plan:
   \pause
-  \begin{enumerate}[<+->]
-    \item Find the first three moments about the mean (central moments) of the binomial and the skew-normal.\\
-          \pause
-          \vsep
-          What are central moments?: $E(X)$, $E([X - E(X)]^2)$, $E([X -
-          E(X)]^3)$.
-    \item Set them equal to each other.
-    \item Take $n$ and $p$ to be constants; solve for $\mu$, $\sigma$, and $\lambda$.
+  \begin{enumerate}
+    \uncover<+->{\item Find the first three moments about the mean (central moments) of the binomial and the skew-normal.\\}
+          \uncover<+->{\vsep
+                       What are central moments?: $E(X)$, $E([X - E(X)]^2)$, $E([X - E(X)]^3)$.}
+    \uncover<+->{\item Set them equal to each other.}
+    \uncover<+->{\item Take $n$ and $p$ to be constants; solve for $\mu$, $\sigma$, and $\lambda$.}
   \end{enumerate}
 }
 
@@ -36,10 +34,11 @@
   First we'll need to find $E(B^2)$ and $E(B^3)$.
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
+  Recall that $Var(B) = E(B^2) - [E(B)]^2$. \pause Thus
   \begin{align*}
     \uncover<+->{E(B^2) &= Var(B) + [E(B)]^2 \\}
     \uncover<+->{&= np(1-p) + n^2p^2 \\}
-    \uncover<+->{&= np - np^2 + n^2p^2}
+    \uncover<+->{&= np - np^2 + n^2p^2.}
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
@@ -56,10 +55,9 @@
   \end{align*}
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
-  Let $y=x-3$; then $x=y+3$, and $x=3$, $x=n \Ra y=0$, $y=n-3$:
-  \pause
   \begin{align*}
-    \uncover<+->{&= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x} \\}
+    \uncover<+->{&= \sum_{x=3}^n n(n-1)(n-2) p^3 \cdot \frac{(n-3)!}{(x-3)!\;(n-x)!} \; p^{x-3}q^{n-x}}
+    \uncover<+->{\intertext{Let $y=x-3$; then $x=y+3$, and $x=3$, $x=n \Ra y=0$, $y=n-3$:}}
     \uncover<+->{&= n(n-1)(n-2)p^3 \cdot \sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;(n-(y+3))!} \; p^y q^{n-(y+3)} \\}
     \uncover<+->{&= n(n-1)(n-2)p^3 \cdot \underbrace {\sum_{y=0}^{n-3} \frac{(n-3)!}{y!\;((n-3)-y)!} \; p^y q^{(n-3)-y}}_{\mathclap{\textnormal{[pdf of $Bin(n-3,p)$ summed over its domain] = 1}}} \\}
     \uncover<+->{&= n(n-1)(n-2)p^3 \\}
@@ -154,7 +152,10 @@
 
 %% Deriving an Approximation
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
-  Set the central moments of the binomial equal to the central moments of the skew-normal:
+  We're finally ready to derive our approximation!
+}
+\frame{ \frametitle{Method of Moments: Deriving an Approximation}
+  We start by setting the central moments of the binomial equal to the central moments of the skew-normal.
   \pause
   \begin{subequations}
     \begin{align}
@@ -197,8 +198,8 @@
   When $p < 0.5$:
   \pause
   \begin{itemize}[<+->]
-    \item $(1-2p)$ is positive
     \item The binomial skews right (weight shifts left) and approaches $+|N(0,1)|$ $\lra$ $\lambda$ is positive
+    \item $(1-2p)$ is positive
   \end{itemize}
 }
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
@@ -208,8 +209,8 @@
   When $p > 0.5$:
   \pause
   \begin{itemize}[<+->]
-    \item $(1-2p)$ is negative
     \item The binomial skews left (weight shifts right) and approaches $-|N(0,1)|$ $\lra$ $\lambda$ is negative
+    \item $(1-2p)$ is negative
   \end{itemize}
 }
 \frame{ \frametitle{Method of Moments: Deriving an Approximation}
@@ -267,7 +268,7 @@
   \begin{align}
     \uncover<+->{\textnormal{\{right hand side of \eqref{eq:solving-for-lambda}\}} &\geq \textnormal{\{min of left hand side of \eqref{eq:solving-for-lambda}\}} \nonumber \\}
     \uncover<+->{\frac{np(1-p)}{(1-2p)^2} &\geq 1 \nonumber \\}
-    \uncover<+->{np(1-p) &\geq (1-2p)^2. \label{eq:solving-the-restriction}}
+    \uncover<+->{np(1-p) &\geq \frac{1}{(1-2p)^2}. \label{eq:solving-the-restriction}}
   \end{align}
   \uncover<+->{From \eqref{eq:solving-the-restriction}, we can answer two questions:}
 }
