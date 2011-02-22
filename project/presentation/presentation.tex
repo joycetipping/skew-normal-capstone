@@ -142,6 +142,8 @@
     \vspace{2mm}
     We write $Y \sim SN(\mu, \sigma, \lambda)$.
   \end{definition}
+  \pause
+  \textit{Note:} $\mu$ and $\sigma$ are not intuitively related to the mean and variance.
 }
 \frame{ \frametitle{The Skew-Normal Distribution: Foundations}
   \tikzstyle{na} = [baseline=-.5ex]
@@ -172,19 +174,19 @@
   \end{lem*}
   \begin{itemize}
     \uncover<3->{
-      \item Kernel
-        \tikz[na] \node[coordinate] (n1) {};
+      \item \tikz[na] \node[coordinate] (n1) {};
+            A pdf symmetric about 0 (kernel)
     }
     \uncover<4->{
-      \item CDF
-        \tikz[na] \node[coordinate] (n2) {};
+      \item A cdf whose derivative is symmetric about 0
+            \tikz[na] \node[coordinate] (n2) {};
     }
   \end{itemize}
 
   % Now it's time to draw some edges between the global nodes. Note that we
   % have to apply the 'overlay' style.
   \begin{tikzpicture}[overlay]
-    \path[->]<3-> (n1) edge [bend right] (t1);
+    \path[->]<3-> (n1) edge [bend left] (t1);
     \path[->]<4-> (n2) edge [bend right] (t2);
   \end{tikzpicture}
 }
@@ -237,9 +239,9 @@
   \begin{pf}
     \pause
     \begin{align*}
-      \uncover<+->{f_{(-Z)}(x) &= f_Z(-x) \\}
-      \uncover<+->{& = 2 \cdot \phi(-x) \cdot \Phi (-\lambda x) \\}
-      \uncover<+->{& = 2 \cdot \phi(x) \cdot \Phi (-\lambda x),}
+      \uncover<+->{f_{(-Z)}(z) &= f_Z(-z) \\}
+      \uncover<+->{& = 2 \cdot \phi(-z) \cdot \Phi (-\lambda z) \\}
+      \uncover<+->{& = 2 \cdot \phi(z) \cdot \Phi (-\lambda z),}
     \end{align*}
     \uncover<+->{which is the pdf of $SN(0, 1, -\lambda)$.}
   \end{pf}
@@ -341,7 +343,10 @@
   Let's start with the binomial ...
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Binomial}
-  The first two central moments are just the mean and variance:
+  Let $B \sim Bin(n,p$.
+  \pause
+
+  The first two central moments of $B$ are just the mean and variance:
   \pause
   \begin{align*}
     E(B) &= np \\
@@ -440,7 +445,10 @@
   Now lets move on to skew-normal ...
 }
 \frame{ \frametitle{Method of Moments: Central Moments of the Skew-Normal}
-  Again, the first and second central moments are the mean and variance.
+  Let $Y \sim SN(\mu, \sigma, \lambda)$.
+  \pause
+
+  Again, the first and second central moments of $Y$ are the mean and variance.
   \pause
   \begin{align*}
     E(Y) &= \mu + b \delta \sigma \\
@@ -642,7 +650,7 @@
 
 %% MABS
 \frame{ \frametitle{Demonstrating Improved Accuracy: MABS}
-  A more numerical way of gauging accuracy is the $MABS$, defined by \citet{mabs} as
+  A more numerical way of gauging accuracy is the maximal absolute error ($MABS$), defined as
   \begin{equation*}
     \textnormal{MABS}(n, p) \eq \max_{k \in \{0, 1,...,n\}} \left| F_{B(n,p)} (k) -  F_{\textnormal{appr}(n,p)}(k + 0.5) \right|.
   \end{equation*}
