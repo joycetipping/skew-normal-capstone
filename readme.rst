@@ -42,7 +42,7 @@ explanation of their contents.
 
 The home of my project.
 
-- ``bibliography.bib``: The BibTeX file shared between and my paper and presentation
+- ``bibliography.bib``: The BibTeX file shared between my paper and presentation.
 - ``calc/``: Everything calculation related. My stats library, ``stats.py``, contains many useful functions for deriving a skew-normal approximation.
 - ``flyer/``: The materials for my flyer, which I put together using Inkscape.
 - ``images/``: Figures and graphs.
