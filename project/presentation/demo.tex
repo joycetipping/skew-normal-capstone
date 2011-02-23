@@ -32,7 +32,7 @@
   \uncover<+->{Our goal is to find $\lambda$ such that $f(\lambda)$ is within a certain margin of error ($e$) of $k_{n,p}$.}
 \end{frame}
 \frame{ \frametitle{Calculating a Skew-Normal Approximation: Finding $\lambda$}
-  Recall that the sign of $\lambda$ is determined independently of the value.
+  Recall that the sign of $\lambda$ is determined independently of the value. Thus, we can consider only $\lambda > 0$.
   \pause
 
   It is possible to show, by taking its derivative, that $f$ is monotonically decreasing for positive $\lambda$.
@@ -44,7 +44,7 @@
   For this demonstration, we will take $n=25$ and $p=0.1$.
   \pause
 
-  Since we're doing this by hand, we'll take our error margin $e$ to be a modest 0.1.
+  Since we're doing this by hand, we'll take our error margin $e$ to be a modest 0.01.
 }
 \frame{ \frametitle{Calculating a Skew-Normal Approximation: Finding $\lambda$}
   \textit{Step 1}: Find $k_{n,p}$.
