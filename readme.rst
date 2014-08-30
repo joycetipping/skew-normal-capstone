@@ -50,6 +50,7 @@ The home of my project.
 - ``pre-talk/``: An introductory talk to my capstone that I put together ages ago for my capstone seminar class.
 - ``presentation/``: The pieces of my presentation. As with my paper, I keep each section in its own tex file and concatenate them just before compilation.
 - ``proposal.pdf``: My capstone proposal.
+- ``support/``: The supporting R packages and TeX style files for my project.
 
 ``articles/``
 ~~~~~~~~~~~~~
