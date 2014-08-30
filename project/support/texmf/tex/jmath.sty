@@ -1,0 +1,42 @@
+\usepackage{amsfonts, amsmath, amsthm, cancel, geometry, mathpazo, mathtools, palatino}
+
+% Layout
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.3cm}
+
+% QED instead of a halmos bar
+\renewcommand{\qedsymbol}{$\mathcal{Q.E.D.}$}
+
+% Theorems, lemmas, corollaries
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}
+\newtheorem*{thm*}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem*{lem*}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem*{cor*}{Corollary}
+
+% Definitions
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem*{defn*}{Definition}
+
+% Convenient commands
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\eq}{\;=\;}
+\newcommand{\Lra}{\;\Longrightarrow\;}
+\newcommand{\lra}{\;\longrightarrow\;}
+\newcommand{\Ra}{\;\Rightarrow\;}
+\newcommand{\ra}{\;\rightarrow\;}
+
+% My old theorem and definition, done manually
+%\newenvironment{proof}[1][]{\vspace{0.2cm} \textit{\textbf{Proof #1}} \newline}{\hfill $\mathcal{Q.E.D.}$ \newline}
+%\newenvironment{thm}[2][]{\vspace{0.2cm} \textbf{Theorem #2: \textit{#1}} \newline}{}
+%\newenvironment{defn}[2][]{\vspace{0.2cm} \textbf{Definition #2: \textit{#1}} \newline}{}
